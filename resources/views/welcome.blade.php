@@ -85,28 +85,33 @@
         <div class="container mx-auto text-center  text-black/50 text-7xl mb-4 pt-36  ">
             Featured
         </div>
-        <div class=" ">
-            <div
-                class="grid  sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4  container mx-auto max-w-7xl pt-8 p-8 mb-4">
-                @for ($i = 0; $i < 5; $i++)
-                    <div class="relative group transition-transform p-0">
-                        <a href="/service-profile" class="">
-                            <img class="mb-4 rounded-3xl aspect-square object-cover"
-                                src="https://source.unsplash.com/random/1">
-                            <div
-                                class="absolute inset-0 flex translate-y-6 flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
-                                <p
-                                    class="mb-3 text-lg italic text-white font-bold duration-300 opacity-0 transition-opacity sm:group-hover:opacity-100">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis dolore adipisci
-                                    placeat.</p>
-                                <div
-                                    class="border border-transparent rounded hover:bg-[#F69679] p-2 mb-3 text-base text-white duration-300 opacity-0 transition-opacity group-hover:opacity-100">
-                                    See More</div>
-                            </div>
-                        </a>
+        <div class="owl-carousel owl-carousel-1 owl-theme  bg-[#6DCFF6]/25 p-8 grid grid-cols-1 ">
+            <a href="/itsMeCJ" class="href">
+                <div class="flex flex-col scale-75  hover:scale-100 ease-in-out duration-300  ">
+                    <img class=" h-96  object-cover rounded-t-3xl"
+                        src="https://images.unsplash.com/photo-1627564174704-4c3765ef733a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                        alt="">
+                    <div class="p-4 bg-[#F69679]/25 rounded-b-3xl">
+                        <div class="font-bold text-base">Angel</div>
+                        <div class="">
+                            <ul class="flex justify-left mb-0">
+                                <li>
+                                    @for ($j = 0; $j < 5; $j++)
+                                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star"
+                                            class="w-4 text-yellow-300" role="img"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <path fill="currentColor"
+                                                d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
+                                            </path>
+                                        </svg>
+                                </li>
+                                @endfor
+                            </ul>
+                        </div>
                     </div>
-                @endfor
-            </div>
+                </div>
+            </a>
+        </div>
         </div>
 
         <div class="container mx-auto flex justify-center p-8">
@@ -151,9 +156,9 @@
 
     <section class="p-8">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mx-auto max-w-7xl">
-            <div class="p-4 md:p-8 bg-[#6DCFF6]/25 flex items-center" data-aos="fade-right" data-aos-duration="2000">
+            <div class="p-4 md:p-8 bg-[#6DCFF6]/25 flex items-center " data-aos="fade-right" data-aos-duration="2000">
                 <div>
-                    <div class=" ">
+                    <div class="">
                         <h1 class="font-bold text-2xl md:text-3xl text-left ">Unique</h1>
                         <h2 class="text-left text-base md:text-lg">Lorem ipsum dolor sit amet consectetur adipisicing
                             elit. Facilis dolore adipisci placeat.</h2>
@@ -210,35 +215,34 @@
         <div class="container mx-auto text-center text-black/50 text-7xl  mb-4 pt-36  ">
             Top Supplier
         </div>
-        <div class="owl-carousel owl-theme rounded-3xl bg-[#6DCFF6]/25 p-8 grid grid-cols-1 ">
-            @for ($i = 0; $i < 5; $i++)
-                <a href="/itsMeCJ" class="href">
-                    <div class="flex flex-col scale-75  hover:scale-100 ease-in-out duration-300  ">
-                        <img class=" h-96  object-cover rounded-t-3xl"
-                            src="https://images.unsplash.com/photo-1627564174704-4c3765ef733a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
-                            alt="">
-                        <div class="p-4 bg-[#F69679]/25 rounded-b-3xl">
-                            <div class="font-bold text-base">Angel</div>
-                            <div class="">
-                                <ul class="flex justify-left mb-0">
-                                    <li>
-                                        @for ($j = 0; $j < 5; $j++)
-                                            <svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                                data-icon="star" class="w-4 text-yellow-300" role="img"
-                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-                                                <path fill="currentColor"
-                                                    d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
-                                                </path>
-                                            </svg>
-                                    </li>
-            @endfor
-            </ul>
+        <div class="owl-carousel owl-carousel-2 owl-theme  bg-[#6DCFF6]/25 p-8 grid grid-cols-1 ">
+            <a href="/itsMeCJ" class="href">
+                <div class="flex flex-col scale-75  hover:scale-100 ease-in-out duration-300  ">
+                    <img class=" h-96  object-cover rounded-t-3xl"
+                        src="https://images.unsplash.com/photo-1627564174704-4c3765ef733a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                        alt="">
+                    <div class="p-4 bg-[#F69679]/25 rounded-b-3xl">
+                        <div class="font-bold text-base">Angel</div>
+                        <div class="">
+                            <ul class="flex justify-left mb-0">
+                                <li>
+                                    @for ($j = 0; $j < 5; $j++)
+                                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star"
+                                            class="w-4 text-yellow-300" role="img"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                            <path fill="currentColor"
+                                                d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
+                                            </path>
+                                        </svg>
+                                </li>
+                                @endfor
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </a>
         </div>
-        </div>
-        </div>
-        </a>
-        @endfor
-        </div>
+
     </section>
 
 
@@ -266,7 +270,9 @@
     </section>
 
 </x-guest-layout>
+{{--
 <script>
+
     $('.owl-carousel').owlCarousel({
         items: 5,
         loop: true,
@@ -288,5 +294,57 @@
                 items: 5
             }
         }
+    });
+</script> --}}
+<script>
+    $(document).ready(function() {
+
+        // Initialize first carousel
+        $('.owl-carousel-1').owlCarousel({
+            items: 5,
+            loop: true,
+            margin: 20,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                640: {
+                    items: 1
+                },
+                768: {
+                    items: 3
+                },
+                992: {
+                    items: 4
+                },
+                1200: {
+                    items: 5
+                }
+            }
+        });
+
+        // Initialize second carousel
+        $('.owl-carousel-2').owlCarousel({
+            items: 3,
+            loop: true,
+            margin: 20,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                640: {
+                    items: 1
+                },
+                768: {
+                    items: 3
+                },
+                992: {
+                    items: 4
+                },
+                1200: {
+                    items: 5
+                }
+            }
+        });
     });
 </script>

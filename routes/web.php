@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/featured', function () {
+    return view('/featured');
+});
 Route::get('/service-profile', function () {
     return view('/suppliers/service-profile');
 });
