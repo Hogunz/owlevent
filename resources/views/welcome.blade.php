@@ -81,34 +81,18 @@
     </section>
 
 
-    <section class="bg-[#6DCFF6]/25">
-        <div class="container mx-auto text-center  text-black/50 text-7xl mb-4 pt-36  ">
+    <section class="lg:bg-[#6DCFF6]/25 sm:bg-white">
+        <div
+            class="container mx-auto lg:text-center sm:text-left text-black lg:text-7xl sm:text-2xl  mb-4 sm:pl-4  lg:pt-36 sm:pt-12  ">
             Featured
         </div>
-        <div class="owl-carousel owl-carousel-1 owl-theme  bg-[#6DCFF6]/25 p-8 grid grid-cols-1 ">
-            <a href="/itsMeCJ" class="href">
-                <div class="flex flex-col scale-75  hover:scale-100 ease-in-out duration-300  ">
-                    <img class=" h-96  object-cover rounded-t-3xl"
+        <div id="owl-carousel1"
+            class="owl-carousel owl-theme  lg:bg-[#6DCFF6]/25 sm:bg-white lg:p-8 sm:p-0 grid grid-cols-1 ">
+            <a href="/service-profile" class="href">
+                <div class="flex flex-col hover:scale-100 ease-in-out duration-300  ">
+                    <img class=" h-96  object-cover rounded-3xl"
                         src="https://images.unsplash.com/photo-1627564174704-4c3765ef733a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
                         alt="">
-                    <div class="p-4 bg-[#F69679]/25 rounded-b-3xl">
-                        <div class="font-bold text-base">Angel</div>
-                        <div class="">
-                            <ul class="flex justify-left mb-0">
-                                <li>
-                                    @for ($j = 0; $j < 5; $j++)
-                                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star"
-                                            class="w-4 text-yellow-300" role="img"
-                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-                                            <path fill="currentColor"
-                                                d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
-                                            </path>
-                                        </svg>
-                                </li>
-                                @endfor
-                            </ul>
-                        </div>
-                    </div>
                 </div>
             </a>
         </div>
@@ -215,7 +199,7 @@
         <div class="container mx-auto text-center text-black/50 text-7xl  mb-4 pt-36  ">
             Top Supplier
         </div>
-        <div class="owl-carousel owl-carousel-2 owl-theme  bg-[#6DCFF6]/25 p-8 grid grid-cols-1 ">
+        <div id="owl-carousel2" class="owl-carousel owl-theme  bg-[#6DCFF6]/25 p-8 grid grid-cols-1 ">
             <a href="/itsMeCJ" class="href">
                 <div class="flex flex-col scale-75  hover:scale-100 ease-in-out duration-300  ">
                     <img class=" h-96  object-cover rounded-t-3xl"
@@ -270,38 +254,11 @@
     </section>
 
 </x-guest-layout>
-{{--
-<script>
-
-    $('.owl-carousel').owlCarousel({
-        items: 5,
-        loop: true,
-        margin: 20,
-        responsive: {
-            0: {
-                items: 1
-            },
-            640: {
-                items: 1
-            },
-            768: {
-                items: 3
-            },
-            992: {
-                items: 4
-            },
-            1200: {
-                items: 5
-            }
-        }
-    });
-</script> --}}
 <script>
     $(document).ready(function() {
 
         // Initialize first carousel
-        $('.owl-carousel-1').owlCarousel({
-            items: 5,
+        $('#owl-carousel1').owlCarousel({
             loop: true,
             margin: 20,
             responsive: {
@@ -309,7 +266,8 @@
                     items: 1
                 },
                 640: {
-                    items: 1
+                    items: 1,
+                    stagePadding: 100
                 },
                 768: {
                     items: 3
@@ -324,8 +282,7 @@
         });
 
         // Initialize second carousel
-        $('.owl-carousel-2').owlCarousel({
-            items: 3,
+        $('#owl-carousel2').owlCarousel({
             loop: true,
             margin: 20,
             responsive: {
