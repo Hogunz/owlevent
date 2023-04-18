@@ -22,7 +22,7 @@
                     class="flex flex-col justify-left gap-4 mb-8 p-8 rounded-lg bg-gradient-to-b from-[#6DCFF6]/50 via-[#6DCFF6]/25 to-transparent ">
                     <div class="flex justify-center ">
                         <div class="relative">
-                            <img class="relative z-auto top-0 w-32 h-32  rounded-full  object-cover"
+                            <img class="relative z-auto top-0 w-32 h-32 rounded-full object-cover"
                                 src="https://images.unsplash.com/photo-1555952517-2e8e729e0b44?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHBlcnNvbnxlbnwwfDF8MHx8&auto=format&fit=crop&w=500&q=60"
                                 alt="">
                             <span class="absolute flex h-4 w-4 bottom-0 right-7">
@@ -133,10 +133,7 @@
                                             </div>
                                             <div class=" text-sm font-bold hover:underline cursor-pointer  ">
                                                 <a href="/itsMeCJ" class="href">ItsMeCJ</a>
-
                                             </div>
-
-
                                         </div>
                                         <p class="mb-3 font-normal text-gray-700 text-justify ">Lorem Ipsum is simply
                                             dummy

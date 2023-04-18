@@ -10,14 +10,12 @@
                             <img class="md:block  hidden object-cover "
                                 style="height:600px; width:500px; top:-59px; left:87px;"
                                 src="http://indigo.test/img/photographer.png" />
-
                         </div>
                         <div class="relative max-w-lg float-left -mr-[100%] hidden transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none "
                             data-te-carousel-item>
                             <img class="md:block  hidden object-cover"
                                 style="height:600px; width:500px; top:-59px; left:87px;"
                                 src="http://indigo.test/img/photographer.png" />
-
                         </div>
                         <div class="relative max-w-lg float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none "
                             data-te-carousel-item>
@@ -29,9 +27,10 @@
                 </div>
             </div>
             <div class="mr-auto place-self-center lg:col-span-7">
-                <h1 class="max-w-2xl mb-4  font-extrabold tracking-tight leading-none sm:text-7xl sm:text-justify">
+                <h1
+                    class="max-w-2xl mb-4  font-extrabold tracking-tight leading-none lg:text-7xl sm:text-6xl sm:text-justify">
                     <span class="text-[#6DCFF6]/75"> Whatever you’re <br>
-                        planning,</span> <span class="text-black  sm:text-6xl"> make it <br>
+                        planning,</span> <span class="text-black  lg:text-6xl sm:text-5xl"> make it <br>
                         extraordinary</span>
                 </h1>
                 <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl ">
@@ -39,7 +38,7 @@
             </div>
         </div>
     </section>
-    <section class="container mx-auto w-full rounded-2xl py-4 p-8 bg-[#6DCFF6]">
+    <section class="container mx-auto w-full lg:max-w-screen-xl sm:max-w-screen-sm sm:rounded-0 lg:rounded-2xl py-4 lg:p-8 bg-[#6DCFF6]">
         <div class="grid items-end gap-6 px-2.5 md:grid-cols-4">
             <div class="relative z-0">
                 <select type="" id="default_standard"
@@ -79,33 +78,19 @@
             </div>
         </div>
     </section>
-
-
     <section class="lg:bg-[#6DCFF6]/25 sm:bg-white">
-        <div
-            class="container mx-auto lg:text-center sm:text-left text-black lg:text-7xl sm:text-2xl  mb-4 sm:pl-4  lg:pt-36 sm:pt-12  ">
-            Featured
+        <div class="container mx-auto text-black text-2xl mb-4 pl-4 pt-12  justify-between lg:hidden sm:flex">
+          <div>Featured</div>
+          <a href="/featured" class="p-2 text-base text-center text-green-500">See All</a>
         </div>
-        <div id="owl-carousel1"
-            class="owl-carousel owl-theme  lg:bg-[#6DCFF6]/25 sm:bg-white lg:p-8 sm:p-0 grid grid-cols-1 ">
-            <a href="/service-profile" class="href">
-                <div class="flex flex-col hover:scale-100 ease-in-out duration-300  ">
-                    <img class=" h-96  object-cover rounded-3xl"
-                        src="https://images.unsplash.com/photo-1627564174704-4c3765ef733a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
-                        alt="">
-                </div>
-            </a>
+        <div id="owl-carousel1" class="owl-carousel owl-theme p-0">
+          <a href="/service-profile" class="href">
+            <div class="flex flex-col scale-75">
+              <img class="h-96 object-cover rounded-3xl" src="https://images.unsplash.com/photo-1627564174704-4c3765ef733a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="">
+            </div>
+          </a>
         </div>
-        </div>
-
-        <div class="container mx-auto flex justify-center p-8">
-            <a href="/featured"
-                class="border rounded hover:bg
-    -[#F69679]/75 p-2  text-base text-center text-[#F69679]/75 hover:text-white hover:bg-[#F69679] transition duration-300 hover:ease-in-out cursor-pointer">
-                Show More
-            </a>
-        </div>
-    </section>
+      </section>
 
     <section class="">
         <div class="container mx-auto text-center text-black/50 text-7xl  mb-4 pt-36  ">
@@ -260,7 +245,6 @@
         // Initialize first carousel
         $('#owl-carousel1').owlCarousel({
             loop: true,
-            margin: 20,
             responsive: {
                 0: {
                     items: 1

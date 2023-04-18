@@ -1,6 +1,6 @@
 <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded border-b ">
     <div class=" flex flex-wrap items-center justify-between ">
-        <div class="flex">
+        <div class="flex lg:order-none sm:order-1">
             <button data-collapse-toggle="navbar-default" type="button"
                 class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200   "
                 aria-controls="navbar-default" aria-expanded="false">
@@ -67,11 +67,13 @@
                 </svg>
             </a>
         </div>
-        <div class="grow">
+
+    <div class="lg:order-none sm:order-2"></div>
+        <div class="grow lg:order-none sm:order-last">
             <form>
                 <div class="hidden sm:flex md:flex ">
                     <button id="dropdown-button" data-dropdown-toggle="dropdown"
-                        class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-[#F69679]/25   hover:bg-[#F69679]/50 focus:ring-4 focus:outline-none focus:ring-[#F69679]/50 "
+                        class="flex-shrink-0 z-10 inline-flex  sm:hidden lg:flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-[#F69679]/25   hover:bg-[#F69679]/50 focus:ring-4 focus:outline-none focus:ring-[#F69679]/50 "
                         type="button">All categories <svg aria-hidden="true" class="w-4 h-4 ml-1" fill="currentColor"
                             viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
@@ -95,8 +97,8 @@
                         @endfor
                     </div>
 
-                    <div class="relative w-full">
-                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                    <div class="relative w-full ">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none ">
 
                             <button type="submit">
                                 <svg aria-hidden="true" class="w-5 h-5 text-gray-500 " fill="currentColor"
@@ -109,13 +111,12 @@
 
                         </div>
                         <input type="text" id="voice-search"
-                            class=" border-transparent text-gray-900 text-sm  focus:ring-[#6DCFF6]/50 focus:border-[#6DCFF6]/50 block w-full pl-10 p-2.5  "
+                            class=" border-transparent text-gray-900 text-sm  focus:ring-[#6DCFF6]/50 focus:border-[#6DCFF6]/50 block w-full pl-10 p-2.5 sm:hidden lg:flex "
                             placeholder="Search for Categories . . . " required>
                     </div>
                 </div>
             </form>
         </div>
-
         <div class="hidden w-full md:block md:w-auto" id="navbar-default">
             <ul
                 class="items-center flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white ">
