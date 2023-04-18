@@ -19,6 +19,9 @@ Route::get('/', function () {
 Route::get('/featured', function () {
     return view('/featured');
 });
+Route::get('/blog', function () {
+    return view('/blog');
+});
 Route::get('/service-profile', function () {
     return view('/suppliers/service-profile');
 });
