@@ -22,6 +22,9 @@ Route::get('/featured', function () {
 Route::get('/blog', function () {
     return view('/blog');
 });
+Route::get('/sample', function () {
+    return view('/sample');
+});
 Route::get('/service-profile', function () {
     return view('/suppliers/service-profile');
 });

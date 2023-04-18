@@ -47,14 +47,7 @@
                     <section class=" sm:bg-white">
                         <div class="container mx-auto text-black text-2xl mb-4 pl-4 pt-12  justify-between flex">
                           <div>Featured</div>
-                          <a href="" class="p-2 text-base text-center text-green-500">See All</a>
-                        </div>
-                        <div id="owl-carousel1" class="owl-carousel owl-theme p-0">
-                          <a href="/service-profile" class="href">
-                            <div class="flex flex-col scale-75">
-                              <img class="h-96 object-cover rounded-3xl" src="https://images.unsplash.com/photo-1627564174704-4c3765ef733a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="">
-                            </div>
-                          </a>
+                          <a href="" class="p-2 text-base text-center text-red-500">See All</a>
                         </div>
                       </section>
                     <div class="grid grid-cols-2 gap-4">
@@ -69,7 +62,7 @@
                                 <div class="text-justify ">
                                     <a href="" class="href">
                                     <h1
-                                        class="max-w-2xl mb-4  font-base tracking-tight leading-none text-lg sm:text-2xl xl:text-xl ">
+                                        class="max-w-2xl mb-4  font-base tracking-tight leading-none text-lg sm:text-lg xl:text-xl ">
                                         Sharing our passion for learning and discovery through our blog.</h1>
                                     </a>
                                 </div>

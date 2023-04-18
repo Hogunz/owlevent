@@ -21,7 +21,7 @@
     },
     "dependencies": {
         "aos": "^2.3.4",
-        "flowbite": "^1.6.4",
+        "flowbite": "^1.6.5",
         "fullcalendar": "^6.1.5",
         "node-notifier": "^10.0.1",
         "owl.carousel": "^2.3.4",

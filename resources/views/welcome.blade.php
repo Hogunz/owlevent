@@ -215,7 +215,7 @@
     </section>
 
 
-    <section>
+    <section class="sm:hidden lg:flex">
         <div class="2xl:mx-auto 2xl:container md:px-20 px-4 md:py-12 py-9">
             <div class="relative rounded-md bg-[#F69679]/25">
 
