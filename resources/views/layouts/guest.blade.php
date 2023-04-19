@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html class="scroll-smooth" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="utf-8">
@@ -34,7 +34,7 @@
 </head>
 
 
-<body class=" scroll-smooth overscroll-contain overflow-auto  font-sans ">
+<body class="  overscroll-contain overflow-auto" style="font-family: Montserrat ">
 
     <div class="min-h-screen flex flex-col justify-center ">
         <header>@include('layouts.header')</header>

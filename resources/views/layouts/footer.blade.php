@@ -64,7 +64,7 @@
 </div>
 
 
-
+{{--
 
 <div class="sm:flex lg:hidden fixed bottom-0 inset-x-0 z-50 w-full bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600">
     <div class="grid h-full max-w-lg grid-cols-5 mx-auto">
@@ -121,4 +121,4 @@
             <div class="tooltip-arrow" data-popper-arrow></div>
         </div>
     </div>
-</div>
+</div> --}}

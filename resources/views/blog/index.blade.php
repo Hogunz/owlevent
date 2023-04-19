@@ -25,57 +25,91 @@
                 </div>
             </aside>
         </div>
-        <!-- 2 -->
-
-        <div>
+         <!-- 2 -->
+         <div>
             <div class="container max-w-max mx-auto p-8 ">
-                <div class="max-w-screen-xl px-4 mx-auto">
-                    <div class="grid grid-cols-1 gap-4 divide-y">
-                        <div class="mr-auto place-self-center lg:col-span-7">
-                            <div class=" lg:mt-0 lg:col-span-5 lg:flex ">
-                                <img class="mb-4"
-                                    src="https://images.unsplash.com/photo-1681616679951-31dd84d5b6f0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
-                                    alt="">
+                <div class="max-w-screen-xl px-4 py-8 mx-auto">
+                    <div class="mr-auto place-self-center lg:col-span-7">
+
+                        <div class="text-justify ">
+                            <h1
+                                class="max-w-2xl mb-4  font-extrabold tracking-tight leading-none text-lg md:text-xl xl:text-4xl ">
+                                Sharing our passion for learning and discovery through our blog.</h1>
+                            <p class="text-xs p-2">By:<span class="underline text-black">Christopher James Dela
+                                    Cruz</span> March
+                                24, 2023</p>
+                            <div
+                                class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2  gap-4">
+                                <div class="">
+                                    <p class="max-w-2xl mb-6 font-base text-gray-500 lg:mb-8 md:text-sm lg:text-base">
+                                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                        when
+                                        an
+                                        unknown
+                                        printer took a galley of type and scrambled it to make a type specimen book.
+                                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                        when
+                                        an
+                                        unknown
+                                        printer took a galley of type and scrambled it to make a type specimen book.
+                                    </p>
+                                </div>
+                                <div class="">
+                                    <p class="max-w-2xl mb-6 font-base text-gray-500 lg:mb-8 md:text-sm lg:text-base">
+                                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                        when
+                                        an
+                                        unknown
+                                        printer took a galley of type and scrambled it to make a type specimen book.
+                                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                        when
+                                        an
+                                        unknown
+                                        printer took a galley of type and scrambled it to make a type specimen book.
+                                    </p>
+                                </div>
                             </div>
-                            <div class="text-justify ">
-                                <a href="/blog/index" class="href">
-                                <h1
-                                    class="max-w-2xl mb-4  font-base tracking-tight leading-none text-lg sm:text-2xl xl:text-4xl ">
-                                    Sharing our passion for learning and discovery through our blog.</h1>
-                                </a>
+                        </div>
+                        <div class="hidden lg:mt-0 lg:col-span-5 lg:flex ">
+                            <img class="mb-4" src="https://images.unsplash.com/photo-1681814308040-9fa0a315fe81?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="">
+                        </div>
+                        <div class="text-justify">
+
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="">
+                                    <p class="max-w-2xl mb-6 font-base text-gray-500 lg:mb-8 md:text-sm lg:text-base">
+                                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                        when
+                                        an
+                                        unknown
+                                        printer took a galley of type and scrambled it to make a type specimen book.
+                                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                        when
+                                        an
+                                        unknown
+                                        printer took a galley of type and scrambled it to make a type specimen book.
+                                    </p>
+                                </div>
+                                <div class="">
+                                    <p class="max-w-2xl mb-6 font-base text-gray-500 lg:mb-8 md:text-sm lg:text-base">
+                                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                        when
+                                        an
+                                        unknown
+                                        printer took a galley of type and scrambled it to make a type specimen book.
+                                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                                        when
+                                        an
+                                        unknown
+                                        printer took a galley of type and scrambled it to make a type specimen book.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <section class=" sm:bg-white">
-                        <div class="container mx-auto text-black text-2xl mb-4 pl-4 pt-12  justify-between flex">
-                          <div>Featured</div>
-                          <a href="" class="p-2 text-base text-center text-red-500">See All</a>
-                        </div>
-                      </section>
-                    <div class="grid grid-cols-2 gap-4">
-                        @for($i = 0; $i < 4; $i ++)
-                        <div>
-                            <div class="mr-auto place-self-center lg:col-span-7">
-                                <div class=" lg:mt-0 lg:col-span-5 lg:flex overflow-hidden">
-                                    <img class="mb-4 transition duration-300 ease-in-out hover:scale-110"
-                                        src="https://images.unsplash.com/photo-1681412330003-2ce8e52f4aa8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"
-                                        alt="">
-                                </div>
-                                <div class="text-justify ">
-                                    <a href="" class="href">
-                                    <h1
-                                        class="max-w-2xl mb-4  font-base tracking-tight leading-none text-lg sm:text-lg xl:text-xl ">
-                                        Sharing our passion for learning and discovery through our blog.</h1>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        @endfor
-                      </div>
                 </div>
             </div>
         </div>
-
         <!-- 3 -->
         <div class="sticky top-0">
             <aside class="hidden lg:block lg:w-80" aria-labelledby="sidebar-label">

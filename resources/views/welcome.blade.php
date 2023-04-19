@@ -1,131 +1,137 @@
 <x-guest-layout>
-    <section class="">
-        <div
-            class="grid max-w-screen-xl px-4 mx-auto lg:gap-8 xl:gap-0  lg:grid-cols-12 xs:place-content-center sm:place-content-center  md:place-content-center">
-            <div class="hidden lg:mt-0 lg:col-span-5 sm:flex md:flex-row flex-col">
-                <div id="carouselSlide" class="relative" data-te-carousel-init data-te-carousel-slide>
+    <section class="bg-[white]">
+        <div class="grid max-w-screen-xl px-4 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-12 xs:grid xs:place-content-center">
+            <div class="xs:col-span-12 lg:mt-0 lg:col-span-5 sm:flex md:flex-row flex-col">
+                <div id="carouselSlide" class="relative lg:flex sm:hidden" data-te-carousel-init data-te-carousel-slide>
                     <div class="relative overflow-hidden after:clear-both after:block after:content-[''] pt-36">
                         <div class="relative  float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none "
                             data-te-carousel-item data-te-carousel-active>
-                            <img class="md:block  hidden object-cover "
+                            <img class="md:block hidden object-cover sm:hidden"
                                 style="height:600px; width:500px; top:-59px; left:87px;"
                                 src="http://indigo.test/img/photographer.png" />
                         </div>
                         <div class="relative max-w-lg float-left -mr-[100%] hidden transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none "
                             data-te-carousel-item>
-                            <img class="md:block  hidden object-cover"
+                            <img class="md:block hidden object-cover sm:hidden"
                                 style="height:600px; width:500px; top:-59px; left:87px;"
                                 src="http://indigo.test/img/photographer.png" />
                         </div>
                         <div class="relative max-w-lg float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none "
                             data-te-carousel-item>
-                            <img class="md:block  hidden object-cover "
+                            <img class="md:block hidden object-cover sm:hidden"
                                 style="height:600px; width:500px; top:-59px; left:87px;"
                                 src="http://indigo.test/img/wedding.png" />
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="mr-auto place-self-center lg:col-span-7">
+            <div class="xs:col-span-12 mr-auto place-self-center lg:col-span-7 lg:p-0 sm:p-8">
                 <h1
-                    class="max-w-2xl mb-4  font-extrabold tracking-tight leading-none lg:text-7xl sm:text-6xl sm:text-justify">
-                    <span class="text-[#6DCFF6]/75"> Whatever you’re <br>
-                        planning,</span> <span class="text-black  lg:text-6xl sm:text-5xl"> make it <br>
+                    class="max-w-2xl mb-4 font-extrabold leading-none lg:text-7xl sm:text-6xl sm:text-justify text-center xs:text-4xl tracking-wide">
+                    <span class="text-[#7895b2]"> Whatever you’re <br>
+                        planning,</span> <span class="text-black  lg:text-6xl sm:text-5xl tracking-wide"> make it <br>
                         extraordinary</span>
                 </h1>
-                <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl ">
+                <p class="max-w-2xl mb-6 font-light text-black lg:mb-8 md:text-lg lg:text-xl text-center xs:text-lg tracking-wide">
                     “Making every moment memorable - with our events!”</p>
             </div>
         </div>
-    </section>
-    <section class="container mx-auto w-full lg:max-w-screen-xl sm:max-w-screen-sm sm:rounded-0 lg:rounded-2xl py-4 lg:p-8 bg-[#6DCFF6]">
-        <div class="grid items-end gap-6 px-2.5 md:grid-cols-4">
-            <div class="relative z-0">
-                <select type="" id="default_standard"
-                    class="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-gray-300  peer"
-                    placeholder=" ">
-                    <option class="text-black" value="">Type of Event</option>
-                    <option class="text-black" value="">Wedding</option>
-                    <option class="text-black" value="">Debut</option>
-                    <option class="text-black" value="">Birthday</option>
-                </select>
-                <label for="default_standard"
-                    class="absolute text-base text-white duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-                    Event</label>
-            </div>
-            <div class="relative z-0">
 
-                <input type="text" id="default_standard"
-                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-gray-300 peer"
-                    placeholder=" " />
-                <label for="default_standard"
-                    class="absolute text-base text-white  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-                    Location / Venues</label>
-            </div>
-            <div class="relative z-0">
-                <input type="date" id="default_standard"
-                    class="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-gray-300 peer"
-                    placeholder=" " />
-                <label for="default_standard"
-                    class="absolute text-base text-white  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-                    Date</label>
-            </div>
-            <div class="relative z-0">
-                <button
-                    class="rounded-lg drop-shadow-2xl text-white p-4 px-24 bg-[#82CA9C]/75  hover:bg-[#82CA9C] active:bg-[#82CA9C]/75 focus:outline-none focus:ring focus:ring-[#82CA9C]">
-                    Search
-                </button>
-            </div>
-        </div>
     </section>
-    <section class="lg:bg-[#6DCFF6]/25 sm:bg-white">
-        <div class="container mx-auto text-black text-2xl mb-4 pl-4 pt-12  justify-between lg:hidden sm:flex">
-          <div>Featured</div>
-          <a href="/featured" class="p-2 text-base text-center text-green-500">See All</a>
-        </div>
-        <div id="owl-carousel1" class="owl-carousel owl-theme p-0">
-          <a href="/service-profile" class="href">
-            <div class="flex flex-col scale-75">
-              <img class="h-96 object-cover rounded-3xl" src="https://images.unsplash.com/photo-1627564174704-4c3765ef733a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="">
-            </div>
-          </a>
-        </div>
-      </section>
-
-    <section class="">
-        <div class="container mx-auto text-center text-black/50 text-7xl  mb-4 pt-36  ">
-            Category
-        </div>
-        <div class=" ">
-            <div
-                class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5  gap-4  container mx-auto max-w-7xl pt-8 p-8 mb-4">
-                @for ($i = 0; $i < 10; $i++)
-                    <div class="relative ">
-                        <a href="/categories" class="">
-                            <img class="mb-4 rounded-lg aspect-square object-cover"
-                                src="https://source.unsplash.com/random/3">
-                            <div
-                                class="absolute inset-0 bottom-0 flex justify-center items-end  bg-gradient-to-b from-transparent via-transparent to-black ">
-                                <p class="mb-3  text-white font-bold ">
-                                    Event Coordinator</p>
-                            </div>
-                        </a>
+    <div class="lg:relative sm:static">
+        <div class="lg:absolute sm:static rounded-lg  inset-x-0 -top-14  max-w-7xl container mx-auto">
+            <section
+                class="container mx-auto w-full lg:max-w-screen-xl sm:max-w-screen-sm sm:rounded-0 lg:rounded-2xl py-4 lg:p-8 bg-[#F5EFE6]">
+                <div class="grid items-end gap-6 px-2.5 md:grid-cols-4">
+                    <div class="relative z-0">
+                        <select type="" id="default_standard"
+                            class="block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-gray-300  peer"
+                            placeholder=" ">
+                            <option class="text-black" value="">Type of Event</option>
+                            <option class="text-black" value="">Wedding</option>
+                            <option class="text-black" value="">Debut</option>
+                            <option class="text-black" value="">Birthday</option>
+                        </select>
+                        <label for="default_standard"
+                            class="absolute text-base text-black duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                            Event</label>
                     </div>
-                @endfor
+                    <div class="relative z-0">
+                        <input type="text" id="default_standard"
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-gray-300 peer"
+                            placeholder=" " />
+                        <label for="default_standard"
+                            class="absolute text-base text-black  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                            Location / Venues</label>
+                    </div>
+                    <div class="relative z-0">
+                        <input type="date" id="default_standard"
+                            class="block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-gray-300 peer"
+                            placeholder=" " />
+                        <label for="default_standard"
+                            class="absolute text-base text-black  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                            Date</label>
+                    </div>
+                    <div class="relative z-0">
+                        <button class="p-4 lg:px-24 md:px-10 sm:px-24 text-sm font-medium text-white focus:outline-none bg-[#7895B2] rounded-lg shadow-2xl border border-[#7895B2] hover:bg-[#AEBDCA] hover:text-white focus:z-10 focus:ring-4 focus:ring-[#AEBDCA]">
+                            Search
+                        </button>
+
+
+                    </div>
+                </div>
+        </div>
+        </section>
+        <section class="lg:bg-[#E8DFCA] sm:bg-white lg:pt-36 sm:pt-12">
+            <div class="container mx-auto text-black text-2xl mb-4 pl-4 justify-between lg:hidden sm:flex ">
+                <div>Featured</div>
+                <a href="/featured" class="p-2 text-base text-center text-green-500">See All</a>
             </div>
-            <div class="container mx-auto flex justify-center p-8">
-                <a href="/categories"
-                    class="border rounded   hover:bg
-    -[#F69679]/75 p-2  text-base text-center text-[#F69679]/75  hover:text-white hover:bg-[#F69679] transition duration-300 hover:ease-in-out   cursor-pointer">
-                    Show More
+            <div id="owl-carousel1" class="owl-carousel owl-theme p-0">
+                <a href="/service-profile" class="href">
+                    <div class="flex flex-col scale-75">
+                        <img class="h-96 object-cover rounded-3xl"
+                            src="https://images.unsplash.com/photo-1627564174704-4c3765ef733a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                            alt="">
+                    </div>
                 </a>
             </div>
-    </section>
+        </section>
 
+        <section class="">
+            <div class="container mx-auto text-center text-black/50 text-7xl  mb-4 pt-36  ">
+                Category
+            </div>
+            <div class=" ">
+                <div
+                    class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5  gap-4  container mx-auto max-w-7xl pt-8 p-8 mb-4">
+                    @for ($i = 0; $i < 10; $i++)
+                        <div class="relative ">
+                            <a href="/categories" class="">
+                                <img class="mb-4 rounded-lg aspect-square object-cover"
+                                    src="https://source.unsplash.com/random/3">
+                                <div
+                                    class="absolute inset-0 bottom-0 flex justify-center items-end  bg-gradient-to-b from-transparent via-transparent to-black ">
+                                    <p class="mb-3  text-white font-bold ">
+                                        Event Coordinator</p>
+                                </div>
+                            </a>
+                        </div>
+                    @endfor
+                </div>
+                <div class="container mx-auto flex justify-center p-8">
+                    <a href="/categories"
+                        class="border rounded   hover:bg
+    -[#F69679]/75 p-2  text-base text-center text-[#F69679]/75  hover:text-white hover:bg-[#F69679] transition duration-300 hover:ease-in-out   cursor-pointer">
+                        Show More
+                    </a>
+                </div>
+        </section>
+    </div>
 
     <section class="p-8">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-2 mx-auto max-w-7xl">
-            <div class="p-4 md:p-8 bg-[#6DCFF6]/25 flex items-center " data-aos="fade-right" data-aos-duration="2000">
+            <div class="p-4 md:p-8 bg-[#E8DFCA] flex items-center " data-aos="fade-right" data-aos-duration="2000">
                 <div>
                     <div class="">
                         <h1 class="font-bold text-2xl md:text-3xl text-left ">Unique</h1>
@@ -147,7 +153,7 @@
                     alt="">
             </div>
 
-            <div class="p-4 md:p-8 bg-[#F69679]/25 flex items-center" data-aos="fade-left" data-aos-duration="2000">
+            <div class="p-4 md:p-8 bg-[#7895B2] flex items-center" data-aos="fade-left" data-aos-duration="2000">
                 <div>
                     <div class=" ">
                         <h1 class="font-bold text-3xl md:text-4xl text-left">Reliable</h1>
@@ -157,7 +163,7 @@
                 </div>
             </div>
 
-            <div class="p-4 md:p-8 bg-[#6DCFF6]/25 flex items-center" data-aos="fade-right" data-aos-duration="2000">
+            <div class="p-4 md:p-8 bg-[#E8DFCA] flex items-center" data-aos="fade-right" data-aos-duration="2000">
 
                 <div>
                     <div class=" ">
@@ -184,13 +190,13 @@
         <div class="container mx-auto text-center text-black/50 text-7xl  mb-4 pt-36  ">
             Top Supplier
         </div>
-        <div id="owl-carousel2" class="owl-carousel owl-theme  bg-[#6DCFF6]/25 p-8 grid grid-cols-1 ">
+        <div id="owl-carousel2" class="owl-carousel owl-theme  bg-[#E8DFCA] p-8 grid grid-cols-1 ">
             <a href="/itsMeCJ" class="href">
                 <div class="flex flex-col scale-75  hover:scale-100 ease-in-out duration-300  ">
                     <img class=" h-96  object-cover rounded-t-3xl"
                         src="https://images.unsplash.com/photo-1627564174704-4c3765ef733a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
                         alt="">
-                    <div class="p-4 bg-[#F69679]/25 rounded-b-3xl">
+                    <div class="p-4 bg-white rounded-b-3xl">
                         <div class="font-bold text-base">Angel</div>
                         <div class="">
                             <ul class="flex justify-left mb-0">
@@ -217,7 +223,7 @@
 
     <section class="sm:hidden lg:flex">
         <div class="2xl:mx-auto 2xl:container md:px-20 px-4 md:py-12 py-9">
-            <div class="relative rounded-md bg-[#F69679]/25">
+            <div class="relative rounded-md bg-gradient-to-r from-[#AEBDCA] to-[#F5EFE6]">
 
                 <div
                     class="text-xl relative z-20 w-full h-full top-0 md:p-16 p-6 flex flex-col justify-between rounded-md ">

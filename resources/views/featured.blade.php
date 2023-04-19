@@ -3,8 +3,7 @@
     <section class="container mx-auto p-8">
         <div class=" h-auto ">
             <div class="container mx-auto" style="">
-                <div class="bg-cover bg-center  h-auto text-white py-24 px-10 object-fill rounded-t-lg"
-                    style="background-image: url(https://images.unsplash.com/photo-1554034483-04fda0d3507b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80">
+                <div class="bg-cover bg-center  h-auto text-white py-24 px-10 object-fill rounded-t-lg bg-gradient-to-br from-[#7895B2] from-50% to-[#E8DFCA]">
                     <div class="sm:w-1/2">
                         <p class="font-bold text-sm uppercase">w</p>
                         <p class="text-3xl font-bold">w</p>
