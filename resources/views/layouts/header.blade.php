@@ -238,8 +238,8 @@
                                     </div>
                                     </h3>
                                     <!--LOGIN FORM-->
-                                    <form class="space-y-6" method="POST" action="">
-
+                                    <form class="space-y-6" method="POST" action="{{ route('register') }}">
+                                        @csrf
                                         <!--Full NAME-->
                                         <div>
                                             <x-label for="name" />
@@ -266,6 +266,16 @@
                                                 required autocomplete="current-password" />
                                         </div>
                                         <!--PASSWORD-->
+
+                                        <!--CONFIRMED PASSWORD-->
+                                        <div>
+                                            <x-label for="password" :value="__('Confirm Password')" />
+                                            <x-input type="password" name="password_confirmation" id="password"
+                                                placeholder="Password"
+                                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-full focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  "
+                                                required autocomplete="current-password" />
+                                        </div>
+                                        <!--CONFIRMED PASSWORD-->
 
                                         <!--Forgot PassWord-->
                                         <button type="submit"
