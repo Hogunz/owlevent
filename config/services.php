@@ -33,7 +33,7 @@ return [
     'facebook' => [
         'client_id' => '1273110190227122',
         'client_secret' => '9522dd98040cf3b5bf35bb1d23ca9672',
-        'redirect' => 'http://localhost:8000/auth/facebook/callback',
+        'redirect' => 'https://owlevent.test/auth/facebook/callback',
     ],
 
 ];

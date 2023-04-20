@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\RoleController;
+use App\Http\Controllers\SocialController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,8 +25,17 @@ Route::get('/supplier-profile', function () {
     return view('/suppliers/supplier-profile');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+
+    Route::prefix('admin/')->group(function () {
+        Route::resource('roles', RoleController::class);
+    });
+});
+
+Route::get('/auth/facebook', [SocialController::class, 'facebookRedirect']);
+Route::get('/auth/facebook/callback', [SocialController::class, 'loginWithFacebook']);
 
 require __DIR__ . '/auth.php';
