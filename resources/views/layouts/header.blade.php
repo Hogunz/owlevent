@@ -120,9 +120,8 @@
                                     </svg>
                                     <span class="sr-only">Close modal</span>
                                 </button>
-                                <div class="border rounded-lg bg-white py-6 px-6 lg:px-8"
-                                    style="background-image: linear-gradient(to bottom, rgba(109, 207, 246, 0.75), transparent);
-                                ">
+                                <div
+                                    class="border rounded-lg bg-white py-6 px-6 lg:px-8 bg-gradient-to-b from-[#F5EFE6] via-[#E8DFCA] to-transparent">
 
                                     <div>
                                         <x-application-logo width="350px" height="70px"></x-application-logo>
@@ -172,7 +171,7 @@
                                         </div>
                                         <!--Forgot PassWord-->
                                         <button type="submit"
-                                            class="w-full text-white bg-[#82CA9C]/75 hover:bg-[#82CA9C]/50  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center ">Continue</button>
+                                            class="w-full text-white bg-[#7895B2] hover:bg-[#7895B2]/75  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center ">Continue</button>
                                         <div class="relative flex py-5 items-center">
                                             <div class="flex-grow border-t border-gray-400"></div>
                                             <span class="flex-shrink mx-4 text-gray-400">OR</span>
@@ -230,9 +229,8 @@
                                     </svg>
                                     <span class="sr-only">Close modal</span>
                                 </button>
-                                <div class="border rounded-lg bg-white py-6 px-6 lg:px-8"
-                                    style="background-image: linear-gradient(to bottom, rgba(109, 207, 246, 0.75), transparent);
-                              ">
+                                <div
+                                    class="border rounded-lg bg-white py-6 px-6 lg:px-8 bg-gradient-to-br from-[#F5EFE6] via-[#E8DFCA] to-transparent">
 
                                     <div>
                                         <x-application-logo width="350px" height="70px"></x-application-logo>
@@ -270,7 +268,7 @@
 
                                         <!--Forgot PassWord-->
                                         <button type="submit"
-                                            class="w-full text-white bg-[#82CA9C]/75 hover:bg-[#82CA9C]/50  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center ">Sign
+                                            class="w-full text-white bg-[#7895B2] hover:bg-[#7895B2]/75  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center ">Sign
                                             Up</button>
                                         <div class="relative flex py-5 items-center">
                                             <div class="flex-grow border-t border-gray-400"></div>
@@ -436,9 +434,9 @@
                     <!-- Main modal -->
                     <div id="medium-modal" tabindex="-1" aria-hidden="true"
                         class=" hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full sm:inset-0 h-modal sm:h-full justify-center items-center">
-                        <div class="relative    p-4 w-full max-w-md h-full sm:h-auto ">
+                        <div class="relative p-4 w-full max-w-md h-full sm:h-auto ">
                             <!-- Modal content -->
-                            <div class="relative   rounded-lg shadow ">
+                            <div class="relative rounded-lg shadow ">
                                 <button type="button"
                                     class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
                                     data-modal-toggle="medium-modal">

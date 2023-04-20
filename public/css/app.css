@@ -1865,6 +1865,9 @@ input:checked + .toggle-bg {
 .max-w-xl {
   max-width: 36rem;
 }
+.max-w-sm {
+  max-width: 24rem;
+}
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -4151,6 +4154,9 @@ input:checked + .toggle-bg {
 .hover\:bg-gray-300:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(209 213 219 / var(--tw-bg-opacity));
+}
+.hover\:bg-\[\#7895B2\]\/50:hover {
+  background-color: rgb(120 149 178 / 0.5);
 }
 .hover\:bg-opacity-75:hover {
   --tw-bg-opacity: 0.75;
