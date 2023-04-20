@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html class="scroll-smooth" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>eVision</title>
+    <title>OwlEvent</title>
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
     <!-- Styles -->
@@ -34,7 +34,7 @@
 </head>
 
 
-<body class=" scroll-smooth overscroll-contain overflow-auto  " style="font-family: sans-serif;">
+<body class="  overscroll-contain overflow-auto" style="font-family: Montserrat ">
 
     <div class="min-h-screen flex flex-col justify-center ">
         <header>@include('layouts.header')</header>
@@ -50,6 +50,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <!-- Data AoS -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
 <script>
     AOS.init();
 </script>
