@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <section class="bg-[white]">
+    <section class="bg-white">
         <div class="grid max-w-screen-xl px-4 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-12 xs:grid xs:place-content-center">
             <div class="xs:col-span-12 lg:mt-0 lg:col-span-5 sm:flex md:flex-row flex-col">
                 <div id="carouselSlide" class="relative lg:flex sm:hidden" data-te-carousel-init data-te-carousel-slide>
@@ -32,7 +32,8 @@
                         planning,</span> <span class="text-black  lg:text-6xl sm:text-5xl tracking-wide"> make it <br>
                         extraordinary</span>
                 </h1>
-                <p class="max-w-2xl mb-6 font-light text-black lg:mb-8 md:text-lg lg:text-xl text-center xs:text-lg tracking-wide">
+                <p
+                    class="max-w-2xl mb-6 font-light text-black lg:mb-8 md:text-lg lg:text-xl text-center xs:text-lg tracking-wide">
                     “Making every moment memorable - with our events!”</p>
             </div>
         </div>
@@ -73,7 +74,8 @@
                             Date</label>
                     </div>
                     <div class="relative z-0">
-                        <button class="p-4 lg:px-24 md:px-10 sm:px-24 text-sm font-medium text-white focus:outline-none bg-[#7895B2] rounded-lg shadow-2xl border border-[#7895B2] hover:bg-[#AEBDCA] hover:text-white focus:z-10 focus:ring-4 focus:ring-[#AEBDCA]">
+                        <button
+                            class="p-4 lg:px-24 md:px-10 sm:px-24 text-sm font-medium text-white hover:text-black focus:outline-none bg-[#7895B2] rounded-lg shadow-2xl border border-[#7895B2] hover:bg-[#AEBDCA] focus:z-10 focus:ring-4 focus:ring-[#AEBDCA]">
                             Search
                         </button>
 
@@ -85,7 +87,7 @@
         <section class="lg:bg-[#E8DFCA] sm:bg-white lg:pt-36 sm:pt-12">
             <div class="container mx-auto text-black text-2xl mb-4 pl-4 justify-between lg:hidden sm:flex ">
                 <div>Featured</div>
-                <a href="/featured" class="p-2 text-base text-center text-green-500">See All</a>
+                <a href="/featured" class="p-2 text-base text-center text-[#7895B2]">See All</a>
             </div>
             <div id="owl-carousel1" class="owl-carousel owl-theme p-0">
                 <a href="/service-profile" class="href">
@@ -99,8 +101,10 @@
         </section>
 
         <section class="">
-            <div class="container mx-auto text-center text-black/50 text-7xl  mb-4 pt-36  ">
-                Category
+            <div
+                class="container mx-auto   mb-4 pl-4 sm:justify-between  lg:justify-center sm:flex lg:flex sm:text-2xl lg:text-7xl text-black lg:pt-36 sm:pt-12  ">
+                <div>Category</div>
+                <a href="/" class="p-2 text-base text-center text-[#7895B2] lg:hidden sm:flex">See All</a>
             </div>
             <div class=" ">
                 <div
@@ -119,10 +123,9 @@
                         </div>
                     @endfor
                 </div>
-                <div class="container mx-auto flex justify-center p-8">
+                <div class="container mx-auto lg:flex sm:hidden justify-center p-8">
                     <a href="/categories"
-                        class="border rounded   hover:bg
-    -[#F69679]/75 p-2  text-base text-center text-[#F69679]/75  hover:text-white hover:bg-[#F69679] transition duration-300 hover:ease-in-out   cursor-pointer">
+                        class="border rounded bg-[#7895B2]  hover:bg-[#7895B2]/75 p-2  text-base text-center text-white  hover:text-black transition duration-300 hover:ease-in-out   cursor-pointer">
                         Show More
                     </a>
                 </div>
@@ -174,9 +177,7 @@
                             Facilis dolore adipisci placeat.</h2>
                     </div>
                 </div>
-
             </div>
-
             <div class=" flex items-center overflow-hidden cursor-pointer">
                 <img class="w-full md:h-full object-cover transition duration-300 ease-in-out hover:scale-110 hover:rotate-3 "
                     src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
@@ -191,7 +192,7 @@
             Top Supplier
         </div>
         <div id="owl-carousel2" class="owl-carousel owl-theme  bg-[#E8DFCA] p-8 grid grid-cols-1 ">
-            <a href="/itsMeCJ" class="href">
+            <a href="/supplier-profile" class="href">
                 <div class="flex flex-col scale-75  hover:scale-100 ease-in-out duration-300  ">
                     <img class=" h-96  object-cover rounded-t-3xl"
                         src="https://images.unsplash.com/photo-1627564174704-4c3765ef733a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"

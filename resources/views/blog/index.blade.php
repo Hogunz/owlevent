@@ -7,7 +7,7 @@
                 <div class="sticky top-36">
                     <h3 class="sr-only">Sidebar</h3>
                     <div
-                        class="p-6 pb-4 mt-6 mb-6 font-medium text-gray-500 bg-white border border-gray-200 rounded-lg  ">
+                        class="p-6 pb-4 mt-6 mb-6 font-medium text-gray-500 bg-gradient-to-r from-[#F5EFE6] to-[#E8DFCA] border border-gray-200 rounded-lg  ">
                         <h4 class="mb-4 font-bold text-gray-900 uppercase ">Become an Author</h4>
                         <ul class="space-y-4 text-gray-500">
                             <li><a class="flex items-start" href="">
@@ -25,8 +25,8 @@
                 </div>
             </aside>
         </div>
-         <!-- 2 -->
-         <div>
+        <!-- 2 -->
+        <div>
             <div class="container max-w-max mx-auto p-8 ">
                 <div class="max-w-screen-xl px-4 py-8 mx-auto">
                     <div class="mr-auto place-self-center lg:col-span-7">
@@ -71,7 +71,9 @@
                             </div>
                         </div>
                         <div class="hidden lg:mt-0 lg:col-span-5 lg:flex ">
-                            <img class="mb-4" src="https://images.unsplash.com/photo-1681814308040-9fa0a315fe81?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="">
+                            <img class="mb-4"
+                                src="https://images.unsplash.com/photo-1681814308040-9fa0a315fe81?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
+                                alt="">
                         </div>
                         <div class="text-justify">
 
@@ -116,7 +118,7 @@
                 <div class=" ">
                     <h3 id="sidebar-label" class="sr-only">Sidebar</h3>
                     <div
-                        class="p-6 pb-4 mt-6 mb-6 font-medium text-gray-500 bg-white border border-gray-200 rounded-lg  ">
+                        class="p-6 pb-4 mt-6 mb-6 font-medium text-gray-500 bg-gradient-to-r from-[#F5EFE6] to-[#E8DFCA] border border-gray-200 rounded-lg  ">
                         <h4 class="mb-4 font-bold text-gray-900 uppercase">Recommended topics</h4>
 
                         <div class="flex flex-wrap">
@@ -128,7 +130,7 @@
 
                     </div>
                     <div
-                        class="p-6 pb-4 mt-6 mb-6 font-medium text-gray-500 bg-white border border-gray-200 rounded-lg   ">
+                        class="p-6 pb-4 mt-6 mb-6 font-medium text-gray-500 bg-gradient-to-r from-[#F5EFE6] to-[#E8DFCA] border border-gray-200 rounded-lg   ">
                         <ul class="space-y-4 divide-y text-gray-500">
                             @for ($i = 0; $i < 6; $i++)
                                 <li class="pt-2">
