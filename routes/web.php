@@ -24,6 +24,9 @@ Route::get('/featured', function () {
 Route::get('/blog', function () {
     return view('/blog');
 });
+Route::get('/categories', function () {
+    return view('/category');
+});
 Route::get('/sample', function () {
     return view('/sample');
 });
