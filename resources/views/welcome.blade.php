@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <section class="bg-white">
+    <section class="bg-white" data-aos="zoom-in" data-aos-duration="1500">
         <div class="grid max-w-screen-xl px-4 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-12 xs:grid xs:place-content-center">
             <div class="xs:col-span-12 lg:mt-0 lg:col-span-5 sm:flex md:flex-row flex-col">
                 <div id="carouselSlide" class="relative lg:flex sm:hidden" data-te-carousel-init data-te-carousel-slide>
@@ -39,7 +39,7 @@
         </div>
 
     </section>
-    <div class="lg:relative sm:static">
+    <div class="lg:relative sm:static" data-aos="fade-up" data-aos-duration="1500">
         <div class="lg:absolute sm:static rounded-lg  inset-x-0 -top-14  max-w-7xl container mx-auto">
             <section
                 class="container mx-auto w-full lg:max-w-screen-xl sm:max-w-screen-sm sm:rounded-0 lg:rounded-2xl py-4 lg:p-8 bg-[#F5EFE6]">
