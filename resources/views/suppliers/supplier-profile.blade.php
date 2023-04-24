@@ -383,7 +383,7 @@
                                 </svg>
                             </div>
 
-                            <div class="shadow w-full rounded-lg bg-white overflow-hidden w-full block p-8">
+                            <div class="shadow w-full rounded-lg bg-white overflow-hidden block p-8">
 
                                 <h2 class="font-bold text-2xl mb-6 text-gray-800 border-b pb-2">Add Event Details</h2>
 

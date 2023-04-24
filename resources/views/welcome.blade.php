@@ -75,7 +75,7 @@
                     </div>
                     <div class="relative z-0">
                         <button
-                            class="p-4 lg:px-24 md:px-10 sm:px-24 text-sm font-medium text-white hover:text-black focus:outline-none bg-[#7895B2] rounded-lg shadow-2xl border border-[#7895B2] hover:bg-[#AEBDCA] focus:z-10 focus:ring-4 focus:ring-[#AEBDCA]">
+                            class="p-4 lg:px-24 md:px-10 sm:w-full text-sm font-medium text-white hover:text-black focus:outline-none bg-[#7895B2] rounded-lg shadow-2xl border border-[#7895B2] hover:bg-[#AEBDCA] focus:z-10 focus:ring-4 focus:ring-[#AEBDCA]">
                             Search
                         </button>
 
@@ -102,16 +102,16 @@
 
         <section class="">
             <div
-                class="container mx-auto   mb-4 pl-4 sm:justify-between  lg:justify-center sm:flex lg:flex sm:text-2xl lg:text-7xl text-black lg:pt-36 sm:pt-12  ">
+                class="container mx-auto   mb-4 pl-4 sm:justify-between  lg:justify-center sm:flex lg:flex sm:text-2xl lg:text-7xl text-black/50 lg:pt-36 sm:pt-12  ">
                 <div>Category</div>
             </div>
 
             <div class=" ">
-                <div id="owl-carousel3" class="owl-carousel owl-theme p-2">
-
+                <div id="owl-carousel2" class="container mx-auto owl-carousel owl-theme lg:p-2 sm:p-8 ">
                     <div class="relative ">
-                        <a href="/categories" class="">
-                            <img class="mb-4 rounded-lg aspect-square object-cover"
+                        <a href="/categories"
+                            class="h-auto max-w-lg transition-all duration-300 rounded-lg cursor-pointer filter hover:opacity-75">
+                            <img class="mb-4 rounded-lg lg:aspect-auto sm:aspect-square object-cover "
                                 src="https://images.unsplash.com/photo-1682232860597-9e16a4972602?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80">
                             <div class="absolute inset-0 bottom-0 flex justify-center items-end  ">
                                 <p class="mb-3  text-white lg:text-xl sm:text-3xl font-bold ">
@@ -121,7 +121,7 @@
                     </div>
 
                 </div>
-
+            </div>
         </section>
     </div>
 
@@ -181,10 +181,12 @@
 
 
     <section>
-        <div class="container mx-auto text-center text-black/50 text-7xl  mb-4 pt-36  ">
-            Top Supplier
+        <div
+            class="container mx-auto   mb-4 pl-4 sm:justify-between  lg:justify-center sm:flex lg:flex sm:text-2xl lg:text-7xl text-black/50 lg:pt-36 sm:pt-12  ">
+            <div>Top Supplier</div>
         </div>
-        <div id="owl-carousel2" class="owl-carousel owl-theme  bg-[#E8DFCA] p-8 grid grid-cols-1 ">
+
+        <div id="owl-carousel3" class="owl-carousel owl-theme  bg-[#E8DFCA] p-8 grid grid-cols-1 ">
             <a href="/supplier-profile" class="href">
                 <div class="flex flex-col scale-75  hover:scale-100 ease-in-out duration-300  ">
                     <img class=" h-96  object-cover rounded-t-3xl"
@@ -244,6 +246,7 @@
 
         // Initialize first carousel
         $('#owl-carousel1').owlCarousel({
+            rtl: true,
             loop: true,
             responsive: {
                 0: {
@@ -260,13 +263,40 @@
                     items: 4
                 },
                 1200: {
-                    items: 5
+                    items: 5,
+                    stagePadding: 100
+                }
+            }
+        });
+        // Initialize second carousel
+        $('#owl-carousel2').owlCarousel({
+            nav: true,
+            loop: true,
+            rtl: true,
+            margin: 30,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                640: {
+                    items: 1
+                },
+                768: {
+                    items: 3
+                },
+                992: {
+                    items: 4
+                },
+                1200: {
+                    items: 4,
+                    stagePadding: 150,
+
                 }
             }
         });
 
         // Initialize second carousel
-        $('#owl-carousel2').owlCarousel({
+        $('#owl-carousel3').owlCarousel({
             loop: true,
             margin: 20,
             responsive: {
@@ -287,27 +317,6 @@
                 }
             }
         });
-        // Initialize second carousel
-        $('#owl-carousel3').owlCarousel({
-            loop: true,
-            margin: 10,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                640: {
-                    items: 1
-                },
-                768: {
-                    items: 3
-                },
-                992: {
-                    items: 4
-                },
-                1200: {
-                    items: 5
-                }
-            }
-        });
+
     });
 </script>

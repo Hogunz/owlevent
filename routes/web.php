@@ -25,7 +25,10 @@ Route::get('/blog', function () {
     return view('/blog');
 });
 Route::get('/categories', function () {
-    return view('/category');
+    return view('/categories');
+});
+Route::get('/blog/show-more', function () {
+    return view('/blog/show-more');
 });
 Route::get('/sample', function () {
     return view('/sample');
