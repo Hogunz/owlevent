@@ -2606,6 +2606,10 @@ input:checked + .toggle-bg {
 .bg-\[\#82CA9C\]\/75 {
   background-color: rgb(130 202 156 / 0.75);
 }
+.bg-\[\#98d7ff\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(152 215 255 / var(--tw-bg-opacity));
+}
 .bg-\[\#E8DFCA\] {
   --tw-bg-opacity: 1;
   background-color: rgb(232 223 202 / var(--tw-bg-opacity));
@@ -2659,6 +2663,10 @@ input:checked + .toggle-bg {
 .bg-gray-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+}
+.bg-gray-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
 }
 .bg-gray-50 {
   --tw-bg-opacity: 1;
@@ -2739,13 +2747,6 @@ input:checked + .toggle-bg {
   --tw-bg-opacity: 1;
   background-color: rgb(39 39 42 / var(--tw-bg-opacity));
 }
-<<<<<<< HEAD
-.bg-gray-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
-}
-=======
->>>>>>> e88467bf74e47e801de50bbb6f00e0d5256cd74e
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
 }
@@ -2796,7 +2797,6 @@ input:checked + .toggle-bg {
   --tw-gradient-to-position:  ;
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
-<<<<<<< HEAD
 .from-transparent {
   --tw-gradient-from: transparent var(--tw-gradient-from-position);
   --tw-gradient-from-position:  ;
@@ -2804,8 +2804,6 @@ input:checked + .toggle-bg {
   --tw-gradient-to-position:  ;
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
-=======
->>>>>>> e88467bf74e47e801de50bbb6f00e0d5256cd74e
 .from-50\% {
   --tw-gradient-from-position: 50%;
 }
@@ -5258,6 +5256,11 @@ input:checked + .toggle-bg {
     line-height: 2rem;
   }
 
+  .sm\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
   .sm\:text-5xl {
     font-size: 3rem;
     line-height: 1;
@@ -5271,16 +5274,6 @@ input:checked + .toggle-bg {
   .sm\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
-  }
-
-  .sm\:text-7xl {
-    font-size: 4.5rem;
-    line-height: 1;
-  }
-
-  .sm\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
   }
 }
 @media (min-width: 768px) {
@@ -5637,11 +5630,6 @@ input:checked + .toggle-bg {
   .lg\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
-  }
-
-  .lg\:text-4xl {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
   }
 
   .lg\:leading-4 {
