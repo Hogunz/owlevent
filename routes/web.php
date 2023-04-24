@@ -35,7 +35,8 @@ Route::get('/blog/index', function () {
 });
 Route::get('/registration', function () {
     return view('/suppliers/registration');
-});
+})->middleware('auth');
+
 Route::get('/become-a-supplier', function () {
     return view('/become-a-supplier');
 });
