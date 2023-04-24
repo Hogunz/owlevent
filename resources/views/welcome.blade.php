@@ -104,31 +104,24 @@
             <div
                 class="container mx-auto   mb-4 pl-4 sm:justify-between  lg:justify-center sm:flex lg:flex sm:text-2xl lg:text-7xl text-black lg:pt-36 sm:pt-12  ">
                 <div>Category</div>
-                <a href="/" class="p-2 text-base text-center text-[#7895B2] lg:hidden sm:flex">See All</a>
             </div>
+
             <div class=" ">
-                <div
-                    class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5  gap-4  container mx-auto max-w-7xl pt-8 p-8 mb-4">
-                    @for ($i = 0; $i < 10; $i++)
-                        <div class="relative ">
-                            <a href="/categories" class="">
-                                <img class="mb-4 rounded-lg aspect-square object-cover"
-                                    src="https://source.unsplash.com/random/3">
-                                <div
-                                    class="absolute inset-0 bottom-0 flex justify-center items-end  bg-gradient-to-b from-transparent via-transparent to-black ">
-                                    <p class="mb-3  text-white font-bold ">
-                                        Event Coordinator</p>
-                                </div>
-                            </a>
-                        </div>
-                    @endfor
+                <div id="owl-carousel3" class="owl-carousel owl-theme p-2">
+
+                    <div class="relative ">
+                        <a href="/categories" class="">
+                            <img class="mb-4 rounded-lg aspect-square object-cover"
+                                src="https://images.unsplash.com/photo-1682232860597-9e16a4972602?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80">
+                            <div class="absolute inset-0 bottom-0 flex justify-center items-end  ">
+                                <p class="mb-3  text-white lg:text-xl sm:text-3xl font-bold ">
+                                    Event Coordinator</p>
+                            </div>
+                        </a>
+                    </div>
+
                 </div>
-                <div class="container mx-auto lg:flex sm:hidden justify-center p-8">
-                    <a href="/categories"
-                        class="border rounded bg-[#7895B2]  hover:bg-[#7895B2]/75 p-2  text-base text-center text-white  hover:text-black transition duration-300 hover:ease-in-out   cursor-pointer">
-                        Show More
-                    </a>
-                </div>
+
         </section>
     </div>
 
@@ -276,6 +269,28 @@
         $('#owl-carousel2').owlCarousel({
             loop: true,
             margin: 20,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                640: {
+                    items: 1
+                },
+                768: {
+                    items: 3
+                },
+                992: {
+                    items: 4
+                },
+                1200: {
+                    items: 5
+                }
+            }
+        });
+        // Initialize second carousel
+        $('#owl-carousel3').owlCarousel({
+            loop: true,
+            margin: 10,
             responsive: {
                 0: {
                     items: 1
