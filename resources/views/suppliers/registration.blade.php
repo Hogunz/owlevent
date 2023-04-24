@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <div class="bg-[#98d7ff]">
+    <div class="bg-white">
         <div class="container mx-auto ">
 
             <ul data-te-stepper-init
@@ -59,8 +59,8 @@
                                 Description
                             </div>
                             <div>
-                                <textarea maxlength="500  "
-                                    class=" h-64 form-control block w-full resize px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 shadow-inner rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-non"
+                                <textarea maxlength="500"
+                                    class=" h-64 form-control block w-full resize px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 shadow-inner rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-600 focus:outline-non"
                                     id="exampleFormControlTextarea1" rows="3" placeholder="Tell me about yourself or your work" require=""></textarea>
                             </div>
                         </div>
