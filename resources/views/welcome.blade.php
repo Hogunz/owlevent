@@ -279,7 +279,8 @@
                     items: 1
                 },
                 640: {
-                    items: 1
+                    items: 1,
+                    stagePadding: 100
                 },
                 768: {
                     items: 3

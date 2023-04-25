@@ -1,4 +1,6 @@
 <x-guest-layout>
+
+
     <div class="bg-white">
         <div class="container mx-auto ">
 
