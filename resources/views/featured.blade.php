@@ -3,11 +3,13 @@
     <section class="container mx-auto p-8">
         <div class=" h-auto ">
             <div class="container mx-auto" style="">
-                <div class="bg-cover bg-center  h-auto text-white py-24 px-10 object-fill rounded-t-lg bg-gradient-to-br from-[#7895B2] from-50% to-[#E8DFCA]">
+                <div
+                    class="bg-cover bg-center  h-auto text-white py-24 px-10 object-fill rounded-t-lg bg-gradient-to-br from-[#7895B2] from-50% to-[#E8DFCA]">
                     <div class="sm:w-1/2">
-                        <p class="font-bold text-sm uppercase">w</p>
-                        <p class="text-3xl font-bold">w</p>
-                        <p class="text-2xl mb-10 leading-none">w</p>
+                        <p class="text-3xl font-bold">"Discover the highlights: A visual journey through our featured
+                            page's top features."</p>
+                        <p class="text-2xl mb-10 leading-none">Find the perfect solution to your needs with our
+                            supplier's wide range of services.</p>
                     </div>
                 </div> <!-- container -->
                 <br>
@@ -30,9 +32,11 @@
                             <img class="h-8 w-8 rounded-full ring-2 ring-white object-cover"
                                 src="https://images.unsplash.com/photo-1555952517-2e8e729e0b44?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHBlcnNvbnxlbnwwfDF8MHx8&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60"
                                 alt="">
-                                <a href="/supplier-profile" class="href">
-                            <p class="mb-2 text-sm font-bold tracking-tight text-gray-900 hover:underline cursor-pointer">ItsMeCJ</p>
-                        </a>
+                            <a href="/supplier-profile" class="href">
+                                <p
+                                    class="mb-2 text-sm font-bold tracking-tight text-gray-900 hover:underline cursor-pointer">
+                                    ItsMeCJ</p>
+                            </a>
                         </div>
                         <p class="mb-3 font-normal text-gray-700">Lorem Ipsum is simply
                             dummy

@@ -1,4 +1,4 @@
-<div class="lg:flex sm:hidden border-t bg-gradient-to-t from-[#6DCFF6]/75 to-transparent">
+<div class="lg:flex sm:hidden border-t bg-gradient-to-br from-[#F5EFE6] via-[#E8DFCA] to-transparent">
     <footer class="p-4  sm:p-6 container mx-auto ">
         <div class="md:flex md:justify-between">
             <div class="mb-6 md:mb-0 flex flex-col ">
