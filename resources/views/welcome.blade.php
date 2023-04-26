@@ -248,7 +248,7 @@
                                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                                         clip-rule="evenodd"></path>
                                 </svg>
-                                <span>Individual configuration</span>
+                                <span>Show Supplier's Sample Photos: <span class="font-semibold">5</span></span>
                             </li>
                             <li class="flex items-center space-x-3">
                                 <!-- Icon -->
@@ -258,7 +258,7 @@
                                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                                         clip-rule="evenodd"></path>
                                 </svg>
-                                <span>No setup, or hidden fees</span>
+                                <span>Videos: <span class="font-semibold">1</span></span>
                             </li>
                             <li class="flex items-center space-x-3">
                                 <!-- Icon -->
@@ -268,7 +268,7 @@
                                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                                         clip-rule="evenodd"></path>
                                 </svg>
-                                <span>Team size: <span class="font-semibold">1 developer</span></span>
+                                <span>Show Social Media</span>
                             </li>
                             <li class="flex items-center space-x-3">
                                 <!-- Icon -->
@@ -278,7 +278,7 @@
                                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                                         clip-rule="evenodd"></path>
                                 </svg>
-                                <span>Premium support: <span class="font-semibold">6 months</span></span>
+                                <span>Show Supplier's Name</span>
                             </li>
                             <li class="flex items-center space-x-3">
                                 <!-- Icon -->
@@ -288,7 +288,7 @@
                                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                                         clip-rule="evenodd"></path>
                                 </svg>
-                                <span>Free updates: <span class="font-semibold">6 months</span></span>
+                                <span>Schedule Meeting to Supplier</span>
                             </li>
                         </ul>
                         <a href="#"
