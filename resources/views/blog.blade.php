@@ -51,7 +51,7 @@
                         <section class=" sm:bg-white">
                             <div class="container mx-auto text-black text-2xl mb-4 pl-4 pt-12  justify-between flex">
                                 <div>test</div>
-                                <a href="" class="p-2 text-base text-center text-[#7895B2]">See All</a>
+                                <a href="/blog/show-more" class="p-2 text-base text-center text-[#7895B2]">See All</a>
                             </div>
                         </section>
                         <div class="grid grid-cols-2 gap-4">
@@ -64,7 +64,7 @@
                                                 alt="">
                                         </div>
                                         <div class="text-justify ">
-                                            <a href="" class="href">
+                                            <a href="/blog/index" class="href">
                                                 <h1
                                                     class="max-w-2xl mb-4  font-base tracking-tight leading-none text-lg sm:text-lg xl:text-xl ">
                                                     Sharing our passion for learning and discovery through our blog.

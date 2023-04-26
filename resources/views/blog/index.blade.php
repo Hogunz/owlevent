@@ -18,10 +18,7 @@
                             <a class="text-white block text-center bg-[#7895B2] hover:bg-[#7895B2]/75 focus:ring-4 focus:ring-[#7895B2]/50 font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none w-full"
                                 href="">Click Here</a>
                         </ul>
-
                     </div>
-
-
                 </div>
             </aside>
         </div>
@@ -70,7 +67,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="hidden lg:mt-0 lg:col-span-5 lg:flex ">
+                        <div class=" lg:mt-0 lg:col-span-5 lg:flex ">
                             <img class="mb-4"
                                 src="https://images.unsplash.com/photo-1681814308040-9fa0a315fe81?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
                                 alt="">

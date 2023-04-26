@@ -75,7 +75,7 @@
                     </div>
                     <div class="relative z-0">
                         <button
-                            class="p-4 lg:px-24 md:px-10 sm:px-24 text-sm font-medium text-white hover:text-black focus:outline-none bg-[#7895B2] rounded-lg shadow-2xl border border-[#7895B2] hover:bg-[#AEBDCA] focus:z-10 focus:ring-4 focus:ring-[#AEBDCA]">
+                            class="p-4 lg:px-24 md:px-10 sm:w-full text-sm font-medium text-white hover:text-black focus:outline-none bg-[#7895B2] rounded-lg shadow-2xl border border-[#7895B2] hover:bg-[#AEBDCA] focus:z-10 focus:ring-4 focus:ring-[#AEBDCA]">
                             Search
                         </button>
 
@@ -101,17 +101,17 @@
         </section>
 
         <section class="">
-            <div
-                class="container mx-auto   mb-4 pl-4 sm:justify-between  lg:justify-center sm:flex lg:flex sm:text-2xl lg:text-7xl text-black lg:pt-36 sm:pt-12  ">
-                <div>Category</div>
-            </div>
+            <h2
+                class="container mx-auto mb-4 pl-4 sm:justify-between  lg:justify-center sm:flex lg:flex sm:text-2xl lg:text-4xl tracking-tight font-extrabold text-gray-900 lg:pt-36 sm:pt-12   ">
+                Category
+            </h2>
 
             <div class=" ">
-                <div id="owl-carousel3" class="owl-carousel owl-theme p-2">
-
+                <div id="owl-carousel2" class="container mx-auto owl-carousel owl-theme lg:p-2 sm:p-8 ">
                     <div class="relative ">
-                        <a href="/categories" class="">
-                            <img class="mb-4 rounded-lg aspect-square object-cover"
+                        <a href="/categories"
+                            class="h-auto max-w-lg transition-all duration-300 rounded-lg cursor-pointer filter hover:opacity-75">
+                            <img class="mb-4 rounded-lg lg:aspect-auto sm:aspect-square object-cover "
                                 src="https://images.unsplash.com/photo-1682232860597-9e16a4972602?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80">
                             <div class="absolute inset-0 bottom-0 flex justify-center items-end  ">
                                 <p class="mb-3  text-white lg:text-xl sm:text-3xl font-bold ">
@@ -121,7 +121,7 @@
                     </div>
 
                 </div>
-
+            </div>
         </section>
     </div>
 
@@ -181,10 +181,12 @@
 
 
     <section>
-        <div class="container mx-auto text-center text-black/50 text-7xl  mb-4 pt-36  ">
+
+        <h2
+            class="container mx-auto mb-4 pl-4 sm:justify-between  lg:justify-center sm:flex lg:flex sm:text-2xl lg:text-4xl tracking-tight font-extrabold text-gray-900 lg:pt-36 sm:pt-12   ">
             Top Supplier
-        </div>
-        <div id="owl-carousel2" class="owl-carousel owl-theme  bg-[#E8DFCA] p-8 grid grid-cols-1 ">
+        </h2>
+        <div id="owl-carousel3" class="owl-carousel owl-theme  bg-[#E8DFCA] p-8 grid grid-cols-1 ">
             <a href="/supplier-profile" class="href">
                 <div class="flex flex-col scale-75  hover:scale-100 ease-in-out duration-300  ">
                     <img class=" h-96  object-cover rounded-t-3xl"
@@ -214,7 +216,223 @@
 
     </section>
 
-
+    <section>
+        <section class="bg-white dark:bg-gray-900">
+            <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+                <div class="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
+                    <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">OwlEvent
+                        Premium</h2>
+                    <p class="mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400">Here at Flowbite we focus on
+                        markets where technology, innovation, and capital can unlock long-term value and drive economic
+                        growth.</p>
+                </div>
+                <div class="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
+                    <!-- Pricing Card -->
+                    <div
+                        class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900  rounded-lg border drop-shadow-2xl bg-gradient-to-br from-[#a67c00]  to-[#bf9b30] ">
+                        <h3 class="mb-4 text-2xl font-semibold">Bronze</h3>
+                        <p class="font-light text-gray-500 sm:text-lg dark:text-gray-400">Best option for personal use
+                            & for
+                            your next project.</p>
+                        <div class="flex justify-center items-baseline my-8">
+                            <span class="mr-2 text-5xl font-extrabold">$29</span>
+                            <span class="text-gray-500 dark:text-gray-400">/month</span>
+                        </div>
+                        <!-- List -->
+                        <ul role="list" class="mb-8 space-y-4 text-left">
+                            <li class="flex items-center space-x-3">
+                                <!-- Icon -->
+                                <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                                    fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Individual configuration</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <!-- Icon -->
+                                <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                                    fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span>No setup, or hidden fees</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <!-- Icon -->
+                                <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                                    fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Team size: <span class="font-semibold">1 developer</span></span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <!-- Icon -->
+                                <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                                    fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Premium support: <span class="font-semibold">6 months</span></span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <!-- Icon -->
+                                <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                                    fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Free updates: <span class="font-semibold">6 months</span></span>
+                            </li>
+                        </ul>
+                        <a href="#"
+                            class="  focus:ring-4 focus:ring-[#7895B2] font-medium text-sm text-center border rounded-lg px-8 py-2 text-white bg-[#7895B2] hover:bg-[#7895B2]/75">Get
+                            started</a>
+                    </div>
+                    <!-- Pricing Card -->
+                    <div
+                        class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900  rounded-lg border drop-shadow-2xl bg-gradient-to-br from-[#8C8C8C]  via-[#B9B9B9] to-[#D6D6D6]">
+                        <h3 class="mb-4 text-2xl font-semibold">Silver</h3>
+                        <p class="font-light text-gray-500 sm:text-lg dark:text-gray-400">Relevant for multiple users,
+                            extended & premium support.</p>
+                        <div class="flex justify-center items-baseline my-8">
+                            <span class="mr-2 text-5xl font-extrabold">$99</span>
+                            <span class="text-gray-500 dark:text-gray-400" dark:text-gray-400>/month</span>
+                        </div>
+                        <!-- List -->
+                        <ul role="list" class="mb-8 space-y-4 text-left">
+                            <li class="flex items-center space-x-3">
+                                <!-- Icon -->
+                                <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                                    fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Individual configuration</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <!-- Icon -->
+                                <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                                    fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span>No setup, or hidden fees</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <!-- Icon -->
+                                <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                                    fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Team size: <span class="font-semibold">10 developers</span></span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <!-- Icon -->
+                                <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                                    fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Premium support: <span class="font-semibold">24 months</span></span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <!-- Icon -->
+                                <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                                    fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Free updates: <span class="font-semibold">24 months</span></span>
+                            </li>
+                        </ul>
+                        <a href="#"
+                            class="  focus:ring-4 focus:ring-[#7895B2] font-medium text-sm text-center border rounded-lg px-8 py-2 text-white bg-[#7895B2] hover:bg-[#7895B2]/75">Get
+                            started</a>
+                    </div>
+                    <!-- Pricing Card -->
+                    <div
+                        class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900  rounded-lg border drop-shadow-2xl bg-gradient-to-br from-[#ffd700] to-[#a67c00]">
+                        <h3 class="mb-4 text-2xl font-semibold">Gold</h3>
+                        <p class="font-light text-gray-500 sm:text-lg dark:text-gray-400">Best for large scale uses and
+                            extended redistribution rights.</p>
+                        <div class="flex justify-center items-baseline my-8">
+                            <span class="mr-2 text-5xl font-extrabold">$499</span>
+                            <span class="text-gray-500 dark:text-gray-400">/month</span>
+                        </div>
+                        <!-- List -->
+                        <ul role="list" class="mb-8 space-y-4 text-left">
+                            <li class="flex items-center space-x-3">
+                                <!-- Icon -->
+                                <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                                    fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Individual configuration</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <!-- Icon -->
+                                <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                                    fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span>No setup, or hidden fees</span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <!-- Icon -->
+                                <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                                    fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Team size: <span class="font-semibold">100+ developers</span></span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <!-- Icon -->
+                                <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                                    fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Premium support: <span class="font-semibold">36 months</span></span>
+                            </li>
+                            <li class="flex items-center space-x-3">
+                                <!-- Icon -->
+                                <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                                    fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                <span>Free updates: <span class="font-semibold">36 months</span></span>
+                            </li>
+                        </ul>
+                        <a href="#"
+                            class="  focus:ring-4 focus:ring-[#7895B2] font-medium text-sm text-center border rounded-lg px-8 py-2 text-white bg-[#7895B2] hover:bg-[#7895B2]/75">Get
+                            started</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
     <section class="sm:hidden lg:flex">
         <div class="2xl:mx-auto 2xl:container md:px-20 px-4 md:py-12 py-9">
             <div class="relative rounded-md bg-gradient-to-r from-[#AEBDCA] to-[#F5EFE6]">
@@ -224,13 +442,15 @@
                     <div>
                         <h1 class="md:text-5xl text-3xl font-bold md:leading-10 leading-9 text-black sm:w-auto w-64">
                             Come and Join us!</h1>
-                        <p class="text-lg leading-6 text-black/25 xl:w-5/12 lg:w-8/12 md:w-10/12  2xl:pr-12 mt-4">Lorem
-                            ipsum dolor sit amet consectetur adipisicing elit.
-                            Facilis dolore adipisci placeat.</p>
+                        <p class="text-lg leading-6 text-black/75 xl:w-5/12 lg:w-8/12 md:w-10/12  2xl:pr-12 mt-4">Lorem
+                            Are you a business owner looking to expand your reach and increase your sales? Look no
+                            further than our website! By creating an account and becoming a supplier on our platform,
+                            you'll gain access to a vast network of potential customers who are eager to purchase your
+                            products or services.</p>
                     </div>
                     <div class="md:mt-12 mt-20">
                         <a href="{{ route('login') }}"
-                            class="text-base font-medium leading-4 text-white bg-[#6DCFF6;] hover:bg-[#ABE7FF;] sm:w-auto w-full rounded p-4 ">Get
+                            class="text-base font-medium leading-4 text-white bg-[#E8DFCA] hover:bg-[#E8DFCA]/75 sm:w-auto w-full rounded p-4 ">Get
                             Started</a>
                     </div>
                 </div>
@@ -244,6 +464,7 @@
 
         // Initialize first carousel
         $('#owl-carousel1').owlCarousel({
+            rtl: true,
             loop: true,
             responsive: {
                 0: {
@@ -260,13 +481,41 @@
                     items: 4
                 },
                 1200: {
-                    items: 5
+                    items: 5,
+                    stagePadding: 100
+                }
+            }
+        });
+        // Initialize second carousel
+        $('#owl-carousel2').owlCarousel({
+            nav: true,
+            loop: true,
+            rtl: true,
+            margin: 30,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                640: {
+                    items: 1,
+                    stagePadding: 100
+                },
+                768: {
+                    items: 3
+                },
+                992: {
+                    items: 4
+                },
+                1200: {
+                    items: 4,
+                    stagePadding: 150,
+
                 }
             }
         });
 
         // Initialize second carousel
-        $('#owl-carousel2').owlCarousel({
+        $('#owl-carousel3').owlCarousel({
             loop: true,
             margin: 20,
             responsive: {
@@ -287,27 +536,6 @@
                 }
             }
         });
-        // Initialize second carousel
-        $('#owl-carousel3').owlCarousel({
-            loop: true,
-            margin: 10,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                640: {
-                    items: 1
-                },
-                768: {
-                    items: 3
-                },
-                992: {
-                    items: 4
-                },
-                1200: {
-                    items: 5
-                }
-            }
-        });
+
     });
 </script>
