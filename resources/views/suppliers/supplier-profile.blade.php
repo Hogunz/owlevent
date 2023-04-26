@@ -2,18 +2,18 @@
     <section class="container mx-auto p-8 ">
         <div class=" h-auto ">
             <div class="container mx-auto" style="">
-                <div class="bg-cover bg-center  h-auto text-white py-24 px-10 object-fill rounded-t-lg"
-                    style="background-image: url(https://plus.unsplash.com/premium_photo-1661311839935-ade135b5aa84?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80">
-                    <div class="md:w-1/2">
-                        <p class="font-bold text-sm uppercase">w</p>
-                        <p class="text-3xl font-bold">w</p>
-                        <p class="text-2xl mb-10 leading-none">w</p>
+                <div
+                    class="bg-cover bg-center  h-auto text-white py-24 px-10 object-fill rounded-t-lg bg-gradient-to-br from-[#7895B2] from-50% to-[#E8DFCA]">
+                    <div class="sm:w-1/2">
+                        <p class="text-3xl font-bold">"Discover the highlights: A visual journey through our featured
+                            page's top features."</p>
+                        <p class="text-2xl mb-10 leading-none">Find the perfect solution to your needs with our
+                            supplier's wide range of services.</p>
                     </div>
                 </div> <!-- container -->
                 <br>
             </div>
         </div>
-
         <div class="">
             <div class="container mx-auto my-5 p-5">
                 <div class="md:flex no-wrap md:-mx-2  ">
@@ -22,7 +22,7 @@
                         <!-- Profile Card -->
                         <div
                             class="rounded-lg shadow-xl bg-gradient-to-b from-[#F5EFE6] via-[#E8DFCA] to-transparent p-3">
-                            <div class="flex justify-center ">
+                            <div class="flex justify-center p-8 ">
                                 <div class="relative">
                                     <img class="relative z-auto top-0 w-32 h-32 rounded-full object-cover"
                                         src="https://images.unsplash.com/photo-1555952517-2e8e729e0b44?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHBlcnNvbnxlbnwwfDF8MHx8&auto=format&fit=crop&w=500&q=60"
