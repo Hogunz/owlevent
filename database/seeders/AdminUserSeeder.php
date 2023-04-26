@@ -22,7 +22,7 @@ class AdminUserSeeder extends Seeder
             'password' => Hash::make('superadmin123'),
         ]);
 
-        $roleAdmin = Role::create(['name' => 'admin']);
+        $roleAdmin = Role::create(['name' => 'Admin']);
 
         $admin->assignRole($roleAdmin);
     }

@@ -459,6 +459,7 @@
                             <div class="text-left">
                                 <input placeholder="Enter your Email Address"
                                     class="border rounded p-2 px-2 w-96 appearance-none outline-none  text-gray-800"
+                                    {{ auth()->user() ? 'readonly' : '' }} value="{{ auth()->user()->email ?? '' }}"
                                     required>
                             </div>
                             <div class="font-bold text-gray-600 text-lg uppercase">

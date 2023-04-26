@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\RoleController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\SocialController;
 use Illuminate\Support\Facades\Route;
 
@@ -38,7 +40,8 @@ Route::get('/blog/index', function () {
 });
 Route::get('/registration', function () {
     return view('/suppliers/registration');
-});
+})->middleware('auth');
+
 Route::get('/become-a-supplier', function () {
     return view('/become-a-supplier');
 });
@@ -58,6 +61,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::prefix('admin/')->group(function () {
         Route::resource('roles', RoleController::class);
+        Route::resource('permissions', PermissionController::class);
+        Route::resource('users', UserController::class);
     });
 });
 
