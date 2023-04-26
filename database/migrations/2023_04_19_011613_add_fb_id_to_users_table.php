@@ -15,6 +15,8 @@ class AddFbIdToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->string('fb_id')->nullable()->after('id');
+            $table->string('google_id')->nullable()->after('fb_id');
+            $table->string('twitter_id')->nullable()->after('google_id');
         });
     }
 
@@ -27,6 +29,8 @@ class AddFbIdToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumn('fb_id');
+            $table->dropColumn('google_id');
+            $table->dropColumn('twitter_id');
         });
     }
 }

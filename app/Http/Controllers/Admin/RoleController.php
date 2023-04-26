@@ -26,7 +26,7 @@ class RoleController extends Controller
         ]);
 
         Role::create($validatedData);
-        return redirect()->route('roles.index');
+        return redirect()->route('roles.index')->with('status', 'Successfully added role');
     }
 
     public function show(Role $role)
@@ -47,6 +47,6 @@ class RoleController extends Controller
 
         $role->update($validatedData);
 
-        //
+        return redirect()->route('roles.index')->with('status', 'Successfully updated role');
     }
 }

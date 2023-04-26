@@ -11,7 +11,7 @@ use Illuminate\Validation\ValidationException;
 
 class LoginRequest extends FormRequest
 {
-    protected $redirectRoute = 'login';
+    protected $redirectRoute = 'fuck';
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -51,7 +51,7 @@ class LoginRequest extends FormRequest
 
             throw ValidationException::withMessages([
                 'email' => trans('auth.failed'),
-            ]);
+            ])->redirectTo('login');
         }
 
         RateLimiter::clear($this->throttleKey());

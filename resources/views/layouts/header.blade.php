@@ -106,9 +106,9 @@
                     <!-- Main modal -->
                     <div id="medium-modal" tabindex="-1" aria-hidden="true"
                         class=" hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full sm:inset-0 h-modal sm:h-full justify-center items-center">
-                        <div class="relative    p-4 w-full max-w-md h-full sm:h-auto ">
+                        <div class="relative p-4 w-full max-w-md h-full sm:h-auto ">
                             <!-- Modal content -->
-                            <div class="relative   rounded-lg shadow ">
+                            <div class="relative rounded-lg shadow">
                                 <button type="button"
                                     class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
                                     data-modal-toggle="medium-modal">
@@ -201,11 +201,11 @@
                                             </svg>Continue with Twitter
                                         </a>
                                         <div class="text-sm font-medium text-gray-500 ">
-                                            Not registered? <button type="button"
-                                                class="text-blue-700 hover:underline"
-                                                data-modal-target="registration-modal"
-                                                data-modal-toggle="registration-modal">Register
-                                                Now</button>
+                                            Not registered?
+                                            <a href="{{ route('register') }}">
+                                                <button type="button" class="text-blue-700 hover:underline">Register
+                                                    Now</button>
+                                            </a>
                                         </div>
                                     </form>
                                 </div>

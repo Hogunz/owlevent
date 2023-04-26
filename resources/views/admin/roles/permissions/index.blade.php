@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-3xl text-gray-800 leading-tight pb-6">
-            {{ __('Roles') }}
+            {{ __('Permissions') }}
         </h2>
     </x-slot>
 
@@ -11,7 +11,7 @@
 
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
             <div class="p-6 bg-white border-b border-gray-200">
-                <div class="flex justify-end space-x-2 mb-2">
+                <div class="flex justify-end mb-2">
                     <a href="{{ route('roles.create') }}">
                         <x-button>Create</x-button>
                     </a>
@@ -28,14 +28,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($roles as $role)
+                        @foreach ($permissions as $permission)
                             <tr>
-                                <td class="px-3 py-2 text-center">{{ $role->name }}</td>
+                                <td class="px-3 py-2 text-center">{{ $permission->name }}</td>
                                 <td class="px-3 py-2 text-center">
-                                    <a href="{{ route('roles.show', $role) }}">
+                                    <a href="{{ route('permissions.show', $permission) }}">
                                         <x-button>Show</x-button>
                                     </a>
-                                    <a href="{{ route('roles.edit', $role) }}">
+                                    <a href="{{ route('permissions.edit', $permission) }}">
                                         <x-button>Edit</x-button>
                                     </a>
                                 </td>
