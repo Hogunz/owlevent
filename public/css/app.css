@@ -1916,6 +1916,9 @@ input:checked + .toggle-bg {
 .basis-auto {
   flex-basis: auto;
 }
+.table-auto {
+  table-layout: auto;
+}
 .origin-\[0\] {
   transform-origin: 0;
 }
@@ -2788,6 +2791,10 @@ input:checked + .toggle-bg {
 .bg-\[\#98d7ff\] {
   --tw-bg-opacity: 1;
   background-color: rgb(152 215 255 / var(--tw-bg-opacity));
+}
+.bg-gray-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
 }
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;

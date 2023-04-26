@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-3xl text-gray-800 leading-tight pb-6">
-            {{ __('Roles') }}
+            {{ __('Permissions') }}
         </h2>
     </x-slot>
 
@@ -9,7 +9,7 @@
 
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
             <div class="p-6 bg-white border-b border-gray-200">
-                <form action="{{ route('roles.store') }}" method="post">
+                <form action="{{ route('permissions.store') }}" method="post">
                     @csrf
                     <div class="mb-2">
                         <x-label>Name</x-label>

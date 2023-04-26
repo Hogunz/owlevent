@@ -1,5 +1,7 @@
 <x-guest-layout>
-    <div class="bg-[#98d7ff]">
+
+
+    <div class="bg-white">
         <div class="container mx-auto ">
 
             <ul data-te-stepper-init
@@ -59,11 +61,17 @@
                                 Description
                             </div>
                             <div>
-                                <textarea maxlength="500  "
-                                    class=" h-64 form-control block w-full resize px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 shadow-inner rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-non"
+                                <textarea maxlength="500"
+                                    class=" h-64 form-control block w-full resize px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 shadow-inner rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-600 focus:outline-non"
                                     id="exampleFormControlTextarea1" rows="3" placeholder="Tell me about yourself or your work" require=""></textarea>
                             </div>
+                            <div class="">
+                            </div>
+                            <div class="flex justify-end">
+                                <x-button class="">Continue</x-button>
+                            </div>
                         </div>
+
                     </div>
                 </li>
                 <li data-te-stepper-step-ref class="w-[4.5rem] flex-auto">
@@ -347,7 +355,9 @@
                                 </div>
                             </div>
 
-
+                            <div class="flex justify-end">
+                                <x-button class="">Continue</x-button>
+                            </div>
                         </div>
                     </div>
                 </li>
@@ -379,45 +389,46 @@
                         <div class="grid grid-cols-2 gap-16 text-left">
                             <div class="flex items-center flex-row">
                                 <div class="h-8 w-8">
-                                    <img src="img/icon/google.png" alt="">
+                                    <img src="images/icon/google.png" alt="">
                                 </div>
                                 <div class="font-bold text-gray-600 pl-2 text-xl">Google
                                 </div>
                             </div>
-                            <div class="">
+                            <div class="flex justify-end">
                                 <button
-                                    class="bg-[#6DCFF6] hover:bg-[#6DCFF6]/75 text-white font-semibold py-2 px-4 border border-[#6DCFF6] rounded">
-                                    Connect
-                                </button>
+                                    class="border rounded-lg px-8 py-2 text-black bg-transparent  hover:border-black">Connect</button>
                             </div>
                             <div class="flex flex-row">
                                 <div class="h-8 w-8">
-                                    <img src="img/icon/facebook.png" alt="">
+                                    <img src="/images/icon/facebook.png" alt="">
                                 </div>
                                 <div class="font-bold text-gray-600 pl-2 text-xl">Facebook
                                 </div>
                             </div>
-                            <div class="">
+                            <div class="flex justify-end">
                                 <button
-                                    class="bg-[#6DCFF6] hover:bg-[#6DCFF6]/75 text-white font-semibold py-2 px-4 border border-[#6DCFF6] rounded">
-                                    Connect
-                                </button>
+                                    class="border rounded-lg px-8 py-2 text-black bg-transparent  hover:border-black">Connect</button>
                             </div>
                             <div class="flex flex-row">
                                 <div class="h-8 w-8">
-                                    <img src="img/icon/twitter.png" alt="">
+                                    <img src="/images/icon/twitter.png" alt="">
                                 </div>
                                 <div class="font-bold text-gray-600 pl-2 text-xl">Twitter
                                 </div>
                             </div>
-                            <div class="">
+                            <div class="flex justify-end">
                                 <button
-                                    class="bg-[#6DCFF6] hover:bg-[#6DCFF6]/75 text-white font-semibold py-2 px-4 border border-[#6DCFF6] rounded">
-                                    Connect
-                                </button>
+                                    class="border rounded-lg px-8 py-2 text-black bg-transparent  hover:border-black">Connect</button>
                             </div>
-
+                            <div class="flex flex-row">
+                                <div class="">
+                                </div>
+                            </div>
+                            <div class="flex justify-end">
+                                <x-button>Continue</x-button>
+                            </div>
                         </div>
+
                     </div>
                 </li>
                 <li data-te-stepper-step-ref class="w-[4.5rem] flex-auto">
@@ -448,14 +459,13 @@
                             <div class="text-left">
                                 <input placeholder="Enter your Email Address"
                                     class="border rounded p-2 px-2 w-96 appearance-none outline-none  text-gray-800"
+                                    {{ auth()->user() ? 'readonly' : '' }} value="{{ auth()->user()->email ?? '' }}"
                                     required>
                             </div>
                             <div class="font-bold text-gray-600 text-lg uppercase">
                                 Government-Issued ID Card
                             </div>
                             <div class="text-left">
-
-
                                 <input
                                     class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50  focus:outline-none da"
                                     id="file_input" type="file">
