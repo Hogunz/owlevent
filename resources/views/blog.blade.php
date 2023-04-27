@@ -2,8 +2,8 @@
     <div class="bg-white">
         <div class="flex justify-between container mx-auto ">
             <!-- 1 -->
-            <div>
-                <aside class="hidden lg:block lg:w-80">
+            <div class="">
+                <aside class="hidden lg:block lg:w-80 sticky inset-x-0 top-14 max-h-full">
                     <div class="sticky top-36">
                         <h3 class="sr-only">Sidebar</h3>
                         <div
@@ -81,13 +81,13 @@
 
             <!-- 3 -->
             <div class="sticky top-0">
-                <aside class="hidden lg:block lg:w-80" aria-labelledby="sidebar-label">
+                <aside class="hidden lg:block lg:w-80 sticky inset-x-0 top-14 max-h-full"
+                    aria-labelledby="sidebar-label">
                     <div class=" ">
                         <h3 id="sidebar-label" class="sr-only">Sidebar</h3>
                         <div
                             class="p-6 pb-4 mt-6 mb-6 font-medium text-gray-500 bg-gradient-to-r from-[#F5EFE6] to-[#E8DFCA] border border-gray-200 rounded-lg  ">
                             <h4 class="mb-4 font-bold text-gray-900 uppercase">Recommended topics</h4>
-
                             <div class="flex flex-wrap">
                                 @for ($i = 0; $i < 5; $i++)
                                     <a class="bg-[#7895B2] hover:bg-[#7895B2]/75 text-white text-sm font-medium mr-2 px-2.5 py-0.5 rounded mb-2"
@@ -98,10 +98,11 @@
                         </div>
                         <div
                             class="p-6 pb-4 mt-6 mb-6 font-medium text-gray-500 bg-gradient-to-r from-[#F5EFE6] to-[#E8DFCA] border border-gray-200 rounded-lg   ">
-                            <ul class="space-y-4 divide-y text-gray-500">
+                            <ul class="space-y-4 divide-y divide-[#AEBDCA] text-gray-500">
                                 @for ($i = 0; $i < 6; $i++)
                                     <li class="pt-2">
-                                        <a class="flex items-start" href="">
+                                        <a class="flex items-start border rounded-lg border-[#AEBDCA] drop-shadow-2xl p-2"
+                                            href="/blog/index">
                                             <div class="mr-3 shrink-0"><img class="object-cover h-24 w-full "
                                                     src="https://images.unsplash.com/photo-1679674704818-f3a500c1305b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
                                                     alt=""></div>

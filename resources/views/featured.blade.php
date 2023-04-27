@@ -5,10 +5,12 @@
             <div class="container mx-auto" style="">
                 <div
                     class="bg-cover bg-center  h-auto text-white py-24 px-10 object-fill rounded-t-lg bg-gradient-to-br from-[#7895B2] from-50% to-[#E8DFCA]">
-                    <div class="sm:w-1/2">
-                        <p class="text-3xl font-bold">"Discover the highlights: A visual journey through our featured
+                    <div class="lg:w-1/2 sm:w-full">
+                        <p class="text-3xl text-left font-bold">"Discover the highlights: A visual
+                            journey through our featured
                             page's top features."</p>
-                        <p class="text-2xl mb-10 leading-none">Find the perfect solution to your needs with our
+                        <p class="text-2xl text-left mb-10 leading-none">Find the perfect solution to
+                            your needs with our
                             supplier's wide range of services.</p>
                     </div>
                 </div> <!-- container -->

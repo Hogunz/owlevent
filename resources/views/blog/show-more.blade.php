@@ -4,12 +4,9 @@
 
     <section class="container mx-auto p-8">
         <div class="flex flex-col">
-            <div class="text-4xl mb-2 font-bold">Event Coordinator</div>
-            <div class="text-base text-black/50 font-bold">Understanding the client's needs and objectives for the event
-                and
-                developing
-                <br>
-                a detailed plan and timeline for its execution.
+            <div class="text-4xl mb-2 font-bold">Blogs</div>
+            <div class="text-base text-black/50 font-bold">This feature is especially useful for blogs that feature <br>
+                long-form content, as it allows readers to focus on the sections that are most relevant to them.
             </div>
         </div>
     </section>
