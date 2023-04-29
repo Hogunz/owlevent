@@ -34,7 +34,7 @@
                             </button>
                         </div>
                         <input type="text" id="voice-search"
-                            class=" border-transparent text-gray-900 text-sm  focus:ring-[#6DCFF6]/50 focus:border-[#6DCFF6]/50 block w-full pl-10 p-2.5  "
+                            class=" border-transparent text-gray-900 text-sm  focus:ring-[#7895B2]/50 focus:border-[#7895B2]/50 block w-full pl-10 p-2.5  "
                             placeholder="Search for Categories . . . " required>
                     </div>
                 </div>

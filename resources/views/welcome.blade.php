@@ -234,13 +234,13 @@
                 </div>
                 <div class="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
                     <!-- Pricing Card -->
-                    <div
-                        class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900  rounded-lg border drop-shadow-2xl bg-gradient-to-br from-[#a67c00]  to-[#bf9b30] ">
-                        <h3 class="mb-4 text-2xl font-semibold">Bronze</h3>
+                    <div class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900  rounded-lg  drop-shadow-2xl border-2 bg-transparent border-yellow-900 "
+                        data-aos="fade-down-right" data-aos-duration="2000">
+                        <h3 class="mb-4 text-2xl font-semibold text-yellow-900">Bronze</h3>
                         <p class="font-light text-gray-500 sm:text-lg dark:text-gray-400">Our Bronze Package offers the
                             perfect balance of affordability and functionality. </p>
                         <div class="flex justify-center items-baseline my-8">
-                            <span class="mr-2 text-5xl font-extrabold">$29</span>
+                            <span class="mr-2 text-5xl font-extrabold text-yellow-900">$29</span>
                             <span class="text-gray-500 dark:text-gray-400">/month</span>
                         </div>
                         <!-- List -->
@@ -289,17 +289,17 @@
 
                         </ul>
                         <a href="#"
-                            class="  focus:ring-4 focus:ring-[#7895B2] font-medium text-sm text-center border rounded-lg px-8 py-2 text-white bg-[#7895B2] hover:bg-[#7895B2]/75">Get
+                            class="  focus:ring-4 focus:ring-[#7895B2] font-medium text-sm text-center border rounded-lg px-8 py-2 text-white bg-yellow-900 hover:bg-yellow-800">Get
                             started</a>
                     </div>
                     <!-- Pricing Card -->
                     <div
-                        class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900  rounded-lg border drop-shadow-2xl bg-gradient-to-br from-[#8C8C8C]  via-[#B9B9B9] to-[#D6D6D6]">
-                        <h3 class="mb-4 text-2xl font-semibold">Silver</h3>
+                        class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900  rounded-lg  drop-shadow-2xl border-2 bg-transparent border-stone-400">
+                        <h3 class="mb-4 text-2xl font-semibold text-stone-400">Silver</h3>
                         <p class="font-light text-gray-500 sm:text-lg dark:text-gray-400">Our Silver Package is
                             designed for those who want a little bit more. </p>
                         <div class="flex justify-center items-baseline my-8">
-                            <span class="mr-2 text-5xl font-extrabold">$99</span>
+                            <span class="mr-2 text-5xl font-extrabold text-stone-400">$99</span>
                             <span class="text-gray-500 dark:text-gray-400" dark:text-gray-400>/month</span>
                         </div>
                         <!-- List -->
@@ -347,17 +347,17 @@
 
                         </ul>
                         <a href="#"
-                            class="  focus:ring-4 focus:ring-[#7895B2] font-medium text-sm text-center border rounded-lg px-8 py-2 text-white bg-[#7895B2] hover:bg-[#7895B2]/75">Get
+                            class="  focus:ring-4 focus:ring-[#7895B2] font-medium text-sm text-center border rounded-lg px-8 py-2 text-white bg-stone-400 hover:bg-stone-500">Get
                             started</a>
                     </div>
                     <!-- Pricing Card -->
-                    <div
-                        class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900  rounded-lg border drop-shadow-2xl bg-gradient-to-br from-[#ffd700] to-[#a67c00]">
-                        <h3 class="mb-4 text-2xl font-semibold">Gold</h3>
+                    <div class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900  rounded-lg drop-shadow-2xl border-2 bg-transparent border-yellow-300 "
+                        data-aos="fade-down-left" data-aos-duration="2000">
+                        <h3 class="mb-4 text-2xl font-semibold text-yellow-300">Gold</h3>
                         <p class="font-light text-gray-500 sm:text-lg dark:text-gray-400">Our Gold Package is the
                             ultimate premium experience.</p>
                         <div class="flex justify-center items-baseline my-8">
-                            <span class="mr-2 text-5xl font-extrabold">$499</span>
+                            <span class="mr-2 text-5xl font-extrabold text-yellow-300">$499</span>
                             <span class="text-gray-500 dark:text-gray-400">/month</span>
                         </div>
                         <!-- List -->
@@ -405,7 +405,7 @@
 
                         </ul>
                         <a href="#"
-                            class="  focus:ring-4 focus:ring-[#7895B2] font-medium text-sm text-center border rounded-lg px-8 py-2 text-white bg-[#7895B2] hover:bg-[#7895B2]/75">Get
+                            class="  focus:ring-4 focus:ring-[#7895B2] font-medium text-sm text-center border rounded-lg px-8 py-2 text-white bg-yellow-300 hover:bg-yellow-400">Get
                             started</a>
                     </div>
                 </div>

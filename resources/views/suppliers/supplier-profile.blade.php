@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <section class="container mx-auto p-8 ">
+    <section class="container mx-auto lg:p-8 sm:p-0 ">
         <div class=" h-auto ">
             <div class="container mx-auto" style="">
                 <div
@@ -84,11 +84,11 @@
                                 <h1 class="mb-4 text-lg font-bold text-left">Portfolio</h1>
                             </div>
 
-                            <div class="grid lg:grid-cols-2 sm:grid-cols-1 gap-4">
+                            <div class="grid lg:grid-cols-2 sm:grid-cols-2 gap-4">
                                 @for ($i = 0; $i < 2; $i++)
                                     <div class="grid gap-4">
                                         <div>
-                                            <img class="h-auto max-w-full rounded-lg"
+                                            <img class="h-auto w-full lg:max-w-full sm:max-w-xs rounded-lg "
                                                 src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg"
                                                 alt="">
                                         </div>
