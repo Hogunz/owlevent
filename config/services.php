@@ -33,7 +33,12 @@ return [
     'facebook' => [
         'client_id' => '1273110190227122',
         'client_secret' => '9522dd98040cf3b5bf35bb1d23ca9672',
-        'redirect' => 'https://owlevent.test/auth/facebook/callback',
+        'redirect' => 'https://owlevent.org/auth/facebook/callback',
     ],
 
+    'google' => [
+        'client_id' => '395004119959-jok7i1aplem9j98fkq47cm2kemj8doht.apps.googleusercontent.com',
+        'client_secret' => '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',
+        'redirect' => 'https://owlevent.org/auth/google/callback',
+    ]
 ];

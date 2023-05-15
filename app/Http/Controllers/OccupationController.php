@@ -14,7 +14,9 @@ class OccupationController extends Controller
      */
     public function index()
     {
-        //
+        $occupations = Occupation::all();
+
+        return view('admin.occupations.index', compact('occupations'));
     }
 
     /**
@@ -24,7 +26,7 @@ class OccupationController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.occupations.create');
     }
 
     /**
@@ -35,7 +37,12 @@ class OccupationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => ['required'],
+        ]);
+
+        Occupation::create($validatedData);
+        return redirect()->route('occupations.index')->with('status', 'Successfully added occupation');
     }
 
     /**
@@ -57,7 +64,7 @@ class OccupationController extends Controller
      */
     public function edit(Occupation $occupation)
     {
-        //
+        return view('admin.occupations.edit', compact('occupation'));
     }
 
     /**
@@ -69,7 +76,13 @@ class OccupationController extends Controller
      */
     public function update(Request $request, Occupation $occupation)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => ['required']
+        ]);
+
+        $occupation->update($validatedData);
+
+        return redirect()->route('occupations.index')->with('status', 'Successfully updated occupation');
     }
 
     /**

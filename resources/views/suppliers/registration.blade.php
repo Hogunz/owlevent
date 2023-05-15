@@ -1,7 +1,5 @@
 <x-guest-layout>
-
-
-    <div class="bg-white">
+    <div class="bg-white" x-data="registration()">
         <div class="container mx-auto ">
 
             <ul data-te-stepper-init
@@ -35,10 +33,10 @@
                                 Owner
                             </div>
                             <div class="text-left">
-                                <input placeholder="First Name"
+                                <input placeholder="First Name" x-model="first_name"
                                     class="border rounded p-2 px-2 w-64 appearance-none outline-none  text-gray-800"
                                     required>
-                                <input placeholder="Last Name"
+                                <input placeholder="Last Name" x-model="last_name"
                                     class="border rounded p-2 px-2 w-64 appearance-none outline-none  text-gray-800"
                                     required>
                             </div>
@@ -46,22 +44,22 @@
                                 Name
                             </div>
                             <div class="text-left">
-                                <input placeholder="Enter your Business Name"
+                                <input placeholder="Enter your Business Name" x-model="business_name"
                                     class="border rounded p-2 px-2 w-96 appearance-none outline-none  text-gray-800"
                                     required>
                             </div>
-                            <div class="font-bold text-gray-600 text-lg  uppercase">Address
+                            <div class="font-bold text-gray-600 text-lg uppercase">Address
                             </div>
                             <div class="text-left">
-                                <input placeholder="Enter your Address"
-                                    class="border rounded p-2 px-2 w-96 appearance-none outline-none  text-gray-800"
+                                <input placeholder="Enter your Full Address" x-model="address"
+                                    class="border rounded p-2 px-2 w-96 appearance-none outline-none text-gray-800"
                                     required>
                             </div>
-                            <div class="font-bold text-gray-600 text-lg  uppercase">
+                            <div class="font-bold text-gray-600 text-lg uppercase">
                                 Description
                             </div>
                             <div>
-                                <textarea maxlength="500"
+                                <textarea maxlength="500" x-model="description"
                                     class=" h-64 form-control block w-full resize px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 shadow-inner rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-600 focus:outline-non"
                                     id="exampleFormControlTextarea1" rows="3" placeholder="Tell me about yourself or your work" require=""></textarea>
                             </div>
@@ -110,127 +108,21 @@
                                         Your Occupation</div>
 
                                     <div class="grid grid-rows-3 grid-flow-col gap-4 mt-4 ">
-                                        <div>
-                                            <div class="form-check">
-                                                <input
-                                                    class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-                                                    type="checkbox" value="" id="flexCheckDefault">
-                                                <label class="form-check-label inline-block text-gray-800"
-                                                    for="flexCheckDefault">
-                                                    Event Coordinator or Planner
-                                                </label>
+                                        @foreach ($occupations as $occupation)
+                                            <div>
+                                                <div class="form-check">
+                                                    <input
+                                                        class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                                                        type="checkbox" value="{{ $occupation->id }}" x-model.number="occupations"
+                                                        id="{{ 'occupation-'.$occupation->id }}">
+                                                    <label class="form-check-label inline-block text-gray-800"
+                                                        for="{{ 'occupation-'.$occupation->id }}">
+                                                        {{ $occupation->name }}
+                                                    </label>
+                                                </div>
                                             </div>
-                                        </div>
+                                        @endforeach
 
-                                        <div>
-                                            <div class="form-check">
-                                                <input
-                                                    class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-                                                    type="checkbox" value="" id="flexCheckDefault">
-                                                <label class="form-check-label inline-block text-gray-800"
-                                                    for="flexCheckDefault">
-                                                    Event Stylist
-                                                </label>
-                                            </div>
-                                        </div>
-
-
-                                        <div>
-                                            <div class="form-check">
-                                                <input
-                                                    class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-                                                    type="checkbox" value="" id="flexCheckDefault">
-                                                <label class="form-check-label inline-block text-gray-800"
-                                                    for="flexCheckDefault">
-                                                    Caterer
-                                                </label>
-                                            </div>
-                                        </div>
-
-                                        <div>
-                                            <div class="form-check">
-                                                <input
-                                                    class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-                                                    type="checkbox" value="" id="flexCheckDefault">
-                                                <label class="form-check-label inline-block text-gray-800"
-                                                    for="flexCheckDefault">
-                                                    Hair & Make Up Artist
-                                                </label>
-                                            </div>
-                                        </div>
-
-
-                                        <div>
-                                            <div class="form-check">
-                                                <input
-                                                    class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-                                                    type="checkbox" value="" id="flexCheckDefault">
-                                                <label class="form-check-label inline-block text-gray-800"
-                                                    for="flexCheckDefault">
-                                                    Hotels & Venues
-                                                </label>
-                                            </div>
-                                        </div>
-
-                                        <div>
-                                            <div class="form-check">
-                                                <input
-                                                    class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-                                                    type="checkbox" value="" id="flexCheckDefault">
-                                                <label class="form-check-label inline-block text-gray-800"
-                                                    for="flexCheckDefault">
-                                                    Fashion Designers
-                                                </label>
-                                            </div>
-                                        </div>
-
-                                        <div>
-                                            <div class="form-check">
-                                                <input
-                                                    class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-                                                    type="checkbox" value="" id="flexCheckDefault">
-                                                <label class="form-check-label inline-block text-gray-800"
-                                                    for="flexCheckDefault">
-                                                    Baker
-                                                </label>
-                                            </div>
-                                        </div>
-
-
-                                        <div>
-                                            <div class="form-check">
-                                                <input
-                                                    class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-                                                    type="checkbox" value="" id="flexCheckDefault">
-                                                <label class="form-check-label inline-block text-gray-800"
-                                                    for="flexCheckDefault">
-                                                    Emcees or Host
-                                                </label>
-                                            </div>
-                                        </div>
-
-                                        <div>
-                                            <div class="form-check">
-                                                <input
-                                                    class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-                                                    type="checkbox" value="" id="flexCheckDefault">
-                                                <label class="form-check-label inline-block text-gray-800"
-                                                    for="flexCheckDefault">
-                                                    Graphic Designer
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="form-check">
-                                                <input
-                                                    class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-                                                    type="checkbox" value="" id="flexCheckDefault">
-                                                <label class="form-check-label inline-block text-gray-800"
-                                                    for="flexCheckDefault">
-                                                    Entertainer (Band, Musicians & Singers)
-                                                </label>
-                                            </div>
-                                        </div>
                                     </div>
 
                                     <!--Skills -->
@@ -240,116 +132,20 @@
 
 
                                     <div class="grid grid-rows-3 grid-flow-col gap-4 mt-4 ">
-                                        <div>
-                                            <div class="form-check">
-                                                <input
-                                                    class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-                                                    type="checkbox" value="" id="flexCheckDefault">
-                                                <label class="form-check-label inline-block text-gray-800"
-                                                    for="flexCheckDefault">
-                                                    Articles & Blog Posts
-                                                </label>
+                                        @foreach ($skills as $skill)
+                                            <div>
+                                                <div class="form-check">
+                                                    <input
+                                                        class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+                                                        type="checkbox" value="{{ $skill->id }}" x-model.number="skills"
+                                                        id="{{ 'skill-'.$skill->id }}">
+                                                    <label class="form-check-label inline-block text-gray-800"
+                                                        for="{{ 'skill-'.$skill->id }}">
+                                                        {{ $skill->name }}
+                                                    </label>
+                                                </div>
                                             </div>
-                                        </div>
-
-                                        <div>
-                                            <div class="form-check">
-                                                <input
-                                                    class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-                                                    type="checkbox" value="" id="flexCheckDefault">
-                                                <label class="form-check-label inline-block text-gray-800"
-                                                    for="flexCheckDefault">
-                                                    Email Copy
-                                                </label>
-                                            </div>
-                                        </div>
-
-
-                                        <div>
-                                            <div class="form-check">
-                                                <input
-                                                    class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-                                                    type="checkbox" value="" id="flexCheckDefault">
-                                                <label class="form-check-label inline-block text-gray-800"
-                                                    for="flexCheckDefault">
-                                                    Press Releases
-                                                </label>
-                                            </div>
-                                        </div>
-
-                                        <div>
-                                            <div class="form-check">
-                                                <input
-                                                    class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-                                                    type="checkbox" value="" id="flexCheckDefault">
-                                                <label class="form-check-label inline-block text-gray-800"
-                                                    for="flexCheckDefault">
-                                                    Research & Summaries
-                                                </label>
-                                            </div>
-                                        </div>
-
-
-                                        <div>
-                                            <div class="form-check">
-                                                <input
-                                                    class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-                                                    type="checkbox" value="" id="flexCheckDefault">
-                                                <label class="form-check-label inline-block text-gray-800"
-                                                    for="flexCheckDefault">
-                                                    Technical Writing
-                                                </label>
-                                            </div>
-                                        </div>
-
-                                        <div>
-                                            <div class="form-check">
-                                                <input
-                                                    class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-                                                    type="checkbox" value="" id="flexCheckDefault">
-                                                <label class="form-check-label inline-block text-gray-800"
-                                                    for="flexCheckDefault">
-                                                    Website Content
-                                                </label>
-                                            </div>
-                                        </div>
-
-                                        <div>
-                                            <div class="form-check">
-                                                <input
-                                                    class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-                                                    type="checkbox" value="" id="flexCheckDefault">
-                                                <label class="form-check-label inline-block text-gray-800"
-                                                    for="flexCheckDefault">
-                                                    Business Names & Slogan
-                                                </label>
-                                            </div>
-                                        </div>
-
-
-                                        <div>
-                                            <div class="form-check">
-                                                <input
-                                                    class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-                                                    type="checkbox" value="" id="flexCheckDefault">
-                                                <label class="form-check-label inline-block text-gray-800"
-                                                    for="flexCheckDefault">
-                                                    Game Writing
-                                                </label>
-                                            </div>
-                                        </div>
-
-                                        <div>
-                                            <div class="form-check">
-                                                <input
-                                                    class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-                                                    type="checkbox" value="" id="flexCheckDefault">
-                                                <label class="form-check-label inline-block text-gray-800"
-                                                    for="flexCheckDefault">
-                                                    Product Descriptions
-                                                </label>
-                                            </div>
-                                        </div>
+                                        @endforeach
 
                                     </div>
                                 </div>
@@ -395,8 +191,19 @@
                                 </div>
                             </div>
                             <div class="flex justify-end">
-                                <button
-                                    class="border rounded-lg px-8 py-2 text-black bg-transparent  hover:border-black">Connect</button>
+                                <template x-if="google_id && google_id.length > 0">
+                                    <button
+                                        class="border
+                                    rounded-lg px-8 py-2 text-black bg-transparent hover:border-black">
+                                        Linked</button>
+                                </template>
+
+                                <template x-if="!google_id || google_id.length === 0">
+                                    <button
+                                        class="border rounded-lg px-8 py-2 text-black bg-transparent  hover:border-black"
+                                        @click="event.preventDefault();connect('google')">Connect</button>
+                                </template>
+
                             </div>
                             <div class="flex flex-row">
                                 <div class="h-8 w-8">
@@ -406,8 +213,17 @@
                                 </div>
                             </div>
                             <div class="flex justify-end">
-                                <button
-                                    class="border rounded-lg px-8 py-2 text-black bg-transparent  hover:border-black">Connect</button>
+                                <template x-if="fb_id && fb_id.length > 0">
+                                    <button
+                                        class="border rounded-lg px-8 py-2 text-black bg-transparent  hover:border-black">
+                                        Linked</button>
+                                </template>
+
+                                <template x-if="!fb_id || fb_id.length === 0">
+                                    <button
+                                        class="border rounded-lg px-8 py-2 text-black bg-transparent  hover:border-black"
+                                        @click="event.preventDefault();connect('facebook')">Connect</button>
+                                </template>
                             </div>
                             <div class="flex flex-row">
                                 <div class="h-8 w-8">
@@ -417,8 +233,17 @@
                                 </div>
                             </div>
                             <div class="flex justify-end">
-                                <button
-                                    class="border rounded-lg px-8 py-2 text-black bg-transparent  hover:border-black">Connect</button>
+                                <template x-if="twitter_id && twitter_id.length > 0">
+                                    <button
+                                        class="border rounded-lg px-8 py-2 text-black bg-transparent  hover:border-black">
+                                        Linked</button>
+                                </template>
+
+                                <template x-if="!twitter_id || twitter_id.length === 0">
+                                    <button
+                                        class="border rounded-lg px-8 py-2 text-black bg-transparent  hover:border-black"
+                                        onclick="event.preventDefault();">Connect</button>
+                                </template>
                             </div>
                             <div class="flex flex-row">
                                 <div class="">
@@ -459,7 +284,7 @@
                             <div class="text-left">
                                 <input placeholder="Enter your Email Address"
                                     class="border rounded p-2 px-2 w-96 appearance-none outline-none  text-gray-800"
-                                    {{ auth()->user() ? 'readonly' : '' }} value="{{ auth()->user()->email ?? '' }}"
+                                    x-model="email"
                                     required>
                             </div>
                             <div class="font-bold text-gray-600 text-lg uppercase">
@@ -468,7 +293,7 @@
                             <div class="text-left">
                                 <input
                                     class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50  focus:outline-none da"
-                                    id="file_input" type="file">
+                                    id="file_input" accept="image/*" type="file" @change="id_card = $event.target.files[0]">
 
                             </div>
                             <div class="font-bold text-gray-600 text-lg  uppercase">
@@ -477,14 +302,116 @@
                             <div class="text-left">
                                 <input
                                     class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none "
-                                    id="file_input" type="file">
-
+                                    id="file_input" accept="image/*" type="file" @change="selfie = $event.target.files[0]">
                             </div>
 
+                        </div>
+                        <div class="flex justify-end mt-5">
+                            <x-button @click="submit()">Submit</x-button>
                         </div>
                     </div>
                 </li>
             </ul>
         </div>
     </div>
+
+    @push('script')
+        <script>
+            function registration() {
+                return {
+                    //first page
+                    first_name: '',
+                    last_name: '',
+                    business_name: '',
+                    address: '',
+                    description: '',
+                    //second page
+                    occupations: [],
+                    skills: [],
+                    //third page
+                    google_id: null,
+                    fb_id: null,
+                    twitter_id: null,
+                    //fourth page
+                    email: null,
+                    id_card: null,
+                    selfie: null,
+                    drivers: {
+                        google: '',
+                        facebook: ''
+                    },
+                    init() {
+                        // this.email = "{{ auth()->user()->email }}"
+                        // this.google_id = "{{ auth()->user()->google_id }}"
+                        // this.fb_id = "{{ auth()->user()->fb_id }}"
+                        // this.twitter_id = "{{ auth()->user()->twitter_id }}"
+                        const userPromise = Promise.resolve(this.getUser())
+                        userPromise.then((response) => {
+                            this.google_id = response.data.google_id
+                            this.fb_id = response.data.fb_id
+                            this.email = response.data.email
+                        })
+
+                    },
+                    submit() {
+                        const forms = new FormData()
+
+                        forms.append('first_name', this.first_name)
+                        forms.append('last_name', this.last_name)
+                        forms.append('last_name', this.last_name)
+                        forms.append('business_name', this.business_name)
+                        forms.append('address', this.address)
+                        forms.append('description', this.description)
+                        forms.append('occupations', JSON.stringify(this.occupations))
+                        forms.append('skills', JSON.stringify(this.skills))
+                        forms.append('id_card', this.id_card)
+                        forms.append('selfie_photo', this.selfie)
+
+                        var url = '/supplier/register'
+                        axios.post(url, forms, {
+                            headers: {
+                                'Content-Type':'multipart/form-data'
+                            }
+                        }).then((response) => {
+                            location.href = "/";
+                        }).catch((error) => {
+                            console.log(error.response)
+                        })
+
+                    },
+                    connect(driver) {
+                        var url = '/auth/' + driver
+
+                        const socialWindow = window.open(url, '_blank', 'height=500,width=500')
+                        socialWindow.focus()
+
+                        var popupTick = setInterval(() => {
+                            if (socialWindow.closed) {
+                                clearInterval(popupTick)
+                                //get users social id
+                                const userPromise = new Promise((res, rej) => {
+                                    res(this.getUser())
+                                })
+                                userPromise.then(response => {
+                                    switch (driver) {
+                                        case 'google':
+                                            this.google_id = response.data.google_id
+                                            break
+                                        case 'facebook':
+                                            this.fb_id = response.data.fb_id
+                                    }
+                                })
+                                // location.reload()
+                            }
+                        }, 500);
+                    },
+                    async getUser() {
+                        return await axios.get('/get-user')
+
+                    }
+                }
+
+            }
+        </script>
+    @endpush
 </x-guest-layout>

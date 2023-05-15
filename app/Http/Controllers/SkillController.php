@@ -14,7 +14,9 @@ class SkillController extends Controller
      */
     public function index()
     {
-        //
+        $skills = Skill::all();
+
+        return view('admin.skills.index', compact('skills'));
     }
 
     /**
@@ -24,7 +26,7 @@ class SkillController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.skills.create');
     }
 
     /**
@@ -35,7 +37,13 @@ class SkillController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required',
+        ]);
+
+        Skill::create($validatedData);
+
+        return redirect()->route('skills.index')->with('status', 'Successfully created skill');
     }
 
     /**
@@ -57,7 +65,7 @@ class SkillController extends Controller
      */
     public function edit(Skill $skill)
     {
-        //
+        return view('admin.skills.edit', compact('skill'));
     }
 
     /**
@@ -69,7 +77,13 @@ class SkillController extends Controller
      */
     public function update(Request $request, Skill $skill)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required',
+        ]);
+
+        $skill->update($validatedData);
+
+        return redirect()->route('skills.index')->with('status', 'Successfully updated skill');
     }
 
     /**

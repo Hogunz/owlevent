@@ -1,10 +1,13 @@
 <?php
 
-use App\Http\Controllers\Admin\PermissionController;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SkillController;
+use App\Http\Controllers\SocialController;
+use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
-use App\Http\Controllers\SocialController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\OccupationController;
+use App\Http\Controllers\Admin\PermissionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +19,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/auth-complete', function () {
+    return view('auth.auth-successful');
+});
 
 Route::get('/', function () {
     return view('welcome');
@@ -38,13 +45,6 @@ Route::get('/sample', function () {
 Route::get('/blog/index', function () {
     return view('/blog/index');
 });
-Route::get('/registration', function () {
-    return view('/suppliers/registration');
-})->middleware('auth');
-
-Route::get('/become-a-supplier', function () {
-    return view('/become-a-supplier');
-});
 
 
 Route::get('/service-profile', function () {
@@ -54,19 +54,33 @@ Route::get('/supplier-profile', function () {
     return view('/suppliers/supplier-profile');
 });
 
+//For Admin User
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
 
+    Route::get('/get-user', [UserController::class, 'getUser']);
+
     Route::prefix('admin/')->group(function () {
         Route::resource('roles', RoleController::class);
         Route::resource('permissions', PermissionController::class);
+
         Route::resource('users', UserController::class);
+        Route::resource('occupations', OccupationController::class);
+        Route::resource('skills', SkillController::class);
     });
 });
 
-Route::get('/auth/facebook', [SocialController::class, 'facebookRedirect']);
-Route::get('/auth/facebook/callback', [SocialController::class, 'loginWithFacebook']);
+//Supplier
+Route::middleware(['auth'])->group(function () {
+    Route::get('/become-a-supplier', [SupplierController::class, 'becomeSupplier']);
+    Route::get('/registration', [SupplierController::class, 'create']);
+    Route::post('/supplier/register', [SupplierController::class, 'store']);
+});
+
+//Laravel Socialite
+Route::get('/auth/{driver}', [SocialController::class, 'socialiteRedirect']);
+Route::get('/auth/{driver}/callback', [SocialController::class, 'loginWithSocialite']);
 
 require __DIR__ . '/auth.php';
