@@ -285,8 +285,6 @@
                                 </svg>
                                 <span>Schedule Meeting to Supplier</span>
                             </li>
-
-
                         </ul>
                         <a href="#"
                             class="  focus:ring-4 focus:ring-[#7895B2] font-medium text-sm text-center border rounded-lg px-8 py-2 text-white bg-yellow-900 hover:bg-yellow-800">Get
