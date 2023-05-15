@@ -326,8 +326,8 @@
                 <div class="sticky inset-x-0 top-14 max-h-full ">
 
                     <div
-                        class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900  rounded-lg border border-gray-100 shadow bg-gradient-to-br from-[#CD7F32]  via-[#B08D57] to-[#B08D57]/75">
-                        <h3 class="mb-4 text-2xl font-semibold">Bronze</h3>
+                        class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900  rounded-lg border drop-shadow-2xl bg-white  border-gray-300  bg-opacity-25 backdrop-filter backdrop-blur-md shadow-md">
+                        <h3 class="mb-4 text-2xl font-semibold">Specific Package(test)</h3>
                         <p class="font-light text-gray-800 sm:text-lg ">Best option for personal use
                             & for
                             your next project.</p>
@@ -388,9 +388,6 @@
                                 <span>Free updates: <span class="font-semibold">6 months</span></span>
                             </li>
                         </ul>
-                        <a href="#"
-                            class="  focus:ring-4 focus:ring-[#7895B2] font-medium text-sm text-center border rounded-lg px-8 py-2 text-white bg-[#7895B2] hover:bg-[#7895B2]/75">Get
-                            started</a>
                     </div>
 
 

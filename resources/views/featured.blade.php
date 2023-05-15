@@ -5,10 +5,12 @@
             <div class="container mx-auto" style="">
                 <div
                     class="bg-cover bg-center  h-auto text-white py-24 px-10 object-fill rounded-t-lg bg-gradient-to-br from-[#7895B2] from-50% to-[#E8DFCA]">
-                    <div class="sm:w-1/2">
-                        <p class="text-3xl font-bold">"Discover the highlights: A visual journey through our featured
+                    <div class="lg:w-1/2 sm:w-full">
+                        <p class="text-3xl text-left font-bold">"Discover the highlights: A visual
+                            journey through our featured
                             page's top features."</p>
-                        <p class="text-2xl mb-10 leading-none">Find the perfect solution to your needs with our
+                        <p class="text-2xl text-left mb-10 leading-none">Find the perfect solution to
+                            your needs with our
                             supplier's wide range of services.</p>
                     </div>
                 </div> <!-- container -->
@@ -18,7 +20,7 @@
     </section>
     <section class="container mx-auto p-8">
         <div class="grid lg:grid-cols-4 justify-items-center sm:grid-cols-1 gap-y-2 gap-x-0">
-            @for ($i = 0; $i < 30; $i++)
+            @for ($i = 0; $i < 15; $i++)
                 <div
                     class="flex lg:flex-col sm:flex-row items-center bg-white border border-gray-200 rounded-lg shadow  sm:max-w-xl lg:max-w-xs hover:bg-gray-100">
                     <a href="/service-profile" class="">

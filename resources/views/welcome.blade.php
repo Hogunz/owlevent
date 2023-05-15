@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <section class="bg-white">
+    <section class="bg-white" data-aos="zoom-in" data-aos-duration="1500">
         <div class="grid max-w-screen-xl px-4 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-12 xs:grid xs:place-content-center">
             <div class="xs:col-span-12 lg:mt-0 lg:col-span-5 sm:flex md:flex-row flex-col">
                 <div id="carouselSlide" class="relative lg:flex sm:hidden" data-te-carousel-init data-te-carousel-slide>
@@ -39,7 +39,7 @@
         </div>
 
     </section>
-    <div class="lg:relative sm:static">
+    <div class="lg:relative sm:static" data-aos="fade-up" data-aos-duration="1500">
         <div class="lg:absolute sm:static rounded-lg  inset-x-0 -top-14  max-w-7xl container mx-auto">
             <section
                 class="container mx-auto w-full lg:max-w-screen-xl sm:max-w-screen-sm sm:rounded-0 lg:rounded-2xl py-4 lg:p-8 bg-[#F5EFE6]">
@@ -131,8 +131,10 @@
                 <div>
                     <div class="">
                         <h1 class="font-bold text-2xl md:text-3xl text-left ">Unique</h1>
-                        <h2 class="text-left text-base md:text-lg">Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Facilis dolore adipisci placeat.</h2>
+                        <h2 class="text-left text-base md:text-lg">Make your next event truly one-of-a-kind and
+                            unforgettable by partnering with our event management team, which offers a unique approach
+                            that is customized to meet your specific needs and goals.
+                        </h2>
                     </div>
                 </div>
             </div>
@@ -153,8 +155,9 @@
                 <div>
                     <div class=" ">
                         <h1 class="font-bold text-3xl md:text-4xl text-left">Reliable</h1>
-                        <h2 class="text-left text-base md:text-lg">Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Facilis dolore adipisci placeat.</h2>
+                        <h2 class="text-left text-base md:text-lg">Trust us to deliver reliable events for all your
+                            special moments. From weddings to corporate events, we handle every detail to ensure an
+                            exceptional experience that exceeds your expectations.</h2>
                     </div>
                 </div>
             </div>
@@ -164,10 +167,11 @@
                 <div>
                     <div class=" ">
                         <h1 class="font-bold text-3xl md:text-4xl text-left">All In One</h1>
-                        <h2 class="text-left text-base md:text-lg">Lorem ipsum dolor sit amet consectetur
-                            adipisicing
-                            elit.
-                            Facilis dolore adipisci placeat.</h2>
+                        <h2 class="text-left text-base md:text-lg">Our all-in-one event planning services take care of
+                            every detail, making it effortless for you to plan your next event. Let us handle everything
+                            from venue selection to entertainment and transportation, while you sit back and enjoy the
+                            event.
+                        </h2>
                     </div>
                 </div>
             </div>
@@ -222,20 +226,21 @@
                 <div class="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
                     <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">OwlEvent
                         Premium</h2>
-                    <p class="mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400">Here at Flowbite we focus on
-                        markets where technology, innovation, and capital can unlock long-term value and drive economic
-                        growth.</p>
+                    <p class="mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400">By upgrading to our premium
+                        subscription, you'll gain access to a wealth of exclusive features and benefits that will
+                        enhance your overall experience with our product/service.
+
+                    </p>
                 </div>
                 <div class="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
                     <!-- Pricing Card -->
-                    <div
-                        class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900  rounded-lg border drop-shadow-2xl bg-gradient-to-br from-[#a67c00]  to-[#bf9b30] ">
-                        <h3 class="mb-4 text-2xl font-semibold">Bronze</h3>
-                        <p class="font-light text-gray-500 sm:text-lg dark:text-gray-400">Best option for personal use
-                            & for
-                            your next project.</p>
+                    <div class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900  rounded-lg  drop-shadow-2xl border-2 bg-transparent border-yellow-900 "
+                        data-aos="fade-down-right" data-aos-duration="2000">
+                        <h3 class="mb-4 text-2xl font-semibold text-yellow-900">Bronze</h3>
+                        <p class="font-light text-gray-500 sm:text-lg dark:text-gray-400">Our Bronze Package offers the
+                            perfect balance of affordability and functionality. </p>
                         <div class="flex justify-center items-baseline my-8">
-                            <span class="mr-2 text-5xl font-extrabold">$29</span>
+                            <span class="mr-2 text-5xl font-extrabold text-yellow-900">$29</span>
                             <span class="text-gray-500 dark:text-gray-400">/month</span>
                         </div>
                         <!-- List -->
@@ -248,7 +253,7 @@
                                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                                         clip-rule="evenodd"></path>
                                 </svg>
-                                <span>Individual configuration</span>
+                                <span>Upload Photos: <span class="font-semibold">5</span></span>
                             </li>
                             <li class="flex items-center space-x-3">
                                 <!-- Icon -->
@@ -258,7 +263,7 @@
                                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                                         clip-rule="evenodd"></path>
                                 </svg>
-                                <span>No setup, or hidden fees</span>
+                                <span>Upload Videos: <span class="font-semibold">1</span></span>
                             </li>
                             <li class="flex items-center space-x-3">
                                 <!-- Icon -->
@@ -268,7 +273,7 @@
                                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                                         clip-rule="evenodd"></path>
                                 </svg>
-                                <span>Team size: <span class="font-semibold">1 developer</span></span>
+                                <span>Show Social Media: <span class="font-semibold">1</span></span>
                             </li>
                             <li class="flex items-center space-x-3">
                                 <!-- Icon -->
@@ -278,31 +283,21 @@
                                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                                         clip-rule="evenodd"></path>
                                 </svg>
-                                <span>Premium support: <span class="font-semibold">6 months</span></span>
-                            </li>
-                            <li class="flex items-center space-x-3">
-                                <!-- Icon -->
-                                <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                                    fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                                <span>Free updates: <span class="font-semibold">6 months</span></span>
+                                <span>Schedule Meeting to Supplier</span>
                             </li>
                         </ul>
                         <a href="#"
-                            class="  focus:ring-4 focus:ring-[#7895B2] font-medium text-sm text-center border rounded-lg px-8 py-2 text-white bg-[#7895B2] hover:bg-[#7895B2]/75">Get
+                            class="  focus:ring-4 focus:ring-[#7895B2] font-medium text-sm text-center border rounded-lg px-8 py-2 text-white bg-yellow-900 hover:bg-yellow-800">Get
                             started</a>
                     </div>
                     <!-- Pricing Card -->
                     <div
-                        class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900  rounded-lg border drop-shadow-2xl bg-gradient-to-br from-[#8C8C8C]  via-[#B9B9B9] to-[#D6D6D6]">
-                        <h3 class="mb-4 text-2xl font-semibold">Silver</h3>
-                        <p class="font-light text-gray-500 sm:text-lg dark:text-gray-400">Relevant for multiple users,
-                            extended & premium support.</p>
+                        class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900  rounded-lg  drop-shadow-2xl border-2 bg-transparent border-stone-400">
+                        <h3 class="mb-4 text-2xl font-semibold text-stone-400">Silver</h3>
+                        <p class="font-light text-gray-500 sm:text-lg dark:text-gray-400">Our Silver Package is
+                            designed for those who want a little bit more. </p>
                         <div class="flex justify-center items-baseline my-8">
-                            <span class="mr-2 text-5xl font-extrabold">$99</span>
+                            <span class="mr-2 text-5xl font-extrabold text-stone-400">$99</span>
                             <span class="text-gray-500 dark:text-gray-400" dark:text-gray-400>/month</span>
                         </div>
                         <!-- List -->
@@ -315,7 +310,7 @@
                                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                                         clip-rule="evenodd"></path>
                                 </svg>
-                                <span>Individual configuration</span>
+                                <span>Upload Photos: <span class="font-semibold">10</span></span>
                             </li>
                             <li class="flex items-center space-x-3">
                                 <!-- Icon -->
@@ -325,7 +320,7 @@
                                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                                         clip-rule="evenodd"></path>
                                 </svg>
-                                <span>No setup, or hidden fees</span>
+                                <span>Upload Videos: <span class="font-semibold">5</span></span>
                             </li>
                             <li class="flex items-center space-x-3">
                                 <!-- Icon -->
@@ -335,7 +330,7 @@
                                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                                         clip-rule="evenodd"></path>
                                 </svg>
-                                <span>Team size: <span class="font-semibold">10 developers</span></span>
+                                <span>Show Social Media: <span class="font-semibold"></span></span>
                             </li>
                             <li class="flex items-center space-x-3">
                                 <!-- Icon -->
@@ -345,31 +340,22 @@
                                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                                         clip-rule="evenodd"></path>
                                 </svg>
-                                <span>Premium support: <span class="font-semibold">24 months</span></span>
+                                <span>Schedule Meeting to Supplier</span>
                             </li>
-                            <li class="flex items-center space-x-3">
-                                <!-- Icon -->
-                                <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                                    fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                                <span>Free updates: <span class="font-semibold">24 months</span></span>
-                            </li>
+
                         </ul>
                         <a href="#"
-                            class="  focus:ring-4 focus:ring-[#7895B2] font-medium text-sm text-center border rounded-lg px-8 py-2 text-white bg-[#7895B2] hover:bg-[#7895B2]/75">Get
+                            class="  focus:ring-4 focus:ring-[#7895B2] font-medium text-sm text-center border rounded-lg px-8 py-2 text-white bg-stone-400 hover:bg-stone-500">Get
                             started</a>
                     </div>
                     <!-- Pricing Card -->
-                    <div
-                        class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900  rounded-lg border drop-shadow-2xl bg-gradient-to-br from-[#ffd700] to-[#a67c00]">
-                        <h3 class="mb-4 text-2xl font-semibold">Gold</h3>
-                        <p class="font-light text-gray-500 sm:text-lg dark:text-gray-400">Best for large scale uses and
-                            extended redistribution rights.</p>
+                    <div class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900  rounded-lg drop-shadow-2xl border-2 bg-transparent border-yellow-300 "
+                        data-aos="fade-down-left" data-aos-duration="2000">
+                        <h3 class="mb-4 text-2xl font-semibold text-yellow-300">Gold</h3>
+                        <p class="font-light text-gray-500 sm:text-lg dark:text-gray-400">Our Gold Package is the
+                            ultimate premium experience.</p>
                         <div class="flex justify-center items-baseline my-8">
-                            <span class="mr-2 text-5xl font-extrabold">$499</span>
+                            <span class="mr-2 text-5xl font-extrabold text-yellow-300">$499</span>
                             <span class="text-gray-500 dark:text-gray-400">/month</span>
                         </div>
                         <!-- List -->
@@ -382,7 +368,7 @@
                                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                                         clip-rule="evenodd"></path>
                                 </svg>
-                                <span>Individual configuration</span>
+                                <span>Upload Photos: <span class="font-semibold">Unlimited</span></span>
                             </li>
                             <li class="flex items-center space-x-3">
                                 <!-- Icon -->
@@ -392,7 +378,7 @@
                                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                                         clip-rule="evenodd"></path>
                                 </svg>
-                                <span>No setup, or hidden fees</span>
+                                <span>Upload Videos: <span class="font-semibold">Unlimited</span></span>
                             </li>
                             <li class="flex items-center space-x-3">
                                 <!-- Icon -->
@@ -402,7 +388,7 @@
                                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                                         clip-rule="evenodd"></path>
                                 </svg>
-                                <span>Team size: <span class="font-semibold">100+ developers</span></span>
+                                <span>Show Social Media: <span class="font-semibold"></span></span>
                             </li>
                             <li class="flex items-center space-x-3">
                                 <!-- Icon -->
@@ -412,21 +398,12 @@
                                         d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                                         clip-rule="evenodd"></path>
                                 </svg>
-                                <span>Premium support: <span class="font-semibold">36 months</span></span>
+                                <span>Schedule Meeting to Supplier</span>
                             </li>
-                            <li class="flex items-center space-x-3">
-                                <!-- Icon -->
-                                <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                                    fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                                <span>Free updates: <span class="font-semibold">36 months</span></span>
-                            </li>
+
                         </ul>
                         <a href="#"
-                            class="  focus:ring-4 focus:ring-[#7895B2] font-medium text-sm text-center border rounded-lg px-8 py-2 text-white bg-[#7895B2] hover:bg-[#7895B2]/75">Get
+                            class="  focus:ring-4 focus:ring-[#7895B2] font-medium text-sm text-center border rounded-lg px-8 py-2 text-white bg-yellow-300 hover:bg-yellow-400">Get
                             started</a>
                     </div>
                 </div>
@@ -442,7 +419,7 @@
                     <div>
                         <h1 class="md:text-5xl text-3xl font-bold md:leading-10 leading-9 text-black sm:w-auto w-64">
                             Come and Join us!</h1>
-                        <p class="text-lg leading-6 text-black/75 xl:w-5/12 lg:w-8/12 md:w-10/12  2xl:pr-12 mt-4">Lorem
+                        <p class="text-lg leading-6 text-black/75 xl:w-5/12 lg:w-8/12 md:w-10/12  2xl:pr-12 mt-4">
                             Are you a business owner looking to expand your reach and increase your sales? Look no
                             further than our website! By creating an account and becoming a supplier on our platform,
                             you'll gain access to a vast network of potential customers who are eager to purchase your

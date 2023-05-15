@@ -32,10 +32,9 @@
                                         clip-rule="evenodd"></path>
                                 </svg>
                             </button>
-
                         </div>
                         <input type="text" id="voice-search"
-                            class=" border-transparent text-gray-900 text-sm  focus:ring-[#6DCFF6]/50 focus:border-[#6DCFF6]/50 block w-full pl-10 p-2.5  "
+                            class=" border-transparent text-gray-900 text-sm  focus:ring-[#7895B2]/50 focus:border-[#7895B2]/50 block w-full pl-10 p-2.5  "
                             placeholder="Search for Categories . . . " required>
                     </div>
                 </div>
@@ -108,7 +107,7 @@
                     @endif
                     <!-- Main modal -->
                     <div id="medium-modal" tabindex="-1" aria-hidden="true"
-                        class=" hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full sm:inset-0 h-modal sm:h-full justify-center items-center">
+                        class=" hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full sm:inset-0 h-modal sm:max-h-full justify-center items-center">
                         <div class="relative p-4 w-full max-w-md h-full sm:h-auto ">
                             <!-- Modal content -->
                             <div class="relative rounded-lg shadow">
@@ -316,7 +315,7 @@
 
 <!-- drawer component -->
 <div id="drawer-navigation"
-    class="fixed top-0 left-0 z-40 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white w-80 dark:bg-gray-800"
+    class="fixed top-0 left-0 z-40 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white w-96 dark:bg-gray-800"
     tabindex="-1" aria-labelledby="drawer-navigation-label">
     <h5 id="drawer-navigation-label" class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400">Menu
     </h5>

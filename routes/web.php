@@ -2,11 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SkillController;
-use App\Http\Controllers\SocialController;
 use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\OccupationController;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\SocialController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
-use App\Http\Controllers\OccupationController;
 use App\Http\Controllers\Admin\PermissionController;
 
 /*
@@ -36,14 +37,17 @@ Route::get('/blog', function () {
 Route::get('/categories', function () {
     return view('/categories');
 });
-Route::get('/blog/show-more', function () {
-    return view('/blog/show-more');
-});
 Route::get('/sample', function () {
     return view('/sample');
 });
-Route::get('/blog/index', function () {
-    return view('/blog/index');
+
+Route::get('suppliers/service/create', function () {
+    return view('suppliers/service/create');
+});
+
+
+Route::get('/blog/create', function () {
+    return view('/blog/create');
 });
 
 
@@ -55,6 +59,11 @@ Route::get('/supplier-profile', function () {
 });
 
 //For Admin User
+Route::get('/blog', [BlogController::class, 'blog'])->name('blog');
+Route::get('/blog/show-more', [BlogController::class, 'showM'])->name('blogs.showM');
+Route::resource('blogs', BlogController::class);
+
+
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
