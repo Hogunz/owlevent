@@ -3217,10 +3217,6 @@ input:checked + .toggle-bg {
   font-size: 3rem;
   line-height: 1;
 }
-.text-7xl {
-  font-size: 4.5rem;
-  line-height: 1;
-}
 .text-\[0\.8rem\] {
   font-size: 0.8rem;
 }
