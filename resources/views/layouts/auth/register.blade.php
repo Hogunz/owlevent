@@ -1,7 +1,7 @@
-<x-auth-card>
-    <x-slot name="logo">
+<div class="border rounded-lg bg-white py-6 px-6 lg:px-8 bg-gradient-to-b from-[#F5EFE6] via-[#E8DFCA] to-transparent">
+    <div>
         <x-application-logo width="350px" height="70px"></x-application-logo>
-    </x-slot>
+    </div>
 
     <!--LOGIN FORM-->
     <form class="space-y-6" method="POST" action="{{ route('register') }}">
@@ -71,5 +71,4 @@
             </svg>Continue with Twitter
         </a>
     </form>
-
-</x-auth-card>
+</div>

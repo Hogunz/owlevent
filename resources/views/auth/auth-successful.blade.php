@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html class="scroll-smooth" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'OwlEvent') }}</title>
+
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
     <!-- Styles -->
@@ -29,33 +30,22 @@
 
     <!-- Owl Carousel CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-
-    <!-- Summernote -->
-
 </head>
 
-
-<body class="overflow-auto" style="font-family: Montserrat">
-    <div class="flex min-h-screen flex-col justify-between">
+<body>
+    <div class="min-h-full flex flex-col justify-center items-center py-6">
         <div>
-            <header>@include('layouts.header')</header>
-            <main>{{ $slot }}</main>
+            <x-application-logo class="w-full h-10"></x-application-logo>
         </div>
-
-
-        @include('layouts.footer')
+        <div class="mt-2 text-center">
+            <div class="font-bold {{ $success ? 'text-green-500' : 'text-red-500' }} text-lg uppercase">
+                {{ $status }}
+            </div>
+            <span class="capitalize">
+                {{ $message }}
+            </span>
+        </div>
     </div>
 </body>
-<!-- Owl Carousel JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-<!-- Data AoS -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-
-<script>
-    AOS.init();
-</script>
-
-@stack('script')
 
 </html>

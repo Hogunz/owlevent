@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Skill;
+use App\Models\Category;
+use App\Models\Gig;
 use Illuminate\Http\Request;
 
-class SkillController extends Controller
+class GigController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,7 +25,9 @@ class SkillController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::all();
+
+        return view('suppliers.service.create', compact('categories'));
     }
 
     /**
@@ -41,10 +44,10 @@ class SkillController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Skill  $skill
+     * @param  \App\Models\Gig  $gig
      * @return \Illuminate\Http\Response
      */
-    public function show(Skill $skill)
+    public function show(Gig $gig)
     {
         //
     }
@@ -52,10 +55,10 @@ class SkillController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Skill  $skill
+     * @param  \App\Models\Gig  $gig
      * @return \Illuminate\Http\Response
      */
-    public function edit(Skill $skill)
+    public function edit(Gig $gig)
     {
         //
     }
@@ -64,10 +67,10 @@ class SkillController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Skill  $skill
+     * @param  \App\Models\Gig  $gig
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Skill $skill)
+    public function update(Request $request, Gig $gig)
     {
         //
     }
@@ -75,10 +78,10 @@ class SkillController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Skill  $skill
+     * @param  \App\Models\Gig  $gig
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Skill $skill)
+    public function destroy(Gig $gig)
     {
         //
     }

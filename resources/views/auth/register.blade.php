@@ -56,5 +56,7 @@
             </div>
         </form>
     </x-auth-card> --}}
-    @include('layouts.auth.register')
+    <x-auth-card>
+        @include('layouts.auth.register')
+    </x-auth-card>
 </x-guest-layout>

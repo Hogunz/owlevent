@@ -1,236 +1,306 @@
 <x-guest-layout>
-    <x-guest-layout>
-
-
-        <div class="bg-white">
-            <div class="container mx-auto ">
-
-                <ul data-te-stepper-init
-                    class="relative m-0 flex list-none justify-between overflow-hidden p-0 transition-[height] duration-200 ease-in-out">
-                    <li data-te-stepper-step-ref data-te-stepper-step-active class="w-[4.5rem] flex-auto">
-                        <div data-te-stepper-head-ref
-                            class="flex cursor-pointer items-center pl-2 leading-[1.3rem] no-underline after:ml-2 after:h-px after:w-full after:flex-1 after:bg-[#e0e0e0] after:content-[''] hover:bg-[#f9f9f9]   focus:outline-none ">
-                            <span data-te-stepper-head-icon-ref
-                                class="my-6 mr-2 flex h-[1.938rem] w-[1.938rem] items-center justify-center rounded-full bg-[#ebedef] text-sm font-medium text-[#40464f]">
-                                1
-                            </span>
-                            <span data-te-stepper-head-text-ref
-                                class="font-medium text-neutral-500 after:flex after:text-[0.8rem] after:content-[data-content] ">
-                                Overview
-                            </span>
+    <div class="container mx-auto bg-white" x-data="gig()">
+        <ul data-te-stepper-init
+            class="relative m-0 flex list-none justify-between overflow-hidden p-0 transition-[height] duration-200 ease-in-out">
+            <li data-te-stepper-step-ref data-te-stepper-step-active class="w-[4.5rem] flex-auto">
+                <div data-te-stepper-head-ref
+                    class="flex cursor-pointer items-center pl-2 leading-[1.3rem] no-underline after:ml-2 after:h-px after:w-full after:flex-1 after:bg-[#e0e0e0] after:content-[''] hover:bg-[#f9f9f9] focus:outline-none">
+                    <span data-te-stepper-head-icon-ref
+                        class="my-6 mr-2 flex h-[1.938rem] w-[1.938rem] items-center justify-center rounded-full bg-[#ebedef] text-sm font-medium text-[#40464f]">
+                        1
+                    </span>
+                    <span data-te-stepper-head-text-ref
+                        class="font-medium text-neutral-500 after:flex after:text-[0.8rem] after:content-[data-content]">
+                        Overview
+                    </span>
+                </div>
+                <div data-te-stepper-content-ref class="absolute w-full p-16 transition-all duration-500 ease-in-out">
+                    <!--1st content -->
+                    <div>
+                        <h1 class="pb-6 text-4xl font-bold">Overview
+                        </h1>
+                        <p class="pb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis
+                            mattis
+                            ex, in tristique libero. Integer urna ante, dapibus ac maximus vel, cursus quis sem.
+                            Proin
+                            turpis arcu, vehicula non tortor ut, sodales luctus erat. Maecenas ligula libero,
+                            feugiat
+                            eget malesuada id, imperdiet sagittis tellus. Maecenas consectetur eget nisl laoreet
+                            sollicitudin. Donec hendrerit mi et risus consectetur dapibus. Sed congue, ex id viverra
+                            mattis, augue eros condimentum orci, a volutpat augue leo a massa. Praesent pulvinar
+                            urna
+                            lorem, vel vulputate velit laoreet mollis. Quisque venenatis consectetur leo efficitur
+                            tempor. Aliquam congue mi posuere, pharetra odio eget, posuere enim. Vivamus cursus sem
+                            at
+                            imperdiet ornare. Aliquam ac enim massa. Sed et semper massa, sit amet consequat lectus.
+                        </p>
+                        <hr class="pb-8">
+                    </div>
+                    <div class="grid grid-cols-2 gap-16 text-left">
+                        <div class="text-lg font-bold uppercase text-gray-600">
+                            Gig title
                         </div>
-                        <div data-te-stepper-content-ref
-                            class="absolute w-full p-16 transition-all duration-500 ease-in-out">
-                            <!--1st content -->
-                            <div>
-                                <h1 class="font-bold text-4xl pb-6">Overview
-                                </h1>
-                                <p class="pb-8">test
-                                </p>
-                                <hr class="pb-8">
-                            </div>
-                            <div class="grid grid-cols-2 gap-16 text-left">
-                                <div class="font-bold text-gray-600 text-lg  uppercase">
-                                    Gig title
-                                </div>
-                                <div>
-                                    <textarea maxlength="100"
-                                        class=" h-64 form-control block w-full resize px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 shadow-inner rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-600 focus:outline-non"
-                                        id="exampleFormControlTextarea1" rows="3" placeholder="Create a title, maximum of 100 letters" require=""></textarea>
-                                </div>
-                                <div class="font-bold text-gray-600 text-lg uppercase">Category
-                                </div>
-                                <div class="text-left">
-                                    <select type="" id="default_standard"
-                                        class="block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-gray-300  peer"
-                                        placeholder=" ">
-                                        <option class="text-black" value="">Type of Category</option>
-                                        <option class="text-black" value="">sample 1</option>
-                                        <option class="text-black" value="">sample 2</option>
-                                        <option class="text-black" value="">sample 3</option>
-                                    </select>
-                                </div>
-
-
-                                <div class="">
-                                </div>
-                                <div class="flex justify-end">
-                                    <x-button class="">Continue</x-button>
-                                </div>
-                            </div>
-
+                        <div>
+                            <textarea x-model="title" :maxLength="titleLimit"
+                                class="form-control focus:outline-non m-0 block h-20 w-full resize rounded border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-1.5 text-base font-normal text-gray-700 shadow-inner transition ease-in-out focus:border-gray-600 focus:bg-white focus:text-gray-700"
+                                id="exampleFormControlTextarea1" placeholder="Create a title, maximum of 100 letters" require=""></textarea>
+                            <div class="text-right" x-text="title.length + `/` + titleLimit"></div>
                         </div>
-                    </li>
-                    <li data-te-stepper-step-ref class="w-[4.5rem] flex-auto">
-                        <!-- 2nd Content -->
-                        <div data-te-stepper-head-ref
-                            class="flex cursor-pointer items-center leading-[1.3rem] no-underline before:mr-2 before:h-px before:w-full before:flex-1 before:bg-[#e0e0e0] before:content-[''] after:ml-2 after:h-px after:w-full after:flex-1 after:bg-[#e0e0e0] after:content-[''] hover:bg-[#f9f9f9] focus:outline-none  ">
-                            <span data-te-stepper-head-icon-ref
-                                class="my-6 mr-2 flex h-[1.938rem] w-[1.938rem] items-center justify-center rounded-full bg-[#ebedef] text-sm font-medium text-[#40464f]">
-                                2
-                            </span>
-                            <span data-te-stepper-head-text-ref
-                                class="text-neutral-500 after:flex after:text-[0.8rem] after:content-[data-content] ">
-                                Pricing
-                            </span>
+                        <div class="text-lg font-bold uppercase text-gray-600">Category
                         </div>
+                        <div class="text-left">
+                            <select type="" id="default_standard"
+                                class="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent py-2.5 px-0 text-sm text-black focus:border-gray-300 focus:outline-none focus:ring-0"
+                                placeholder=" ">
+                                <option value="" selected hidden>Type of Category</option>
+                                @foreach ($categories as $category)
+                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="text-lg font-bold uppercase text-gray-600">Description:
+                        </div>
+                        <div>
+                            <textarea :maxlength="descriptionLimit" x-model="description"
+                                class="form-control focus:outline-non m-0 block h-64 w-full resize rounded border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-1.5 text-base font-normal text-gray-700 shadow-inner transition ease-in-out focus:border-gray-600 focus:bg-white focus:text-gray-700"
+                                id="exampleFormControlTextarea1" rows="3" placeholder="Describe your service" require=""></textarea>
+                            <div class="text-right" x-text="description.length + `/` + descriptionLimit"></div>
+                        </div>
+                        <div class="flex justify-end">
+                            <x-button class="">Continue</x-button>
+                        </div>
+                    </div>
 
-                        <div data-te-stepper-content-ref
-                            class="absolute left-0 w-full translate-x-[150%] p-16 transition-all duration-500 ease-in-out ">
-                            <div>
-                                <h1 class="font-bold text-4xl pb-6">Pricing
-                                </h1>
-                                <p class="pb-8">test
-                                </p>
-                                <hr class="pb-8">
-                            </div>
+                </div>
+            </li>
+            <li data-te-stepper-step-ref class="w-[4.5rem] flex-auto">
+                <!-- 2nd Content -->
+                <div data-te-stepper-head-ref
+                    class="flex cursor-pointer items-center leading-[1.3rem] no-underline before:mr-2 before:h-px before:w-full before:flex-1 before:bg-[#e0e0e0] before:content-[''] after:ml-2 after:h-px after:w-full after:flex-1 after:bg-[#e0e0e0] after:content-[''] hover:bg-[#f9f9f9] focus:outline-none">
+                    <span data-te-stepper-head-icon-ref
+                        class="my-6 mr-2 flex h-[1.938rem] w-[1.938rem] items-center justify-center rounded-full bg-[#ebedef] text-sm font-medium text-[#40464f]">
+                        2
+                    </span>
+                    <span data-te-stepper-head-text-ref
+                        class="text-neutral-500 after:flex after:text-[0.8rem] after:content-[data-content]">
+                        Pricing
+                    </span>
+                </div>
 
-                            <div class="p-5">
+                <div data-te-stepper-content-ref
+                    class="absolute left-0 w-full translate-x-[150%] p-16 transition-all duration-500 ease-in-out">
+                    <div>
+                        <h1 class="pb-6 text-4xl font-bold">Pricing
+                        </h1>
+                        <p class="pb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis
+                            mattis ex, in tristique libero. Integer urna ante, dapibus ac maximus vel, cursus quis
+                            sem. Proin turpis arcu, vehicula non tortor ut, sodales luctus erat. Maecenas ligula
+                            libero, feugiat eget malesuada id, imperdiet sagittis tellus. Maecenas consectetur eget
+                            nisl laoreet sollicitudin. Donec hendrerit mi et risus consectetur dapibus. Sed congue,
+                            ex id viverra mattis, augue eros condimentum orci, a volutpat augue leo a massa.
+                            Praesent pulvinar urna lorem, vel vulputate velit laoreet mollis. Quisque venenatis
+                            consectetur leo efficitur tempor. Aliquam congue mi posuere, pharetra odio eget, posuere
+                            enim. Vivamus cursus sem at imperdiet ornare. Aliquam ac enim massa. Sed et semper
+                            massa, sit amet consequat lectus.
+                        </p>
+                        <hr class="pb-8">
+                    </div>
 
-                                <div class="mx-auto ">
+                    <div class="p-5">
 
-                                    <div class="grid grid-cols-2 gap-16 text-left">
-                                        <div class="font-bold text-gray-600 text-lg uppercase">Package:
-                                        </div>
-                                        <div class="text-left">
-                                            <select type="" id="default_standard"
-                                                class="block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-gray-300  peer"
-                                                placeholder=" ">
-                                                <option class="text-black" value="">Type of Package</option>
-                                                <option class="text-black" value="">Bronze</option>
-                                                <option class="text-black" value="">Silver</option>
-                                                <option class="text-black" value="">Gold</option>
-                                            </select>
-                                        </div>
-
-                                        <div class="font-bold text-gray-600 text-lg uppercase">Price:
-                                        </div>
-                                        <div class="text-left">
-                                            <input placeholder="Enter price"
-                                                class="border rounded p-2 px-2 w-96 appearance-none outline-none  text-gray-800"
-                                                required>
-                                        </div>
-                                        <div class="font-bold text-gray-600 text-lg  uppercase">
-                                            Description
-                                        </div>
-                                        <div>
-                                            <textarea maxlength="500"
-                                                class=" h-64 form-control block w-full resize px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 shadow-inner rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-600 focus:outline-non"
-                                                id="exampleFormControlTextarea1" rows="3" placeholder="Describe your package" require=""></textarea>
-                                        </div>
+                        <div class="mx-auto grid grid-cols-3 gap-4">
+                            <template x-for="(package, index) in packages" :key="`p` + index">
+                                <div class="relative flex flex-col space-y-4 rounded border-2 p-3">
+                                    <div class="absolute top-0 right-1">
+                                        <button type="button"
+                                            class="rounded bg-red-500 p-1 text-xs text-white hover:bg-red-300"
+                                            x-show="packages.length > 1" @click="removePackage(index)">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="h-3 w-3">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15" />
+                                            </svg>
+                                        </button>
                                     </div>
-
-                                </div>
-
-                                <div class="flex justify-end mt-6">
-                                    <x-button class="">Continue</x-button>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li data-te-stepper-step-ref class="w-[4.5rem] flex-auto">
-                        <!--3rd content -->
-                        <div data-te-stepper-head-ref
-                            class="flex cursor-pointer items-center leading-[1.3rem] no-underline before:mr-2 before:h-px before:w-full before:flex-1 before:bg-[#e0e0e0] before:content-[''] after:ml-2 after:h-px after:w-full after:flex-1 after:bg-[#e0e0e0] after:content-[''] hover:bg-[#f9f9f9] focus:outline-none ">
-                            <span data-te-stepper-head-icon-ref
-                                class="my-6 mr-2 flex h-[1.938rem] w-[1.938rem] items-center justify-center rounded-full bg-[#ebedef] text-sm font-medium text-[#40464f]">
-                                3
-                            </span>
-                            <span data-te-stepper-head-text-ref
-                                class="text-neutral-500 after:flex after:text-[0.8rem] after:content-[data-content] ">
-                                Description & FAQ
-                            </span>
-                        </div>
-                        <div data-te-stepper-content-ref
-                            class="absolute left-0 w-full translate-x-[150%] p-16 transition-all duration-500 ease-in-out">
-                            <h1 class="font-bold text-4xl pb-6"> Description & FAQ
-                            </h1>
-                            <p class="pb-8">test</p>
-                            <hr class="pb-8">
-
-                            <div class="grid grid-cols-2 gap-16 text-left">
-                                <div class="font-bold text-gray-600 text-lg uppercase">Description:
-                                </div>
-                                <div>
-                                    <textarea maxlength="500"
-                                        class=" h-64 form-control block w-full resize px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 shadow-inner rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-600 focus:outline-non"
-                                        id="exampleFormControlTextarea1" rows="3" placeholder="Describe your service" require=""></textarea>
-                                </div>
-                                <div class="font-bold text-gray-600 text-lg uppercase">FAQ:
-                                </div>
-                                <div class="text-left">
-                                    <input placeholder="Add a Question"
-                                        class="border rounded p-2 px-2 w-full appearance-none outline-none  text-gray-800"
-                                        required>
-                                </div>
-                                <div>
-
-                                </div>
-                                <div class="text-left">
-                                    <textarea maxlength="300"
-                                        class=" h-64 form-control block w-full resize px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 shadow-inner rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-600 focus:outline-non"
-                                        id="exampleFormControlTextarea1" rows="3" placeholder="Add an Answer" require=""></textarea>
-                                </div>
-                                <div class="flex flex-row">
-                                    <div class="">
+                                    <div class="grid grid-cols-2">
+                                        <label for=""
+                                            class="text-lg font-bold uppercase text-gray-600">Package</label>
+                                        <input type="text"
+                                            class="w-full appearance-none rounded border p-2 px-2 text-gray-800 outline-none">
+                                    </div>
+                                    <div class="grid grid-cols-2">
+                                        <label for=""
+                                            class="text-lg font-bold uppercase text-gray-600">Price</label>
+                                        <input type="text"
+                                            class="w-full appearance-none rounded border p-2 px-2 text-gray-800 outline-none">
+                                    </div>
+                                    <div class="grid grid-cols-2">
+                                        <label for=""
+                                            class="text-lg font-bold uppercase text-gray-600">Description</label>
+                                        <textarea
+                                            class="form-control focus:outline-non m-0 block h-64 w-full resize rounded border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-1.5 text-base font-normal text-gray-700 shadow-inner transition ease-in-out focus:border-gray-600 focus:bg-white focus:text-gray-700"
+                                            id="exampleFormControlTextarea1"></textarea>
                                     </div>
                                 </div>
-                                <div class="flex justify-end">
-                                    <x-button>Continue</x-button>
+                            </template>
+
+                            <button type="button"
+                                class="rounded border-2 border-dashed p-6 text-xl font-bold uppercase tracking-wide text-gray-500"
+                                @click="addPackage()" x-show="packages.length < 3">Add Package</button>
+
+
+                        </div>
+
+                        <div class="mt-6 flex justify-end">
+                            <x-button class="">Continue</x-button>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li data-te-stepper-step-ref class="w-[4.5rem] flex-auto">
+                <!--3rd content -->
+                <div data-te-stepper-head-ref
+                    class="flex cursor-pointer items-center leading-[1.3rem] no-underline before:mr-2 before:h-px before:w-full before:flex-1 before:bg-[#e0e0e0] before:content-[''] after:ml-2 after:h-px after:w-full after:flex-1 after:bg-[#e0e0e0] after:content-[''] hover:bg-[#f9f9f9] focus:outline-none">
+                    <span data-te-stepper-head-icon-ref
+                        class="my-6 mr-2 flex h-[1.938rem] w-[1.938rem] items-center justify-center rounded-full bg-[#ebedef] text-sm font-medium text-[#40464f]">
+                        3
+                    </span>
+                    <span data-te-stepper-head-text-ref
+                        class="text-neutral-500 after:flex after:text-[0.8rem] after:content-[data-content]">
+                        Frequently Asked Questions
+                    </span>
+                </div>
+                <div data-te-stepper-content-ref
+                    class="absolute left-0 w-full translate-x-[150%] p-16 transition-all duration-500 ease-in-out">
+                    <h1 class="pb-6 text-4xl font-bold">Frequently Asked Questions
+                    </h1>
+                    <p class="pb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis mattis
+                        ex, in tristique libero. Integer urna ante, dapibus ac maximus vel, cursus quis sem. Proin
+                        turpis arcu, vehicula non tortor ut, sodales luctus erat. Maecenas ligula libero, feugiat
+                        eget malesuada id, imperdiet sagittis tellus. Maecenas consectetur eget nisl laoreet
+                        sollicitudin. Donec hendrerit mi et risus consectetur dapibus. Sed congue, ex id viverra
+                        mattis, augue eros condimentum orci, a volutpat augue leo a massa. Praesent pulvinar urna
+                        lorem, vel vulputate velit laoreet mollis. Quisque venenatis consectetur leo efficitur
+                        tempor. Aliquam congue mi posuere, pharetra odio eget, posuere enim. Vivamus cursus sem at
+                        imperdiet ornare. Aliquam ac enim massa. Sed et semper massa, sit amet consequat lectus.
+                    </p>
+                    <hr class="pb-8">
+                    <div class="flex flex-col space-y-4 p-6">
+                        <template x-for="(faq, index) in faqs" :key="`f` + index">
+                            <div class="relative flex flex-col space-y-4 border-2 p-3">
+                                <div class="absolute top-0 left-2">
+                                    <button type="button"
+                                        class="rounded bg-red-500 p-1 text-xs text-white hover:bg-red-300"
+                                        x-show="faqs.length > 1" @click="removeFaq(index)">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="h-3 w-3">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="grid grid-cols-2">
+                                    <label for=""
+                                        class="text-lg font-bold uppercase text-gray-600">Question</label>
+                                    <input type="text"
+                                        class="w-full appearance-none rounded border p-2 px-2 text-gray-800 outline-none">
+                                </div>
+                                <div class="grid grid-cols-2">
+                                    <label for=""
+                                        class="text-lg font-bold uppercase text-gray-600">Answer</label>
+                                    <textarea
+                                        class="form-control focus:outline-non m-0 block h-20 w-full resize rounded border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-1.5 text-base font-normal text-gray-700 shadow-inner transition ease-in-out focus:border-gray-600 focus:bg-white focus:text-gray-700"
+                                        id="exampleFormControlTextarea1"></textarea>
                                 </div>
                             </div>
+                        </template>
+                        <button type="button"
+                            class="rounded border-2 border-dashed p-6 text-xl font-bold uppercase tracking-wide text-gray-500"
+                            @click="addFaq()">Add Faq</button>
+                    </div>
+                </div>
+            </li>
+            <li data-te-stepper-step-ref class="w-[4.5rem] flex-auto">
+                <!--4th content -->
+                <div data-te-stepper-head-ref
+                    class="flex cursor-pointer items-center pr-2 leading-[1.3rem] no-underline before:mr-2 before:h-px before:w-full before:flex-1 before:bg-[#e0e0e0] before:content-[''] hover:bg-[#f9f9f9] focus:outline-none">
+                    <span data-te-stepper-head-icon-ref
+                        class="my-6 mr-2 flex h-[1.938rem] w-[1.938rem] items-center justify-center rounded-full bg-[#ebedef] text-sm font-medium text-[#40464f]">
+                        4
+                    </span>
+                    <span data-te-stepper-head-text-ref
+                        class="text-neutral-500 after:flex after:text-[0.8rem] after:content-[data-content]">
+                        Portfolio
+                    </span>
+                </div>
+                <div data-te-stepper-content-ref
+                    class="absolute left-0 w-full translate-x-[150%] p-16 transition-all duration-500 ease-in-out">
+                    <h1 class="pb-6 text-4xl font-bold">Portfolio
+                    </h1>
+                    <p class="pb-8">Ensuring trust and safety is of utmost importance in our community. <br>
+                        To
+                        maintain
+                        the security of your account, kindly verify your email and phone number.</p>
+                    <hr class="pb-8">
+                    <div class="grid grid-cols-2 gap-16 text-left">
+
+
+                        <div class="text-lg font-bold uppercase text-gray-600">
+                            Photos/Videos
+                        </div>
+                        <div class="text-left">
+                            <input
+                                class="block w-full cursor-pointer rounded-lg border border-gray-300 bg-gray-50 text-sm text-gray-900 focus:outline-none"
+                                id="file_input" type="file">
 
                         </div>
-                    </li>
-                    <li data-te-stepper-step-ref class="w-[4.5rem] flex-auto">
-                        <!--4th content -->
-                        <div data-te-stepper-head-ref
-                            class="flex cursor-pointer items-center pr-2 leading-[1.3rem] no-underline before:mr-2 before:h-px before:w-full before:flex-1 before:bg-[#e0e0e0] before:content-[''] hover:bg-[#f9f9f9] focus:outline-none  ">
-                            <span data-te-stepper-head-icon-ref
-                                class="my-6 mr-2 flex h-[1.938rem] w-[1.938rem] items-center justify-center rounded-full bg-[#ebedef] text-sm font-medium text-[#40464f]">
-                                4
-                            </span>
-                            <span data-te-stepper-head-text-ref
-                                class="text-neutral-500 after:flex after:text-[0.8rem] after:content-[data-content] ">
-                                Portfolio
-                            </span>
-                        </div>
-                        <div data-te-stepper-content-ref
-                            class="absolute left-0 w-full translate-x-[150%] p-16 transition-all duration-500 ease-in-out">
-                            <h1 class="font-bold text-4xl pb-6">Portfolio
-                            </h1>
-                            <p class="pb-8">Ensuring trust and safety is of utmost importance in our community. <br>
-                                To
-                                maintain
-                                the security of your account, kindly verify your email and phone number.</p>
-                            <hr class="pb-8">
-                            <div class="grid grid-cols-2 gap-16 text-left">
 
-                                <div class="font-bold text-gray-600 text-lg uppercase">
-                                    Photos
-                                </div>
-                                <div class="text-left">
-                                    <input
-                                        class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50  focus:outline-none da"
-                                        id="file_input" type="file">
+                    </div>
+                </div>
+            </li>
+        </ul>
 
-                                </div>
-                                <div class="font-bold text-gray-600 text-lg  uppercase">
-                                    Videos
-                                </div>
-                                <div class="text-left">
-                                    <input
-                                        class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none "
-                                        id="file_input" type="file">
-
-                                </div>
-
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </x-guest-layout>
-
+    </div>
 </x-guest-layout>
+
+<script>
+    function gig() {
+        return {
+            title: "",
+            titleLimit: 100,
+            category_id: "",
+            packages: [{
+                package: '',
+                price: '',
+                description: '',
+            }],
+            description: "",
+            descriptionLimit: 500,
+            faqs: [{
+                question: '',
+                answer: '',
+            }],
+            portfolios: [],
+            checkLimit() {
+                return this.title > this.titleLimit
+            },
+            addPackage() {
+                this.packages.push({
+                    package: '',
+                    price: '',
+                    description: '',
+                })
+            },
+            removePackage(i) {
+                this.packages.splice(i, 1)
+            },
+            addFaq() {
+                this.faqs.push({
+                    question: '',
+                    answer: '',
+                })
+            },
+            removeFaq(i) {
+                this.faqs.splice(i, 1)
+            },
+        }
+    }
+</script>
