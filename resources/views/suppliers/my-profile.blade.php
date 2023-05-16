@@ -27,7 +27,7 @@
                             <div class="flex justify-center p-8">
                                 <div class="relative">
                                     <img class="relative top-0 z-auto h-32 w-32 rounded-full object-cover"
-                                        src="https://images.unsplash.com/photo-1555952517-2e8e729e0b44?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHBlcnNvbnxlbnwwfDF8MHx8&auto=format&fit=crop&w=500&q=60"
+                                        src="{{ auth()->user()->avatar ?? 'https://images.unsplash.com/photo-1555952517-2e8e729e0b44?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHBlcnNvbnxlbnwwfDF8MHx8&auto=format&fit=crop&w=500&q=60' }}"
                                         alt="">
                                     <span class="absolute bottom-0 right-7 flex h-4 w-4">
                                         <span
@@ -36,7 +36,8 @@
                                     </span>
                                 </div>
                             </div>
-                            <h1 class="my-1 text-center text-xl font-bold leading-8 text-gray-900">ItsMeCJ</h1>
+                            <h1 class="my-1 text-center text-xl font-bold leading-8 text-gray-900">
+                                {{ auth()->user()->business_name }}</h1>
                             <div class="">
                                 <ul class="mb-0 flex items-center justify-center">
                                     <li>
@@ -103,20 +104,7 @@
                         <div
                             class="mb-4 rounded-lg bg-gradient-to-br from-[#F5EFE6] via-[#E8DFCA] to-transparent p-8 shadow-xl">
                             <h1 class="mb-4 text-left text-lg font-bold">Description</h1>
-                            <p class="text-justify">Hi it's me CJ,
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                                has
-                                been the industry's standard dummy text ever since the 1500s, when an unknown printer
-                                took a
-                                galley of type and scrambled it to make a type specimen book. It has survived not only
-                                five
-                                centuries, but also the leap into electronic typesetting, remaining essentially
-                                unchanged.
-                                It was popularised in the 1960s with the release of Letraset sheets containing Lorem
-                                Ipsum
-                                passages, and more recently with desktop publishing software like Aldus PageMaker
-                                including
-                                versions of Lorem Ipsum.
+                            <p class="text-justify">{{ auth()->user()->description }}
                             </p>
                         </div>
                         <!-- End of Description-->
@@ -127,6 +115,9 @@
                         <!-- Grid Section -->
                         <div class="rounded-sm p-3 shadow-sm">
                             <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+                                <div>
+                                    <a href="{{ route('gigs.create') }}">Create Gig</a>
+                                </div>
                                 <!-- CAROUSEL -->
                                 @for ($x = 0; $x < 6; $x++)
                                     <div class="container">
@@ -155,28 +146,31 @@
                                                     dummy
                                                     text of the
                                                     printing and typesetting industry.</p>
-                                                <div class="">
-                                                    <ul class="justify-left mb-0 flex items-center">
-                                                        <li>
-                                                            @for ($j = 0; $j < 5; $j++)
-                                                                <svg aria-hidden="true" focusable="false"
-                                                                    data-prefix="fas" data-icon="star"
-                                                                    class="w-4 text-yellow-300" role="img"
-                                                                    xmlns="http://www.w3.org/2000/svg"
-                                                                    viewBox="0 0 576 512">
-                                                                    <path fill="currentColor"
-                                                                        d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
-                                                                    </path>
-                                                                </svg>
-                                                        </li>
+                                                <div class="justify-left mb-0 flex items-center">
+                                                    @for ($j = 0; $j < 5; $j++)
+                                                        <span>
+                                                            <svg aria-hidden="true" focusable="false"
+                                                                data-prefix="fas" data-icon="star"
+                                                                class="w-4 text-yellow-300" role="img"
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                viewBox="0 0 576 512">
+                                                                <path fill="currentColor"
+                                                                    d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
+                                                                </path>
+                                                            </svg>
+                                                        </span>
+                                                    @endfor
+                                                    <span>(23)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 @endfor
-                                <span>(23)</span>
-                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-                @endfor
+
             </div>
             <!-- End of grid section -->
 

@@ -17,15 +17,15 @@
 
 </head>
 
-<body class="font-sans antialiased flex">
+<body class="flex font-sans antialiased">
     @include('layouts.side-nav')
 
-    <div class="w-full flex flex-col h-screen overflow-y-hidden">
+    <div class="flex min-h-screen w-full flex-col overflow-y-hidden">
 
         @include('layouts.navigation')
 
-        <div class="w-full overflow-x-hidden border-t flex flex-col">
-            <main class="w-full min-h-full p-6">
+        <div class="flex w-full flex-col overflow-x-hidden border-t">
+            <main class="min-h-full w-full p-6">
                 <header>
                     {{ $header }}
                 </header>
@@ -137,7 +137,7 @@
                 </div> --}}
             </main>
 
-            <footer class="text-right p-4 bg-blue-500 absolute bottom-0 right-0 left-0">
+            <footer class="absolute bottom-0 right-0 left-0 bg-blue-500 p-4 text-right">
                 <div class="text-white">
                     Copyright <i class="far fa-copyright"></i> Arzatech 2023
                 </div>

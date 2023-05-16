@@ -35,17 +35,16 @@
 </head>
 
 
-<body class="  overscroll-contain overflow-auto" style="font-family: Montserrat ">
+<body class="overflow-auto" style="font-family: Montserrat">
+    <div class="flex min-h-screen flex-col justify-between">
+        <div>
+            <header>@include('layouts.header')</header>
+            <main>{{ $slot }}</main>
+        </div>
 
-    <div class="min-h-screen flex flex-col justify-center ">
-        <header>@include('layouts.header')</header>
-        <main class="flex-grow">{{ $slot }}</main>
-        <footer class="">
-            @include('layouts.footer')
-        </footer>
 
+        @include('layouts.footer')
     </div>
-
 </body>
 <!-- Owl Carousel JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>

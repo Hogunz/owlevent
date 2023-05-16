@@ -28,9 +28,8 @@ class SupplierController extends Controller
 
     public function store(Request $request)
     {
+
         try {
-
-
             $validator = Validator::make($request->all(), [
                 'first_name' => ['required'],
                 'last_name' => ['required'],
@@ -63,12 +62,10 @@ class SupplierController extends Controller
 
             $validatedData = $validator->validated();
 
-            return response()->json($validatedData);
-
             $validatedData = $validator->safe()->except(['id_card', 'selfie_photo', 'occupations', 'skills']);
 
-            $validatedData['id_card'] = $request->file('id_card')->storeAs(Auth::id(), 'id_card' ,'public');
-            $validatedData['selfie_photo'] = $request->file('selfie_photo')->storeAs(Auth::id(), 'selfie' ,'public');
+            $validatedData['id_card'] = $request->file('id_card')->storeAs(Auth::id(), 'id_card.'.$request->file('id_card')->getClientOriginalExtension() ,'public');
+            $validatedData['selfie_photo'] = $request->file('selfie_photo')->storeAs(Auth::id(), 'selfie.'.$request->file('selfie_photo')->getClientOriginalExtension() ,'public');
 
             DB::beginTransaction();
 
@@ -86,4 +83,11 @@ class SupplierController extends Controller
             return response()->json($e->getMessage(), 422);
         }
     }
+
+    public function myProfile()
+    {
+        return view('suppliers.my-profile');
+    }
+
+
 }

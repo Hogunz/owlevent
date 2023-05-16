@@ -1,13 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\SkillController;
-use App\Http\Controllers\SupplierController;
-use App\Http\Controllers\OccupationController;
+use App\Http\Controllers\GigController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\SocialController;
+use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\SkillController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\OccupationController;
 use App\Http\Controllers\Admin\PermissionController;
 
 /*
@@ -41,9 +43,7 @@ Route::get('/sample', function () {
     return view('/sample');
 });
 
-Route::get('suppliers/service/create', function () {
-    return view('suppliers/service/create');
-});
+
 
 
 Route::get('/blog/create', function () {
@@ -78,6 +78,7 @@ Route::middleware(['auth'])->group(function () {
         Route::resource('users', UserController::class);
         Route::resource('occupations', OccupationController::class);
         Route::resource('skills', SkillController::class);
+        Route::resource('categories', CategoryController::class);
     });
 });
 
@@ -86,6 +87,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/become-a-supplier', [SupplierController::class, 'becomeSupplier']);
     Route::get('/registration', [SupplierController::class, 'create']);
     Route::post('/supplier/register', [SupplierController::class, 'store']);
+
+    Route::get('/my-profile', [SupplierController::class, 'myProfile'])->name('my-profile');
+    Route::get('suppliers/service/create', [GigController::class, 'create'])->name('gigs.create');
 });
 
 //Laravel Socialite

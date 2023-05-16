@@ -12,6 +12,170 @@
 
 namespace App\Models{
 /**
+ * App\Models\Blog
+ *
+ * @property int $id
+ * @property int $user_id
+ * @property string $name
+ * @property string $image
+ * @property string $description
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \App\Models\User|null $user
+ * @method static \Illuminate\Database\Eloquent\Builder|Blog newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Blog newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Blog query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Blog whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Blog whereDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Blog whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Blog whereImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Blog whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Blog whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Blog whereUserId($value)
+ */
+	class Blog extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * App\Models\Category
+ *
+ * @property int $id
+ * @property string $name
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|Category newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Category newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Category query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Category whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Category whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Category whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Category whereUpdatedAt($value)
+ */
+	class Category extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * App\Models\Faq
+ *
+ * @property int $id
+ * @property int $gig_id
+ * @property string $question
+ * @property string $answer
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|Faq newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Faq newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Faq query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Faq whereAnswer($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Faq whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Faq whereGigId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Faq whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Faq whereQuestion($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Faq whereUpdatedAt($value)
+ */
+	class Faq extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * App\Models\Gig
+ *
+ * @property int $id
+ * @property string $title
+ * @property int $category_id
+ * @property string $description
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Faq> $faqs
+ * @property-read int|null $faqs_count
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\GigPackage> $gigPackages
+ * @property-read int|null $gig_packages_count
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\GigPortfolio> $gigPortfolio
+ * @property-read int|null $gig_portfolio_count
+ * @method static \Illuminate\Database\Eloquent\Builder|Gig newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Gig newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Gig query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Gig whereCategoryId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Gig whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Gig whereDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Gig whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Gig whereTitle($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Gig whereUpdatedAt($value)
+ */
+	class Gig extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * App\Models\GigPackage
+ *
+ * @property int $id
+ * @property int $gig_id
+ * @property string $package
+ * @property float $price
+ * @property string $description
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|GigPackage newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|GigPackage newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|GigPackage query()
+ * @method static \Illuminate\Database\Eloquent\Builder|GigPackage whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|GigPackage whereDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|GigPackage whereGigId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|GigPackage whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|GigPackage wherePackage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|GigPackage wherePrice($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|GigPackage whereUpdatedAt($value)
+ */
+	class GigPackage extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * App\Models\GigPortfolio
+ *
+ * @property int $id
+ * @property int $gig_id
+ * @property string $url
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|GigPortfolio newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|GigPortfolio newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|GigPortfolio query()
+ * @method static \Illuminate\Database\Eloquent\Builder|GigPortfolio whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|GigPortfolio whereGigId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|GigPortfolio whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|GigPortfolio whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|GigPortfolio whereUrl($value)
+ */
+	class GigPortfolio extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * App\Models\GigVideo
+ *
+ * @property int $id
+ * @property int $gig_id
+ * @property string $url
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|GigVideo newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|GigVideo newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|GigVideo query()
+ * @method static \Illuminate\Database\Eloquent\Builder|GigVideo whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|GigVideo whereGigId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|GigVideo whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|GigVideo whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|GigVideo whereUrl($value)
+ */
+	class GigVideo extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
  * App\Models\Occupation
  *
  * @property int $id
@@ -71,6 +235,9 @@ namespace App\Models{
  * @property string|null $remember_token
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read mixed $full_name
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Gig> $gigs
+ * @property-read int|null $gigs_count
  * @property-read \Illuminate\Notifications\DatabaseNotificationCollection<int, \Illuminate\Notifications\DatabaseNotification> $notifications
  * @property-read int|null $notifications_count
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Occupation> $occupations

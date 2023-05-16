@@ -54,6 +54,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function getFullNameAttribute()
+    {
+        return "{$this->first_name} {$this->last_name}";
+    }
+
     public function occupations()
     {
         return $this->belongsToMany(Occupation::class)->withTimestamps();
@@ -62,5 +67,10 @@ class User extends Authenticatable
     public function skills()
     {
         return $this->belongsToMany(Skill::class)->withTimestamps();
+    }
+
+    public function gigs()
+    {
+        return $this->hasMany(Gig::class);
     }
 }

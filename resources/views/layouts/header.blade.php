@@ -55,12 +55,12 @@
                         class="block py-2 pl-3 pr-4 text-center hover:text-[#7895B2] hover:underline hover:underline-offset-8 transition duration-300 rounded md:bg-transparent md:p-0">Blog</a>
                 </li>
 
-                @if(!optional(auth()->user())->hasRole('Supplier'))
-                <li class="">
-                    <a href="/become-a-supplier"
-                        class="block py-2 pl-3 pr-4 text-center hover:text-[#7895B2] hover:underline hover:underline-offset-8 transition duration-300 rounded md:bg-transparent md:p-0">Become
-                        a Supplier</a>
-                </li>
+                @if (!optional(auth()->user())->hasRole('Supplier'))
+                    <li class="">
+                        <a href="/become-a-supplier"
+                            class="block py-2 pl-3 pr-4 text-center hover:text-[#7895B2] hover:underline hover:underline-offset-8 transition duration-300 rounded md:bg-transparent md:p-0">Become
+                            a Supplier</a>
+                    </li>
                 @endif
                 <li>
                     @if (!auth()->user())
@@ -91,16 +91,21 @@
                                 </x-slot>
 
                                 <x-slot name="content">
-                                    <!-- Authentication -->
-                                    <form method="POST" action="{{ route('logout') }}">
-                                        @csrf
+                                    <div>
+                                        <x-dropdown-link :href="route('my-profile')">My Profile</x-dropdown-link>
+                                    </div>
+                                    <div>
+                                        <!-- Authentication -->
+                                        <form method="POST" action="{{ route('logout') }}">
+                                            @csrf
+                                            <x-dropdown-link
+                                                onclick="event.preventDefault();
+                                                    this.closest('form').submit();">
+                                                {{ __('Log Out') }}
+                                            </x-dropdown-link>
+                                        </form>
+                                    </div>
 
-                                        <x-dropdown-link :href="route('logout')"
-                                            onclick="event.preventDefault();
-                                    this.closest('form').submit();">
-                                            {{ __('Log Out') }}
-                                        </x-dropdown-link>
-                                    </form>
                                 </x-slot>
                             </x-dropdown>
                         </div>
