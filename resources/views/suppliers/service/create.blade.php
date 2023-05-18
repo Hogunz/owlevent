@@ -1,13 +1,13 @@
 <x-guest-layout>
     <section>
-        <div class="container mx-auto bg-white mt-6" x-data="gig()">
+        <div class="container mx-auto mt-6 bg-white" x-data="gig()">
             <ol id="stepper"
-                class="flex items-center w-full text-sm font-medium text-center text-gray-500 dark:text-gray-400 sm:text-base">
+                class="flex w-full items-center text-center text-sm font-medium text-gray-500 dark:text-gray-400 sm:text-base">
                 <li id="step1"
-                    class="cursor-pointer pl-2 leading-[1.3rem] flex md:w-full items-center  text-[#7895B2] sm:after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-6 xl:after:mx-10 dark:after:border-gray-700 ">
+                    class="after:border-1 flex cursor-pointer items-center pl-2 leading-[1.3rem] text-[#7895B2] after:mx-6 after:hidden after:h-1 after:w-full after:border-b after:border-gray-200 dark:after:border-gray-700 sm:after:inline-block sm:after:content-[''] md:w-full xl:after:mx-10">
                     <span
-                        class="flex items-center after:content-['/'] sm:after:hidden after:mx-2 after:text-gray-200 dark:after:text-gray-500">
-                        <svg aria-hidden="true" class="w-4 h-4 mr-2 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 20 20"
+                        class="flex items-center after:mx-2 after:text-gray-200 after:content-['/'] dark:after:text-gray-500 sm:after:hidden">
+                        <svg aria-hidden="true" class="mr-2 h-4 w-4 sm:h-5 sm:w-5" fill="currentColor" viewBox="0 0 20 20"
                             xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
                                 d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
@@ -17,30 +17,30 @@
                     </span>
                 </li>
                 <li id="step2"
-                    class="cursor-pointer flex md:w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-6 xl:after:mx-10 dark:after:border-gray-700">
+                    class="after:border-1 flex cursor-pointer items-center after:mx-6 after:hidden after:h-1 after:w-full after:border-b after:border-gray-200 after:content-[''] dark:after:border-gray-700 sm:after:inline-block md:w-full xl:after:mx-10">
                     <span
-                        class="flex items-center after:content-['/'] sm:after:hidden after:mx-2 after:text-gray-200 dark:after:text-gray-500">
+                        class="flex items-center after:mx-2 after:text-gray-200 after:content-['/'] dark:after:text-gray-500 sm:after:hidden">
                         <span class="mr-2">2</span>
                         <span>Pricing </span>
                     </span>
                 </li>
                 <li id="step3"
-                    class="cursor-pointer flex md:w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-6 xl:after:mx-10 dark:after:border-gray-700">
+                    class="after:border-1 flex cursor-pointer items-center after:mx-6 after:hidden after:h-1 after:w-full after:border-b after:border-gray-200 after:content-[''] dark:after:border-gray-700 sm:after:inline-block md:w-full xl:after:mx-10">
                     <span
-                        class="flex items-center after:content-['/'] sm:after:hidden after:mx-2 after:text-gray-200 dark:after:text-gray-500">
+                        class="flex items-center after:mx-2 after:text-gray-200 after:content-['/'] dark:after:text-gray-500 sm:after:hidden">
                         <span class="mr-2">3</span>
-                        Frequently <span class="hidden sm:inline-flex sm:ml-2">Asked</span><span
-                            class="hidden sm:inline-flex sm:ml-2">Question</span>
+                        Frequently <span class="hidden sm:ml-2 sm:inline-flex">Asked</span><span
+                            class="hidden sm:ml-2 sm:inline-flex">Question</span>
                     </span>
                 </li>
-                <li id="step4" class="cursor-pointer flex items-center">
+                <li id="step4" class="flex cursor-pointer items-center">
                     <span class="mr-2">4</span>
                     Portfolio
                 </li>
 
             </ol>
 
-            <div id="content1" class=" w-full p-16 transition-all duration-500 ease-in-out">
+            <div id="content1" class="w-full p-16 transition-all duration-500 ease-in-out">
                 <!--1st content -->
                 <div>
                     <h1 class="pb-6 text-4xl font-bold">Overview
@@ -75,7 +75,7 @@
                     <div class="text-lg font-bold uppercase text-gray-600">Category
                     </div>
                     <div class="text-left">
-                        <select type="" id="default_standard"
+                        <select type="" id="default_standard" x-model.number="category_id"
                             class="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent py-2.5 px-0 text-sm text-black focus:border-gray-300 focus:outline-none focus:ring-0"
                             placeholder=" ">
                             <option value="" selected hidden>Type of Category</option>
@@ -100,7 +100,7 @@
             </div>
 
 
-            <div id="content2" class=" w-full p-16 transition-all duration-500 ease-in-out">
+            <div id="content2" class="w-full p-16 transition-all duration-500 ease-in-out">
                 <div>
                     <h1 class="pb-6 text-4xl font-bold">Pricing
                     </h1>
@@ -136,19 +136,19 @@
                                 <div class="grid grid-cols-2">
                                     <label for=""
                                         class="text-lg font-bold uppercase text-gray-600">Package</label>
-                                    <input type="text"
+                                    <input type="text" x-model="package.package"
                                         class="w-full appearance-none rounded border p-2 px-2 text-gray-800 outline-none">
                                 </div>
                                 <div class="grid grid-cols-2">
                                     <label for=""
                                         class="text-lg font-bold uppercase text-gray-600">Price</label>
-                                    <input type="text"
+                                    <input type="text" x-model.number="package.price"
                                         class="w-full appearance-none rounded border p-2 px-2 text-gray-800 outline-none">
                                 </div>
                                 <div class="grid grid-cols-2">
                                     <label for=""
                                         class="text-lg font-bold uppercase text-gray-600">Description</label>
-                                    <textarea
+                                    <textarea x-model="package.description"
                                         class="form-control focus:outline-non m-0 block h-64 w-full resize rounded border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-1.5 text-base font-normal text-gray-700 shadow-inner transition ease-in-out focus:border-gray-600 focus:bg-white focus:text-gray-700"
                                         id="exampleFormControlTextarea1"></textarea>
                                 </div>
@@ -198,12 +198,12 @@
                             <div class="grid grid-cols-2">
                                 <label for=""
                                     class="text-lg font-bold uppercase text-gray-600">Question</label>
-                                <input type="text"
+                                <input type="text" x-model="faq.question"
                                     class="w-full appearance-none rounded border p-2 px-2 text-gray-800 outline-none">
                             </div>
                             <div class="grid grid-cols-2">
                                 <label for="" class="text-lg font-bold uppercase text-gray-600">Answer</label>
-                                <textarea
+                                <textarea x-model="faq.answer"
                                     class="form-control focus:outline-non m-0 block h-20 w-full resize rounded border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-1.5 text-base font-normal text-gray-700 shadow-inner transition ease-in-out focus:border-gray-600 focus:bg-white focus:text-gray-700"
                                     id="exampleFormControlTextarea1"></textarea>
                             </div>
@@ -215,7 +215,7 @@
                 </div>
             </div>
 
-            <div id="content4" class=" w-full p-16 transition-all duration-500 ease-in-out">
+            <div id="content4" class="w-full p-16 transition-all duration-500 ease-in-out">
                 <h1 class="pb-6 text-4xl font-bold">Portfolio
                 </h1>
                 <p class="pb-8">Ensuring trust and safety is of utmost importance in our community. <br>
@@ -260,38 +260,6 @@
             </div>
         </div>
     </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     @push('head-script')
         <script>
             function readFileData(file) {
@@ -349,13 +317,16 @@
                     async addFile(event) {
 
                         const files = event.target.files
+
                         for (let i = 0; i < files.length; i++) {
+                            const file = files[i]
+
+                            const previewUrl = await readFileData(file)
                             this.files.push({
-                                file: files[i],
-                                previewUrl: await readFileData(files[i])
+                                file,
+                                previewUrl
                             })
                         }
-
                     },
                     removeFile(i) {
                         this.files.splice(i, 1)
@@ -368,10 +339,12 @@
                         forms.append('description', this.description)
                         forms.append('packages', JSON.stringify(this.packages))
                         forms.append('faqs', JSON.stringify(this.faqs))
-                        var files = this.files.map(file => {
-                            return file.file
-                        })
-                        forms.append('files', JSON.stringify(files))
+                        for (var i = 0; i < this.files.length; i++) {
+                            var file = this.files[i].file; // Assuming `file` property holds the actual File object
+                            forms.append('uploads[]', file);
+                        }
+
+                        // forms.append('uploads', JSON.stringify(this.files))
 
                         const url = "{{ route('gigs.store') }}"
                         axios.post(url, forms, {
@@ -380,8 +353,9 @@
                             }
                         }).then(response => {
                             console.log(response)
+                            location.href = "/my-profile";
                         }).catch(error => {
-                            console.log(error)
+                            console.log(error.response)
                         })
                     }
                 }

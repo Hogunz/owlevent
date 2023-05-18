@@ -94,6 +94,7 @@ namespace App\Models{
  * @property-read int|null $gig_packages_count
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\GigUpload> $gigUploads
  * @property-read int|null $gig_uploads_count
+ * @property-read \App\Models\User|null $user
  * @method static \Illuminate\Database\Eloquent\Builder|Gig newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Gig newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Gig query()
@@ -136,9 +137,21 @@ namespace App\Models{
 /**
  * App\Models\GigUpload
  *
+ * @property int $id
+ * @property int $gig_id
+ * @property string $url
+ * @property string $type
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder|GigUpload newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|GigUpload newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|GigUpload query()
+ * @method static \Illuminate\Database\Eloquent\Builder|GigUpload whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|GigUpload whereGigId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|GigUpload whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|GigUpload whereType($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|GigUpload whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|GigUpload whereUrl($value)
  */
 	class GigUpload extends \Eloquent {}
 }
