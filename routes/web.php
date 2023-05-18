@@ -96,4 +96,8 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/auth/{driver}', [SocialController::class, 'socialiteRedirect']);
 Route::get('/auth/{driver}/callback', [SocialController::class, 'loginWithSocialite']);
 
+Route::get('/test', function () {
+    return view('test');
+});
+
 require __DIR__ . '/auth.php';
