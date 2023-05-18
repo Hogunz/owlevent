@@ -15,6 +15,7 @@ class CreateGigUploadsTable extends Migration
     {
         Schema::create('gig_uploads', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('gig_id')->constrained()->cascadeOnDelete();
             $table->string('url');
             $table->string('type');
             $table->timestamps();

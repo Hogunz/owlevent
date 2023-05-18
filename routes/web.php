@@ -89,8 +89,8 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/supplier/register', [SupplierController::class, 'store']);
 
     Route::get('/my-profile', [SupplierController::class, 'myProfile'])->name('my-profile');
-    Route::get('suppliers/service/create', [GigController::class, 'create'])->name('gigs.create');
-    Route::resource('gigs', GigController::class)->except('create');
+    Route::get('/gig/{gig}', [SupplierController::class, 'showGig'])->name('show.gig');
+    Route::resource('gigs', GigController::class);
 });
 
 //Laravel Socialite

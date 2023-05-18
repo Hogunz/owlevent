@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use Exception;
+use Validator;
+use App\Models\Gig;
 use App\Models\User;
 use App\Models\Skill;
 use App\Models\Occupation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
-use Validator;
 
 class SupplierController extends Controller
 {
@@ -86,8 +87,13 @@ class SupplierController extends Controller
 
     public function myProfile()
     {
-        return view('suppliers.my-profile');
+        $gigs = Gig::all();
+        return view('suppliers.my-profile', compact('gigs'));
     }
 
+    public function showGig(Gig $gig)
+    {
+        return view('suppliers.service-profile', compact('gig'));
+    }
 
 }

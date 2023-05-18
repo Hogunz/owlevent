@@ -115,18 +115,16 @@
                         <!-- Grid Section -->
                         <div class="rounded-sm p-3 shadow-sm">
                             <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
-                                <div>
-                                    <a href="{{ route('gigs.create') }}">Create Gig</a>
-                                </div>
+
                                 <!-- CAROUSEL -->
-                                @for ($x = 0; $x < 6; $x++)
+                                @foreach ($gigs as $gig)
                                     <div class="container">
                                         <div class="inset-x-0 top-14 max-h-full">
                                             <div id="owl-carousel" class="owl-carousel owl-theme">
                                                 <div class="">
-                                                    <a href="/service-profile" class="href">
-                                                        <img src="https://images.unsplash.com/photo-1539074012390-794e447a2d9e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                                                            class="" alt="...">
+                                                    <a href="{{ route('gigs.show', $gig) }}" class="href">
+                                                        <img src="{{ asset('storage/' . $gig->gigUploads->where('type', 'image')->first()->url) }}"
+                                                            class="h-52 w-full object-cover" alt="...">
                                                     </a>
                                                 </div>
                                             </div>
@@ -137,15 +135,13 @@
                                                             src="https://images.unsplash.com/photo-1555952517-2e8e729e0b44?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHBlcnNvbnxlbnwwfDF8MHx8&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60"
                                                             alt="">
                                                     </div>
-                                                    <div class="cursor-pointer text-sm font-bold hover:underline">
-                                                        <a href="/itsMeCJ" class="href">ItsMeCJ</a>
+                                                    <div
+                                                        class="cursor-pointer text-sm font-bold uppercase hover:underline">
+                                                        <a href="/itsMeCJ" class="href">{{ $gig->title }}</a>
                                                     </div>
                                                 </div>
-                                                <p class="mb-3 text-justify font-normal text-gray-700">Lorem Ipsum is
-                                                    simply
-                                                    dummy
-                                                    text of the
-                                                    printing and typesetting industry.</p>
+                                                <p class="line-clamp-3 mb-3 text-justify font-normal text-gray-700">
+                                                    {{ $gig->description }}</p>
                                                 <div class="justify-left mb-0 flex items-center">
                                                     @for ($j = 0; $j < 5; $j++)
                                                         <span>
@@ -165,7 +161,13 @@
                                             </div>
                                         </div>
                                     </div>
-                                @endfor
+                                @endforeach
+                                <a href="{{ route('gigs.create') }}">
+                                    <div
+                                        class="flex h-52 w-full items-center justify-center rounded border-2 border-dashed p-6 text-xl font-bold uppercase tracking-wide text-gray-500">
+                                        Create Gig
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     </div>

@@ -29,4 +29,9 @@ class Gig extends Model
     {
         return $this->hasMany(GigUpload::class);
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

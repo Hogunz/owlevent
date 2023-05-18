@@ -75,7 +75,7 @@
                     <div class="text-lg font-bold uppercase text-gray-600">Category
                     </div>
                     <div class="text-left">
-                        <select type="" id="default_standard"
+                        <select type="" id="default_standard" x-model.number="category_id"
                             class="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent py-2.5 px-0 text-sm text-black focus:border-gray-300 focus:outline-none focus:ring-0"
                             placeholder=" ">
                             <option value="" selected hidden>Type of Category</option>
@@ -136,19 +136,19 @@
                                 <div class="grid grid-cols-2">
                                     <label for=""
                                         class="text-lg font-bold uppercase text-gray-600">Package</label>
-                                    <input type="text"
+                                    <input type="text" x-model="package.package"
                                         class="w-full appearance-none rounded border p-2 px-2 text-gray-800 outline-none">
                                 </div>
                                 <div class="grid grid-cols-2">
                                     <label for=""
                                         class="text-lg font-bold uppercase text-gray-600">Price</label>
-                                    <input type="text"
+                                    <input type="text" x-model.number="package.price"
                                         class="w-full appearance-none rounded border p-2 px-2 text-gray-800 outline-none">
                                 </div>
                                 <div class="grid grid-cols-2">
                                     <label for=""
                                         class="text-lg font-bold uppercase text-gray-600">Description</label>
-                                    <textarea
+                                    <textarea x-model="package.description"
                                         class="form-control focus:outline-non m-0 block h-64 w-full resize rounded border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-1.5 text-base font-normal text-gray-700 shadow-inner transition ease-in-out focus:border-gray-600 focus:bg-white focus:text-gray-700"
                                         id="exampleFormControlTextarea1"></textarea>
                                 </div>
@@ -198,12 +198,12 @@
                             <div class="grid grid-cols-2">
                                 <label for=""
                                     class="text-lg font-bold uppercase text-gray-600">Question</label>
-                                <input type="text"
+                                <input type="text" x-model="faq.question"
                                     class="w-full appearance-none rounded border p-2 px-2 text-gray-800 outline-none">
                             </div>
                             <div class="grid grid-cols-2">
                                 <label for="" class="text-lg font-bold uppercase text-gray-600">Answer</label>
-                                <textarea
+                                <textarea x-model="faq.answer"
                                     class="form-control focus:outline-non m-0 block h-20 w-full resize rounded border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-1.5 text-base font-normal text-gray-700 shadow-inner transition ease-in-out focus:border-gray-600 focus:bg-white focus:text-gray-700"
                                     id="exampleFormControlTextarea1"></textarea>
                             </div>
@@ -317,13 +317,16 @@
                     async addFile(event) {
 
                         const files = event.target.files
+
                         for (let i = 0; i < files.length; i++) {
+                            const file = files[i]
+
+                            const previewUrl = await readFileData(file)
                             this.files.push({
-                                file: files[i],
-                                previewUrl: await readFileData(files[i])
+                                file,
+                                previewUrl
                             })
                         }
-
                     },
                     removeFile(i) {
                         this.files.splice(i, 1)
@@ -336,10 +339,12 @@
                         forms.append('description', this.description)
                         forms.append('packages', JSON.stringify(this.packages))
                         forms.append('faqs', JSON.stringify(this.faqs))
-                        var files = this.files.map(file => {
-                            return file.file
-                        })
-                        forms.append('files', JSON.stringify(files))
+                        for (var i = 0; i < this.files.length; i++) {
+                            var file = this.files[i].file; // Assuming `file` property holds the actual File object
+                            forms.append('uploads[]', file);
+                        }
+
+                        // forms.append('uploads', JSON.stringify(this.files))
 
                         const url = "{{ route('gigs.store') }}"
                         axios.post(url, forms, {
@@ -348,8 +353,9 @@
                             }
                         }).then(response => {
                             console.log(response)
+                            location.href = "/my-profile";
                         }).catch(error => {
-                            console.log(error)
+                            console.log(error.response)
                         })
                     }
                 }

@@ -4,8 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Gig;
+use Auth;
+use DB;
 use Exception;
+use GuzzleHttp\Psr7\UploadedFile;
 use Illuminate\Http\Request;
+use Storage;
+use Str;
 
 class GigController extends Controller
 {
@@ -39,10 +44,76 @@ class GigController extends Controller
      */
     public function store(Request $request)
     {
-        return response()->json($request->all());
-        try {
+        // return response()->json($request->all());
 
-        }catch (Exception $e) {
+        try {
+            $request->validate([
+                'title' => ['required'],
+                'category_id' => ['required'],
+                'description' => ['required'],
+                'packages' => ['required'],
+                'faqs' => ['required'],
+                'uploads' => ['required'],
+            ]);
+
+            $faqs = json_decode($request->faqs);
+            $packages = json_decode($request->packages);
+            // $files = json_decode($request->uploads);
+
+
+            $faqData = array_map(function ($faq) {
+                return [
+                    'question' => $faq->question,
+                    'answer' => $faq->answer,
+                ];
+            }, $faqs);
+
+            $packageData = array_map(function ($package) {
+                return [
+                    'package' => $package->package,
+                    'price' => $package->price,
+                    'description' => $package->description,
+                ];
+            }, $packages);
+
+            // return response()->json(['faqu' => $shits]);
+            DB::beginTransaction();
+
+            $gig = Auth::user()->gigs()->create([
+                'title' => $request->title,
+                'category_id' => $request->category_id,
+                'description' => $request->description,
+            ]);
+
+            $gig->faqs()->createMany($faqData);
+            $gig->gigPackages()->createMany($packageData);
+
+            $paths = [];
+            foreach ($request->file('uploads') as $file) {
+                $mimeType = $file->getMimeType();
+
+                if (str_starts_with($mimeType, 'image/')) {
+                    $type = 'image';
+                } else if (str_starts_with($mimeType, 'video/')) {
+                    $type = 'video';
+                } else {
+                    return response()->json('Error', 422);
+                }
+                $paths[] = [
+                    'url' => $file->store(Auth::id() . "/gig/{$gig->id}", 'public'),
+                    'type' => $type
+                ];
+            }
+
+            // return response()->json($paths);
+
+            $gig->gigUploads()->createMany($paths);
+
+            DB::commit();
+            return response()->json('Successfully created Gig!');
+        } catch (Exception $e) {
+            DB::rollBack();
+
             return response()->json([
                 'message' => $e->getMessage(),
             ], 422);
@@ -57,7 +128,7 @@ class GigController extends Controller
      */
     public function show(Gig $gig)
     {
-        //
+        return view('suppliers.service.show', compact('gig'));
     }
 
     /**
