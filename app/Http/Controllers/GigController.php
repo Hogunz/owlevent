@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Gig;
+use Exception;
 use Illuminate\Http\Request;
 
 class GigController extends Controller
@@ -38,7 +39,14 @@ class GigController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return response()->json($request->all());
+        try {
+
+        }catch (Exception $e) {
+            return response()->json([
+                'message' => $e->getMessage(),
+            ], 422);
+        }
     }
 
     /**
