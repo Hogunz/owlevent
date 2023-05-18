@@ -717,10 +717,11 @@
                                     </button>
                                 </div>
                                 <div x-show="upload.file.type.startsWith('image/')">
-                                    <img :src="upload.previewUrl" alt="Uploaded Image">
+                                    <img :src="upload.previewUrl" alt="Uploaded Image"
+                                        class="h-60 w-full object-cover">
                                 </div>
                                 <div x-show="upload.file.type.startsWith('video/')">
-                                    <video :src="upload.previewUrl" controls></video>
+                                    <video :src="upload.previewUrl" controls class="h-60 w-full object-cover"></video>
                                 </div>
                             </div>
                         </template>
