@@ -261,46 +261,88 @@
     </div>
 </x-guest-layout>
 
-<script>
-    function gig() {
-        return {
-            title: "",
-            titleLimit: 100,
-            category_id: "",
-            packages: [{
-                package: '',
-                price: '',
-                description: '',
-            }],
-            description: "",
-            descriptionLimit: 500,
-            faqs: [{
-                question: '',
-                answer: '',
-            }],
-            portfolios: [],
-            checkLimit() {
-                return this.title > this.titleLimit
-            },
-            addPackage() {
-                this.packages.push({
+@push('script')
+    <script>
+        function gig() {
+            return {
+                title: "",
+                titleLimit: 100,
+                category_id: "",
+                packages: [{
                     package: '',
                     price: '',
                     description: '',
-                })
-            },
-            removePackage(i) {
-                this.packages.splice(i, 1)
-            },
-            addFaq() {
-                this.faqs.push({
+                }],
+                description: "",
+                descriptionLimit: 500,
+                faqs: [{
                     question: '',
                     answer: '',
-                })
-            },
-            removeFaq(i) {
-                this.faqs.splice(i, 1)
-            },
+                }],
+                files: [],
+                checkLimit() {
+                    return this.title > this.titleLimit
+                },
+                addPackage() {
+                    this.packages.push({
+                        package: '',
+                        price: '',
+                        description: '',
+                    })
+                },
+                removePackage(i) {
+                    this.packages.splice(i, 1)
+                },
+                addFaq() {
+                    this.faqs.push({
+                        question: '',
+                        answer: '',
+                    })
+                },
+                removeFaq(i) {
+                    this.faqs.splice(i, 1)
+                },
+                async addFile(event) {
+
+                    const files = event.target.files
+                    for (let i = 0; i < files.length; i++) {
+                        this.files.push({
+                            file: files[i],
+                            previewUrl: await readFileData(files[i])
+                        })
+                    }
+
+                },
+                removeFile(i) {
+                    this.files.splice(i, 1)
+                },
+                submit() {
+                    const forms = new FormData()
+
+                    forms.append('title', this.title)
+                    forms.append('category_id', this.category_id)
+                    forms.append('description', this.description)
+                    forms.append('packages', JSON.stringify(this.packages))
+                    forms.append('faqs', JSON.stringify(this.faqs))
+                    var files = this.files.map(file => {
+                        return file.file
+                    })
+                    forms.append('files', JSON.stringify(files))
+
+                    const url = "{{ route('gigs.store') }}"
+                    axios.post(url, forms, {
+                        headers: {
+                            'Content-Type': 'multipart/form-data'
+                        }
+                    }).then(response => {
+                        console.log(response)
+                    }).catch(error => {
+                        console.log(error)
+                    })
+                }
+            }
         }
-    }
-</script>
+    </script>
+@endpush
+
+</x-guest-layout>
