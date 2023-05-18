@@ -360,7 +360,6 @@
                         var files = this.files.map(file => {
                             return file.file
                         })
-                        console.log(files)
                         forms.append('files', JSON.stringify(files))
 
                         const url = "{{ route('gigs.store') }}"
