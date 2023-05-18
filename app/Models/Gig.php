@@ -25,13 +25,8 @@ class Gig extends Model
         return $this->hasMany(GigPackage::class);
     }
 
-    public function gigPortfolio()
+    public function gigUploads()
     {
-        return $this->hasMany(GigPortfolio::class);
-    }
-
-    public function gigVideos()
-    {
-        return $this->hasMany(GigVideos::class);
+        return $this->hasMany(GigUpload::class);
     }
 }

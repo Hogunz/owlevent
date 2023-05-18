@@ -92,8 +92,8 @@ namespace App\Models{
  * @property-read int|null $faqs_count
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\GigPackage> $gigPackages
  * @property-read int|null $gig_packages_count
- * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\GigPortfolio> $gigPortfolio
- * @property-read int|null $gig_portfolio_count
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\GigUpload> $gigUploads
+ * @property-read int|null $gig_uploads_count
  * @method static \Illuminate\Database\Eloquent\Builder|Gig newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Gig newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Gig query()
@@ -134,44 +134,13 @@ namespace App\Models{
 
 namespace App\Models{
 /**
- * App\Models\GigPortfolio
+ * App\Models\GigUpload
  *
- * @property int $id
- * @property int $gig_id
- * @property string $url
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
- * @method static \Illuminate\Database\Eloquent\Builder|GigPortfolio newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|GigPortfolio newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|GigPortfolio query()
- * @method static \Illuminate\Database\Eloquent\Builder|GigPortfolio whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|GigPortfolio whereGigId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|GigPortfolio whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|GigPortfolio whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|GigPortfolio whereUrl($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|GigUpload newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|GigUpload newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|GigUpload query()
  */
-	class GigPortfolio extends \Eloquent {}
-}
-
-namespace App\Models{
-/**
- * App\Models\GigVideo
- *
- * @property int $id
- * @property int $gig_id
- * @property string $url
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
- * @method static \Illuminate\Database\Eloquent\Builder|GigVideo newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|GigVideo newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|GigVideo query()
- * @method static \Illuminate\Database\Eloquent\Builder|GigVideo whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|GigVideo whereGigId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|GigVideo whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|GigVideo whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|GigVideo whereUrl($value)
- */
-	class GigVideo extends \Eloquent {}
+	class GigUpload extends \Eloquent {}
 }
 
 namespace App\Models{
