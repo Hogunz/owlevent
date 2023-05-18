@@ -90,6 +90,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/my-profile', [SupplierController::class, 'myProfile'])->name('my-profile');
     Route::get('suppliers/service/create', [GigController::class, 'create'])->name('gigs.create');
+    Route::resource('gigs', GigController::class)->except('create');
 });
 
 //Laravel Socialite

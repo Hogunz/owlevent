@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <div class="container mx-auto bg-white" x-data="gig()">
+    <div class="container mx-auto bg-white" x-data="gig">
         <ul data-te-stepper-init
             class="relative m-0 flex min-h-full list-none justify-between overflow-hidden p-0 transition-[height] duration-200 ease-in-out">
             <li data-te-stepper-step-ref data-te-stepper-step-active class="w-[4.5rem] flex-auto">
@@ -271,76 +271,112 @@
                             Add Upload
                         </button>
                     </div>
+
+                    <div class="mt-6 flex justify-end">
+                        <x-button class="" @click="submit()">Continue</x-button>
+                    </div>
                 </div>
             </li>
         </ul>
 
     </div>
-</x-guest-layout>
 
-<script>
-    function readFileData(file) {
-        return new Promise((resolve, reject) => {
-            const reader = new FileReader();
-            reader.onload = () => resolve(reader.result);
-            reader.onerror = reject;
-            reader.readAsDataURL(file);
-        });
-    }
-
-    function gig() {
-        return {
-            title: "",
-            titleLimit: 100,
-            category_id: "",
-            packages: [{
-                package: '',
-                price: '',
-                description: '',
-            }],
-            description: "",
-            descriptionLimit: 500,
-            faqs: [{
-                question: '',
-                answer: '',
-            }],
-            files: [],
-            checkLimit() {
-                return this.title > this.titleLimit
-            },
-            addPackage() {
-                this.packages.push({
-                    package: '',
-                    price: '',
-                    description: '',
-                })
-            },
-            removePackage(i) {
-                this.packages.splice(i, 1)
-            },
-            addFaq() {
-                this.faqs.push({
-                    question: '',
-                    answer: '',
-                })
-            },
-            removeFaq(i) {
-                this.faqs.splice(i, 1)
-            },
-            async addFile(event) {
-
-                const files = event.target.files
-                for (let i = 0; i < files.length; i++) {
-                    this.files.push({
-                        file: files[i],
-                        previewUrl: await readFileData(files[i])
-                    })
-                }
-
-            },
-            removeFile(i) {
-                this.files.splice(i, 1)
+    @push('head-script')
+        <script>
+            function readFileData(file) {
+                return new Promise((resolve, reject) => {
+                    const reader = new FileReader();
+                    reader.onload = () => resolve(reader.result);
+                    reader.onerror = reject;
+                    reader.readAsDataURL(file);
+                });
             }
-        }
-    }
-</script>
+        </script>
+    @endpush
+
+    @push('script')
+        <script>
+            function gig() {
+                return {
+                    title: "",
+                    titleLimit: 100,
+                    category_id: "",
+                    packages: [{
+                        package: '',
+                        price: '',
+                        description: '',
+                    }],
+                    description: "",
+                    descriptionLimit: 500,
+                    faqs: [{
+                        question: '',
+                        answer: '',
+                    }],
+                    files: [],
+                    checkLimit() {
+                        return this.title > this.titleLimit
+                    },
+                    addPackage() {
+                        this.packages.push({
+                            package: '',
+                            price: '',
+                            description: '',
+                        })
+                    },
+                    removePackage(i) {
+                        this.packages.splice(i, 1)
+                    },
+                    addFaq() {
+                        this.faqs.push({
+                            question: '',
+                            answer: '',
+                        })
+                    },
+                    removeFaq(i) {
+                        this.faqs.splice(i, 1)
+                    },
+                    async addFile(event) {
+
+                        const files = event.target.files
+                        for (let i = 0; i < files.length; i++) {
+                            this.files.push({
+                                file: files[i],
+                                previewUrl: await readFileData(files[i])
+                            })
+                        }
+
+                    },
+                    removeFile(i) {
+                        this.files.splice(i, 1)
+                    },
+                    submit() {
+                        const forms = new FormData()
+
+                        forms.append('title', this.title)
+                        forms.append('category_id', this.category_id)
+                        forms.append('description', this.description)
+                        forms.append('packages', JSON.stringify(this.packages))
+                        forms.append('faqs', JSON.stringify(this.faqs))
+                        var files = this.files.map(file => {
+                            return file.file
+                        })
+                        console.log(files)
+                        forms.append('files', JSON.stringify(files))
+
+                        const url = "{{ route('gigs.store') }}"
+                        axios.post(url, forms, {
+                            headers: {
+                                'Content-Type': 'multipart/form-data'
+                            }
+                        }).then(response => {
+                            console.log(response)
+                        }).catch(error => {
+                            console.log(error)
+                        })
+                    }
+                }
+            }
+        </script>
+    @endpush
+
+</x-guest-layout>
