@@ -1,9 +1,6 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
-    "/node_modules/tinymce/icons/default/icons.js": "/node_modules/tinymce/icons/default/icons.js",
-    "/node_modules/tinymce/icons/default/icons.min.js": "/node_modules/tinymce/icons/default/icons.min.js",
-    "/node_modules/tinymce/icons/default/index.js": "/node_modules/tinymce/icons/default/index.js",
     "/node_modules/tinymce/models/dom/index.js": "/node_modules/tinymce/models/dom/index.js",
     "/node_modules/tinymce/models/dom/model.js": "/node_modules/tinymce/models/dom/model.js",
     "/node_modules/tinymce/models/dom/model.min.js": "/node_modules/tinymce/models/dom/model.min.js",
