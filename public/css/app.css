@@ -1369,6 +1369,9 @@ input:checked + .toggle-bg {
 .-ml-px {
   margin-left: -1px;
 }
+.-mr-1 {
+  margin-right: -0.25rem;
+}
 .-mr-2 {
   margin-right: -0.5rem;
 }
@@ -1731,6 +1734,9 @@ input:checked + .toggle-bg {
 }
 .w-20 {
   width: 5rem;
+}
+.w-24 {
+  width: 6rem;
 }
 .w-3 {
   width: 0.75rem;
@@ -5491,14 +5497,14 @@ input:checked + .toggle-bg {
     line-height: 1.75rem;
   }
 
-  .sm\:text-xl {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-  }
-
   .sm\:text-sm {
     font-size: 0.875rem;
     line-height: 1.25rem;
+  }
+
+  .sm\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 
   .sm\:after\:inline-block::after {
@@ -6017,6 +6023,10 @@ input:checked + .toggle-bg {
 
   .xl\:grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .xl\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .xl\:gap-0 {
