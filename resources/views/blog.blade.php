@@ -106,7 +106,7 @@
                                 @foreach ($blogs->shuffle()->take(5) as $blog)
                                     <li class="pt-2">
                                         <a class="flex items-start border rounded-lg border-[#AEBDCA] drop-shadow-2xl p-2"
-                                            href="/blog/show">
+                                            href="{{ route('blogs.show', $blog->id) }}">
                                             <div class="mr-3 shrink-0"><img class="object-cover h-24 w-full "
                                                     src="{{ asset('storage/' . $blog->image) }}" alt=""></div>
 
@@ -118,7 +118,7 @@
                                                 <div class="mr-3 "><span class="text-sm ">{{ $blog->name }}</span>
                                                 </div>
                                                 <div
-                                                    class="mr-3 inline-flex items-center justify-center  text-sm font-light text-center text-[#7895B2] hover:underline hover:underline-offset-2 hover:text-[#F69679]">
+                                                    class="-mr-1 inline-flex items-center justify-center  text-sm font-light text-center text-[#7895B2] hover:underline hover:underline-offset-2 hover:text-[#F69679]">
                                                     Read More
                                                     <svg class="w-3 h-3 ml-2 " fill="currentColor" viewBox="0 0 20 20"
                                                         xmlns="http://www.w3.org/2000/svg">

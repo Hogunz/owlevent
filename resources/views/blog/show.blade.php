@@ -39,8 +39,8 @@
                             <h1
                                 class="max-w-2xl mb-4  font-extrabold tracking-tight leading-none text-lg md:text-xl xl:text-4xl ">
                                 {{ $blog->name }}</h1>
-                            <p class="text-xs p-2">By:<span class="underline text-black">Christopher James Dela
-                                    Cruz</span> {{ $blog->created_at }}</p>
+                            <p class="text-xs p-2">By:<span class="underline text-black">{{ Auth::user()->name }}</span>
+                                {{ $blog->created_at }}</p>
                             <div
                                 class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-1  gap-4 mb-6">
                                 <div class="">
