@@ -20,7 +20,7 @@
                                 </a>
                             </li>
                             <a class="text-white block text-center bg-[#7895B2] hover:bg-[#7895B2]/75 focus:ring-4 focus:ring-[#7895B2]/50 font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none w-full"
-                                href=" /blog/create">Post</a>
+                                href="{{ route('blogs.create') }}">Post</a>
                         </ul>
                     </div>
                 </div>
@@ -65,10 +65,10 @@
                         class="p-6 pb-4 mt-6 mb-6 font-medium text-gray-500 bg-gradient-to-r from-[#F5EFE6] to-[#E8DFCA] border border-gray-200 rounded-lg  ">
                         <h4 class="mb-4 font-bold text-gray-900 uppercase">Recommended topics</h4>
                         <div class="flex flex-wrap">
-                            @for ($i = 0; $i < 5; $i++)
+                            @foreach ($categories as $category)
                                 <a class="bg-[#7895B2] hover:bg-[#7895B2]/75 text-white text-sm font-medium mr-2 px-2.5 py-0.5 rounded mb-2"
-                                    href="">Caterer</a>
-                            @endfor
+                                    href="">{{ $category->name }}</a>
+                            @endforeach
                         </div>
 
                     </div>

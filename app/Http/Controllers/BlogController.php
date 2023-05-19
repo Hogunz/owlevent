@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Gig;
 use App\Models\Blog;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,14 +17,17 @@ class BlogController extends Controller
      */
     public function index()
     {
+        $categories = Category::all();
         $blogs = Blog::orderBy('created_at', 'desc')->get();
-        return view('blog.index', compact('blogs'));
+        return view('blog.index', compact('blogs', 'categories'));
     }
 
     public function blog()
     {
+
+        $categories = Category::all();
         $blogs = Blog::orderBy('created_at', 'desc')->get();
-        return view('blog', compact('blogs'));
+        return view('blog', compact('blogs', 'categories'));
     }
 
     /**
@@ -32,7 +37,9 @@ class BlogController extends Controller
      */
     public function create()
     {
-        return view('blog.create');
+
+        $categories = Category::all();
+        return view('blog.create', compact('categories'));
     }
 
     /**
@@ -45,6 +52,7 @@ class BlogController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
+            'category_id' => 'required|max:255',
             'image' => 'required|image',
             'description' => 'required',
         ]);
@@ -55,7 +63,7 @@ class BlogController extends Controller
         $blog->name = $request->input('name');
         $blog->image = $imageName;
         $blog->description = $request->input('description');
-
+        $blog->category_id = $request->category_id;
         $blog->user_id = Auth::id();
         $blog->save();
 
@@ -71,14 +79,16 @@ class BlogController extends Controller
     public function show(Blog $blog)
     {
 
-        return view('blog.show', compact('blog'));
+        $categories = Category::all();
+        return view('blog.show', compact('blog', 'categories'));
     }
 
 
     public function showM()
     {
+        $categories = Category::all();
         $blogs = Blog::all();
-        return view('blog.show-more', compact('blogs'));
+        return view('blog.show-more', compact('blogs', 'categories'));
     }
 
 
@@ -108,7 +118,7 @@ class BlogController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-
+            'category_id' => 'required|max:255',
             'description' => 'nullable',
         ]);
 
@@ -118,6 +128,7 @@ class BlogController extends Controller
         }
 
         $blog->name = $request->name;
+        $blog->category_id = $request->category_id;
         $blog->description = $request->input('description');
         $blog->save();
 

@@ -45,12 +45,6 @@ Route::get('/sample', function () {
 
 
 
-
-Route::get('/blog/create', function () {
-    return view('/blog/create');
-});
-
-
 Route::get('/service-profile', function () {
     return view('/suppliers/service-profile');
 });
@@ -61,10 +55,12 @@ Route::get('/supplier-profile', function () {
 //For Admin User
 Route::get('/blog', [BlogController::class, 'blog'])->name('blog');
 Route::get('/blog/show-more', [BlogController::class, 'showM'])->name('blogs.showM');
-Route::resource('blogs', BlogController::class);
+
 
 
 Route::middleware(['auth'])->group(function () {
+
+    Route::resource('blogs', BlogController::class);
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');

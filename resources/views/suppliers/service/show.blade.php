@@ -36,11 +36,14 @@
                     class="fixed top-0 left-0 right-0 z-50 hidden h-[calc(100%-1rem)] w-full overflow-y-auto overflow-x-hidden p-4 md:inset-0 md:h-full">
                     <div class="relative h-full w-full max-w-7xl md:h-auto">
                         <!-- Modal content -->
-                        <div class="relative rounded-lg bg-white shadow">
-                            <div class="relative">
-                                <img src="https://images.unsplash.com/photo-1539074012390-794e447a2d9e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                                    class="relative rounded-lg transition duration-300 ease-in-out" alt="...">
-                            </div>
+                        <div id="owl-carousel2"
+                            class="owl-carousel owl-theme relative rounded-lg bg-transparent shadow">
+                            @foreach ($gig->gigUploads as $upload)
+                                <div class="relative">
+                                    <img src="{{ asset('storage/' . $upload->url) }}"
+                                        class="relative rounded-lg transition duration-300 ease-in-out" alt="...">
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -83,46 +86,52 @@
 
                     </p>
                 </div>
+
+
+
+
+
                 <div class="p-8">
                     <h1 class="text-left text-xl font-semibold leading-7 text-gray-800 lg:text-2xl lg:leading-9">
                         FAQ's</h1>
-                    <div class="">
-                        @foreach ($gig->faqs as $faq)
-                            <!-- Question 1 -->
-                            <hr class="my-8 w-full md:mt-12 md:mb-8 lg:mt-10" />
 
+
+                    <div class=" w-full mx-auto">
+                        <!-- Question 1 -->
+                        <hr class="my-8 w-full md:mt-12 md:mb-8 lg:mt-10" />
+                        @foreach ($gig->faqs as $faq)
                             <div class="w-full md:px-6">
-                                <div id="mainHeading" class="flex w-full items-center justify-between">
-                                    <div>
+                                <div id="mainHeading" class="flex justify-between items-center w-full">
+                                    <div class="">
                                         <p
-                                            class="items-center justify-center text-base font-medium leading-6 text-gray-800 md:leading-4">
+                                            class="flex justify-center items-center dark:text-white font-medium text-base leading-6 md:leading-4 text-gray-800">
                                             <span
-                                                class="mr-4 text-lg font-semibold leading-6 text-gray-800 md:text-xl md:leading-5 lg:mr-6 lg:text-2xl lg:leading-4">Q{{ $loop->iteration }}.</span>
+                                                class="lg:mr-6 mr-4 dark:text-white lg:text-2xl md:text-xl text-lg leading-6 md:leading-5 lg:leading-4 font-semibold text-gray-800">Q{{ $loop->iteration }}.</span>
                                             {{ $faq->question }}
                                         </p>
-
-                                        <button aria-label="toggler"
-                                            class="focus:outline-none focus:ring-2 focus:ring-gray-800 focus:ring-offset-2"
-                                            data-menu>
-                                            <img class="transform"
-                                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg"
-                                                alt="toggler">
-                                            <img class="hidden transform"
-                                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg"
-                                                alt="toggler">
-                                        </button>
                                     </div>
-
+                                    <button aria-label="toggler"
+                                        class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800"
+                                        data-menu>
+                                        <img class="transform dark:hidden "
+                                            src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg"
+                                            alt="toggler">
+                                        <img class="transform dark:block hidden "
+                                            src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg"
+                                            alt="toggler">
+                                    </button>
                                 </div>
-                                <div id="menu" class="mt-6 hidden w-full">
-                                    <p class="text-base font-normal leading-6 text-gray-600">
+                                <div id="menu" class="hidden mt-6 w-full">
+                                    <p class="text-base leading-6 text-gray-600 dark:text-gray-300 font-normal">
                                         {{ $faq->answer }}</p>
+                                    </p>
                                 </div>
                             </div>
                         @endforeach
+
+                        <hr class="w-full lg:mt-10 my-8" />
                     </div>
                 </div>
-
                 <div class="mb-8 flex justify-between border p-4">
                     <div
                         class="order-first text-left text-xl font-semibold leading-7 text-gray-800 lg:text-2xl lg:leading-9">
@@ -321,7 +330,7 @@
                             <h3 class="mb-4 text-2xl font-semibold">Package ({{ $package->package }})</h3>
 
                             <div class="my-8 flex items-baseline justify-center">
-                                <span class="mr-2 text-5xl font-extrabold">PHP
+                                <span class="mr-2 text-5xl font-extrabold">₱
                                     {{ number_format($package->price, 2, '.', ',') }}</span>
                             </div>
                             <p class="font-light text-gray-800 sm:text-sm">{{ $package->description }}</p>
@@ -376,6 +385,32 @@
 <script>
     //Owl-Carousel
     $('.owl-carousel').owlCarousel({
+        items: 5,
+        loop: true,
+        margin: 20,
+        responsive: {
+            0: {
+                items: 1
+            },
+            640: {
+                items: 1
+            },
+            768: {
+                items: 1
+            },
+            992: {
+                items: 1
+            },
+            1200: {
+                items: 1
+            }
+        }
+    });
+</script>
+
+<script>
+    //Owl-Carousel
+    $('#owl-carousel2').owlCarousel({
         items: 5,
         loop: true,
         margin: 20,
