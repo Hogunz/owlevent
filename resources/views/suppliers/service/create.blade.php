@@ -92,9 +92,6 @@
                             id="exampleFormControlTextarea1" rows="3" placeholder="Describe your service" require=""></textarea>
                         <div class="text-right" x-text="description.length + `/` + descriptionLimit"></div>
                     </div>
-                    <div class="flex justify-end">
-                        <x-button class="">Continue</x-button>
-                    </div>
                 </div>
 
             </div>
@@ -158,12 +155,6 @@
                         <button type="button"
                             class="rounded border-2 border-dashed p-6 text-xl font-bold uppercase tracking-wide text-gray-500"
                             @click="addPackage()" x-show="packages.length < 3">Add Package</button>
-
-
-                    </div>
-
-                    <div class="mt-6 flex justify-end">
-                        <x-button class="">Continue</x-button>
                     </div>
                 </div>
             </div>
