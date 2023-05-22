@@ -82,6 +82,20 @@
                                     </svg>
                                     <span>(52)</span>
                                 </ul>
+                                <div class="grid grid-cols-2 gap-4 mt-4 mb-4">
+                                    <div>
+                                        <a href="" class="href">
+                                            <x-button class="w-full">Edit Profile</x-button>
+                                        </a>
+                                    </div>
+
+                                    <div>
+                                        <a href="" class="href">
+                                            <x-button class="w-full">Edit Profile</x-button>
+                                        </a>
+                                    </div>
+                                </div>
+
                                 <h1 class="mb-4 text-left text-lg font-bold">Portfolio</h1>
                             </div>
 

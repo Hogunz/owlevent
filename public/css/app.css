@@ -1381,6 +1381,9 @@ input:checked + .toggle-bg {
 .-mt-3 {
   margin-top: -0.75rem;
 }
+.-mt-px {
+  margin-top: -1px;
+}
 .mb-0 {
   margin-bottom: 0px;
 }
@@ -1419,6 +1422,9 @@ input:checked + .toggle-bg {
 }
 .ml-1 {
   margin-left: 0.25rem;
+}
+.ml-12 {
+  margin-left: 3rem;
 }
 .ml-2 {
   margin-left: 0.5rem;
@@ -1500,12 +1506,6 @@ input:checked + .toggle-bg {
 }
 .mt-\[3px\] {
   margin-top: 3px;
-}
-.-mt-px {
-  margin-top: -1px;
-}
-.ml-12 {
-  margin-left: 3rem;
 }
 .box-border {
   box-sizing: border-box;
@@ -1852,6 +1852,9 @@ input:checked + .toggle-bg {
 .max-w-2xl {
   max-width: 42rem;
 }
+.max-w-6xl {
+  max-width: 72rem;
+}
 .max-w-7xl {
   max-width: 80rem;
 }
@@ -1891,9 +1894,6 @@ input:checked + .toggle-bg {
 }
 .max-w-xl {
   max-width: 36rem;
-}
-.max-w-6xl {
-  max-width: 72rem;
 }
 .flex-1 {
   flex: 1 1 0%;
@@ -2933,6 +2933,10 @@ input:checked + .toggle-bg {
   -o-object-fit: fill;
      object-fit: fill;
 }
+.object-center {
+  -o-object-position: center;
+     object-position: center;
+}
 .p-0 {
   padding: 0px;
 }
@@ -3203,11 +3207,11 @@ input:checked + .toggle-bg {
 .pt-6 {
   padding-top: 1.5rem;
 }
-.pt-\[0\.37rem\] {
-  padding-top: 0.37rem;
-}
 .pt-8 {
   padding-top: 2rem;
+}
+.pt-\[0\.37rem\] {
+  padding-top: 0.37rem;
 }
 .text-left {
   text-align: left;
@@ -5009,6 +5013,12 @@ input:checked + .toggle-bg {
     transition-property: none;
   }
 }
+:is(.dark .dark\:block) {
+  display: block;
+}
+:is(.dark .dark\:hidden) {
+  display: none;
+}
 :is(.dark .dark\:border-0) {
   border-width: 0px;
 }
@@ -5156,10 +5166,6 @@ input:checked + .toggle-bg {
   --tw-bg-opacity: 1;
   background-color: rgb(75 85 99 / var(--tw-bg-opacity));
 }
-:is(.dark .dark\:hover\:bg-gray-700:hover) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
-}
 :is(.dark .dark\:hover\:bg-gray-800:hover) {
   --tw-bg-opacity: 1;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
@@ -5204,10 +5210,6 @@ input:checked + .toggle-bg {
 :is(.dark .group:hover .dark\:group-hover\:text-blue-500) {
   --tw-text-opacity: 1;
   color: rgb(63 131 248 / var(--tw-text-opacity));
-}
-:is(.dark .group:hover .dark\:group-hover\:text-white) {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 :is(.dark .group[data-te-datepicker-cell-current] .dark\:group-\[\[data-te-datepicker-cell-current\]\]\:border-white) {
   --tw-border-opacity: 1;
@@ -5863,6 +5865,10 @@ input:checked + .toggle-bg {
 
   .lg\:max-w-xs {
     max-width: 20rem;
+  }
+
+  .lg\:flex-1 {
+    flex: 1 1 0%;
   }
 
   .lg\:grid-cols-1 {

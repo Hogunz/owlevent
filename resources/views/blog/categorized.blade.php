@@ -1,33 +1,6 @@
 <x-guest-layout>
     <div class="bg-white">
         <div class="flex justify-between container mx-auto ">
-            <!-- 1 -->
-            <div class="">
-                <aside class="hidden lg:block lg:w-80 sticky inset-x-0 top-14 max-h-full">
-                    <div class="sticky top-36">
-                        <h3 class="sr-only">Sidebar</h3>
-                        <div
-                            class="p-6 pb-4 mt-6 mb-6 font-medium text-gray-500 bg-gradient-to-r from-[#F5EFE6] to-[#E8DFCA] border border-gray-200 rounded-lg  ">
-                            <h4 class="mb-4 font-bold text-gray-900 uppercase ">Become an Author</h4>
-                            <ul class="space-y-4 text-gray-500">
-                                <li>
-                                    <a class="flex items-start" href="">
-                                        <div class="mr-3"><span class="text-sm"> Would you like to make a contribution
-                                                to
-                                                this blog by writing guest posts?<br>To proceed, please get in touch
-                                                with us
-                                                and provide a resume of your previous writing articles.</span></div>
-                                    </a>
-                                </li>
-                                <a class="text-white block text-center bg-[#7895B2] hover:bg-[#7895B2]/75 focus:ring-4 focus:ring-[#7895B2]/50 font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none w-full"
-                                    href="{{ route('blogs.create') }}">Post</a>
-                            </ul>
-                        </div>
-                    </div>
-                </aside>
-            </div>
-            <!-- 2 -->
-
             <div>
                 <div class="container max-w-max mx-auto p-8 ">
                     <div class="max-w-screen-xl px-4 mx-auto">
@@ -111,8 +84,7 @@
                                     <li class="pt-2">
                                         <a class="flex items-start border rounded-lg border-[#AEBDCA] drop-shadow-2xl p-2"
                                             href="{{ route('blogs.show', $blog->id) }}">
-                                            <div class="mr-3 shrink-0"><img
-                                                    class="object-cover object-center h-24 w-full "
+                                            <div class="mr-3 shrink-0"><img class="object-cover h-24 w-full "
                                                     src="{{ asset('storage/' . $blog->image) }}" alt=""></div>
 
                                             <div class="flex flex-col space-y-4 truncate">

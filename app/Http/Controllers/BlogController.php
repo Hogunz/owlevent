@@ -91,6 +91,12 @@ class BlogController extends Controller
         return view('blog.show-more', compact('blogs', 'categories'));
     }
 
+    public function categorized(Request $request)
+    {
+        $categories = Category::all();
+        $blogs = Blog::where('category_id', $request->get('category_id'))->get();
+        return view('blog.categorized', compact('blogs', 'categories'));
+    }
 
     /**
      * Show the form for editing the specified resource.

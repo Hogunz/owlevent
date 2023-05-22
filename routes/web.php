@@ -55,7 +55,7 @@ Route::get('/supplier-profile', function () {
 //For Admin User
 Route::get('/blog', [BlogController::class, 'blog'])->name('blog');
 Route::get('/blog/show-more', [BlogController::class, 'showM'])->name('blogs.showM');
-
+Route::get('/blog/categorized', [BlogController::class, 'categorized'])->name('blogs.categorized');
 
 
 Route::middleware(['auth'])->group(function () {
@@ -70,7 +70,6 @@ Route::middleware(['auth'])->group(function () {
     Route::prefix('admin/')->group(function () {
         Route::resource('roles', RoleController::class);
         Route::resource('permissions', PermissionController::class);
-
         Route::resource('users', UserController::class);
         Route::resource('occupations', OccupationController::class);
         Route::resource('skills', SkillController::class);
