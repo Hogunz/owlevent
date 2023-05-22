@@ -11,6 +11,7 @@ use App\Models\Occupation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class SupplierController extends Controller
 {
@@ -82,6 +83,36 @@ class SupplierController extends Controller
         {
             // return response()->json("ERROR", 500);
             return response()->json($e->getMessage(), 422);
+        }
+    }
+
+    public function updateAvatar(Request $request)
+    {
+        try {
+            $user = Auth::user();
+
+            $image = $request->input('image');
+            $image = str_replace('data:image/png;base64,', '', $image);
+            $image = str_replace(' ', '+', $image);
+
+            // $path = $request->file('id_card')->storeAs(Auth::id(), 'avatar.png', 'public');
+            $disk = Storage::disk('public');
+            $path = Auth::id().'/avatar.png';
+            $disk->put($path, base64_decode($image));
+
+            $user->update([
+                'avatar' => $path,
+            ]);
+
+            return response()->json([
+                'status' => 'Successfully updated avatar'
+            ]);
+        } catch (Exception $e) {
+            return response()->json([
+                'errors' => [
+                    'error' => $e->getMessage(),
+                ]
+            ]);
         }
     }
 
