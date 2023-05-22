@@ -27,20 +27,26 @@
                             <div class="flex justify-center p-8" x-data="avatar">
                                 <input type="file" accept="image/*" class="hidden" x-ref="avatar"
                                     @change="openCroppie()">
-                                <div class="relative" x-data="{ show: false }" @mouseover="show = true"
-                                    @mouseover.away="show = false">
-                                    <img class="relative top-0 z-auto h-32 w-32 rounded-full object-cover"
+                                <div class="relative group cursor-pointer items-center justify-center transition-shadow hover:shadow-xl hover:shadow-black/30 rounded-full "
+                                    x-data="{ show: false }" @mouseover="show = true" @mouseover.away="show = false">
+
+                                    <img class="relative top-0 z-auto h-32 w-32 rounded-full object-cover transition-transform duration-500"
                                         src="{{ asset('storage/' . auth()->user()->avatar) ?? 'https://images.unsplash.com/photo-1555952517-2e8e729e0b44?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHBlcnNvbnxlbnwwfDF8MHx8&auto=format&fit=crop&w=500&q=60' }}"
                                         alt="">
+
                                     <span class="absolute bottom-0 right-7 flex h-4 w-4">
                                         <span
                                             class="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75"></span>
                                         <span class="relative inline-flex h-4 w-4 rounded-full bg-sky-500"></span>
                                     </span>
-                                    <button class="absolute inset-x-0 bottom-0 mx-auto w-full bg-white text-xs"
-                                        @click="$refs.avatar.click()" x-show="show">
-                                        Edit Avatar
-                                    </button>
+                                    <div
+                                        class="rounded-full absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-transparent group-hover:from-black/80 group-hover:via-black/70 group-hover:to-black/70">
+                                        <button class="absolute inset-x-0 bottom-0 mx-auto w-full bg-white text-sm"
+                                            @click="$refs.avatar.click()" x-show="show">
+                                            Edit Picture
+                                        </button>
+                                    </div>
+
                                 </div>
 
                                 <div class="fixed inset-0 z-40 flex items-center justify-center bg-gray-500/50"
@@ -105,26 +111,29 @@
                                     </svg>
                                     <span>(52)</span>
                                 </ul>
-                                <div class="grid grid-cols-2 gap-4 mt-4 mb-4">
+                                <div class="grid grid-cols-1 gap-4 mt-4 mb-4">
                                     <div>
                                         <a href="" class="href">
-                                            <x-button class="w-full">Edit Profile</x-button>
+                                            <x-button class="w-full">View As</x-button>
                                         </a>
                                     </div>
 
+                                </div>
+                                <div class="flex justify-between ...">
+                                    <div class="order-last">
+                                        <h1 class="mb-4 text-left text-lg font-bold">Portfolio</h1>
+                                    </div>
+
                                     <div>
-                                        <a href="" class="href">
-                                            <x-button class="w-full">Edit Profile</x-button>
-                                        </a>
+                                        <button onclick="myFunction()"
+                                            class="mb-4 text-left text-lg text-[#7895B2] hover:text-[#7895B2]/50 underline">Edit
+                                            Portfolio</button>
                                     </div>
                                 </div>
-
-                                <h1 class="mb-4 text-left text-lg font-bold">Portfolio</h1>
                             </div>
-
-                            <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
+                            <div id="content1" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
                                 @for ($i = 0; $i < 2; $i++)
-                                    <div class="grid gap-4">
+                                    <div class="gap-4">
                                         <div>
                                             <img class="h-auto w-full rounded-lg sm:max-w-xs lg:max-w-full"
                                                 src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg"
@@ -133,7 +142,13 @@
                                     </div>
                                 @endfor
                             </div>
-
+                            <a href="" class="href">
+                                <div id="content2"
+                                    class="flex w-full items-center justify-center rounded border-2 border-dashed p-6 text-xl font-bold uppercase tracking-wide text-gray-500"
+                                    style="display: none;">
+                                    Edit Portfolio
+                                </div>
+                            </a>
                         </div>
                         <!-- End of profile card -->
                         <div class="my-4"></div>
@@ -820,15 +835,27 @@
                 for (var i = 1; i <= dayOfWeek; i++) {
                     blankdaysArray.push(i);
                 }
-
                 let daysArray = [];
                 for (var i = 1; i <= daysInMonth; i++) {
                     daysArray.push(i);
                 }
-
                 this.blankdays = blankdaysArray;
                 this.no_of_days = daysArray;
             }
+        }
+    }
+</script>
+<script>
+    function myFunction() {
+        var content1 = document.getElementById("content1");
+        var content2 = document.getElementById("content2");
+
+        if (content2.style.display === "none") {
+            content1.style.display = "none";
+            content2.style.display = "block";
+        } else {
+            content1.style.display = "block";
+            content2.style.display = "none";
         }
     }
 </script>
