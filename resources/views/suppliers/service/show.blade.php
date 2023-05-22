@@ -336,7 +336,6 @@
                             <p class="font-light text-gray-800 sm:text-sm">{{ $package->description }}</p>
                         </div>
                     @endforeach
-
                 </div>
             </div>
 

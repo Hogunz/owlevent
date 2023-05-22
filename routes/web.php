@@ -45,6 +45,12 @@ Route::get('/sample', function () {
 
 
 
+
+Route::get('/blog/create', function () {
+    return view('/blog/create');
+});
+
+
 Route::get('/service-profile', function () {
     return view('/suppliers/service-profile');
 });
@@ -84,6 +90,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/supplier/register', [SupplierController::class, 'store']);
 
     Route::get('/my-profile', [SupplierController::class, 'myProfile'])->name('my-profile');
+    Route::post('/my-profile/update-avatar', [SupplierController::class, 'updateAvatar']);
     Route::get('/gig/{gig}', [SupplierController::class, 'showGig'])->name('show.gig');
     Route::resource('gigs', GigController::class);
 });
