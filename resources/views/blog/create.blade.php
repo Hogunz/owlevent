@@ -3,7 +3,6 @@
 
 
     <div class="min-h-screen">
-
         <!-- Page Content -->
         <main class="max-w-7xl p-12 mx-auto">
             <form action="{{ route('blogs.store') }}" method="post" enctype="multipart/form-data">

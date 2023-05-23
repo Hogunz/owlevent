@@ -57,9 +57,6 @@ Route::get('/service-profile', function () {
 Route::get('/supplier-profile', function () {
     return view('/suppliers/supplier-profile');
 });
-Route::get('/suppliers/profile/edit', function () {
-    return view('/suppliers/edit');
-});
 
 //For Admin User
 Route::get('/blog', [BlogController::class, 'blog'])->name('blog');

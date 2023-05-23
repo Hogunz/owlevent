@@ -54,7 +54,7 @@
                 <div class="justify-left mb-8 flex gap-4">
                     <div class="">
                         <img class="relative top-0 z-auto h-32 w-32 rounded-full object-cover ring-2 ring-white"
-                            src="https://images.unsplash.com/photo-1555952517-2e8e729e0b44?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHBlcnNvbnxlbnwwfDF8MHx8&auto=format&fit=crop&w=500&q=60"
+                            src="{{ asset('storage/' . auth()->user()->avatar) ?? 'https://images.unsplash.com/photo-1555952517-2e8e729e0b44?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHBlcnNvbnxlbnwwfDF8MHx8&auto=format&fit=crop&w=500&q=60' }}"
                             alt="">
                     </div>
                     <div class="flex flex-col">
@@ -83,19 +83,12 @@
                 </div>
                 <div class="border p-8">
                     <p>{{ $gig->user->description }}
-
                     </p>
                 </div>
-
-
-
-
 
                 <div class="p-8">
                     <h1 class="text-left text-xl font-semibold leading-7 text-gray-800 lg:text-2xl lg:leading-9">
                         FAQ's</h1>
-
-
                     <div class=" w-full mx-auto">
                         <!-- Question 1 -->
                         <hr class="my-8 w-full md:mt-12 md:mb-8 lg:mt-10" />
@@ -128,8 +121,14 @@
                                 </div>
                             </div>
                         @endforeach
-
                         <hr class="w-full lg:mt-10 my-8" />
+
+                        <a href="{{ route('gigs.edit', $gig) }}">
+                            <x-button class="w-full">
+                                Edit Services
+                            </x-button>
+                        </a>
+
                     </div>
                 </div>
                 <div class="mb-8 flex justify-between border p-4">

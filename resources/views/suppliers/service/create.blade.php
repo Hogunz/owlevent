@@ -46,19 +46,7 @@
                     <h1 class="pb-6 text-4xl font-bold">Overview
                     </h1>
                     <p class="pb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis
-                        mattis
-                        ex, in tristique libero. Integer urna ante, dapibus ac maximus vel, cursus quis sem.
-                        Proin
-                        turpis arcu, vehicula non tortor ut, sodales luctus erat. Maecenas ligula libero,
-                        feugiat
-                        eget malesuada id, imperdiet sagittis tellus. Maecenas consectetur eget nisl laoreet
-                        sollicitudin. Donec hendrerit mi et risus consectetur dapibus. Sed congue, ex id viverra
-                        mattis, augue eros condimentum orci, a volutpat augue leo a massa. Praesent pulvinar
-                        urna
-                        lorem, vel vulputate velit laoreet mollis. Quisque venenatis consectetur leo efficitur
-                        tempor. Aliquam congue mi posuere, pharetra odio eget, posuere enim. Vivamus cursus sem
-                        at
-                        imperdiet ornare. Aliquam ac enim massa. Sed et semper massa, sit amet consequat lectus.
+
                     </p>
                     <hr class="pb-8">
                 </div>
@@ -102,15 +90,7 @@
                     <h1 class="pb-6 text-4xl font-bold">Pricing
                     </h1>
                     <p class="pb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis
-                        mattis ex, in tristique libero. Integer urna ante, dapibus ac maximus vel, cursus quis
-                        sem. Proin turpis arcu, vehicula non tortor ut, sodales luctus erat. Maecenas ligula
-                        libero, feugiat eget malesuada id, imperdiet sagittis tellus. Maecenas consectetur eget
-                        nisl laoreet sollicitudin. Donec hendrerit mi et risus consectetur dapibus. Sed congue,
-                        ex id viverra mattis, augue eros condimentum orci, a volutpat augue leo a massa.
-                        Praesent pulvinar urna lorem, vel vulputate velit laoreet mollis. Quisque venenatis
-                        consectetur leo efficitur tempor. Aliquam congue mi posuere, pharetra odio eget, posuere
-                        enim. Vivamus cursus sem at imperdiet ornare. Aliquam ac enim massa. Sed et semper
-                        massa, sit amet consequat lectus.
+
                     </p>
                     <hr class="pb-8">
                 </div>
@@ -163,14 +143,7 @@
                 <h1 class="pb-6 text-4xl font-bold">Frequently Asked Questions
                 </h1>
                 <p class="pb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis mattis
-                    ex, in tristique libero. Integer urna ante, dapibus ac maximus vel, cursus quis sem. Proin
-                    turpis arcu, vehicula non tortor ut, sodales luctus erat. Maecenas ligula libero, feugiat
-                    eget malesuada id, imperdiet sagittis tellus. Maecenas consectetur eget nisl laoreet
-                    sollicitudin. Donec hendrerit mi et risus consectetur dapibus. Sed congue, ex id viverra
-                    mattis, augue eros condimentum orci, a volutpat augue leo a massa. Praesent pulvinar urna
-                    lorem, vel vulputate velit laoreet mollis. Quisque venenatis consectetur leo efficitur
-                    tempor. Aliquam congue mi posuere, pharetra odio eget, posuere enim. Vivamus cursus sem at
-                    imperdiet ornare. Aliquam ac enim massa. Sed et semper massa, sit amet consequat lectus.
+
                 </p>
                 <hr class="pb-8">
                 <div class="flex flex-col space-y-4 p-6">

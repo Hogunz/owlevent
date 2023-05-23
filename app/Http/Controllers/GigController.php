@@ -32,7 +32,6 @@ class GigController extends Controller
     public function create()
     {
         $categories = Category::all();
-
         return view('suppliers.service.create', compact('categories'));
     }
 
@@ -128,6 +127,7 @@ class GigController extends Controller
      */
     public function show(Gig $gig)
     {
+
         return view('suppliers.service.show', compact('gig'));
     }
 
@@ -139,7 +139,8 @@ class GigController extends Controller
      */
     public function edit(Gig $gig)
     {
-        //
+
+        return view('suppliers.service.edit', compact('gig'));
     }
 
     /**
@@ -149,9 +150,80 @@ class GigController extends Controller
      * @param  \App\Models\Gig  $gig
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Gig $gig)
+    public function update(Request $request, $gig)
     {
-        //
+        try {
+            $request->validate([
+                'title' => ['required'],
+                'category_id' => ['required'],
+                'description' => ['required'],
+                'packages' => ['required'],
+                // 'faqs' => ['required'],
+                // 'uploads' => ['required'],
+            ]);
+
+            // $faqs = json_decode($request->faqs);
+            // $packages = json_decode($request->packages);
+            // $files = json_decode($request->uploads);
+
+
+            // $faqData = array_map(function ($faq) {
+            //     return [
+            //         'question' => $faq->question,
+            //         'answer' => $faq->answer,
+            //     ];
+            // }, $faqs);
+
+            // $packageData = array_map(function ($package) {
+            //     return [
+            //         'package' => $package->package,
+            //         'price' => $package->price,
+            //         'description' => $package->description,
+            //     ];
+            // }, $packages);
+
+            // return response()->json(['faqu' => $shits]);
+            DB::beginTransaction();
+
+            $gig->update([
+                'title' => $request->title,
+                'category_id' => $request->category_id,
+                'description' => $request->description,
+            ]);
+
+            // $gig->faqs()->updateOrCreateMany($faqData);
+            // $gig->gigPackages()->updateOrCreateMany($packageData);
+
+            // $paths = [];
+            // foreach ($request->file('uploads') as $file) {
+            //     $mimeType = $file->getMimeType();
+
+            //     if (str_starts_with($mimeType, 'image/')) {
+            //         $type = 'image';
+            //     } else if (str_starts_with($mimeType, 'video/')) {
+            //         $type = 'video';
+            //     } else {
+            //         return response()->json('Error', 422);
+            //     }
+            //     $paths[] = [
+            //         'url' => $file->store(Auth::id() . "/gig/{$gig->id}", 'public'),
+            //         'type' => $type
+            //     ];
+            // }
+
+            // return response()->json($paths);
+
+            // $gig->gigUploads()->createMany($paths);
+
+            DB::commit();
+            return response()->json('Successfully created Gig!');
+        } catch (Exception $e) {
+            DB::rollBack();
+
+            return response()->json([
+                'message' => $e->getMessage(),
+            ], 422);
+        }
     }
 
     /**

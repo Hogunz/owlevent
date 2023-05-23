@@ -111,44 +111,37 @@
                                     </svg>
                                     <span>(52)</span>
                                 </ul>
-                                <div class="grid grid-cols-1 gap-4 mt-4 mb-4">
+                                <div class="grid grid-cols-2 gap-4 mt-4 mb-4">
                                     <div>
                                         <a href="" class="href">
                                             <x-button class="w-full">View As</x-button>
                                         </a>
                                     </div>
-
+                                    <div>
+                                        <a href="" class="">
+                                            <x-button class="w-full">Edit Profile</x-button>
+                                        </a>
+                                    </div>
                                 </div>
                                 <div class="flex justify-between ...">
                                     <div class="order-last">
                                         <h1 class="mb-4 text-left text-lg font-bold">Portfolio</h1>
                                     </div>
 
-                                    <div>
-                                        <button onclick="myFunction()"
-                                            class="mb-4 text-left text-lg text-[#7895B2] hover:text-[#7895B2]/50 underline">Edit
-                                            Portfolio</button>
-                                    </div>
                                 </div>
                             </div>
-                            <div id="content1" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
-                                @for ($i = 0; $i < 2; $i++)
+                            <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
+                                @foreach ($gigs->take(2) as $gig)
                                     <div class="gap-4">
                                         <div>
                                             <img class="h-auto w-full rounded-lg sm:max-w-xs lg:max-w-full"
-                                                src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg"
+                                                src="{{ asset('storage/' . $gig->gigUploads->where('type', 'image')->first()->url) }}"
                                                 alt="">
                                         </div>
                                     </div>
-                                @endfor
+                                @endforeach
                             </div>
-                            <a href="" class="href">
-                                <div id="content2"
-                                    class="flex w-full items-center justify-center rounded border-2 border-dashed p-6 text-xl font-bold uppercase tracking-wide text-gray-500"
-                                    style="display: none;">
-                                    Edit Portfolio
-                                </div>
-                            </a>
+
                         </div>
                         <!-- End of profile card -->
                         <div class="my-4"></div>
@@ -842,20 +835,6 @@
                 this.blankdays = blankdaysArray;
                 this.no_of_days = daysArray;
             }
-        }
-    }
-</script>
-<script>
-    function myFunction() {
-        var content1 = document.getElementById("content1");
-        var content2 = document.getElementById("content2");
-
-        if (content2.style.display === "none") {
-            content1.style.display = "none";
-            content2.style.display = "block";
-        } else {
-            content1.style.display = "block";
-            content2.style.display = "none";
         }
     }
 </script>
