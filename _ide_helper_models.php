@@ -16,6 +16,7 @@ namespace App\Models{
  *
  * @property int $id
  * @property int $user_id
+ * @property int $category_id
  * @property string $name
  * @property string $image
  * @property string $description
@@ -25,6 +26,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|Blog newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Blog newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Blog query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Blog whereCategoryId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Blog whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Blog whereDescription($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Blog whereId($value)
@@ -44,6 +46,8 @@ namespace App\Models{
  * @property string $name
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Gig> $gigs
+ * @property-read int|null $gigs_count
  * @method static \Illuminate\Database\Eloquent\Builder|Category newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Category newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Category query()
@@ -83,13 +87,18 @@ namespace App\Models{
  * App\Models\Gig
  *
  * @property int $id
+ * @property int $user_id
  * @property string $title
  * @property int $category_id
  * @property string $description
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \App\Models\Category|null $category
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\GigComment> $comments
+ * @property-read int|null $comments_count
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Faq> $faqs
  * @property-read int|null $faqs_count
+ * @property-read mixed $ratings
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\GigPackage> $gigPackages
  * @property-read int|null $gig_packages_count
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\GigUpload> $gigUploads
@@ -104,8 +113,60 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|Gig whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Gig whereTitle($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Gig whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Gig whereUserId($value)
  */
 	class Gig extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * App\Models\GigComment
+ *
+ * @property int $id
+ * @property int $gig_id
+ * @property int $commenter_id
+ * @property string $text
+ * @property int $ratings
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \App\Models\User|null $commenter
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\GigCommentReply> $replies
+ * @property-read int|null $replies_count
+ * @method static \Illuminate\Database\Eloquent\Builder|GigComment newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|GigComment newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|GigComment query()
+ * @method static \Illuminate\Database\Eloquent\Builder|GigComment whereCommenterId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|GigComment whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|GigComment whereGigId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|GigComment whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|GigComment whereRatings($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|GigComment whereText($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|GigComment whereUpdatedAt($value)
+ */
+	class GigComment extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * App\Models\GigCommentReply
+ *
+ * @property int $id
+ * @property int $gig_comment_id
+ * @property int $commenter_id
+ * @property string $text
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|GigCommentReply newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|GigCommentReply newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|GigCommentReply query()
+ * @method static \Illuminate\Database\Eloquent\Builder|GigCommentReply whereCommenterId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|GigCommentReply whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|GigCommentReply whereGigCommentId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|GigCommentReply whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|GigCommentReply whereText($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|GigCommentReply whereUpdatedAt($value)
+ */
+	class GigCommentReply extends \Eloquent {}
 }
 
 namespace App\Models{
@@ -196,6 +257,58 @@ namespace App\Models{
 
 namespace App\Models{
 /**
+ * App\Models\SupplierComment
+ *
+ * @property int $id
+ * @property int $user_id
+ * @property int $commenter_id
+ * @property string $text
+ * @property int $ratings
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \App\Models\User|null $commenter
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\SupplierCommentReply> $replies
+ * @property-read int|null $replies_count
+ * @method static \Illuminate\Database\Eloquent\Builder|SupplierComment newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|SupplierComment newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|SupplierComment query()
+ * @method static \Illuminate\Database\Eloquent\Builder|SupplierComment whereCommenterId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SupplierComment whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SupplierComment whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SupplierComment whereRatings($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SupplierComment whereText($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SupplierComment whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SupplierComment whereUserId($value)
+ */
+	class SupplierComment extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * App\Models\SupplierCommentReply
+ *
+ * @property int $id
+ * @property int $supplier_comment_id
+ * @property int $commenter_id
+ * @property string $text
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \App\Models\User|null $commenter
+ * @method static \Illuminate\Database\Eloquent\Builder|SupplierCommentReply newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|SupplierCommentReply newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|SupplierCommentReply query()
+ * @method static \Illuminate\Database\Eloquent\Builder|SupplierCommentReply whereCommenterId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SupplierCommentReply whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SupplierCommentReply whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SupplierCommentReply whereSupplierCommentId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SupplierCommentReply whereText($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SupplierCommentReply whereUpdatedAt($value)
+ */
+	class SupplierCommentReply extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
  * App\Models\User
  *
  * @property int $id
@@ -217,7 +330,12 @@ namespace App\Models{
  * @property string|null $remember_token
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\SupplierComment> $comments
+ * @property-read int|null $comments_count
  * @property-read mixed $full_name
+ * @property-read mixed $ratings
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\GigComment> $gigComments
+ * @property-read int|null $gig_comments_count
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Gig> $gigs
  * @property-read int|null $gigs_count
  * @property-read \Illuminate\Notifications\DatabaseNotificationCollection<int, \Illuminate\Notifications\DatabaseNotification> $notifications
@@ -230,6 +348,8 @@ namespace App\Models{
  * @property-read int|null $roles_count
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Skill> $skills
  * @property-read int|null $skills_count
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\SupplierComment> $supplierComments
+ * @property-read int|null $supplier_comments_count
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \Laravel\Sanctum\PersonalAccessToken> $tokens
  * @property-read int|null $tokens_count
  * @method static \Database\Factories\UserFactory factory(...$parameters)

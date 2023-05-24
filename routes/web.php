@@ -5,12 +5,15 @@ use App\Http\Controllers\GigController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\SocialController;
 use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\SkillController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\OccupationController;
 use App\Http\Controllers\Admin\PermissionController;
+use App\Http\Controllers\GigCommentController;
+use App\Http\Controllers\SupplierCommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,9 +30,11 @@ Route::get('/auth-complete', function () {
     return view('auth.auth-successful');
 });
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [DashboardController::class, 'welcome']);
+Route::get('/category/{category}', [DashboardController::class, 'showCategory'])->name('show.category');
+Route::get('/supplier-profile/{user}', [DashboardController::class, 'showProfile'])->name('show.profile');
+Route::get('/service-profile/{user}/gig/{gig}', [DashboardController::class, 'showGig'])->name('show.supplier-gig');
+
 Route::get('/featured', function () {
     return view('/featured');
 });
@@ -39,23 +44,9 @@ Route::get('/blog', function () {
 Route::get('/categories', function () {
     return view('/categories');
 });
-Route::get('/sample', function () {
-    return view('/sample');
-});
-
-
-
 
 Route::get('/blog/create', function () {
     return view('/blog/create');
-});
-
-
-Route::get('/service-profile', function () {
-    return view('/suppliers/service-profile');
-});
-Route::get('/supplier-profile', function () {
-    return view('/suppliers/supplier-profile');
 });
 
 //For Admin User
@@ -93,6 +84,9 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/my-profile/update-avatar', [SupplierController::class, 'updateAvatar']);
     Route::get('/gig/{gig}', [SupplierController::class, 'showGig'])->name('show.gig');
     Route::resource('gigs', GigController::class);
+
+    Route::post('/gig/{gig}/comment', [GigCommentController::class, 'comment'])->name('gig.comment');
+    Route::post('/supplier/{user}/comment', [SupplierCommentController::class, 'comment'])->name('supplier.comment');
 });
 
 //Laravel Socialite

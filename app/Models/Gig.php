@@ -15,6 +15,11 @@ class Gig extends Model
         'description',
     ];
 
+    public function getRatingsAttribute()
+    {
+        return $this->comments->sum('ratings') / $this->comments->count();
+    }
+
     public function faqs()
     {
         return $this->hasMany(Faq::class);
@@ -37,5 +42,10 @@ class Gig extends Model
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(GigComment::class, 'gig_id');
     }
 }

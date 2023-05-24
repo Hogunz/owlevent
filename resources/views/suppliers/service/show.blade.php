@@ -62,20 +62,22 @@
                             <a href="/supplier-profile" class="href">{{ $gig->user->business_name }}</a>
                         </div>
                         <div class="">
-                            <ul class="justify-left mb-0 flex items-center">
-                                <li>
-                                    @for ($j = 0; $j < 5; $j++)
-                                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star"
-                                            class="w-4 text-yellow-300" role="img"
-                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
-                                            <path fill="currentColor"
-                                                d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
-                                            </path>
-                                        </svg>
-                                </li>
-                                @endfor
-                                <span>(52)</span>
-                            </ul>
+                            <div class="flex items-center justify-center">
+                                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star"
+                                    class="w-4 text-yellow-300" role="img" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 576 512">
+                                    <path fill="currentColor"
+                                        d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
+                                    </path>
+                                </svg>
+                                <p class="ml-2 text-sm font-bold text-gray-900 dark:text-white">
+                                    {{ $gig->ratings }}
+                                </p>
+                                <span class="mx-1.5 h-1 w-1 rounded-full bg-gray-500 dark:bg-gray-400"></span>
+                                <a href="#reviews"
+                                    class="text-sm font-medium text-gray-900 underline hover:no-underline dark:text-white">{{ $gig->comments->count() }}
+                                    reviews</a>
+                            </div>
 
                         </div>
                     </div>
@@ -89,39 +91,39 @@
                 <div class="p-8">
                     <h1 class="text-left text-xl font-semibold leading-7 text-gray-800 lg:text-2xl lg:leading-9">
                         FAQ's</h1>
-                    <div class=" w-full mx-auto">
+                    <div class="mx-auto w-full">
                         <!-- Question 1 -->
                         <hr class="my-8 w-full md:mt-12 md:mb-8 lg:mt-10" />
                         @foreach ($gig->faqs as $faq)
                             <div class="w-full md:px-6">
-                                <div id="mainHeading" class="flex justify-between items-center w-full">
+                                <div id="mainHeading" class="flex w-full items-center justify-between">
                                     <div class="">
                                         <p
-                                            class="flex justify-center items-center dark:text-white font-medium text-base leading-6 md:leading-4 text-gray-800">
+                                            class="flex items-center justify-center text-base font-medium leading-6 text-gray-800 dark:text-white md:leading-4">
                                             <span
-                                                class="lg:mr-6 mr-4 dark:text-white lg:text-2xl md:text-xl text-lg leading-6 md:leading-5 lg:leading-4 font-semibold text-gray-800">Q{{ $loop->iteration }}.</span>
+                                                class="mr-4 text-lg font-semibold leading-6 text-gray-800 dark:text-white md:text-xl md:leading-5 lg:mr-6 lg:text-2xl lg:leading-4">Q{{ $loop->iteration }}.</span>
                                             {{ $faq->question }}
                                         </p>
                                     </div>
                                     <button aria-label="toggler"
-                                        class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800"
+                                        class="focus:outline-none focus:ring-2 focus:ring-gray-800 focus:ring-offset-2"
                                         data-menu>
-                                        <img class="transform dark:hidden "
+                                        <img class="transform dark:hidden"
                                             src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg"
                                             alt="toggler">
-                                        <img class="transform dark:block hidden "
+                                        <img class="hidden transform dark:block"
                                             src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg"
                                             alt="toggler">
                                     </button>
                                 </div>
-                                <div id="menu" class="hidden mt-6 w-full">
-                                    <p class="text-base leading-6 text-gray-600 dark:text-gray-300 font-normal">
+                                <div id="menu" class="mt-6 hidden w-full">
+                                    <p class="text-base font-normal leading-6 text-gray-600 dark:text-gray-300">
                                         {{ $faq->answer }}</p>
                                     </p>
                                 </div>
                             </div>
                         @endforeach
-                        <hr class="w-full lg:mt-10 my-8" />
+                        <hr class="my-8 w-full lg:mt-10" />
 
                         <a href="{{ route('gigs.edit', $gig) }}">
                             <x-button class="w-full">
@@ -131,85 +133,73 @@
 
                     </div>
                 </div>
-                <div class="mb-8 flex justify-between border p-4">
-                    <div
-                        class="order-first text-left text-xl font-semibold leading-7 text-gray-800 lg:text-2xl lg:leading-9">
-                        Reviews</div>
-
-                    <div class="self-center">
-
-                        <button class="inline-flex items-center text-center" id="dropdownBtn"
-                            data-dropdown-toggle="star">
-                            Filter
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                                class="bi bi-filter" viewBox="0 0 16 16" id="IconChangeColor">
-                                <path
-                                    d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"
-                                    id="mainIconPathAttribute"></path>
-                            </svg>
-                        </button>
-                        <div id="star"
-                            class="z-10 hidden w-44 divide-y divide-gray-100 rounded-lg bg-white shadow">
-                            <ul class="p-4 py-2 text-sm text-gray-700" aria-labelledby="dropdownDefaultButton">
-                                <li>
-                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100">All
-                                        Star</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100">1
-                                        Star</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100">2
-                                        Star</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100">3
-                                        Star</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100">4
-                                        Star
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100">5
-                                        Star
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
 
                 <hr class="my-8 w-full md:mt-12 md:mb-8 lg:mt-10" />
                 <section class="bg-white py-8 lg:py-16">
                     <div class="mx-auto max-w-2xl px-4">
-                        <div class="mb-6 flex items-center justify-between">
-                            <h2 class="text-lg font-bold text-gray-900 lg:text-2xl">Discussion (20)
-                            </h2>
-                        </div>
-                        <form class="mb-6">
-                            <div class="mb-4 rounded-lg rounded-t-lg border border-gray-200 bg-white py-2 px-4">
-                                <label for="comment" class="sr-only">Your comment</label>
-                                <textarea id="comment" rows="6"
-                                    class="w-full border-0 px-0 text-sm text-gray-900 focus:outline-none focus:ring-0"
-                                    placeholder="Write a comment..." required></textarea>
+                        <div class="mb-8 flex justify-between border p-4">
+                            <div
+                                class="order-first text-left text-xl font-semibold leading-7 text-gray-800 lg:text-2xl lg:leading-9">
+                                Reviews</div>
+
+                            <div class="self-center">
+
+                                <button class="inline-flex items-center text-center" id="dropdownBtn"
+                                    data-dropdown-toggle="star">
+                                    Filter
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                        fill="currentColor" class="bi bi-filter" viewBox="0 0 16 16"
+                                        id="IconChangeColor">
+                                        <path
+                                            d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"
+                                            id="mainIconPathAttribute"></path>
+                                    </svg>
+                                </button>
+                                <div id="star"
+                                    class="z-10 hidden w-44 divide-y divide-gray-100 rounded-lg bg-white shadow">
+                                    <ul class="p-4 py-2 text-sm text-gray-700" aria-labelledby="dropdownDefaultButton">
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">All
+                                                Star</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">1
+                                                Star</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">2
+                                                Star</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">3
+                                                Star</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">4
+                                                Star
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">5
+                                                Star
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
-                            <x-button>Post Comment</x-button>
-                        </form>
-                        @for ($i = 0; $i < 4; $i++)
+                        </div>
+
+                        @foreach ($gig->comments as $comment)
                             <article class="mb-6 rounded-lg bg-white p-6 text-base">
                                 <footer class="mb-2 flex items-center justify-between">
                                     <div class="flex items-center">
                                         <p class="mr-3 inline-flex items-center text-sm text-gray-900">
                                             <img class="mr-2 h-6 w-6 rounded-full"
                                                 src="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
-                                                alt="Michael Gough">Michael Gough
+                                                alt="Michael Gough">{{ $comment->commenter->name }}
                                         </p>
                                         <p class="text-sm text-gray-600"><time pubdate datetime="2022-02-08"
-                                                title="February 8th, 2022">Feb. 8, 2022</time>
+                                                title="February 8th, 2022">{{ $comment->created_at->diffForHumans() }}</time>
                                         </p>
                                     </div>
                                     <button id="dropdownComment1Button" data-dropdown-toggle="dropdownComment1"
@@ -240,13 +230,21 @@
                                         </ul>
                                     </div>
                                 </footer>
-                                <p class="text-gray-500">Very straight-to-point article. Really
-                                    worth
-                                    time reading. Thank you! But tools are just the
-                                    instruments for the UX designers. The knowledge of the design tools are as important
-                                    as
-                                    the
-                                    creation of the design strategy.</p>
+                                <div class="flex items-center">
+                                    Ratings:
+                                    @for ($k = 0; $k < $comment->ratings; $k++)
+                                        <span>
+                                            <svg aria-hidden="true" focusable="false" data-prefix="fas"
+                                                data-icon="star" class="w-4 text-yellow-300" role="img"
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                                <path fill="currentColor"
+                                                    d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
+                                                </path>
+                                            </svg>
+                                        </span>
+                                    @endfor
+                                </div>
+                                <p class="text-gray-500">{{ $comment->text }}</p>
                                 <div class="mt-4 flex items-center space-x-4">
                                     <button type="button"
                                         class="flex items-center text-sm text-gray-500 hover:underline">
@@ -261,62 +259,67 @@
                                     </button>
                                 </div>
                             </article>
-                            <article class="mb-6 ml-6 rounded-lg bg-white p-6 text-base lg:ml-12">
-                                <footer class="mb-2 flex items-center justify-between">
-                                    <div class="flex items-center">
-                                        <p class="mr-3 inline-flex items-center text-sm text-gray-900">
-                                            <img class="mr-2 h-6 w-6 rounded-full"
-                                                src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
-                                                alt="Jese Leos">Jese Leos
-                                        </p>
-                                        <p class="text-sm text-gray-600"><time pubdate datetime="2022-02-12"
-                                                title="February 12th, 2022">Feb. 12, 2022</time>
-                                        </p>
+                            @foreach ($comment->replies as $reply)
+                                <article class="mb-6 ml-6 rounded-lg bg-white p-6 text-base lg:ml-12">
+                                    <footer class="mb-2 flex items-center justify-between">
+                                        <div class="flex items-center">
+                                            <p class="mr-3 inline-flex items-center text-sm text-gray-900">
+                                                <img class="mr-2 h-6 w-6 rounded-full"
+                                                    src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
+                                                    alt="Jese Leos">{{ $reply->commenter->name }}
+                                            </p>
+                                            <p class="text-sm text-gray-600"><time pubdate datetime="2022-02-12"
+                                                    title="February 12th, 2022">{{ $reply->created_at->diffForHumans() }}</time>
+                                            </p>
+                                        </div>
+                                        <button id="dropdownComment2Button" data-dropdown-toggle="dropdownComment2"
+                                            class="inline-flex items-center rounded-lg bg-white p-2 text-center text-sm font-medium text-gray-400 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-50"
+                                            type="button">
+                                            <svg class="h-5 w-5" aria-hidden="true" fill="currentColor"
+                                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z">
+                                                </path>
+                                            </svg>
+                                            <span class="sr-only">Comment settings</span>
+                                        </button>
+                                        <!-- Dropdown menu -->
+                                        <div id="dropdownComment2"
+                                            class="z-10 hidden w-36 divide-y divide-gray-100 rounded bg-white shadow">
+                                            <ul class="py-1 text-sm text-gray-700"
+                                                aria-labelledby="dropdownMenuIconHorizontalButton">
+                                                <li>
+                                                    <a href="#"
+                                                        class="block py-2 px-4 hover:bg-gray-100">Edit</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"
+                                                        class="block py-2 px-4 hover:bg-gray-100">Remove</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"
+                                                        class="block py-2 px-4 hover:bg-gray-100">Report</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </footer>
+                                    <p class="text-gray-500">{{ $reply->text }}</p>
+                                    <div class="mt-4 flex items-center space-x-4">
+                                        <button type="button"
+                                            class="flex items-center text-sm text-gray-500 hover:underline">
+                                            <svg aria-hidden="true" class="mr-1 h-4 w-4" fill="none"
+                                                stroke="currentColor" viewBox="0 0 24 24"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z">
+                                                </path>
+                                            </svg>
+                                            Reply
+                                        </button>
                                     </div>
-                                    <button id="dropdownComment2Button" data-dropdown-toggle="dropdownComment2"
-                                        class="inline-flex items-center rounded-lg bg-white p-2 text-center text-sm font-medium text-gray-400 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-50"
-                                        type="button">
-                                        <svg class="h-5 w-5" aria-hidden="true" fill="currentColor"
-                                            viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z">
-                                            </path>
-                                        </svg>
-                                        <span class="sr-only">Comment settings</span>
-                                    </button>
-                                    <!-- Dropdown menu -->
-                                    <div id="dropdownComment2"
-                                        class="z-10 hidden w-36 divide-y divide-gray-100 rounded bg-white shadow">
-                                        <ul class="py-1 text-sm text-gray-700"
-                                            aria-labelledby="dropdownMenuIconHorizontalButton">
-                                            <li>
-                                                <a href="#" class="block py-2 px-4 hover:bg-gray-100">Edit</a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="block py-2 px-4 hover:bg-gray-100">Remove</a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="block py-2 px-4 hover:bg-gray-100">Report</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </footer>
-                                <p class="text-gray-500">Much appreciated! Glad you liked it ☺️</p>
-                                <div class="mt-4 flex items-center space-x-4">
-                                    <button type="button"
-                                        class="flex items-center text-sm text-gray-500 hover:underline">
-                                        <svg aria-hidden="true" class="mr-1 h-4 w-4" fill="none"
-                                            stroke="currentColor" viewBox="0 0 24 24"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z">
-                                            </path>
-                                        </svg>
-                                        Reply
-                                    </button>
-                                </div>
-                            </article>
-                        @endfor
+                                </article>
+                            @endforeach
+                        @endforeach
                     </div>
                 </section>
             </div>

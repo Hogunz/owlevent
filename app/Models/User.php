@@ -59,6 +59,11 @@ class User extends Authenticatable
         return "{$this->first_name} {$this->last_name}";
     }
 
+    public function getRatingsAttribute()
+    {
+        return $this->comments->sum('ratings') / $this->comments->count();
+    }
+
     public function occupations()
     {
         return $this->belongsToMany(Occupation::class)->withTimestamps();
@@ -72,5 +77,20 @@ class User extends Authenticatable
     public function gigs()
     {
         return $this->hasMany(Gig::class);
+    }
+
+    public function supplierComments()
+    {
+        return $this->hasMany(SupplierComment::class, 'commenter_id');
+    }
+
+    public function gigComments()
+    {
+        return $this->hasMany(GigComment::class, 'commenter_id');
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(SupplierComment::class, 'user_id');
     }
 }
