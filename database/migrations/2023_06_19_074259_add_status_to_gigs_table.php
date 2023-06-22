@@ -25,8 +25,8 @@ class AddStatusToGigsTable extends Migration
      */
     public function down()
     {
-        // Schema::table('gigs', function (Blueprint $table) {
-        //     $table->dropColumn('status');
-        // });
+        Schema::table('gigs', function (Blueprint $table) {
+            $table->dropColumn('status');
+        });
     }
 }
