@@ -64,7 +64,7 @@
                                     <div class="mr-auto place-self-center lg:col-span-7">
                                         <div class="overflow-hidden lg:col-span-5 lg:mt-0 lg:flex">
                                             <img class="mb-4 transition duration-300 ease-in-out hover:scale-110"
-                                                src="{{ asset('storage/' . $blog->image) }}" alt="">
+                                                src="{{ asset('storage/' . $blog->image) }}" alt="{{ $blog->name }}">
                                         </div>
                                         <div class="text-justify">
                                             <a href="{{ route('blogs.show', $blog->id) }}" class="href">

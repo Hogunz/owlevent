@@ -13,6 +13,7 @@ class Blog extends Model
         'image',
         'category_id',
         'description',
+        'status'
     ];
     use HasFactory;
 

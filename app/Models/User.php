@@ -33,6 +33,7 @@ class User extends Authenticatable
         'description',
         'id_card',
         'selfie_photo',
+        'status',
     ];
 
     /**

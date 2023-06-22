@@ -1,44 +1,47 @@
 <x-guest-layout>
     <section>
         <div class="container mx-auto mt-6 bg-white" x-data="gig()">
-            <ol id="stepper"
-                class="flex w-full items-center text-center text-sm font-medium text-gray-500 dark:text-gray-400 sm:text-base">
-                <li id="step1"
-                    class="after:border-1 flex cursor-pointer items-center pl-2 leading-[1.3rem] text-[#7895B2] after:mx-6 after:hidden after:h-1 after:w-full after:border-b after:border-gray-200 dark:after:border-gray-700 sm:after:inline-block sm:after:content-[''] md:w-full xl:after:mx-10">
-                    <span
-                        class="flex items-center after:mx-2 after:text-gray-200 after:content-['/'] dark:after:text-gray-500 sm:after:hidden">
-                        <svg aria-hidden="true" class="mr-2 h-4 w-4 sm:h-5 sm:w-5" fill="currentColor" viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                clip-rule="evenodd"></path>
-                        </svg>
-                        <span>Overview </span>
-                    </span>
-                </li>
-                <li id="step2"
-                    class="after:border-1 flex cursor-pointer items-center after:mx-6 after:hidden after:h-1 after:w-full after:border-b after:border-gray-200 after:content-[''] dark:after:border-gray-700 sm:after:inline-block md:w-full xl:after:mx-10">
-                    <span
-                        class="flex items-center after:mx-2 after:text-gray-200 after:content-['/'] dark:after:text-gray-500 sm:after:hidden">
-                        <span class="mr-2">2</span>
-                        <span>Pricing </span>
-                    </span>
-                </li>
-                <li id="step3"
-                    class="after:border-1 flex cursor-pointer items-center after:mx-6 after:hidden after:h-1 after:w-full after:border-b after:border-gray-200 after:content-[''] dark:after:border-gray-700 sm:after:inline-block md:w-full xl:after:mx-10">
-                    <span
-                        class="flex items-center after:mx-2 after:text-gray-200 after:content-['/'] dark:after:text-gray-500 sm:after:hidden">
-                        <span class="mr-2">3</span>
-                        Frequently <span class="hidden sm:ml-2 sm:inline-flex">Asked</span><span
-                            class="hidden sm:ml-2 sm:inline-flex">Question</span>
-                    </span>
-                </li>
-                <li id="step4" class="flex cursor-pointer items-center">
-                    <span class="mr-2">4</span>
-                    Portfolio
-                </li>
+            <div class="sticky inset-x-0 top-5">
+                <ol id="stepper"
+                    class="flex w-full items-center text-center text-sm font-medium text-gray-500 dark:text-gray-400 sm:text-base">
+                    <li id="step1"
+                        class="after:border-1 flex cursor-pointer items-center pl-2 leading-[1.3rem] text-[#7895B2] after:mx-6 after:hidden after:h-1 after:w-full after:border-b after:border-gray-200 dark:after:border-gray-700 sm:after:inline-block sm:after:content-[''] md:w-full xl:after:mx-10">
+                        <span
+                            class="flex items-center after:mx-2 after:text-gray-200 after:content-['/'] dark:after:text-gray-500 sm:after:hidden">
+                            <svg aria-hidden="true" class="mr-2 h-4 w-4 sm:h-5 sm:w-5" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Overview </span>
+                        </span>
+                    </li>
+                    <li id="step2"
+                        class="after:border-1 flex cursor-pointer items-center after:mx-6 after:hidden after:h-1 after:w-full after:border-b after:border-gray-200 after:content-[''] dark:after:border-gray-700 sm:after:inline-block md:w-full xl:after:mx-10">
+                        <span
+                            class="flex items-center after:mx-2 after:text-gray-200 after:content-['/'] dark:after:text-gray-500 sm:after:hidden">
+                            <span class="mr-2">2</span>
+                            <span>Pricing </span>
+                        </span>
+                    </li>
+                    <li id="step3"
+                        class="after:border-1 flex cursor-pointer items-center after:mx-6 after:hidden after:h-1 after:w-full after:border-b after:border-gray-200 after:content-[''] dark:after:border-gray-700 sm:after:inline-block md:w-full xl:after:mx-10">
+                        <span
+                            class="flex items-center after:mx-2 after:text-gray-200 after:content-['/'] dark:after:text-gray-500 sm:after:hidden">
+                            <span class="mr-2">3</span>
+                            Frequently <span class="hidden sm:ml-2 sm:inline-flex">Asked</span><span
+                                class="hidden sm:ml-2 sm:inline-flex">Question</span>
+                        </span>
+                    </li>
+                    <li id="step4" class="flex cursor-pointer items-center">
+                        <span class="mr-2">4</span>
+                        Portfolio
+                    </li>
 
-            </ol>
+                </ol>
+            </div>
+
 
             <div id="content1" class="w-full p-16 transition-all duration-500 ease-in-out">
                 <!--1st content -->
@@ -187,7 +190,7 @@
                     maintain
                     the security of your account, kindly verify your email and phone number.</p>
                 <hr class="pb-8">
-                <div class="grid grid-cols-5 gap-4">
+                {{-- <div class="grid grid-cols-5 gap-4">
                     <template x-for="(upload, index) in files" :key="`u` + index">
                         <div class="relative">
                             <div class="absolute top-0 left-2">
@@ -214,8 +217,69 @@
                         class="h-60 w-full rounded border-2 border-dashed p-6 text-xl font-bold uppercase tracking-wide text-gray-500">
                         Add Upload
                     </button>
+                </div> --}}
+                <div class="flex justify-end">
+                    <span x-text="getSize()" class="font-bold"></span>
                 </div>
 
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <div class="text-2xl font-semibold">Pictures</div>
+                        <div class="grid grid-cols-3 gap-2">
+                            <template x-for="(upload, index) in images" :key="`i` + index">
+                                <div class="relative">
+                                    <div class="absolute top-0 left-2">
+                                        <button type="button"
+                                            class="rounded bg-red-500 p-1 text-xs text-white hover:bg-red-300"
+                                            @click="removeImage(index)">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                class="h-3 w-3">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M19.5 12h-15" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <img :src="upload.previewUrl" alt="Uploaded Image">
+                                </div>
+                            </template>
+                            <input type="file" accept="image/*" class="hidden" x-ref="image"
+                                @change="addImage(event)">
+                            <button type="button" @click="$refs.image.click()"
+                                class="h-60 w-full rounded border-2 border-dashed p-6 text-xl font-bold uppercase tracking-wide text-gray-500">
+                                Add Image
+                            </button>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-semibold">Videos</div>
+                        <div class="grid grid-cols-3 gap-2">
+                            <template x-for="(upload, index) in videos" :key="`v` + index">
+                                <div class="relative">
+                                    <div class="absolute top-0 left-2">
+                                        <button type="button"
+                                            class="rounded bg-red-500 p-1 text-xs text-white hover:bg-red-300"
+                                            @click="removeVideo(index)">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                class="h-3 w-3">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M19.5 12h-15" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <video :src="upload.previewUrl" controls></video>
+                                </div>
+                            </template>
+                            <input type="file" accept="video/*" class="hidden" x-ref="video"
+                                @change="addVideo(event)">
+                            <button type="button" @click="$refs.video.click()"
+                                class="h-60 w-full rounded border-2 border-dashed p-6 text-xl font-bold uppercase tracking-wide text-gray-500">
+                                Add Video
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="mt-6 flex justify-end">
                     <x-button class="" @click="submit()">Continue</x-button>
@@ -255,7 +319,8 @@
                         question: '',
                         answer: '',
                     }],
-                    files: [],
+                    images: [],
+                    videos: [],
                     checkLimit() {
                         return this.title > this.titleLimit
                     },
@@ -278,7 +343,7 @@
                     removeFaq(i) {
                         this.faqs.splice(i, 1)
                     },
-                    async addFile(event) {
+                    async addImage(event) {
 
                         const files = event.target.files
 
@@ -286,14 +351,43 @@
                             const file = files[i]
 
                             const previewUrl = await readFileData(file)
-                            this.files.push({
+                            this.images.push({
                                 file,
                                 previewUrl
                             })
                         }
                     },
-                    removeFile(i) {
-                        this.files.splice(i, 1)
+                    async addVideo(event) {
+                        const files = event.target.files
+
+                        for (let i = 0; i < files.length; i++) {
+                            const file = files[i]
+
+                            const previewUrl = await readFileData(file)
+                            this.videos.push({
+                                file,
+                                previewUrl
+                            })
+                        }
+                    },
+                    getSize() {
+                        var size = 0
+
+                        this.images.forEach((image) => {
+                            size += image.file.size
+                        })
+
+                        this.videos.forEach((video) => {
+                            size += video.file.size
+                        })
+
+                        return size / (1024 * 1024) + " MB";
+                    },
+                    removeImage(i) {
+                        this.images.splice(i, 1)
+                    },
+                    removeVideo(i) {
+                        this.videos.splice(i, 1)
                     },
                     submit() {
                         const forms = new FormData()
@@ -303,9 +397,13 @@
                         forms.append('description', this.description)
                         forms.append('packages', JSON.stringify(this.packages))
                         forms.append('faqs', JSON.stringify(this.faqs))
-                        for (var i = 0; i < this.files.length; i++) {
-                            var file = this.files[i].file; // Assuming `file` property holds the actual File object
-                            forms.append('uploads[]', file);
+                        for (var i = 0; i < this.images.length; i++) {
+                            var file = this.images[i].file; // Assuming `file` property holds the actual File object
+                            forms.append('images[]', file);
+                        }
+                        for (var i = 0; i < this.videos.length; i++) {
+                            var file = this.videos[i].file; // Assuming `file` property holds the actual File object
+                            forms.append('videos[]', file);
                         }
 
                         // forms.append('uploads', JSON.stringify(this.files))

@@ -13,6 +13,7 @@ class Gig extends Model
         'title',
         'category_id',
         'description',
+        'status',
     ];
 
     public function getRatingsAttribute()
@@ -39,6 +40,7 @@ class Gig extends Model
     {
         return $this->belongsTo(User::class);
     }
+
     public function category()
     {
         return $this->belongsTo(Category::class);

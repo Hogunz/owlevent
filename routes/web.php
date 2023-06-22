@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ApprovalController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GigController;
 use App\Http\Controllers\BlogController;
@@ -49,6 +50,16 @@ Route::get('/blog/create', function () {
     return view('/blog/create');
 });
 
+//Approvals
+Route::get('/admin/blog/user/index', [ApprovalController::class, 'index'])->name('blogs.approval.index');
+Route::put('/admin/blog/user/index/{blog}/change-status', [ApprovalController::class, 'changeStatus'])->name('blogs.approval.change');
+Route::get('/admin/supplier/user/index', [ApprovalController::class, 'supplierindex'])->name('suppliers.approval.index');
+Route::put('/admin/supplier/user/index/{supplier}/change-status', [ApprovalController::class, 'supplierchangeStatus'])->name('suppliers.approval.change');
+Route::get('/admin/service/user/index', [ApprovalController::class, 'serviceindex'])->name('services.approval.index');
+Route::put('/admin/service/user/index/{service}/change-status', [ApprovalController::class, 'servicechangeStatus'])->name('services.approval.change');
+
+
+
 //For Admin User
 Route::get('/blog', [BlogController::class, 'blog'])->name('blog');
 Route::get('/blog/show-more', [BlogController::class, 'showM'])->name('blogs.showM');
@@ -83,7 +94,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/my-profile', [SupplierController::class, 'myProfile'])->name('my-profile');
     Route::post('/my-profile/update-avatar', [SupplierController::class, 'updateAvatar']);
     Route::get('/gig/{gig}', [SupplierController::class, 'showGig'])->name('show.gig');
-    Route::resource('gigs', GigController::class);
+    Route::resource('gigs', GigController::class)->except(['update']);
+    Route::post('/gigs/{gig}/update', [GigController::class, 'update'])->name('gigs.update');
 
     Route::post('/gig/{gig}/comment', [GigCommentController::class, 'comment'])->name('gig.comment');
     Route::post('/supplier/{user}/comment', [SupplierCommentController::class, 'comment'])->name('supplier.comment');

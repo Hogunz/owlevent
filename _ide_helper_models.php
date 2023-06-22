@@ -20,6 +20,7 @@ namespace App\Models{
  * @property string $name
  * @property string $image
  * @property string $description
+ * @property string|null $status
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \App\Models\User|null $user
@@ -32,6 +33,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|Blog whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Blog whereImage($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Blog whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Blog whereStatus($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Blog whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Blog whereUserId($value)
  */
@@ -321,6 +323,7 @@ namespace App\Models{
  * @property string|null $last_name
  * @property string|null $business_name
  * @property string|null $description
+ * @property string|null $status
  * @property string|null $id_card
  * @property string|null $selfie_photo
  * @property string|null $address
@@ -375,6 +378,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|User wherePassword($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereRememberToken($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereSelfiePhoto($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|User whereStatus($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereTwitterId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereUpdatedAt($value)
  */

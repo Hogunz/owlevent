@@ -21,7 +21,7 @@ class GigController extends Controller
      */
     public function index()
     {
-        //
+        $services = Gig::where('status', 'approved')->orderBy('created_at', 'desc')->get();
     }
 
     /**
@@ -52,7 +52,8 @@ class GigController extends Controller
                 'description' => ['required'],
                 'packages' => ['required'],
                 'faqs' => ['required'],
-                'uploads' => ['required'],
+                'images' => ['required'],
+                'videos' => ['required'],
             ]);
 
             $faqs = json_decode($request->faqs);
@@ -88,19 +89,20 @@ class GigController extends Controller
             $gig->gigPackages()->createMany($packageData);
 
             $paths = [];
-            foreach ($request->file('uploads') as $file) {
-                $mimeType = $file->getMimeType();
 
-                if (str_starts_with($mimeType, 'image/')) {
-                    $type = 'image';
-                } else if (str_starts_with($mimeType, 'video/')) {
-                    $type = 'video';
-                } else {
-                    return response()->json('Error', 422);
-                }
+            foreach ($request->file('images') as $file) {
+
                 $paths[] = [
                     'url' => $file->store(Auth::id() . "/gig/{$gig->id}", 'public'),
-                    'type' => $type
+                    'type' => 'image',
+                ];
+            }
+
+            foreach ($request->file('videos') as $file) {
+
+                $paths[] = [
+                    'url' => $file->store(Auth::id() . "/gig/{$gig->id}", 'public'),
+                    'type' => 'video',
                 ];
             }
 
@@ -139,8 +141,9 @@ class GigController extends Controller
      */
     public function edit(Gig $gig)
     {
-
-        return view('suppliers.service.edit', compact('gig'));
+        $categories = Category::all();
+        $gig = $gig->load(['faqs', 'gigUploads', 'gigPackages']);
+        return view('suppliers.service.edit', compact('gig', 'categories'));
     }
 
     /**
@@ -152,6 +155,7 @@ class GigController extends Controller
      */
     public function update(Request $request, $gig)
     {
+        return response()->json($request->all());
         try {
             $request->validate([
                 'title' => ['required'],

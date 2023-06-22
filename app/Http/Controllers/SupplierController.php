@@ -18,6 +18,8 @@ class SupplierController extends Controller
     public function becomeSupplier()
     {
         return view('/become-a-supplier');
+        $suppliers = User::where('status', 'approved')->orderBy('created_at', 'desc')->get();
+        return view('/become-a-supplier', compact('suppliers'));
     }
 
     public function create()
@@ -53,7 +55,7 @@ class SupplierController extends Controller
             //     'id_card' => ['required', 'image'],
             //     'selfie_photo' => ['required', 'image'],
             // ]);
-            if($validator->fails()) {
+            if ($validator->fails()) {
                 return response()->json(['errors' => $validator->errors(), 422]);
             }
 
@@ -66,8 +68,8 @@ class SupplierController extends Controller
 
             $validatedData = $validator->safe()->except(['id_card', 'selfie_photo', 'occupations', 'skills']);
 
-            $validatedData['id_card'] = $request->file('id_card')->storeAs(Auth::id(), 'id_card.'.$request->file('id_card')->getClientOriginalExtension() ,'public');
-            $validatedData['selfie_photo'] = $request->file('selfie_photo')->storeAs(Auth::id(), 'selfie.'.$request->file('selfie_photo')->getClientOriginalExtension() ,'public');
+            $validatedData['id_card'] = $request->file('id_card')->storeAs(Auth::id(), 'id_card.' . $request->file('id_card')->getClientOriginalExtension(), 'public');
+            $validatedData['selfie_photo'] = $request->file('selfie_photo')->storeAs(Auth::id(), 'selfie.' . $request->file('selfie_photo')->getClientOriginalExtension(), 'public');
 
             DB::beginTransaction();
 
@@ -78,9 +80,7 @@ class SupplierController extends Controller
             DB::commit();
 
             return response()->json('successful');
-
-        } catch (Exception $e)
-        {
+        } catch (Exception $e) {
             // return response()->json("ERROR", 500);
             return response()->json($e->getMessage(), 422);
         }
@@ -97,7 +97,7 @@ class SupplierController extends Controller
 
             // $path = $request->file('id_card')->storeAs(Auth::id(), 'avatar.png', 'public');
             $disk = Storage::disk('public');
-            $path = Auth::id().'/avatar.png';
+            $path = Auth::id() . '/avatar.png';
             $disk->put($path, base64_decode($image));
 
             $user->update([
@@ -126,5 +126,4 @@ class SupplierController extends Controller
     {
         return view('suppliers.service-profile', compact('gig'));
     }
-
 }

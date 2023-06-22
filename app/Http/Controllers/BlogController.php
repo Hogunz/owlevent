@@ -26,7 +26,7 @@ class BlogController extends Controller
     {
 
         $categories = Category::all();
-        $blogs = Blog::orderBy('created_at', 'desc')->get();
+        $blogs = Blog::where('status', 'approved')->orderBy('created_at', 'desc')->get();
         return view('blog', compact('blogs', 'categories'));
     }
 
@@ -106,7 +106,8 @@ class BlogController extends Controller
      */
     public function edit(Blog $blog)
     {
-        return view('blog.edit', compact('blog'));
+        $categories = Category::all();
+        return view('blog.edit', compact('blog', 'categories'));
     }
 
     /**
