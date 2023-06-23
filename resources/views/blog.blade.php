@@ -27,14 +27,13 @@
                 </aside>
             </div>
             <!-- 2 -->
-
             <div>
                 <div class="container mx-auto max-w-max p-8">
                     <div class="mx-auto max-w-screen-xl px-4">
                         <div class="grid grid-cols-1 gap-4 divide-y">
                             @foreach ($blogs->shuffle()->take(1) as $blog)
                                 <div class="mr-auto place-self-center lg:col-span-7">
-                                    <div class="lg:col-span-5 lg:mt-0 lg:flex">
+                                    <div class="lg:col-span-5 lg:mt-0 lg:flex w-full max-h-min">
                                         <img class="mb-4" src="{{ asset('storage/' . $blog->image) }}" alt="">
                                     </div>
                                     <div class="text-justify">
@@ -104,8 +103,7 @@
                             </div>
 
                         </div>
-                        <div
-                            class="mt-6 mb-6 rounded-lg border border-gray-200 bg-gradient-to-r from-[#F5EFE6] to-[#E8DFCA] p-6 pb-4 font-medium text-gray-500">
+                        <div class="">
                             <ul class="space-y-4 divide-y divide-[#AEBDCA] text-gray-500">
                                 @foreach ($blogs->shuffle()->take(5) as $blog)
                                     <li class="pt-2">
@@ -118,7 +116,7 @@
                                             <div class="flex flex-col space-y-4">
                                                 <div class="mr-3">
                                                     <span
-                                                        class="block text-sm text-gray-900">{{ $blog->created_at }}</span>
+                                                        class="block text-sm text-gray-900">{{ $blog->created_at->format('Y-m-d') }}</span>
                                                 </div>
                                                 <div class="mr-3"><span
                                                         class="line-clamp-2 text-sm">{{ $blog->name }}</span>

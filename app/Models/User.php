@@ -61,7 +61,7 @@ class User extends Authenticatable
 
     public function getRatingsAttribute()
     {
-        return $this->comments->sum('ratings') / $this->comments->count();
+        return $this->comments->count() > 0 ? $this->comments->sum('ratings') / $this->comments->count() : 0;
     }
 
     public function occupations()

@@ -25,6 +25,37 @@
 
     <hr>
 
+
+    <button type="button" class="nav-item  flex items-center pl-6 text-white" aria-controls="dropdown-example"
+        data-collapse-toggle="dropdown-example">
+        <i class="fas fa-user-tag mr-3"></i>
+        Approval
+        <svg sidebar-toggle-item class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clip-rule="evenodd"></path>
+        </svg>
+    </button>
+    <ul id="dropdown-example" class="hidden pl-6 space-y-2">
+        <li>
+            <a href="#"
+                class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100">Services</a>
+        </li>
+        <li>
+            <a href="#"
+                class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100">Supplier</a>
+        </li>
+        <li>
+            <a href="#"
+                class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100">Blog
+                Post</a>
+        </li>
+    </ul>
+
+
+
+
     <a href="{{ route('users.index') }}"
         class="nav-item {{ request()->routeIs('users.*') ? 'active-nav-link' : 'opacity-75 hover:opacity-100' }} flex items-center pl-6 text-white">
         <i class="fas fa-users mr-3"></i>
@@ -42,6 +73,8 @@
         <i class="fas fa-user-tag mr-3"></i>
         Permissions
     </a>
+
+
 
     {{ $slot }}
 </nav>

@@ -197,7 +197,7 @@
             @foreach ($suppliers as $supplier)
                 <a href="{{ route('show.profile', $supplier) }}" class="href">
                     <div class="flex scale-75 flex-col duration-300 ease-in-out hover:scale-100">
-                        <img class="h-96 rounded-t-3xl object-cover"
+                        <img class="rounded-t-3xl object-cover"
                             src="{{ asset('storage/' . $supplier->avatar) ?? 'https://images.unsplash.com/photo-1627564174704-4c3765ef733a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80' }}"
                             alt="">
                         <div class="flex justify-between rounded-b-3xl bg-white p-4">
@@ -236,11 +236,11 @@
 
                     </p>
                 </div>
-                <div class="space-y-8 sm:gap-6 lg:grid lg:grid-cols-3 lg:space-y-0 xl:gap-10">
+                <div class="space-y-8 sm:gap-6 lg:grid lg:grid-cols-2 lg:space-y-0 xl:gap-10">
                     <!-- Pricing Card -->
                     <div class="mx-auto flex max-w-lg flex-col rounded-lg border-2 border-yellow-900 bg-transparent p-6 text-center text-gray-900 drop-shadow-2xl"
                         data-aos="fade-down-right" data-aos-duration="2000">
-                        <h3 class="mb-4 text-2xl font-semibold text-yellow-900">Bronze</h3>
+                        <h3 class="mb-4 text-2xl font-semibold text-yellow-900">Free Subscription</h3>
                         <p class="font-light text-gray-500 dark:text-gray-400 sm:text-lg">Our Bronze Package offers the
                             perfect balance of affordability and functionality. </p>
                         <div class="my-8 flex items-baseline justify-center">
@@ -291,13 +291,12 @@
                             </li>
                         </ul>
                         <a href="#"
-                            class="rounded-lg border bg-yellow-900 px-8 py-2 text-center text-sm font-medium text-white hover:bg-yellow-800 focus:ring-4 focus:ring-[#7895B2]">Get
-                            started</a>
+                            class="rounded-lg border bg-yellow-900 px-8 py-2 text-center text-sm font-medium text-white hover:bg-yellow-800 focus:ring-4 focus:ring-[#7895B2]">Avail</a>
                     </div>
                     <!-- Pricing Card -->
-                    <div
-                        class="mx-auto flex max-w-lg flex-col rounded-lg border-2 border-stone-400 bg-transparent p-6 text-center text-gray-900 drop-shadow-2xl">
-                        <h3 class="mb-4 text-2xl font-semibold text-stone-400">Silver</h3>
+                    <div class="mx-auto flex max-w-lg flex-col rounded-lg border-2 border-stone-400 bg-transparent p-6 text-center text-gray-900 drop-shadow-2xl"
+                        data-aos="fade-down-left" data-aos-duration="2000">
+                        <h3 class="mb-4 text-2xl font-semibold text-stone-400">Premium Subscription</h3>
                         <p class="font-light text-gray-500 dark:text-gray-400 sm:text-lg">Our Silver Package is
                             designed for those who want a little bit more. </p>
                         <div class="my-8 flex items-baseline justify-center">
@@ -349,66 +348,7 @@
 
                         </ul>
                         <a href="#"
-                            class="rounded-lg border bg-stone-400 px-8 py-2 text-center text-sm font-medium text-white hover:bg-stone-500 focus:ring-4 focus:ring-[#7895B2]">Get
-                            started</a>
-                    </div>
-                    <!-- Pricing Card -->
-                    <div class="mx-auto flex max-w-lg flex-col rounded-lg border-2 border-yellow-300 bg-transparent p-6 text-center text-gray-900 drop-shadow-2xl"
-                        data-aos="fade-down-left" data-aos-duration="2000">
-                        <h3 class="mb-4 text-2xl font-semibold text-yellow-300">Gold</h3>
-                        <p class="font-light text-gray-500 dark:text-gray-400 sm:text-lg">Our Gold Package is the
-                            ultimate premium experience.</p>
-                        <div class="my-8 flex items-baseline justify-center">
-                            <span class="mr-2 text-5xl font-extrabold text-yellow-300">$499</span>
-                            <span class="text-gray-500 dark:text-gray-400">/month</span>
-                        </div>
-                        <!-- List -->
-                        <ul role="list" class="mb-8 space-y-4 text-left">
-                            <li class="flex items-center space-x-3">
-                                <!-- Icon -->
-                                <svg class="h-5 w-5 flex-shrink-0 text-green-500 dark:text-green-400"
-                                    fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                                <span>Upload Photos: <span class="font-semibold">Unlimited</span></span>
-                            </li>
-                            <li class="flex items-center space-x-3">
-                                <!-- Icon -->
-                                <svg class="h-5 w-5 flex-shrink-0 text-green-500 dark:text-green-400"
-                                    fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                                <span>Upload Videos: <span class="font-semibold">Unlimited</span></span>
-                            </li>
-                            <li class="flex items-center space-x-3">
-                                <!-- Icon -->
-                                <svg class="h-5 w-5 flex-shrink-0 text-green-500 dark:text-green-400"
-                                    fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                                <span>Show Social Media: <span class="font-semibold"></span></span>
-                            </li>
-                            <li class="flex items-center space-x-3">
-                                <!-- Icon -->
-                                <svg class="h-5 w-5 flex-shrink-0 text-green-500 dark:text-green-400"
-                                    fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                                <span>Schedule Meeting to Supplier</span>
-                            </li>
-
-                        </ul>
-                        <a href="#"
-                            class="rounded-lg border bg-yellow-300 px-8 py-2 text-center text-sm font-medium text-white hover:bg-yellow-400 focus:ring-4 focus:ring-[#7895B2]">Get
-                            started</a>
+                            class="rounded-lg border bg-stone-400 px-8 py-2 text-center text-sm font-medium text-white hover:bg-stone-500 focus:ring-4 focus:ring-[#7895B2]">Avail</a>
                     </div>
                 </div>
             </div>
@@ -504,6 +444,7 @@
                     items: 1
                 },
                 640: {
+                    stagePadding: 135,
                     items: 1
                 },
                 768: {

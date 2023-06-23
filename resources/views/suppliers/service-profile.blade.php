@@ -367,7 +367,8 @@
                                 <span class="mr-2 text-5xl font-extrabold">₱
                                     {{ number_format($package->price, 2, '.', ',') }}</span>
                             </div>
-                            <p class="font-light text-gray-800 sm:text-sm">{{ $package->description }}</p>
+                            <p class="font-light text-gray-800 sm:text-sm text-justify">{{ $package->description }}
+                            </p>
                         </div>
                     @endforeach
                 </div>

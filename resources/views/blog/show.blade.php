@@ -70,12 +70,9 @@
                                     href="">{{ $category->name }}</a>
                             @endforeach
                         </div>
-
                     </div>
-
                 </div>
             </aside>
         </div>
-
     </div>
 </x-guest-layout>

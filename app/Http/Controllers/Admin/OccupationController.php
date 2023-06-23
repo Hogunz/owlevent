@@ -16,7 +16,6 @@ class OccupationController extends Controller
     public function index()
     {
         $occupations = Occupation::all();
-
         return view('admin.occupations.index', compact('occupations'));
     }
 

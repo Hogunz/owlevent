@@ -9,7 +9,7 @@
                         <p class="text-3xl text-left font-bold">"Discover the highlights: A visual
                             journey through our featured
                             page's top features."</p>
-                        <p class="text-2xl text-left mb-10 leading-none">Find the perfect solution to
+                        <p class="text-base text-left mb-10 leading-none">Find the perfect solution to
                             your needs with our
                             supplier's wide range of services.</p>
                     </div>

@@ -1524,17 +1524,17 @@ input:checked + .toggle-bg {
 .box-content {
   box-sizing: content-box;
 }
-.line-clamp-3 {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-}
 .line-clamp-2 {
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+}
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
 }
 .\!block {
   display: block !important;
@@ -2396,18 +2396,12 @@ input:checked + .toggle-bg {
 .whitespace-pre-line {
   white-space: pre-line;
 }
-.whitespace-break-spaces {
-  white-space: break-spaces;
-}
 .break-normal {
   overflow-wrap: normal;
   word-break: normal;
 }
 .break-words {
   overflow-wrap: break-word;
-}
-.break-all {
-  word-break: break-all;
 }
 .rounded {
   border-radius: 0.25rem;
@@ -2991,10 +2985,6 @@ input:checked + .toggle-bg {
 }
 .fill-white {
   fill: #ffffff;
-}
-.object-contain {
-  -o-object-fit: contain;
-     object-fit: contain;
 }
 .object-cover {
   -o-object-fit: cover;
@@ -3675,10 +3665,6 @@ input:checked + .toggle-bg {
 .text-yellow-300 {
   --tw-text-opacity: 1;
   color: rgb(250 202 21 / var(--tw-text-opacity));
-}
-.text-yellow-400 {
-  --tw-text-opacity: 1;
-  color: rgb(227 160 8 / var(--tw-text-opacity));
 }
 .text-yellow-800 {
   --tw-text-opacity: 1;
@@ -4405,9 +4391,6 @@ input:checked + .toggle-bg {
 .hover\:text-\[\#7895B2\]:hover {
   --tw-text-opacity: 1;
   color: rgb(120 149 178 / var(--tw-text-opacity));
-}
-.hover\:text-\[\#7895B2\]\/50:hover {
-  color: rgb(120 149 178 / 0.5);
 }
 .hover\:text-\[\#8b8b8b\]:hover {
   --tw-text-opacity: 1;
@@ -5474,10 +5457,6 @@ input:checked + .toggle-bg {
     display: none;
   }
 
-  .sm\:aspect-square {
-    aspect-ratio: 1 / 1;
-  }
-
   .sm\:h-5 {
     height: 1.25rem;
   }
@@ -5983,10 +5962,6 @@ input:checked + .toggle-bg {
     display: none;
   }
 
-  .lg\:aspect-auto {
-    aspect-ratio: auto;
-  }
-
   .lg\:h-full {
     height: 100%;
   }
@@ -6165,13 +6140,13 @@ input:checked + .toggle-bg {
     line-height: 1.5rem;
   }
 
-  .lg\:text-xl {
-    font-size: 1.25rem;
+  .lg\:text-lg {
+    font-size: 1.125rem;
     line-height: 1.75rem;
   }
 
-  .lg\:text-lg {
-    font-size: 1.125rem;
+  .lg\:text-xl {
+    font-size: 1.25rem;
     line-height: 1.75rem;
   }
 

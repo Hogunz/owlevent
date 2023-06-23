@@ -4,16 +4,17 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GigController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\SocialController;
+use App\Http\Controllers\ApprovalController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\GigCommentController;
 use App\Http\Controllers\Admin\SkillController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\SupplierCommentController;
 use App\Http\Controllers\Admin\OccupationController;
 use App\Http\Controllers\Admin\PermissionController;
-use App\Http\Controllers\GigCommentController;
-use App\Http\Controllers\SupplierCommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,7 +49,9 @@ Route::get('/categories', function () {
 Route::get('/blog/create', function () {
     return view('/blog/create');
 });
-
+Route::get('/sample', function () {
+    return view('/sample');
+});
 //For Admin User
 Route::get('/blog', [BlogController::class, 'blog'])->name('blog');
 Route::get('/blog/show-more', [BlogController::class, 'showM'])->name('blogs.showM');
