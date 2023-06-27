@@ -20,6 +20,11 @@ class Category extends Model
 
     public function firstImg()
     {
-        return $this->gigs->first() ? $this->gigs->first()->gigUploads->first()->url : null;
+        return $this->firstGig() ? $this->firstGig()->gigUploads->first()->url : null;
+    }
+
+    public function firstGig()
+    {
+        return $this->gigs->shuffle()->first();
     }
 }

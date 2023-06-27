@@ -34,10 +34,10 @@
                             <img class="h-8 w-8 rounded-full object-cover ring-2 ring-white"
                                 src="https://images.unsplash.com/photo-1555952517-2e8e729e0b44?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHBlcnNvbnxlbnwwfDF8MHx8&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60"
                                 alt="">
-                            <a href="/supplier-profile" class="href">
+                            <a href="{{ route('my-profile') }}" class="href">
                                 <p
                                     class="mb-2 cursor-pointer text-sm font-bold tracking-tight text-gray-900 hover:underline">
-                                    {{ $gig->user->business_name }}</p>
+                                    {{ $gig->title }}</p>
                             </a>
                         </div>
                         <p class="line-clamp-3 mb-3 font-normal text-gray-700">{{ $gig->description }}</p>

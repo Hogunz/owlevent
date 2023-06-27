@@ -18,8 +18,15 @@ class Gig extends Model
 
     public function getRatingsAttribute()
     {
-        return $this->comments->sum('ratings') / $this->comments->count();
+        $commentsCount = $this->comments->count();
+
+        if ($commentsCount === 0) {
+            return 0; // or any other default value you want to assign
+        }
+
+        return $this->comments->sum('ratings') / $commentsCount;
     }
+
 
     public function faqs()
     {

@@ -18,7 +18,6 @@ class ApprovalController extends Controller
 
     public function servicechangeStatus(Request $request, Gig $service)
     {
-
         $service->update([
             'status' => $request->status,
         ]);

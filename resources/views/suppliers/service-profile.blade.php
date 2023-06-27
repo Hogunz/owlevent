@@ -21,29 +21,65 @@
                     <div class="inset-x-0 top-14 max-h-full">
                         <div id="owl-carousel" class="owl-carousel owl-theme">
                             <!-- Item 1 -->
+
                             @foreach ($gig->gigUploads as $upload)
+                                <div class="relative" data-modal-target="extralarge-modal"
+                                    data-modal-toggle="extralarge-modal">
+                                    @if (pathinfo($upload->url, PATHINFO_EXTENSION) === 'mp4')
+                                        <video class="relative rounded-lg transition duration-300 ease-in-out" controls>
+                                            <source src="{{ asset('storage/' . $upload->url) }}" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    @else
+                                        <img src="{{ asset('storage/' . $upload->url) }}"
+                                            class="relative rounded-lg transition duration-300 ease-in-out"
+                                            alt="...">
+                                    @endif
+                                </div>
+                            @endforeach
+                            {{-- @foreach ($gig->gigUploads as $upload)
                                 <div class="item relative h-56 overflow-hidden rounded-lg md:h-96"
                                     data-modal-target="extralarge-modal" data-modal-toggle="extralarge-modal">
                                     <img src="{{ asset('storage/' . $upload->url) }}"
                                         class="absolute top-1/2 left-1/2 block w-full -translate-x-1/2 -translate-y-1/2 cursor-pointer transition duration-300 ease-out hover:scale-110 hover:overflow-hidden"
                                         alt="...">
                                 </div>
-                            @endforeach
+                            @endforeach --}}
                         </div>
                     </div>
                 </div>
+
+
                 <div id="extralarge-modal" tabindex="-1"
                     class="fixed top-0 left-0 right-0 z-50 hidden h-[calc(100%-1rem)] w-full overflow-y-auto overflow-x-hidden p-4 md:inset-0 md:h-full">
                     <div class="relative h-full w-full max-w-7xl md:h-auto">
                         <!-- Modal content -->
                         <div id="owl-carousel2"
                             class="owl-carousel owl-theme relative rounded-lg bg-transparent shadow">
+
+                            @foreach ($gig->gigUploads as $upload)
+                                <div class="relative" data-modal-target="extralarge-modal"
+                                    data-modal-toggle="extralarge-modal">
+                                    @if (pathinfo($upload->url, PATHINFO_EXTENSION) === 'mp4')
+                                        <video class="relative rounded-lg transition duration-300 ease-in-out" controls>
+                                            <source src="{{ asset('storage/' . $upload->url) }}" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    @else
+                                        <img src="{{ asset('storage/' . $upload->url) }}"
+                                            class="relative rounded-lg transition duration-300 ease-in-out"
+                                            alt="...">
+                                    @endif
+                                </div>
+                            @endforeach
+
+                            {{--
                             @foreach ($gig->gigUploads as $upload)
                                 <div class="relative">
                                     <img src="{{ asset('storage/' . $upload->url) }}"
                                         class="relative rounded-lg transition duration-300 ease-in-out" alt="...">
                                 </div>
-                            @endforeach
+                            @endforeach --}}
                         </div>
                     </div>
                 </div>

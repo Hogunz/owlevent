@@ -20,7 +20,7 @@
     </section>
     <section class="container mx-auto p-8">
         <div class="grid lg:grid-cols-4 justify-items-center sm:grid-cols-1 gap-y-2 gap-x-0">
-            @for ($i = 0; $i < 15; $i++)
+            @for ($i = 0; $i < 4; $i++)
                 <div
                     class="flex lg:flex-col sm:flex-row items-center bg-white border border-gray-200 rounded-lg shadow  sm:max-w-xl lg:max-w-xs hover:bg-gray-100">
                     <a href="/service-profile" class="">

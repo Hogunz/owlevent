@@ -29,6 +29,7 @@
                                         <x-button name="status" value="approved">Approve</x-button>
                                         <x-button name="status" value="declined">Declined</x-button>
                                     </form>
+
                                     <a href="">
                                         <x-button class="">Edit
                                         </x-button>
@@ -36,8 +37,6 @@
                                 </td>
                             </tr>
                         @endforeach
-
-
                     </tbody>
                 </table>
             </div>

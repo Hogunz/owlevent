@@ -65,9 +65,7 @@
                             </div>
                             <div class="">
                             </div>
-                            <div class="flex justify-end">
-                                <x-button class="">Continue</x-button>
-                            </div>
+
                         </div>
 
                     </div>
@@ -113,10 +111,11 @@
                                                 <div class="form-check">
                                                     <input
                                                         class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-                                                        type="checkbox" value="{{ $occupation->id }}" x-model.number="occupations"
-                                                        id="{{ 'occupation-'.$occupation->id }}">
+                                                        type="checkbox" value="{{ $occupation->id }}"
+                                                        x-model.number="occupations"
+                                                        id="{{ 'occupation-' . $occupation->id }}">
                                                     <label class="form-check-label inline-block text-gray-800"
-                                                        for="{{ 'occupation-'.$occupation->id }}">
+                                                        for="{{ 'occupation-' . $occupation->id }}">
                                                         {{ $occupation->name }}
                                                     </label>
                                                 </div>
@@ -137,10 +136,10 @@
                                                 <div class="form-check">
                                                     <input
                                                         class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-                                                        type="checkbox" value="{{ $skill->id }}" x-model.number="skills"
-                                                        id="{{ 'skill-'.$skill->id }}">
+                                                        type="checkbox" value="{{ $skill->id }}"
+                                                        x-model.number="skills" id="{{ 'skill-' . $skill->id }}">
                                                     <label class="form-check-label inline-block text-gray-800"
-                                                        for="{{ 'skill-'.$skill->id }}">
+                                                        for="{{ 'skill-' . $skill->id }}">
                                                         {{ $skill->name }}
                                                     </label>
                                                 </div>
@@ -149,10 +148,6 @@
 
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="flex justify-end">
-                                <x-button class="">Continue</x-button>
                             </div>
                         </div>
                     </div>
@@ -249,9 +244,7 @@
                                 <div class="">
                                 </div>
                             </div>
-                            <div class="flex justify-end">
-                                <x-button>Continue</x-button>
-                            </div>
+
                         </div>
 
                     </div>
@@ -284,8 +277,7 @@
                             <div class="text-left">
                                 <input placeholder="Enter your Email Address"
                                     class="border rounded p-2 px-2 w-96 appearance-none outline-none  text-gray-800"
-                                    x-model="email"
-                                    required>
+                                    x-model="email" required>
                             </div>
                             <div class="font-bold text-gray-600 text-lg uppercase">
                                 Government-Issued ID Card
@@ -293,7 +285,8 @@
                             <div class="text-left">
                                 <input
                                     class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50  focus:outline-none da"
-                                    id="file_input" accept="image/*" type="file" @change="id_card = $event.target.files[0]">
+                                    id="file_input" accept="image/*" type="file"
+                                    @change="id_card = $event.target.files[0]">
 
                             </div>
                             <div class="font-bold text-gray-600 text-lg  uppercase">
@@ -302,7 +295,8 @@
                             <div class="text-left">
                                 <input
                                     class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none "
-                                    id="file_input" accept="image/*" type="file" @change="selfie = $event.target.files[0]">
+                                    id="file_input" accept="image/*" type="file"
+                                    @change="selfie = $event.target.files[0]">
                             </div>
 
                         </div>
@@ -370,7 +364,7 @@
                         var url = '/supplier/register'
                         axios.post(url, forms, {
                             headers: {
-                                'Content-Type':'multipart/form-data'
+                                'Content-Type': 'multipart/form-data'
                             }
                         }).then((response) => {
                             location.href = "/";

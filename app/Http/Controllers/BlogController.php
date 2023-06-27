@@ -19,7 +19,7 @@ class BlogController extends Controller
     {
         $categories = Category::all();
         $blogs = Blog::orderBy('created_at', 'desc')->get();
-        return view('blog.index', compact('blogs', 'categories'));
+        return view('approvals.services.index', compact('blogs', 'categories'));
     }
 
     public function blog()
