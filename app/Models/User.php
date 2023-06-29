@@ -71,6 +71,11 @@ class User extends Authenticatable
         return $this->comments->sum('ratings') / $commentsCount;
     }
 
+    public function scopeApproved($query)
+    {
+        return $query->where('status', 'approved');
+    }
+
     public function occupations()
     {
         return $this->belongsToMany(Occupation::class)->withTimestamps();

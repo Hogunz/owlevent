@@ -27,6 +27,10 @@ class Gig extends Model
         return $this->comments->sum('ratings') / $commentsCount;
     }
 
+    public function scopeApproved($query)
+    {
+        return $query->where('status', 'approved');
+    }
 
     public function faqs()
     {

@@ -42,7 +42,7 @@
 
                             </div>
                             <h1 class="my-1 text-center text-xl font-bold leading-8 text-gray-900">
-                                {{ $user->business_name }}</h1>
+                                {{ $user->name }}</h1>
                             <div class="">
                                 <div class="flex items-center justify-center">
                                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star"

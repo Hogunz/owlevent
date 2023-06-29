@@ -18,15 +18,15 @@ class BlogController extends Controller
     public function index()
     {
         $categories = Category::all();
-        $blogs = Blog::orderBy('created_at', 'desc')->get();
-        return view('approvals.services.index', compact('blogs', 'categories'));
+        $blogs = Blog::where('user_id', Auth::id())->orderBy('created_at', 'desc')->get();
+        return view('blog.index', compact('blogs', 'categories'));
     }
 
     public function blog()
     {
 
         $categories = Category::all();
-        $blogs = Blog::where('status', 'approved')->orderBy('created_at', 'desc')->get();
+        $blogs = Blog::approved()->orderBy('created_at', 'desc')->get();
         return view('blog', compact('blogs', 'categories'));
     }
 

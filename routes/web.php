@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Admin\ApprovalController;
+use App\Models\Gig;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GigController;
 use App\Http\Controllers\BlogController;
@@ -9,12 +9,13 @@ use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\GigCommentController;
 use App\Http\Controllers\Admin\SkillController;
+use App\Http\Controllers\Admin\ApprovalController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\SupplierCommentController;
 use App\Http\Controllers\Admin\OccupationController;
 use App\Http\Controllers\Admin\PermissionController;
-use App\Http\Controllers\GigCommentController;
-use App\Http\Controllers\SupplierCommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,7 +38,9 @@ Route::get('/supplier-profile/{user}', [DashboardController::class, 'showProfile
 Route::get('/service-profile/{user}/gig/{gig}', [DashboardController::class, 'showGig'])->name('show.supplier-gig');
 
 Route::get('/featured', function () {
-    return view('/featured');
+    $gigs = Gig::where('status', 'approved')->get();
+
+    return view('/featured', compact('gigs'));
 });
 Route::get('/blog', function () {
     return view('/blog');
@@ -64,9 +67,10 @@ Route::put('/admin/service/user/index/{service}/change-status', [ApprovalControl
 Route::get('/blog', [BlogController::class, 'blog'])->name('blog');
 Route::get('/blog/show-more', [BlogController::class, 'showM'])->name('blogs.showM');
 Route::get('/blog/categorized', [BlogController::class, 'categorized'])->name('blogs.categorized');
-
+Route::post('/gig-comments/{comment}/reply', [GigCommentController::class, 'reply'])->name('gig.comment.reply');
 
 Route::middleware(['auth'])->group(function () {
+
 
     Route::resource('blogs', BlogController::class);
     Route::get('/dashboard', function () {

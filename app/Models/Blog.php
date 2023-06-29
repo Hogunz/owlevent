@@ -17,6 +17,11 @@ class Blog extends Model
     ];
     use HasFactory;
 
+    public function scopeApproved($query)
+    {
+        return $query->where('status', 'approved');
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);

@@ -367,6 +367,7 @@
                                 'Content-Type': 'multipart/form-data'
                             }
                         }).then((response) => {
+                            // console.log(response);
                             location.href = "/";
                         }).catch((error) => {
                             console.log(error.response)

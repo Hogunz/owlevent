@@ -12,13 +12,12 @@ class DashboardController extends Controller
 
     public function welcome()
     {
-        $categories = Category::with('gigs')->get();
-        $suppliers = User::role('Supplier')->get();
+        $categories = Category::with(['gigs' => function ($query) {
+            $query->approved();
+        }])->get();
+        $suppliers = User::role('Supplier')->approved()->get();
         return view('welcome', compact('categories', 'suppliers'));
     }
-
-
-
     public function showCategory(Category $category)
     {
         return view('categories', compact('category'));
@@ -29,7 +28,6 @@ class DashboardController extends Controller
     }
     public function showGig(User $user, Gig $gig)
     {
-
         return view('suppliers.service-profile', compact('user', 'gig'));
     }
 }

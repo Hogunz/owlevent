@@ -56,7 +56,7 @@ class SupplierController extends Controller
             //     'selfie_photo' => ['required', 'image'],
             // ]);
             if ($validator->fails()) {
-                return response()->json(['errors' => $validator->errors(), 422]);
+                return response()->json(['errors' => $validator->errors()], 500);
             }
 
             $personalInfo = $validator->safe()->only(['occupations', 'skills']);
@@ -82,7 +82,7 @@ class SupplierController extends Controller
             return response()->json('successful');
         } catch (Exception $e) {
             // return response()->json("ERROR", 500);
-            return response()->json($e->getMessage(), 422);
+            return response()->json($e->getMessage(), 500);
         }
     }
 
@@ -118,7 +118,10 @@ class SupplierController extends Controller
 
     public function myProfile()
     {
-        $gigs = Gig::all();
+        if (!Auth::user()->hasRole('Supplier')) {
+            return redirect('/become-a-supplier');
+        }
+        $gigs = Gig::where('status', 'approved')->get();
         return view('suppliers.my-profile', compact('gigs'));
     }
 

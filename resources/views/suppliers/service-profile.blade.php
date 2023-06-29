@@ -263,7 +263,7 @@
                                     <div class="flex items-center">
                                         <p class="mr-3 inline-flex items-center text-sm text-gray-900">
                                             <img class="mr-2 h-6 w-6 rounded-full"
-                                                src="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
+                                                src="{{ asset('storage/' . $comment->commenter->avatar) ?? 'https://images.unsplash.com/photo-1555952517-2e8e729e0b44?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHBlcnNvbnxlbnwwfDF8MHx8&auto=format&fit=crop&w=500&q=60' }}"
                                                 alt="Michael Gough">{{ $comment->commenter->name }}
                                         </p>
                                         <p class="text-sm text-gray-600"><time pubdate datetime="2022-02-08"
@@ -313,8 +313,20 @@
                                     @endfor
                                 </div>
                                 <p class="text-gray-500">{{ $comment->text }}</p>
-                                <div class="mt-4 flex items-center space-x-4">
-                                    <button type="button"
+
+                                <form method="POST"
+                                    action="{{ route('gig.comment.reply', ['comment' => $comment->id]) }}">
+                                    @csrf
+                                    <div
+                                        class="mb-4 rounded-lg rounded-t-lg border border-gray-200 bg-white py-2 px-4">
+                                        <label for="reply" class="sr-only">Your review</label>
+                                        <textarea id="reply" rows="3" name="reply"
+                                            class="w-full border-0 px-0 text-sm text-gray-900 focus:outline-none focus:ring-0" placeholder="Write a review..."
+                                            required></textarea>
+                                    </div>
+
+                                    <!-- Add any additional fields as needed -->
+                                    <button type="submit"
                                         class="flex items-center text-sm text-gray-500 hover:underline">
                                         <svg aria-hidden="true" class="mr-1 h-4 w-4" fill="none"
                                             stroke="currentColor" viewBox="0 0 24 24"
@@ -325,9 +337,13 @@
                                         </svg>
                                         Reply
                                     </button>
+                                </form>
+
+                                <div class="mt-4 flex items-center space-x-4">
+
                                 </div>
                             </article>
-                            @foreach ($comment->replies as $reply)
+                            {{-- @foreach ($comment->replies as $reply)
                                 <article class="mb-6 ml-6 rounded-lg bg-white p-6 text-base lg:ml-12">
                                     <footer class="mb-2 flex items-center justify-between">
                                         <div class="flex items-center">
@@ -386,7 +402,7 @@
                                         </button>
                                     </div>
                                 </article>
-                            @endforeach
+                            @endforeach --}}
                         @endforeach
                     </div>
                 </section>

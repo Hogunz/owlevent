@@ -222,7 +222,6 @@
                     </div>
                 </a>
             @endforeach
-
         </div>
 
     </section>
@@ -501,7 +500,7 @@
         // Initialize second carousel
         $('#owl-carousel3').owlCarousel({
             loop: true,
-            margin: 20,
+            margin: 30,
             responsive: {
                 0: {
                     items: 1
