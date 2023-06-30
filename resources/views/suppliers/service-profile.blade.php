@@ -264,7 +264,7 @@
                                     <div class="flex items-center">
                                         <p class="mr-3 inline-flex items-center text-sm text-gray-900">
                                             <img class="mr-2 h-6 w-6 rounded-full"
-                                                src="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
+                                                src="{{ asset('storage/' . $gig->user->avatar) ?? 'https://images.unsplash.com/photo-1555952517-2e8e729e0b44?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHBlcnNvbnxlbnwwfDF8MHx8&auto=format&fit=crop&w=500&q=60' }}"
                                                 alt="Michael Gough">{{ $comment->commenter->name }}
                                         </p>
                                         <p class="text-sm text-gray-600"><time pubdate datetime="2022-02-08"
@@ -343,7 +343,9 @@
                                             </button>
                                         </form>
                                     @else
-                                        <p>Please <a href="{{ route('login') }}">login</a> to reply to the comment.
+                                        <p class="text-red-600 font-bold">Please <a
+                                                href="{{ route('login') }}">login</a> to
+                                            reply to the comment.
                                         </p>
                                     @endif
                                 </div>
@@ -354,7 +356,7 @@
                                         <div class="flex items-center">
                                             <p class="mr-3 inline-flex items-center text-sm text-gray-900">
                                                 <img class="mr-2 h-6 w-6 rounded-full"
-                                                    src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
+                                                    src="{{ asset('storage/' . $reply->commenter->avatar) ?? 'https://images.unsplash.com/photo-1555952517-2e8e729e0b44?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHBlcnNvbnxlbnwwfDF8MHx8&auto=format&fit=crop&w=500&q=60' }}"
                                                     alt="Jese Leos">{{ $reply->commenter->name }}
                                             </p>
                                             <p class="text-sm text-gray-600"><time pubdate datetime="2022-02-12"
@@ -369,6 +371,7 @@
                                                 <path
                                                     d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z">
                                                 </path>
+
                                             </svg>
                                             <span class="sr-only">Comment settings</span>
                                         </button>
