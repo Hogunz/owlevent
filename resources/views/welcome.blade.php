@@ -90,13 +90,16 @@
                 <a href="/featured" class="p-2 text-center text-base text-[#7895B2]">See All</a>
             </div>
             <div id="owl-carousel1" class="owl-carousel owl-theme p-0">
-                <a href="/service-profile" class="href">
-                    <div class="flex scale-75 flex-col">
-                        <img class="h-96 rounded-3xl object-cover"
-                            src="https://images.unsplash.com/photo-1627564174704-4c3765ef733a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
-                            alt="">
-                    </div>
-                </a>
+                @foreach ($categories as $category)
+                    <a href="{{ $category->gigs->count() ? route('show.supplier-gig', ['user' => optional($category->firstGig())->user_id, 'gig' => optional($category->firstGig())->id]) : '#' }}"
+                        class="href">
+                        <div class="flex scale-75 flex-col">
+                            <img class="h-96 rounded-3xl object-cover"
+                                src="{{ $category->firstImg() ? asset('storage/' . $category->firstImg()) : 'https://images.unsplash.com/photo-1682232860597-9e16a4972602?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80' }}"
+                                alt="">
+                        </div>
+                    </a>
+                @endforeach
             </div>
         </section>
 
@@ -219,7 +222,6 @@
                     </div>
                 </a>
             @endforeach
-
         </div>
 
     </section>
@@ -498,7 +500,7 @@
         // Initialize second carousel
         $('#owl-carousel3').owlCarousel({
             loop: true,
-            margin: 20,
+            margin: 30,
             responsive: {
                 0: {
                     items: 1

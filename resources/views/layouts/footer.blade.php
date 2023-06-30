@@ -54,7 +54,7 @@
             <span class="text-sm text-gray-500 dark:text-gray-400 sm:text-center">
                 <script>
                     document.write(new Date().getFullYear());
-                </script> <a href="https://flowbite.com/" class="hover:underline"><span
+                </script> <a href="/" class="hover:underline"><span
                         style="color:#F69679;">Owl</span>Event©</a>. All
                 Rights Reserved.
             </span>

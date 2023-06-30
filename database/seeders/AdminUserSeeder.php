@@ -23,7 +23,15 @@ class AdminUserSeeder extends Seeder
         ]);
 
         $roleAdmin = Role::create(['name' => 'Admin']);
-
         $admin->assignRole($roleAdmin);
+
+
+        // $supplier =  User::create([
+        //     'name' => 'supplier',
+        //     'email' => 'supplier@gmail.com',
+        //     'password' => Hash::make('supplier123'),
+        // ]);
+        // $roleSupplier = Role::create(['supplier' => 'Supplier']);
+        // $supplier->assignRole($roleSupplier);
     }
 }

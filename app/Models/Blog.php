@@ -13,9 +13,14 @@ class Blog extends Model
         'image',
         'category_id',
         'description',
-        'status'
+        'status',
     ];
     use HasFactory;
+
+    public function scopeApproved($query)
+    {
+        return $query->where('status', 'approved');
+    }
 
     public function user()
     {

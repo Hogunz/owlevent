@@ -21,6 +21,27 @@
                     <div class="inset-x-0 top-14 max-h-full">
                         <div id="owl-carousel" class="owl-carousel owl-theme">
                             <!-- Item 1 -->
+
+                            @foreach ($gig->gigUploads as $upload)
+                                <div class="item relative h-56 overflow-hidden rounded-lg md:h-96"
+                                    data-modal-target="extralarge-modal" data-modal-toggle="extralarge-modal">
+                                    @if (pathinfo($upload->url, PATHINFO_EXTENSION) === 'mp4')
+                                        <video
+                                            class="absolute top-1/2 left-1/2 block w-full -translate-x-1/2 -translate-y-1/2 cursor-pointer transition duration-300 ease-out"
+                                            controls>
+                                            <source src="{{ asset('storage/' . $upload->url) }}" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    @else
+                                        <img src="{{ asset('storage/' . $upload->url) }}"
+                                            class="absolute top-1/2 left-1/2 block w-full -translate-x-1/2 -translate-y-1/2 cursor-pointer transition duration-300 ease-out hover:scale-110 hover:overflow-hidden"
+                                            alt="...">
+                                    @endif
+                                </div>
+                            @endforeach
+
+
+                            {{--
                             @foreach ($gig->gigUploads as $upload)
                                 <div class="item relative h-56 overflow-hidden rounded-lg md:h-96"
                                     data-modal-target="extralarge-modal" data-modal-toggle="extralarge-modal">
@@ -28,7 +49,7 @@
                                         class="absolute top-1/2 left-1/2 block w-full -translate-x-1/2 -translate-y-1/2 cursor-pointer transition duration-300 ease-out hover:scale-110 hover:overflow-hidden"
                                         alt="...">
                                 </div>
-                            @endforeach
+                            @endforeach --}}
                         </div>
                     </div>
                 </div>
@@ -38,12 +59,29 @@
                         <!-- Modal content -->
                         <div id="owl-carousel2"
                             class="owl-carousel owl-theme relative rounded-lg bg-transparent shadow">
+
+                            @foreach ($gig->gigUploads as $upload)
+                                <div class="relative" data-modal-target="extralarge-modal"
+                                    data-modal-toggle="extralarge-modal">
+                                    @if (pathinfo($upload->url, PATHINFO_EXTENSION) === 'mp4')
+                                        <video class="relative rounded-lg transition duration-300 ease-in-out" controls>
+                                            <source src="{{ asset('storage/' . $upload->url) }}" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    @else
+                                        <img src="{{ asset('storage/' . $upload->url) }}"
+                                            class="relative rounded-lg transition duration-300 ease-in-out"
+                                            alt="...">
+                                    @endif
+                                </div>
+                            @endforeach
+                            {{--
                             @foreach ($gig->gigUploads as $upload)
                                 <div class="relative">
                                     <img src="{{ asset('storage/' . $upload->url) }}"
                                         class="relative rounded-lg transition duration-300 ease-in-out" alt="...">
                                 </div>
-                            @endforeach
+                            @endforeach --}}
                         </div>
                     </div>
                 </div>
@@ -157,7 +195,8 @@
                                 </button>
                                 <div id="star"
                                     class="z-10 hidden w-44 divide-y divide-gray-100 rounded-lg bg-white shadow">
-                                    <ul class="p-4 py-2 text-sm text-gray-700" aria-labelledby="dropdownDefaultButton">
+                                    <ul class="p-4 py-2 text-sm text-gray-700"
+                                        aria-labelledby="dropdownDefaultButton">
                                         <li>
                                             <a href="#" class="block px-4 py-2 hover:bg-gray-100">All
                                                 Star</a>
@@ -389,6 +428,7 @@
         items: 5,
         loop: true,
         margin: 20,
+        video: true,
         responsive: {
             0: {
                 items: 1

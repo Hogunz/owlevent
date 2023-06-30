@@ -18,7 +18,7 @@ class BlogController extends Controller
     public function index()
     {
         $categories = Category::all();
-        $blogs = Blog::orderBy('created_at', 'desc')->get();
+        $blogs = Blog::where('user_id', Auth::id())->orderBy('created_at', 'desc')->get();
         return view('blog.index', compact('blogs', 'categories'));
     }
 
@@ -26,7 +26,7 @@ class BlogController extends Controller
     {
 
         $categories = Category::all();
-        $blogs = Blog::where('status', 'approved')->orderBy('created_at', 'desc')->get();
+        $blogs = Blog::approved()->orderBy('created_at', 'desc')->get();
         return view('blog', compact('blogs', 'categories'));
     }
 

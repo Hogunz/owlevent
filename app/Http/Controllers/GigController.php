@@ -21,7 +21,6 @@ class GigController extends Controller
      */
     public function index()
     {
-        $services = Gig::where('status', 'approved')->orderBy('created_at', 'desc')->get();
     }
 
     /**

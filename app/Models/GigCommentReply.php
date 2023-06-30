@@ -11,5 +11,10 @@ class GigCommentReply extends Model
 
     protected $fillable = [
         'text',
+        'commenter_id',
     ];
+    public function commenter()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }
