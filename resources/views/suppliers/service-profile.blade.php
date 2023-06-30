@@ -84,6 +84,7 @@
                     </div>
                 </div>
 
+
                 <div class="mb-2 text-2xl font-bold">
                     About This Supplier
                 </div>
@@ -263,7 +264,7 @@
                                     <div class="flex items-center">
                                         <p class="mr-3 inline-flex items-center text-sm text-gray-900">
                                             <img class="mr-2 h-6 w-6 rounded-full"
-                                                src="{{ asset('storage/' . $comment->commenter->avatar) ?? 'https://images.unsplash.com/photo-1555952517-2e8e729e0b44?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHBlcnNvbnxlbnwwfDF8MHx8&auto=format&fit=crop&w=500&q=60' }}"
+                                                src="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
                                                 alt="Michael Gough">{{ $comment->commenter->name }}
                                         </p>
                                         <p class="text-sm text-gray-600"><time pubdate datetime="2022-02-08"
@@ -313,37 +314,41 @@
                                     @endfor
                                 </div>
                                 <p class="text-gray-500">{{ $comment->text }}</p>
+                                <div class="mt-4 space-x-4">
 
-                                <form method="POST"
-                                    action="{{ route('gig.comment.reply', ['comment' => $comment->id]) }}">
-                                    @csrf
-                                    <div
-                                        class="mb-4 rounded-lg rounded-t-lg border border-gray-200 bg-white py-2 px-4">
-                                        <label for="reply" class="sr-only">Your review</label>
-                                        <textarea id="reply" rows="3" name="reply"
-                                            class="w-full border-0 px-0 text-sm text-gray-900 focus:outline-none focus:ring-0" placeholder="Write a review..."
-                                            required></textarea>
-                                    </div>
+                                    @if (Auth::check())
+                                        <form method="POST"
+                                            action="{{ route('gig.comment.reply', ['comment' => $comment->id]) }}">
+                                            @csrf
+                                            <div
+                                                class="mb-4 rounded-lg rounded-t-lg border border-gray-200 bg-white py-2 px-4">
+                                                <label for="review" class="sr-only">Your review</label>
+                                                <textarea id="review" rows="6" name="review"
+                                                    class="w-full border-0 px-0 text-sm text-gray-900 focus:outline-none focus:ring-0" placeholder="Write a review..."
+                                                    required></textarea>
+                                            </div>
 
-                                    <!-- Add any additional fields as needed -->
-                                    <button type="submit"
-                                        class="flex items-center text-sm text-gray-500 hover:underline">
-                                        <svg aria-hidden="true" class="mr-1 h-4 w-4" fill="none"
-                                            stroke="currentColor" viewBox="0 0 24 24"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z">
-                                            </path>
-                                        </svg>
-                                        Reply
-                                    </button>
-                                </form>
-
-                                <div class="mt-4 flex items-center space-x-4">
-
+                                            <!-- Add any additional fields as needed -->
+                                            <button type="submit"
+                                                class="flex items-center text-sm text-gray-500 hover:underline">
+                                                <svg aria-hidden="true" class="mr-1 h-4 w-4" fill="none"
+                                                    stroke="currentColor" viewBox="0 0 24 24"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z">
+                                                    </path>
+                                                </svg>
+                                                Reply
+                                            </button>
+                                        </form>
+                                    @else
+                                        <p>Please <a href="{{ route('login') }}">login</a> to reply to the comment.
+                                        </p>
+                                    @endif
                                 </div>
                             </article>
-                            {{-- @foreach ($comment->replies as $reply)
+                            @foreach ($comment->replies as $reply)
                                 <article class="mb-6 ml-6 rounded-lg bg-white p-6 text-base lg:ml-12">
                                     <footer class="mb-2 flex items-center justify-between">
                                         <div class="flex items-center">
@@ -388,21 +393,9 @@
                                         </div>
                                     </footer>
                                     <p class="text-gray-500">{{ $reply->text }}</p>
-                                    <div class="mt-4 flex items-center space-x-4">
-                                        <button type="button"
-                                            class="flex items-center text-sm text-gray-500 hover:underline">
-                                            <svg aria-hidden="true" class="mr-1 h-4 w-4" fill="none"
-                                                stroke="currentColor" viewBox="0 0 24 24"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z">
-                                                </path>
-                                            </svg>
-                                            Reply
-                                        </button>
-                                    </div>
+
                                 </article>
-                            @endforeach --}}
+                            @endforeach
                         @endforeach
                     </div>
                 </section>
@@ -419,7 +412,8 @@
                                 <span class="mr-2 text-5xl font-extrabold">₱
                                     {{ number_format($package->price, 2, '.', ',') }}</span>
                             </div>
-                            <p class="font-light text-gray-800 sm:text-sm">{{ $package->description }}</p>
+                            <p class="font-light text-gray-800 sm:text-sm text-justify">{{ $package->description }}
+                            </p>
                         </div>
                     @endforeach
                 </div>

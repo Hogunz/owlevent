@@ -11,6 +11,7 @@ class GigCommentReply extends Model
 
     protected $fillable = [
         'text',
+        'commenter_id',
     ];
     public function commenter()
     {

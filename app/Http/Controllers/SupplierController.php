@@ -127,6 +127,8 @@ class SupplierController extends Controller
 
     public function showGig(Gig $gig)
     {
+        $gig->load('comments.replies');
+
         return view('suppliers.service-profile', compact('gig'));
     }
 }
