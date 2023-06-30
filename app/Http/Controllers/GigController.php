@@ -162,29 +162,29 @@ class GigController extends Controller
                 'category_id' => ['required'],
                 'description' => ['required'],
                 'packages' => ['required'],
-                // 'faqs' => ['required'],
-                // 'uploads' => ['required'],
+                'faqs' => ['required'],
+                'images' => ['required'],
+                'videos' => ['required'],
             ]);
 
-            // $faqs = json_decode($request->faqs);
-            // $packages = json_decode($request->packages);
-            // $files = json_decode($request->uploads);
+            $faqs = json_decode($request->faqs);
+            $packages = json_decode($request->packages);
 
 
-            // $faqData = array_map(function ($faq) {
-            //     return [
-            //         'question' => $faq->question,
-            //         'answer' => $faq->answer,
-            //     ];
-            // }, $faqs);
+            $faqData = array_map(function ($faq) {
+                return [
+                    'question' => $faq->question,
+                    'answer' => $faq->answer,
+                ];
+            }, $faqs);
 
-            // $packageData = array_map(function ($package) {
-            //     return [
-            //         'package' => $package->package,
-            //         'price' => $package->price,
-            //         'description' => $package->description,
-            //     ];
-            // }, $packages);
+            $packageData = array_map(function ($package) {
+                return [
+                    'package' => $package->package,
+                    'price' => $package->price,
+                    'description' => $package->description,
+                ];
+            }, $packages);
 
             // return response()->json(['faqu' => $shits]);
             DB::beginTransaction();
@@ -198,22 +198,22 @@ class GigController extends Controller
             // $gig->faqs()->updateOrCreateMany($faqData);
             // $gig->gigPackages()->updateOrCreateMany($packageData);
 
-            // $paths = [];
-            // foreach ($request->file('uploads') as $file) {
-            //     $mimeType = $file->getMimeType();
+            $paths = [];
+            foreach ($request->file('images') as $file) {
 
-            //     if (str_starts_with($mimeType, 'image/')) {
-            //         $type = 'image';
-            //     } else if (str_starts_with($mimeType, 'video/')) {
-            //         $type = 'video';
-            //     } else {
-            //         return response()->json('Error', 422);
-            //     }
-            //     $paths[] = [
-            //         'url' => $file->store(Auth::id() . "/gig/{$gig->id}", 'public'),
-            //         'type' => $type
-            //     ];
-            // }
+                $paths[] = [
+                    'url' => $file->store(Auth::id() . "/gig/{$gig->id}", 'public'),
+                    'type' => 'image',
+                ];
+            }
+
+            foreach ($request->file('videos') as $file) {
+
+                $paths[] = [
+                    'url' => $file->store(Auth::id() . "/gig/{$gig->id}", 'public'),
+                    'type' => 'video',
+                ];
+            }
 
             // return response()->json($paths);
 

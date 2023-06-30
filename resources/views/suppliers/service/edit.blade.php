@@ -187,7 +187,7 @@
                     maintain
                     the security of your account, kindly verify your email and phone number.</p>
                 <hr class="pb-8">
-                <div class="grid grid-cols-5 gap-4">
+                {{-- <div class="grid grid-cols-5 gap-4">
                     <template x-for="(upload, index) in files" :key="`u` + index">
                         <div class="relative">
                             <template x-if="('id' in upload)">
@@ -238,6 +238,71 @@
                         class="h-60 w-full rounded border-2 border-dashed p-6 text-xl font-bold uppercase tracking-wide text-gray-500">
                         Add Upload
                     </button>
+                </div> --}}
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <div class="text-2xl font-semibold">Pictures</div>
+                        <div class="grid grid-cols-3 gap-2">
+                            <template x-for="(upload, index) in images" :key="`i` + index">
+                                <div class="relative">
+                                    <div class="absolute top-0 left-2">
+                                        <button type="button"
+                                            class="rounded bg-red-500 p-1 text-xs text-white hover:bg-red-300"
+                                            @click="removeImage(index)">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                class="h-3 w-3">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M19.5 12h-15" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <template x-if="('id' in upload)">
+                                        <img :src="`/storage/` + upload.url" alt="">
+                                    </template>
+                                    <template x-if="!('id' in upload)">
+                                        <img :src="upload.previewUrl" alt="Uploaded Image">
+                                    </template>
+
+                                </div>
+                            </template>
+                            <input type="file" accept="image/*" class="hidden" x-ref="image"
+                                @change="addImage(event)">
+                            <button type="button" @click="$refs.image.click()"
+                                class="h-60 w-full rounded border-2 border-dashed p-6 text-xl font-bold uppercase tracking-wide text-gray-500">
+                                Add Image
+                            </button>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-semibold">Videos</div>
+                        <div class="grid grid-cols-3 gap-2">
+                            <template x-for="(upload, index) in videos" :key="`v` + index">
+                                <div class="relative">
+                                    <div class="absolute top-0 left-2">
+                                        <button type="button"
+                                            class="rounded bg-red-500 p-1 text-xs text-white hover:bg-red-300"
+                                            @click="removeVideo(index)">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                class="h-3 w-3">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M19.5 12h-15" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <video :src="upload.previewUrl" controls></video>
+                                </div>
+                            </template>
+                            <input type="file" accept="video/*" class="hidden" x-ref="video"
+                                @change="addVideo(event)">
+                            <button type="button" @click="$refs.video.click()"
+                                class="h-60 w-full rounded border-2 border-dashed p-6 text-xl font-bold uppercase tracking-wide text-gray-500">
+                                Add Video
+                            </button>
+                        </div>
+                    </div>
                 </div>
 
 
@@ -279,7 +344,8 @@
                         question: '',
                         answer: '',
                     }],
-                    files: [],
+                    images: [],
+                    videos: [],
                     init() {
                         var gig = @json($gig);
                         this.title = gig.title
@@ -287,7 +353,13 @@
                         this.description = gig.description
                         this.packages = gig.gig_packages
                         this.faqs = gig.faqs
-                        this.files = gig.gig_uploads
+                        var files = gig.gig_uploads
+                        this.images = files.filter((f) => {
+                            return f.type == "image"
+                        })
+                        this.videos = files.filter((f) => {
+                            return f.type == "video"
+                        })
                     },
                     checkLimit() {
                         return this.title > this.titleLimit
@@ -325,8 +397,11 @@
                             })
                         }
                     },
-                    removeFile(i) {
-                        this.files.splice(i, 1)
+                    removeImage(i) {
+                        this.images.splice(i, 1)
+                    },
+                    removeVideo(i) {
+                        this.videos.splice(i, 1)
                     },
                     submit() {
                         const forms = new FormData()
