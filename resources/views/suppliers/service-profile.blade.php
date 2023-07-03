@@ -258,7 +258,7 @@
                                 <x-button class="mt-2">Post Review</x-button>
                             </form>
                         @endauth
-                        @foreach ($gig->comments as $comment)
+                        @foreach ($gig->comments->reverse() as $comment)
                             <article class="mb-6 rounded-lg bg-white p-6 text-base">
                                 <footer class="mb-2 flex items-center justify-between">
                                     <div class="flex items-center">
@@ -323,24 +323,17 @@
                                             <div
                                                 class="mb-4 rounded-lg rounded-t-lg border border-gray-200 bg-white py-2 px-4">
                                                 <label for="review" class="sr-only">Your review</label>
-                                                <textarea id="review" rows="6" name="review"
+                                                <textarea id="review" rows="1" name="review"
                                                     class="w-full border-0 px-0 text-sm text-gray-900 focus:outline-none focus:ring-0" placeholder="Write a review..."
                                                     required></textarea>
                                             </div>
 
                                             <!-- Add any additional fields as needed -->
-                                            <button type="submit"
+                                            <x-button type="submit"
                                                 class="flex items-center text-sm text-gray-500 hover:underline">
-                                                <svg aria-hidden="true" class="mr-1 h-4 w-4" fill="none"
-                                                    stroke="currentColor" viewBox="0 0 24 24"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2"
-                                                        d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z">
-                                                    </path>
-                                                </svg>
+
                                                 Reply
-                                            </button>
+                                            </x-button>
                                         </form>
                                     @else
                                         <p class="text-red-600 font-bold">Please <a
@@ -350,7 +343,7 @@
                                     @endif
                                 </div>
                             </article>
-                            @foreach ($comment->replies as $reply)
+                            @foreach ($comment->replies->reverse() as $reply)
                                 <article class="mb-6 ml-6 rounded-lg bg-white p-6 text-base lg:ml-12">
                                     <footer class="mb-2 flex items-center justify-between">
                                         <div class="flex items-center">
