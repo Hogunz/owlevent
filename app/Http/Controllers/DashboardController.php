@@ -24,10 +24,28 @@ class DashboardController extends Controller
     }
     public function showProfile(User $user)
     {
+        $rating =  request()->get('rating');
+        $user->load([
+            'comments' => function ($query) use ($rating) {
+                $query->when($rating, function ($query) use ($rating) {
+                    $query->where('ratings', $rating);
+                });
+            }
+
+        ]);
+
         return view('suppliers.supplier-profile', compact('user'));
     }
     public function showGig(User $user, Gig $gig)
     {
+        $rating = request()->get('rating');
+        $gig->load([
+            'comments' => function ($query) use ($rating) {
+                $query->when($rating, function ($query) use ($rating) {
+                    $query->where('ratings', $rating);
+                });
+            }
+        ]);
         return view('suppliers.service-profile', compact('user', 'gig'));
     }
 }

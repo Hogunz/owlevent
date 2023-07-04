@@ -16,22 +16,25 @@ class AdminUserSeeder extends Seeder
      */
     public function run()
     {
+        $roleAdmin = Role::create(['name' => 'Admin']);
+        $roleSupplier = Role::create(['name' => 'Supplier']);
+        Role::create(['name' => 'Writer']);
+        Role::create(['name' => 'Operations']);
+
         $admin = User::create([
             'name' => 'admin',
             'email' => 'superadmin123@gmail.com',
             'password' => Hash::make('superadmin123'),
         ]);
 
-        $roleAdmin = Role::create(['name' => 'Admin']);
         $admin->assignRole($roleAdmin);
 
+        $supplier =  User::create([
+            'name' => 'supplier',
+            'email' => 'supplier@gmail.com',
+            'password' => Hash::make('supplier123'),
+        ]);
 
-        // $supplier =  User::create([
-        //     'name' => 'supplier',
-        //     'email' => 'supplier@gmail.com',
-        //     'password' => Hash::make('supplier123'),
-        // ]);
-        // $roleSupplier = Role::create(['supplier' => 'Supplier']);
-        // $supplier->assignRole($roleSupplier);
+        $supplier->assignRole($roleSupplier);
     }
 }

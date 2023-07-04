@@ -52,7 +52,7 @@ class GigController extends Controller
                 'packages' => ['required'],
                 'faqs' => ['required'],
                 'images' => ['required'],
-                'videos' => ['required'],
+                'videos' => ['nullable'],
             ]);
 
             $faqs = json_decode($request->faqs);
@@ -71,7 +71,7 @@ class GigController extends Controller
                 return [
                     'package' => $package->package,
                     'price' => $package->price,
-                    'description' => $package->description,
+                    'description' => nl2br($package->description),
                 ];
             }, $packages);
 
@@ -89,6 +89,11 @@ class GigController extends Controller
 
             $paths = [];
 
+            $gig->load([
+                'gigUploads' => function ($query) {
+                }
+            ]);
+
             foreach ($request->file('images') as $file) {
 
                 $paths[] = [
@@ -97,12 +102,15 @@ class GigController extends Controller
                 ];
             }
 
-            foreach ($request->file('videos') as $file) {
+            if ($request->videos) {
 
-                $paths[] = [
-                    'url' => $file->store(Auth::id() . "/gig/{$gig->id}", 'public'),
-                    'type' => 'video',
-                ];
+                foreach ($request->file('videos') as $file) {
+
+                    $paths[] = [
+                        'url' => $file->store(Auth::id() . "/gig/{$gig->id}", 'public'),
+                        'type' => 'video',
+                    ];
+                }
             }
 
             // return response()->json($paths);
@@ -152,9 +160,14 @@ class GigController extends Controller
      * @param  \App\Models\Gig  $gig
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $gig)
+    public function update(Request $request, Gig $gig)
     {
-        return response()->json($request->all());
+        $cI = json_decode($request->currentImages);
+        $cV = json_decode($request->currentVideos);
+        $cU = array_merge($cI, $cV);
+
+        // return response()->json(['data' => array_column($cU, 'id')]);
+
         try {
             $request->validate([
                 'title' => ['required'],
@@ -162,8 +175,10 @@ class GigController extends Controller
                 'description' => ['required'],
                 'packages' => ['required'],
                 'faqs' => ['required'],
-                'images' => ['required'],
-                'videos' => ['required'],
+                'currentImages' => ['nullable'],
+                'currentVideos' => ['nullable'],
+                'images' => ['nullable'],
+                'videos' => ['nullable'],
             ]);
 
             $faqs = json_decode($request->faqs);
@@ -172,6 +187,7 @@ class GigController extends Controller
 
             $faqData = array_map(function ($faq) {
                 return [
+                    'id' => $faq->id ?? null,
                     'question' => $faq->question,
                     'answer' => $faq->answer,
                 ];
@@ -179,13 +195,15 @@ class GigController extends Controller
 
             $packageData = array_map(function ($package) {
                 return [
+                    'id' => $package->id ?? null,
                     'package' => $package->package,
                     'price' => $package->price,
                     'description' => $package->description,
                 ];
             }, $packages);
 
-            // return response()->json(['faqu' => $shits]);
+            // return response()->json(['faqu' => array_column($packageData, 'id')]);
+
             DB::beginTransaction();
 
             $gig->update([
@@ -194,32 +212,68 @@ class GigController extends Controller
                 'description' => $request->description,
             ]);
 
+            $gig->faqs()->whereNotIn('id', array_column($faqData, 'id'))->delete();
+            $gig->gigPackages()->whereNotIn('id', array_column($packageData, 'id'))->delete();
+
             // $gig->faqs()->updateOrCreateMany($faqData);
             // $gig->gigPackages()->updateOrCreateMany($packageData);
+            foreach ($faqData as $faq) {
+                $gig->faqs()->updateOrCreate(
+                    ['id' => $faq['id']],
+                    [
+                        'question' => $faq['question'],
+                        'answer' => $faq['answer'],
+                    ]
+                );
+            }
+
+            foreach ($packageData as $package) {
+                $gig->gigPackages()->updateOrCreate(
+                    ['id' => $package['id']],
+                    [
+                        'package' => $package['package'],
+                        'price' => $package['price'],
+                        'description' => nl2br($package['description']),
+                    ]
+                );
+            }
+
+
+            // return response()->json(array_column($cU, 'id'));
+            $gig->gigUploads()->whereNotIn('id', array_column($cU, 'id'))->delete();
 
             $paths = [];
-            foreach ($request->file('images') as $file) {
 
-                $paths[] = [
-                    'url' => $file->store(Auth::id() . "/gig/{$gig->id}", 'public'),
-                    'type' => 'image',
-                ];
+            if ($request->images) {
+
+                foreach ($request->file('images') as $file) {
+                    $paths[] = [
+                        'url' => $file->store(Auth::id() . "/gig/{$gig->id}", 'public'),
+                        'type' => 'image',
+                    ];
+                }
             }
 
-            foreach ($request->file('videos') as $file) {
+            if ($request->videos) {
 
-                $paths[] = [
-                    'url' => $file->store(Auth::id() . "/gig/{$gig->id}", 'public'),
-                    'type' => 'video',
-                ];
+                foreach ($request->file('videos') as $file) {
+
+                    $paths[] = [
+                        'url' => $file->store(Auth::id() . "/gig/{$gig->id}", 'public'),
+                        'type' => 'video',
+                    ];
+                }
             }
 
-            // return response()->json($paths);
+            $gig->gigUploads()->createMany($paths);
 
-            // $gig->gigUploads()->createMany($paths);
+
+            // if ($gig->gigUploads->count() < 1)
+            //     throw new Exception('Not enough upload');
+
 
             DB::commit();
-            return response()->json('Successfully created Gig!');
+            return response()->json('Successfully updated Gig!');
         } catch (Exception $e) {
             DB::rollBack();
 

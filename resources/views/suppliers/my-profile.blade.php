@@ -144,7 +144,7 @@
                                                     <div class="">
                                                         <a href="{{ route('gigs.show', $gig) }}" class="href">
                                                             <img src="{{ asset('storage/' . $gig->gigUploads->where('type', 'image')->first()->url) }}"
-                                                                class="h-52 w-full object-cover" alt="...">
+                                                                class="h-auto w-full object-cover" alt="...">
                                                         </a>
                                                     </div>
                                                 </div>
@@ -165,20 +165,30 @@
                                                         class="line-clamp-3 mb-3 text-justify font-normal text-gray-700">
                                                         {{ $gig->description }}
                                                     </p>
-                                                    <div class="justify-left mb-0 flex items-center">
-                                                        <svg aria-hidden="true" focusable="false" data-prefix="fas"
-                                                            data-icon="star" class="w-4 text-yellow-300"
-                                                            role="img" xmlns="http://www.w3.org/2000/svg"
-                                                            viewBox="0 0 576 512">
-                                                            <path fill="currentColor"
-                                                                d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
-                                                            </path>
-                                                        </svg>
-                                                        <p
-                                                            class="ml-2 text-sm font-bold text-gray-900 dark:text-white">
-                                                            {{ $gig->ratings }}
-                                                        </p>
-                                                    </div>
+
+                                                    @if ($gig->status == 'approved')
+                                                        <div class="justify-left mb-0 flex items-center">
+                                                            <svg aria-hidden="true" focusable="false"
+                                                                data-prefix="fas" data-icon="star"
+                                                                class="w-4 text-yellow-300" role="img"
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                viewBox="0 0 576 512">
+                                                                <path fill="currentColor"
+                                                                    d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
+                                                                </path>
+                                                            </svg>
+
+                                                            <p
+                                                                class="ml-2 text-sm font-bold text-gray-900 dark:text-white">
+                                                                {{ $gig->ratings }}
+                                                            </p>
+                                                        </div>
+                                                    @else
+                                                        <div class="">
+                                                            <span
+                                                                class="mr-2 rounded-full bg-yellow-100 px-2.5 py-0.5 text-xs font-medium uppercase text-[#32393a]">{{ $gig->status }}</span>
+                                                        </div>
+                                                    @endif
                                                 </div>
                                             </div>
                                         </div>
@@ -270,7 +280,7 @@
                                                 <div class="flex items-center">
                                                     <p class="mr-3 inline-flex items-center text-sm text-gray-900">
                                                         <img class="mr-2 h-6 w-6 rounded-full"
-                                                            src="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
+                                                            src="{{ asset('storage/' . $comment->commenter->avatar ?? 'https://images.unsplash.com/photo-1555952517-2e8e729e0b44?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHBlcnNvbnxlbnwwfDF8MHx8&auto=format&fit=crop&w=500&q=60') }}"
                                                             alt="Michael Gough">{{ $comment->commenter->name }}
                                                     </p>
                                                     <p class="text-sm text-gray-600"><time pubdate
@@ -278,7 +288,7 @@
                                                             title="February 8th, 2022">{{ $comment->created_at->diffForHumans() }}</time>
                                                     </p>
                                                 </div>
-                                                <button id="dropdownComment1Button"
+                                                {{-- <button id="dropdownComment1Button"
                                                     data-dropdown-toggle="dropdownComment1"
                                                     class="inline-flex items-center rounded-lg bg-white p-2 text-center text-sm font-medium text-gray-400 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-50"
                                                     type="button">
@@ -308,7 +318,7 @@
                                                                 class="block py-2 px-4 hover:bg-gray-100">Report</a>
                                                         </li>
                                                     </ul>
-                                                </div>
+                                                </div> --}}
                                             </footer>
                                             <div class="flex items-center">
                                                 Ratings:
@@ -326,7 +336,7 @@
                                                 @endfor
                                             </div>
                                             <p class="text-gray-500">{{ $comment->text }}</p>
-                                            <div class="mt-4 flex items-center space-x-4">
+                                            {{-- <div class="mt-4 flex items-center space-x-4">
                                                 <button type="button"
                                                     class="flex items-center text-sm text-gray-500 hover:underline">
                                                     <svg aria-hidden="true" class="mr-1 h-4 w-4" fill="none"
@@ -339,7 +349,7 @@
                                                     </svg>
                                                     Reply
                                                 </button>
-                                            </div>
+                                            </div> --}}
                                         </article>
                                         @foreach ($comment->replies as $reply)
                                             <article class="mb-6 ml-6 rounded-lg bg-white p-6 text-base lg:ml-12">
@@ -356,7 +366,7 @@
                                                                 title="February 12th, 2022">{{ $reply->created_at->diffForHumans() }}</time>
                                                         </p>
                                                     </div>
-                                                    <button id="dropdownComment2Button"
+                                                    {{-- <button id="dropdownComment2Button"
                                                         data-dropdown-toggle="dropdownComment2"
                                                         class="inline-flex items-center rounded-lg bg-white p-2 text-center text-sm font-medium text-gray-400 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-50"
                                                         type="button">
@@ -386,12 +396,12 @@
                                                                     class="block py-2 px-4 hover:bg-gray-100">Report</a>
                                                             </li>
                                                         </ul>
-                                                    </div>
+                                                    </div> --}}
                                                 </footer>
 
                                                 <p class="text-gray-500">{{ $reply->text }}
                                                 </p>
-                                                <div class="mt-4 flex items-center space-x-4">
+                                                {{-- <div class="mt-4 flex items-center space-x-4">
                                                     <button type="button"
                                                         class="flex items-center text-sm text-gray-500 hover:underline">
                                                         <svg aria-hidden="true" class="mr-1 h-4 w-4" fill="none"
@@ -404,7 +414,7 @@
                                                         </svg>
                                                         Reply
                                                     </button>
-                                                </div>
+                                                </div> --}}
                                             </article>
                                         @endforeach
                                     @endforeach

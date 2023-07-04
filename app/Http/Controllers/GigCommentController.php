@@ -24,12 +24,34 @@ class GigCommentController extends Controller
     public function reply(Request $request, GigComment $comment)
     {
         $reply = new GigCommentReply();
-        $reply->text = $request->review; // Update the field name to 'review'
-        $reply->user_id = Auth::id(); // Set the user ID for the commenter
-        $reply->commenter_id = Auth::id(); // Set the commenter ID explicitly
-        $reply->gig_comment_id = $comment->id; // Set the gig_comment_id to associate the reply with the original comment
+        $reply->text = $request->review;
+
+        $reply->commenter_id = Auth::id();
+        $reply->gig_comment_id = $comment->id;
+        $reply->save();
+        return redirect()->back()->with('success', 'Successfully replied to comment');
+    }
+    public function updateReply(Request $request, GigCommentReply $reply)
+    {
+        if ($reply->commenter_id != Auth::id()) {
+            return redirect()->back()->with('error', 'You are not authorized to edit this reply');
+        }
+        $reply->text = $request->review;
         $reply->save();
 
-        return redirect()->back()->with('success', 'Successfully replied to comment');
+        return redirect()->back()->with('success', 'Reply updated successfully');
+    }
+
+    public function destroyReply(GigCommentReply $reply)
+    {
+
+        if ($reply->commenter_id != Auth::id()) {
+            return redirect()->back()->with('error', 'You are not authorized to delete this reply');
+        }
+
+
+        $reply->delete();
+
+        return redirect()->back()->with('success', 'Reply deleted successfully');
     }
 }

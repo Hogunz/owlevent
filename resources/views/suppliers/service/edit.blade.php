@@ -244,6 +244,22 @@
                     <div>
                         <div class="text-2xl font-semibold">Pictures</div>
                         <div class="grid grid-cols-3 gap-2">
+                            <template x-for="(currentImage, index) in currentImages" :key="`cU` + index">
+                                <div class="relative">
+                                    <div class="absolute top-0 left-2">
+                                        <button type="button"
+                                            class="rounded bg-red-500 p-1 text-xs text-white hover:bg-red-300"
+                                            @click="removeImage(index, true)">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                class="h-3 w-3">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M19.5 12h-15" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <img :src="`/storage/` + currentImage.url" alt="Uploaded Image">
+                            </template>
                             <template x-for="(upload, index) in images" :key="`i` + index">
                                 <div class="relative">
                                     <div class="absolute top-0 left-2">
@@ -258,13 +274,7 @@
                                             </svg>
                                         </button>
                                     </div>
-                                    <template x-if="('id' in upload)">
-                                        <img :src="`/storage/` + upload.url" alt="">
-                                    </template>
-                                    <template x-if="!('id' in upload)">
-                                        <img :src="upload.previewUrl" alt="Uploaded Image">
-                                    </template>
-
+                                    <img :src="upload.previewUrl" alt="Uploaded Image">
                                 </div>
                             </template>
                             <input type="file" accept="image/*" class="hidden" x-ref="image"
@@ -278,6 +288,22 @@
                     <div>
                         <div class="text-2xl font-semibold">Videos</div>
                         <div class="grid grid-cols-3 gap-2">
+                            <template x-for="(currentVideo, index) in currentVideos" :key="`cV` + index">
+                                <div class="relative">
+                                    <div class="absolute top-0 left-2">
+                                        <button type="button"
+                                            class="rounded bg-red-500 p-1 text-xs text-white hover:bg-red-300"
+                                            @click="removeVideo(index, true)">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                class="h-3 w-3">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M19.5 12h-15" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <video :src="`/storage/` + currentVideo.url" alt="Uploaded Image">
+                            </template>
                             <template x-for="(upload, index) in videos" :key="`v` + index">
                                 <div class="relative">
                                     <div class="absolute top-0 left-2">
@@ -344,6 +370,8 @@
                         question: '',
                         answer: '',
                     }],
+                    currentImages: [],
+                    currentVideos: [],
                     images: [],
                     videos: [],
                     init() {
@@ -354,10 +382,10 @@
                         this.packages = gig.gig_packages
                         this.faqs = gig.faqs
                         var files = gig.gig_uploads
-                        this.images = files.filter((f) => {
+                        this.currentImages = files.filter((f) => {
                             return f.type == "image"
                         })
-                        this.videos = files.filter((f) => {
+                        this.currentVideos = files.filter((f) => {
                             return f.type == "video"
                         })
                     },
@@ -383,7 +411,7 @@
                     removeFaq(i) {
                         this.faqs.splice(i, 1)
                     },
-                    async addFile(event) {
+                    async addImage(event) {
 
                         const files = event.target.files
 
@@ -391,17 +419,37 @@
                             const file = files[i]
 
                             const previewUrl = await readFileData(file)
-                            this.files.push({
+                            this.images.push({
                                 file,
                                 previewUrl
                             })
                         }
                     },
-                    removeImage(i) {
-                        this.images.splice(i, 1)
+                    async addVideo(event) {
+
+                        const files = event.target.files
+
+                        for (let i = 0; i < files.length; i++) {
+                            const file = files[i]
+
+                            const previewUrl = await readFileData(file)
+                            this.videos.push({
+                                file,
+                                previewUrl
+                            })
+                        }
                     },
-                    removeVideo(i) {
-                        this.videos.splice(i, 1)
+                    removeImage(i, current = false) {
+                        if (current)
+                            this.currentImages.splice(i, 1)
+                        else
+                            this.images.splice(i, 1)
+                    },
+                    removeVideo(i, current = false) {
+                        if (current)
+                            this.currentVideos.splice(i, 1)
+                        else
+                            this.videos.splice(i, 1)
                     },
                     submit() {
                         const forms = new FormData()
@@ -411,12 +459,19 @@
                         forms.append('description', this.description)
                         forms.append('packages', JSON.stringify(this.packages))
                         forms.append('faqs', JSON.stringify(this.faqs))
-                        for (var i = 0; i < this.files.length; i++) {
-                            var file = this.files[i].file; // Assuming `file` property holds the actual File object
-                            forms.append('uploads[]', file);
+                        for (var i = 0; i < this.images.length; i++) {
+                            var file = this.images[i].file;
+                            // Assuming `file` property holds the actual File object
+                            forms.append('images[]', file);
+                        }
+                        for (var i = 0; i < this.videos.length; i++) {
+                            var file = this.videos[i].file;
+                            // Assuming `file` property holds the actual File object
+                            forms.append('videos[]', file);
                         }
 
-                        // forms.append('uploads', JSON.stringify(this.files))
+                        forms.append('currentImages', JSON.stringify(this.currentImages))
+                        forms.append('currentVideos', JSON.stringify(this.currentVideos))
 
                         const url = "{{ route('gigs.update', $gig) }}"
                         axios.post(url, forms, {
@@ -425,9 +480,10 @@
                             }
                         }).then(response => {
                             console.log(response)
-                            // location.href = "/my-profile";
+                            location.href = "/gigs/{{ $gig->id }}"
                         }).catch(error => {
-                            console.log(error.response)
+                            alert(error.response.data.message)
+                            // alert(error)
                         })
                     }
                 }

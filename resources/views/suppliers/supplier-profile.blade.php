@@ -156,7 +156,6 @@
 
                 <div class="">
                     <section class="container mx-auto max-w-7xl" id="reviews">
-
                         <hr class="my-8 w-full md:mt-12 md:mb-8 lg:mt-10" />
                         <section class="py-8 lg:py-16">
                             <div class="mx-auto px-4">
@@ -178,34 +177,21 @@
                                         </button>
                                         <div id="star"
                                             class="z-10 hidden w-44 divide-y divide-gray-100 rounded-lg bg-white shadow">
+
                                             <ul class="p-4 py-2 text-sm text-gray-700"
                                                 aria-labelledby="dropdownDefaultButton">
                                                 <li>
-                                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100">All
+                                                    <a href="{{ URL::current() }}"
+                                                        class="block px-4 py-2 hover:bg-gray-100">All
                                                         Star</a>
                                                 </li>
-                                                <li>
-                                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100">1
-                                                        Star</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100">2
-                                                        Star</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100">3
-                                                        Star</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100">4
-                                                        Star
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100">5
-                                                        Star
-                                                    </a>
-                                                </li>
+                                                @for ($i = 1; $i <= 5; $i++)
+                                                    <li>
+                                                        <a href="{{ URL::current() }}?rating={{ $i }}"
+                                                            class="block px-4 py-2 hover:bg-gray-100">{{ $i }}
+                                                            Star</a>
+                                                    </li>
+                                                @endfor
 
                                             </ul>
                                         </div>
@@ -249,13 +235,13 @@
                                         <x-button class="mt-2">Post Review</x-button>
                                     </form>
                                 @endauth
-                                @foreach ($user->comments as $comment)
+                                @foreach ($user->comments->reverse() as $comment)
                                     <article class="mb-6 rounded-lg bg-white p-6 text-base">
                                         <footer class="mb-2 flex items-center justify-between">
                                             <div class="flex items-center">
                                                 <p class="mr-3 inline-flex items-center text-sm text-gray-900">
                                                     <img class="mr-2 h-6 w-6 rounded-full"
-                                                        src="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
+                                                        src="{{ asset('storage/' . $comment->commenter->avatar) ?? 'https://images.unsplash.com/photo-1555952517-2e8e729e0b44?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHBlcnNvbnxlbnwwfDF8MHx8&auto=format&fit=crop&w=500&q=60' }}"
                                                         alt="Michael Gough">{{ $comment->commenter->name }}
                                                 </p>
                                                 <p class="text-sm text-gray-600"><time pubdate datetime="2022-02-08"
@@ -309,38 +295,49 @@
                                             @endfor
                                         </div>
                                         <p class="text-gray-500">{{ $comment->text }}</p>
-                                        <div class="mt-4 flex items-center space-x-4">
-                                            <button type="button"
-                                                class="flex items-center text-sm text-gray-500 hover:underline">
-                                                <svg aria-hidden="true" class="mr-1 h-4 w-4" fill="none"
-                                                    stroke="currentColor" viewBox="0 0 24 24"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2"
-                                                        d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z">
-                                                    </path>
-                                                </svg>
-                                                Reply
-                                            </button>
+                                        <div class="">
+                                            @if (Auth::check())
+                                                <form method="POST"
+                                                    action="{{ route('supplier.comment.reply', ['comment' => $comment->id]) }}">
+                                                    @csrf
+                                                    <div
+                                                        class="mb-4 rounded-lg rounded-t-lg border border-gray-200 bg-white py-2 px-4">
+                                                        <label for="review" class="sr-only">Your review</label>
+                                                        <textarea id="review" rows="3" cols="2" name="review"
+                                                            class="w-full border-0 px-0 text-sm text-gray-900 focus:outline-none focus:ring-0" placeholder="Write a review..."
+                                                            required></textarea>
+                                                    </div>
+
+                                                    <!-- Add any additional fields as needed -->
+                                                    <x-button type="submit"
+                                                        class="flex items-center text-sm text-gray-500 hover:underline">
+                                                        Reply
+                                                    </x-button>
+                                                </form>
+                                            @else
+                                                <p class="font-bold text-red-600">Please <a
+                                                        href="{{ route('login') }}">login</a> to
+                                                    reply to the comment.
+                                                </p>
+                                            @endif
                                         </div>
                                     </article>
-                                    @foreach ($comment->replies as $reply)
+                                    @foreach ($comment->replies->reverse() as $reply)
                                         <article class="mb-6 ml-6 rounded-lg bg-white p-6 text-base lg:ml-12">
-
                                             <footer class="mb-2 flex items-center justify-between">
                                                 <div class="flex items-center">
                                                     <p class="mr-3 inline-flex items-center text-sm text-gray-900">
                                                         <img class="mr-2 h-6 w-6 rounded-full"
-                                                            src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
-                                                            alt="Jese Leos">{{ $reply->commenter->name }}
+                                                            src="{{ asset('storage/' . $reply->commenter->avatar) ?? 'https://images.unsplash.com/photo-1555952517-2e8e729e0b44?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHBlcnNvbnxlbnwwfDF8MHx8&auto=format&fit=crop&w=500&q=60' }}"
+                                                            alt="">{{ $reply->commenter->name }}
                                                     </p>
                                                     <p class="text-sm text-gray-600"><time pubdate
                                                             datetime="2022-02-12"
                                                             title="February 12th, 2022">{{ $reply->created_at->diffForHumans() }}</time>
                                                     </p>
                                                 </div>
-                                                <button id="dropdownComment2Button"
-                                                    data-dropdown-toggle="dropdownComment2"
+                                                <button id="dropdownReply{{ $reply->id }}Button"
+                                                    data-dropdown-toggle="dropdownReply{{ $reply->id }}"
                                                     class="inline-flex items-center rounded-lg bg-white p-2 text-center text-sm font-medium text-gray-400 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-50"
                                                     type="button">
                                                     <svg class="h-5 w-5" aria-hidden="true" fill="currentColor"
@@ -348,46 +345,50 @@
                                                         <path
                                                             d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z">
                                                         </path>
+
                                                     </svg>
                                                     <span class="sr-only">Comment settings</span>
                                                 </button>
                                                 <!-- Dropdown menu -->
-                                                <div id="dropdownComment2"
-                                                    class="z-10 hidden w-36 divide-y divide-gray-100 rounded bg-white shadow">
-                                                    <ul class="py-1 text-sm text-gray-700"
-                                                        aria-labelledby="dropdownMenuIconHorizontalButton">
-                                                        <li>
-                                                            <a href="#"
-                                                                class="block py-2 px-4 hover:bg-gray-100">Edit</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#"
-                                                                class="block py-2 px-4 hover:bg-gray-100">Remove</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#"
-                                                                class="block py-2 px-4 hover:bg-gray-100">Report</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </footer>
+                                                @if ($reply->commenter_id == auth()->id())
+                                                    <div id="dropdownReply{{ $reply->id }}"
+                                                        class="z-10 hidden w-36 divide-y divide-gray-100 rounded bg-white shadow">
+                                                        <ul class="py-1 text-sm text-gray-700"
+                                                            aria-labelledby="dropdownMenuIconHorizontalButton">
 
-                                            <p class="text-gray-500">{{ $reply->text }}
-                                            </p>
-                                            <div class="mt-4 flex items-center space-x-4">
-                                                <button type="button"
-                                                    class="flex items-center text-sm text-gray-500 hover:underline">
-                                                    <svg aria-hidden="true" class="mr-1 h-4 w-4" fill="none"
-                                                        stroke="currentColor" viewBox="0 0 24 24"
-                                                        xmlns="http://www.w3.org/2000/svg">
-                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                            stroke-width="2"
-                                                            d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z">
-                                                        </path>
-                                                    </svg>
-                                                    Reply
-                                                </button>
-                                            </div>
+                                                            <li>
+                                                                <!-- Edit Button -->
+                                                                <button onclick="showEditForm({{ $reply->id }})"
+                                                                    class="block w-full px-2 py-2 hover:bg-gray-100">Edit</button>
+                                                            </li>
+                                                            <li>
+                                                                <!-- Delete Form -->
+                                                                <form
+                                                                    action="{{ route('supplier.comment.reply.destroy', $reply) }}"
+                                                                    method="POST">
+                                                                    @csrf
+                                                                    @method('DELETE')
+                                                                    <button type="submit"
+                                                                        class="block w-full px-2 py-2 hover:bg-gray-100">Remove</button>
+                                                                </form>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                @endif
+                                            </footer>
+                                            <p class="reply-text text-gray-500" id="replyText{{ $reply->id }}">
+                                                {{ $reply->text }}</p>
+                                            <!-- Edit Form -->
+                                            <form class="hidden" id="editReplyForm{{ $reply->id }}"
+                                                action="{{ route('supplier.comment.reply.update', $reply) }}"
+                                                method="POST">
+                                                @csrf
+                                                @method('PUT')
+                                                <textarea class="w-full rounded-lg border-gray-300 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
+                                                    name="review" required>{{ $reply->text }}</textarea>
+                                                <x-button type="submit" class="bg-red-600">
+                                                    Update</x-button>
+                                            </form>
                                         </article>
                                     @endforeach
                                 @endforeach
@@ -579,6 +580,15 @@
     </section>
 
 </x-guest-layout>
+<script>
+    function showEditForm(replyId) {
+        const replyText = document.getElementById(`replyText${replyId}`);
+        const editForm = document.getElementById(`editReplyForm${replyId}`);
+
+        replyText.classList.add('hidden');
+        editForm.classList.remove('hidden');
+    }
+</script>
 <script>
     //Owl-Carousel
     $('.owl-carousel').owlCarousel({

@@ -39,8 +39,8 @@
         </div>
 
     </section>
-    <div class="sm:static lg:relative" data-aos="fade-up" data-aos-duration="1500">
-        <div class="container inset-x-0 -top-14 mx-auto max-w-7xl rounded-lg sm:static lg:absolute">
+    {{-- <div class="sm:static lg:relative" data-aos="fade-up" data-aos-duration="1500"> --}}
+    {{-- <div class="container inset-x-0 -top-14 mx-auto max-w-7xl rounded-lg sm:static lg:absolute">
             <section
                 class="sm:rounded-0 container mx-auto w-full bg-[#F5EFE6] py-4 sm:max-w-screen-sm lg:max-w-screen-xl lg:rounded-2xl lg:p-8">
                 <div class="grid items-end gap-6 px-2.5 md:grid-cols-4">
@@ -82,54 +82,54 @@
 
                     </div>
                 </div>
+        </div> --}}
+    </section>
+    <section class="sm:bg-white sm:pt-12 lg:bg-[#E8DFCA] lg:pt-36">
+        <div class="container mx-auto mb-4 justify-between pl-4 text-2xl text-black sm:flex lg:hidden">
+            <div>Featured</div>
+            <a href="/featured" class="p-2 text-center text-base text-[#7895B2]">See All</a>
         </div>
-        </section>
-        <section class="sm:bg-white sm:pt-12 lg:bg-[#E8DFCA] lg:pt-36">
-            <div class="container mx-auto mb-4 justify-between pl-4 text-2xl text-black sm:flex lg:hidden">
-                <div>Featured</div>
-                <a href="/featured" class="p-2 text-center text-base text-[#7895B2]">See All</a>
-            </div>
-            <div id="owl-carousel1" class="owl-carousel owl-theme p-0">
+        <div id="owl-carousel1" class="owl-carousel owl-theme p-0">
+            @foreach ($categories as $category)
+                <a href="{{ $category->gigs->count() ? route('show.supplier-gig', ['user' => optional($category->firstGig())->user_id, 'gig' => optional($category->firstGig())->id]) : '#' }}"
+                    class="href">
+                    <div class="flex scale-75 flex-col">
+                        <img class="h-96 w-full rounded-3xl object-cover object-center"
+                            src="{{ $category->firstImg() ? asset('storage/' . $category->firstImg()) : 'https://images.unsplash.com/photo-1682232860597-9e16a4972602?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80' }}"
+                            alt="">
+                    </div>
+                </a>
+            @endforeach
+        </div>
+    </section>
+
+    <section class="">
+        <h2
+            class="container mx-auto mb-4 pl-4 font-extrabold tracking-tight text-gray-900 sm:flex sm:justify-between sm:pt-12 sm:text-2xl lg:flex lg:justify-center lg:pt-36 lg:text-4xl">
+            Category
+        </h2>
+
+        <div class="">
+            <div id="owl-carousel2" class="owl-carousel owl-theme container mx-auto sm:p-8 lg:p-2">
                 @foreach ($categories as $category)
-                    <a href="{{ $category->gigs->count() ? route('show.supplier-gig', ['user' => optional($category->firstGig())->user_id, 'gig' => optional($category->firstGig())->id]) : '#' }}"
-                        class="href">
-                        <div class="flex scale-75 flex-col">
-                            <img class="h-96 rounded-3xl object-cover"
-                                src="{{ $category->firstImg() ? asset('storage/' . $category->firstImg()) : 'https://images.unsplash.com/photo-1682232860597-9e16a4972602?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80' }}"
-                                alt="">
-                        </div>
-                    </a>
+                    <div class="relative">
+                        <a href="{{ route('show.category', $category) }}"
+                            class="h-auto max-w-lg cursor-pointer rounded-lg filter transition-all duration-300 hover:opacity-75">
+                            <img class="mb-4 aspect-square h-full rounded-lg object-cover"
+                                src={{ $category->firstImg() ? asset('storage/' . $category->firstImg()) : 'https://images.unsplash.com/photo-1682232860597-9e16a4972602?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80' }}>
+                            <div class="absolute inset-0 bottom-0 flex items-end justify-center">
+                                <p class="mb-3 whitespace-pre-line font-bold text-white sm:text-3xl lg:text-lg">
+                                    {{ $category->name }}</p>
+                            </div>
+                        </a>
+                    </div>
                 @endforeach
+
+
             </div>
-        </section>
-
-        <section class="">
-            <h2
-                class="container mx-auto mb-4 pl-4 font-extrabold tracking-tight text-gray-900 sm:flex sm:justify-between sm:pt-12 sm:text-2xl lg:flex lg:justify-center lg:pt-36 lg:text-4xl">
-                Category
-            </h2>
-
-            <div class="">
-                <div id="owl-carousel2" class="owl-carousel owl-theme container mx-auto sm:p-8 lg:p-2">
-                    @foreach ($categories as $category)
-                        <div class="relative">
-                            <a href="{{ route('show.category', $category) }}"
-                                class="h-auto max-w-lg cursor-pointer rounded-lg filter transition-all duration-300 hover:opacity-75">
-                                <img class="mb-4 aspect-square h-full rounded-lg object-cover"
-                                    src={{ $category->firstImg() ? asset('storage/' . $category->firstImg()) : 'https://images.unsplash.com/photo-1682232860597-9e16a4972602?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80' }}>
-                                <div class="absolute inset-0 bottom-0 flex items-end justify-center">
-                                    <p class="mb-3 whitespace-pre-line font-bold text-white sm:text-3xl lg:text-lg">
-                                        {{ $category->name }}</p>
-                                </div>
-                            </a>
-                        </div>
-                    @endforeach
-
-
-                </div>
-            </div>
-        </section>
-    </div>
+        </div>
+    </section>
+    {{-- </div> --}}
 
     <section class="p-8">
         <div class="mx-auto grid max-w-7xl grid-cols-1 gap-2 md:grid-cols-2">
@@ -138,7 +138,8 @@
                     <div class="">
                         <h1 class="text-left text-2xl font-bold md:text-3xl">Unique</h1>
                         <h2 class="text-left text-base md:text-lg">Make your next event truly one-of-a-kind and
-                            unforgettable by partnering with our event management team, which offers a unique approach
+                            unforgettable by partnering with our event management team, which offers a unique
+                            approach
                             that is customized to meet your specific needs and goals.
                         </h2>
                     </div>
@@ -173,9 +174,12 @@
                 <div>
                     <div class="">
                         <h1 class="text-left text-3xl font-bold md:text-4xl">All In One</h1>
-                        <h2 class="text-left text-base md:text-lg">Our all-in-one event planning services take care of
-                            every detail, making it effortless for you to plan your next event. Let us handle everything
-                            from venue selection to entertainment and transportation, while you sit back and enjoy the
+                        <h2 class="text-left text-base md:text-lg">Our all-in-one event planning services take care
+                            of
+                            every detail, making it effortless for you to plan your next event. Let us handle
+                            everything
+                            from venue selection to entertainment and transportation, while you sit back and enjoy
+                            the
                             event.
                         </h2>
                     </div>
@@ -200,7 +204,7 @@
             @foreach ($suppliers as $supplier)
                 <a href="{{ route('show.profile', $supplier) }}" class="href">
                     <div class="flex scale-75 flex-col duration-300 ease-in-out hover:scale-100">
-                        <img class="h-96 rounded-t-3xl object-cover"
+                        <img class="h-96 w-full rounded-t-3xl object-cover"
                             src="{{ asset('storage/' . $supplier->avatar) ?? 'https://images.unsplash.com/photo-1627564174704-4c3765ef733a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80' }}"
                             alt="">
                         <div class="flex justify-between rounded-b-3xl bg-white p-4">
@@ -232,7 +236,8 @@
                 <div class="mx-auto mb-8 max-w-screen-md text-center lg:mb-12">
                     <h2 class="mb-4 text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white">OwlEvent
                         Premium</h2>
-                    <p class="mb-5 font-light text-gray-500 dark:text-gray-400 sm:text-xl">By upgrading to our premium
+                    <p class="mb-5 font-light text-gray-500 dark:text-gray-400 sm:text-xl">By upgrading to our
+                        premium
                         subscription, you'll gain access to a wealth of exclusive features and benefits that will
                         enhance your overall experience with our product/service.
 
@@ -243,7 +248,8 @@
                     <div class="mx-auto flex max-w-lg flex-col rounded-lg border-2 border-yellow-900 bg-transparent p-6 text-center text-gray-900 drop-shadow-2xl"
                         data-aos="fade-down-right" data-aos-duration="2000">
                         <h3 class="mb-4 text-2xl font-semibold text-yellow-900">Bronze</h3>
-                        <p class="font-light text-gray-500 dark:text-gray-400 sm:text-lg">Our Bronze Package offers the
+                        <p class="font-light text-gray-500 dark:text-gray-400 sm:text-lg">Our Bronze Package offers
+                            the
                             perfect balance of affordability and functionality. </p>
                         <div class="my-8 flex items-baseline justify-center">
                             <span class="mr-2 text-5xl font-extrabold text-yellow-900">$29</span>
@@ -427,8 +433,10 @@
                             Come and Join us!</h1>
                         <p class="mt-4 text-lg leading-6 text-black/75 md:w-10/12 lg:w-8/12 xl:w-5/12 2xl:pr-12">
                             Are you a business owner looking to expand your reach and increase your sales? Look no
-                            further than our website! By creating an account and becoming a supplier on our platform,
-                            you'll gain access to a vast network of potential customers who are eager to purchase your
+                            further than our website! By creating an account and becoming a supplier on our
+                            platform,
+                            you'll gain access to a vast network of potential customers who are eager to purchase
+                            your
                             products or services.</p>
                     </div>
                     <div class="mt-20 md:mt-12">
@@ -506,10 +514,11 @@
                     items: 1
                 },
                 640: {
-                    items: 1
+                    items: 1,
+                    stagePadding: 100
                 },
                 768: {
-                    items: 3
+                    items: 2
                 },
                 992: {
                     items: 4

@@ -121,7 +121,7 @@ class SupplierController extends Controller
         if (!Auth::user()->hasRole('Supplier')) {
             return redirect('/become-a-supplier');
         }
-        $gigs = Gig::where('status', 'approved')->get();
+        $gigs = Gig::all();
         return view('suppliers.my-profile', compact('gigs'));
     }
 

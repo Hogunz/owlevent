@@ -33,12 +33,12 @@
 </head>
 
 <body>
-    <div class="min-h-full flex flex-col justify-center items-center py-6">
+    <div class="flex min-h-full flex-col items-center justify-center py-6">
         <div>
-            <x-application-logo class="w-full h-10"></x-application-logo>
+            <x-application-logo class="h-10 w-full"></x-application-logo>
         </div>
         <div class="mt-2 text-center">
-            <div class="font-bold {{ $success ? 'text-green-500' : 'text-red-500' }} text-lg uppercase">
+            <div class="{{ $success ? 'text-green-500' : 'text-red-500' }} text-lg font-bold uppercase">
                 {{ $status }}
             </div>
             <span class="capitalize">

@@ -68,7 +68,7 @@ Route::get('/blog', [BlogController::class, 'blog'])->name('blog');
 Route::get('/blog/show-more', [BlogController::class, 'showM'])->name('blogs.showM');
 Route::get('/blog/categorized', [BlogController::class, 'categorized'])->name('blogs.categorized');
 Route::post('/gig-comments/{comment}/reply', [GigCommentController::class, 'reply'])->name('gig.comment.reply');
-
+Route::post('/supplier-comments/{comment}/reply', [SupplierCommentController::class, 'reply'])->name('supplier.comment.reply');
 Route::middleware(['auth'])->group(function () {
 
 
@@ -100,6 +100,13 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/gig/{gig}', [SupplierController::class, 'showGig'])->name('show.gig');
     Route::resource('gigs', GigController::class)->except(['update']);
     Route::post('/gigs/{gig}/update', [GigController::class, 'update'])->name('gigs.update');
+    //delete Reply
+    Route::delete('/gig-comments/reply/{reply}', [GigCommentController::class, 'destroyReply'])->name('gig.comment.reply.destroy');
+    Route::delete('/supplier-comments/reply/{reply}', [SupplierCommentController::class, 'destroyReply'])->name('supplier.comment.reply.destroy');
+    //Edit Reply
+    Route::put('/gig-comments/reply/{reply}', [GigCommentController::class, 'updateReply'])->name('gig.comment.reply.update');
+    Route::put('/supplier-comments/reply/{reply}', [SupplierCommentController::class, 'updateReply'])->name('supplier.comment.reply.update');
+
 
     Route::post('/gig/{gig}/comment', [GigCommentController::class, 'comment'])->name('gig.comment');
     Route::post('/supplier/{user}/comment', [SupplierCommentController::class, 'comment'])->name('supplier.comment');

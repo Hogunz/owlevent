@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-3xl text-gray-800 leading-tight pb-6">
+        <h2 class="pb-6 text-3xl font-semibold leading-tight text-gray-800">
             {{ __('Roles') }}
         </h2>
     </x-slot>
@@ -9,18 +9,19 @@
 
         <x-auth-session-status :status="session('status')"></x-auth-session-status>
 
-        <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-            <div class="p-6 bg-white border-b border-gray-200">
-                <div class="flex justify-end mb-2">
+        <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
+            <div class="border-b border-gray-200 bg-white p-6">
+                <div class="mb-2 flex justify-end">
                     <a href="{{ route('roles.create') }}">
                         <x-button>Create</x-button>
                     </a>
                 </div>
-                <table class="table-auto min-w-full">
+                <table class="min-w-full table-auto">
                     <thead>
                         <tr class="bg-gray-300">
-                            <th class="tracking-tight px-3 py-2 uppercase">Name</th>
-                            <th class="tracking-tight px-3 py-2 uppercase">
+                            <th class="px-3 py-2 uppercase tracking-tight">ID</th>
+                            <th class="px-3 py-2 uppercase tracking-tight">Name</th>
+                            <th class="px-3 py-2 uppercase tracking-tight">
                                 <span class="sr-only">
                                     Action
                                 </span>
@@ -30,6 +31,7 @@
                     <tbody>
                         @foreach ($users as $user)
                             <tr>
+                                <td class="px-3 py-2 text-center">{{ $user->id }}</td>
                                 <td class="px-3 py-2 text-center">{{ $user->name }}</td>
                                 <td class="px-3 py-2 text-center">
                                     <a href="{{ route('users.show', $user) }}">

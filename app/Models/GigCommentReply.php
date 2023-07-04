@@ -15,6 +15,6 @@ class GigCommentReply extends Model
     ];
     public function commenter()
     {
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->belongsTo(User::class, 'commenter_id');
     }
 }

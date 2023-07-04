@@ -46,7 +46,8 @@
             </li>
             <li>
                 <a href="/admin/supplier/user/index"
-                    class="group flex w-full items-center rounded-lg p-2 text-white opacity-75 hover:opacity-100">Suppliers</a>
+                    class="group flex w-full items-center rounded-lg p-2 text-white opacity-75 hover:opacity-100">Top
+                    Suppliers</a>
             </li>
             <li>
                 <a href="/admin/blog/user/index"
