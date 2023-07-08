@@ -1,45 +1,72 @@
-<x-guest-layout>
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="pb-6 text-3xl font-semibold leading-tight text-gray-800">
+            {{ __('Services') }}
+        </h2>
+    </x-slot>
     <div class="py-12">
-        <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
-            <div class="border-b border-gray-200 bg-white p-6">
-                <div class="mb-2 flex justify-end">
-                    <x-auth-validation-errors></x-auth-validation-errors>
-                </div>
-                <table class="min-w-full table-auto">
-                    <thead>
-                        <tr class="bg-gray-300">
-                            <th class="px-3 py-2 uppercase tracking-tight">Name</th>
-                            <th class="px-3 py-2 uppercase tracking-tight">Status</th>
-                            <th class="px-3 py-2 uppercase tracking-tight">
-                                <span class="sr-only">
-                                    Action
-                                </span>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($services as $service)
-                            <tr>
-                                <td class="px-3 py-2 text-center">{{ $service->title }}</td>
-                                <td class="px-3 py-2 text-center capitalize">{{ $service->status }}</td>
-                                <td class="px-3 py-2 text-center">
-                                    <form action="{{ route('services.approval.change', $service) }}" method="post">
-                                        @csrf
-                                        @method('put')
-                                        <x-button name="status" value="approved">Approve</x-button>
-                                        <x-button name="status" value="declined">Declined</x-button>
-                                    </form>
-
-                                    <a href="">
-                                        <x-button class="">Edit
-                                        </x-button>
-                                    </a>
-                                </td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+        <div class="relative overflow-x-auto shadow-md sm:rounded-lg container mx-auto">
+            <div class="mb-2 flex justify-end">
+                <x-auth-validation-errors></x-auth-validation-errors>
             </div>
+            <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                    <tr>
+
+                        <th scope="col" class="px-6 py-3">
+                            ID
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Name
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Status
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Action
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($services as $service)
+                        <tr
+                            class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+
+                            <th scope="row"
+                                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                {{ $service->id }}
+                            </th>
+                            <td class="px-6 py-4">
+                                {{ $service->title }}
+                            </td>
+                            <td class="px-6 py-4">
+                                @if ($service->status == 'approved')
+                                    <span
+                                        class=" mr-2 rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium uppercase text-green-800">Approved</span>
+                                @else
+                                    <span
+                                        class="mr-2 rounded-full bg-yellow-100 px-2.5 py-0.5 text-xs font-medium uppercase text-[#32393a]">{{ $service->status }}</span>
+                                @endif
+                            </td>
+                            <td class="flex items-center px-6 py-4 space-x-3">
+                                <form action="{{ route('services.approval.change', $service) }}" method="post">
+                                    @csrf
+                                    @method('put')
+                                    <button class="font-medium text-green-600 hover:underline" name="status"
+                                        value="approved">Approve</button>
+                                    <button class="font-medium text-red-600 hover:underline" name="status"
+                                        value="declined">Declined</button>
+                                </form>
+                                <a href="{{ route('gigs.show', $service) }}">
+                                    <button class="font-medium text-blue-600 hover:underline">
+                                        Show
+                                    </button>
+                                </a>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
     </div>
-</x-guest-layout>
+</x-app-layout>

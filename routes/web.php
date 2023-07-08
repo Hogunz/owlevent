@@ -4,6 +4,7 @@ use App\Models\Gig;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GigController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\FinderController;
 use App\Http\Controllers\SocialController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\DashboardController;
@@ -33,6 +34,8 @@ Route::get('/auth-complete', function () {
 });
 
 Route::get('/', [DashboardController::class, 'welcome']);
+//Search and Filter
+Route::get('/filtered', [FinderController::class, 'search'])->name('show.filtered');
 Route::get('/category/{category}', [DashboardController::class, 'showCategory'])->name('show.category');
 Route::get('/supplier-profile/{user}', [DashboardController::class, 'showProfile'])->name('show.profile');
 Route::get('/service-profile/{user}/gig/{gig}', [DashboardController::class, 'showGig'])->name('show.supplier-gig');
@@ -49,9 +52,11 @@ Route::get('/categories', function () {
     return view('/categories');
 });
 
+
 Route::get('/blog/create', function () {
     return view('/blog/create');
 });
+
 
 //Approvals
 Route::get('/admin/blog/user/index', [ApprovalController::class, 'index'])->name('blogs.approval.index');
@@ -60,7 +65,6 @@ Route::get('/admin/supplier/user/index', [ApprovalController::class, 'supplierin
 Route::put('/admin/supplier/user/index/{supplier}/change-status', [ApprovalController::class, 'supplierchangeStatus'])->name('suppliers.approval.change');
 Route::get('/admin/service/user/index', [ApprovalController::class, 'serviceindex'])->name('services.approval.index');
 Route::put('/admin/service/user/index/{service}/change-status', [ApprovalController::class, 'servicechangeStatus'])->name('services.approval.change');
-
 
 
 //For Admin User
@@ -94,23 +98,29 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/become-a-supplier', [SupplierController::class, 'becomeSupplier']);
     Route::get('/registration', [SupplierController::class, 'create']);
     Route::post('/supplier/register', [SupplierController::class, 'store']);
-
+    Route::get('/suppliers/edit', [SupplierController::class, 'edit'])->name('suppliers.edit');
+    Route::put('/suppliers/{user}', [SupplierController::class, 'update'])->name('suppliers.update');
     Route::get('/my-profile', [SupplierController::class, 'myProfile'])->name('my-profile');
     Route::post('/my-profile/update-avatar', [SupplierController::class, 'updateAvatar']);
     Route::get('/gig/{gig}', [SupplierController::class, 'showGig'])->name('show.gig');
     Route::resource('gigs', GigController::class)->except(['update']);
     Route::post('/gigs/{gig}/update', [GigController::class, 'update'])->name('gigs.update');
     //delete Reply
+    Route::delete('/gig/{comment}/comment', [GigCommentController::class, 'destroy'])->name('gig.comment.destroy');
+    Route::delete('/supplier/{comment}/comment', [SupplierCommentController::class, 'destroy'])->name('supplier.comment.destroy');
     Route::delete('/gig-comments/reply/{reply}', [GigCommentController::class, 'destroyReply'])->name('gig.comment.reply.destroy');
     Route::delete('/supplier-comments/reply/{reply}', [SupplierCommentController::class, 'destroyReply'])->name('supplier.comment.reply.destroy');
     //Edit Reply
+    Route::put('/gig/{comment}/comment', [GigcommentController::class, 'updateComment'])->name('gig.comment.update');
     Route::put('/gig-comments/reply/{reply}', [GigCommentController::class, 'updateReply'])->name('gig.comment.reply.update');
+    Route::put('/supplier/{comment}/comment', [SupplierCommentController::class, 'updateComment'])->name('supplier.comment.update');
     Route::put('/supplier-comments/reply/{reply}', [SupplierCommentController::class, 'updateReply'])->name('supplier.comment.reply.update');
 
 
     Route::post('/gig/{gig}/comment', [GigCommentController::class, 'comment'])->name('gig.comment');
     Route::post('/supplier/{user}/comment', [SupplierCommentController::class, 'comment'])->name('supplier.comment');
 });
+
 
 //Laravel Socialite
 Route::get('/auth/{driver}', [SocialController::class, 'socialiteRedirect']);

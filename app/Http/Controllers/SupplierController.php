@@ -85,7 +85,63 @@ class SupplierController extends Controller
             return response()->json($e->getMessage(), 500);
         }
     }
+    public function edit()
+    {
+        $occupations = Occupation::all();
+        $skills = Skill::all();
+        $user = Auth::user();
 
+        return view('/suppliers/registration/edit', compact('occupations', 'skills', 'user'));
+    }
+
+    public function update(Request $request)
+    {
+
+        try {
+            $validator = Validator::make($request->all(), [
+                'first_name' => ['required'],
+                'last_name' => ['required'],
+                'business_name' => ['required'],
+                'address' => ['required'],
+                'description' => ['required'],
+                'occupations' => ['required'],
+                'skills' => ['required'],
+                'id_card' => ['image'],
+                'selfie_photo' => ['image'],
+            ]);
+
+            $personalInfo = $validator->safe()->only(['occupations', 'skills']);
+
+            Auth::user()->occupations()->sync($personalInfo['occupations']);
+            Auth::user()->skills()->sync($personalInfo['skills']);
+
+            $validatedData = $validator->validated();
+
+            $validatedData = $validator->safe()->except(['id_card', 'selfie_photo', 'occupations', 'skills']);
+
+            if ($request->hasFile('id_card')) {
+                $validatedData['id_card'] = $request->file('id_card')->storeAs(Auth::id(), 'id_card.' . $request->file('id_card')->getClientOriginalExtension(), 'public');
+            }
+
+            if ($request->hasFile('selfie_photo')) {
+                $validatedData['selfie_photo'] = $request->file('selfie_photo')->storeAs(Auth::id(), 'selfie.' . $request->file('selfie_photo')->getClientOriginalExtension(), 'public');
+            }
+
+            DB::beginTransaction();
+
+            Auth::user()->update($validatedData);
+
+            DB::commit();
+
+            return redirect('/my-profile');
+        } catch (Exception $e) {
+            return back()->withErrors(['message' => $e->getMessage()]);
+        }
+    }
+
+    public function showRegistration()
+    {
+    }
     public function updateAvatar(Request $request)
     {
         try {
@@ -128,7 +184,6 @@ class SupplierController extends Controller
     public function showGig(Gig $gig)
     {
         $gig->load('comments.replies');
-
         return view('suppliers.service-profile', compact('gig'));
     }
 }

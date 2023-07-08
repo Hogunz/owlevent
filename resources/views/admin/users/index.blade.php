@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="pb-6 text-3xl font-semibold leading-tight text-gray-800">
-            {{ __('Roles') }}
+            {{ __('Users') }}
         </h2>
     </x-slot>
 
@@ -40,6 +40,11 @@
                                     <a href="{{ route('users.edit', $user) }}">
                                         <x-button>Edit</x-button>
                                     </a>
+                                    {{-- <form action="{{ route('users.destroy', $user) }}" method="post">
+                                        @csrf
+                                        @method('delete')
+                                        <x-button type="submit">Delete</x-button>
+                                    </form> --}}
                                 </td>
                             </tr>
                         @endforeach

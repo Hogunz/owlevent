@@ -10,12 +10,14 @@ use Illuminate\Http\Request;
 class DashboardController extends Controller
 {
 
+
     public function welcome()
     {
+        // if (request()->get('search')) dd(request()->get('search'));
         $categories = Category::with(['gigs' => function ($query) {
             $query->approved();
         }])->get();
-        $suppliers = User::role('Supplier')->approved()->get();
+        $suppliers = User::role('Supplier')->get();
         return view('welcome', compact('categories', 'suppliers'));
     }
     public function showCategory(Category $category)

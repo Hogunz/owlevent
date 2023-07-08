@@ -18,7 +18,7 @@
             </a>
         </div>
         <div class="grow">
-            <form>
+            <form action="{{ route('show.filtered') }}" method="get" class="">
                 <div class="hidden sm:flex md:flex">
 
                     <div class="relative w-full">
@@ -33,7 +33,8 @@
                                 </svg>
                             </button>
                         </div>
-                        <input type="text" id="voice-search"
+
+                        <input type="text" name="search"
                             class="block w-full border-transparent p-2.5 pl-10 text-sm text-gray-900 focus:border-[#7895B2]/50 focus:ring-[#7895B2]/50"
                             placeholder="Search for Categories . . . " required>
                     </div>
@@ -91,9 +92,16 @@
                                 </x-slot>
 
                                 <x-slot name="content">
-                                    <div>
-                                        <x-dropdown-link :href="route('my-profile')">My Profile</x-dropdown-link>
-                                    </div>
+                                    @if (auth()->user()->hasRole(['Admin', 'Operations']))
+                                        <div>
+                                            <x-dropdown-link :href="route('dashboard')">Dashboard</x-dropdown-link>
+                                        </div>
+                                    @endif
+                                    @if (!auth()->user()->hasRole(['Admin', 'Operations', 'Writer']))
+                                        <div>
+                                            <x-dropdown-link :href="route('my-profile')">My Profile</x-dropdown-link>
+                                        </div>
+                                    @endif
                                     <div>
                                         <!-- Authentication -->
                                         <form method="POST" action="{{ route('logout') }}">

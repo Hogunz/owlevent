@@ -85,16 +85,18 @@
 
                                 <div class="mt-4 mb-4 grid grid-cols-2 gap-4">
                                     <div>
-                                        <a href="" class="href">
+                                        <a href="#" class="href">
                                             <x-button class="w-full">View As</x-button>
                                         </a>
                                     </div>
                                     <div>
-                                        <a href="" class="">
+                                        <a href="{{ route('suppliers.edit') }}" class="">
                                             <x-button class="w-full">Edit Profile</x-button>
                                         </a>
                                     </div>
+
                                 </div>
+                                {{-- <hr class="my-8 w-full md:mt-12 md:mb-8 lg:mt-10" /> --}}
                                 <div class="... flex justify-between">
                                     <div class="order-last">
                                         <h1 class="mb-4 text-left text-lg font-bold">Portfolio</h1>
@@ -144,15 +146,16 @@
                                                     <div class="">
                                                         <a href="{{ route('gigs.show', $gig) }}" class="href">
                                                             <img src="{{ asset('storage/' . $gig->gigUploads->where('type', 'image')->first()->url) }}"
-                                                                class="h-auto w-full object-cover" alt="...">
+                                                                class="h-auto w-full object-cover rounded-lg"
+                                                                alt="...">
                                                         </a>
                                                     </div>
                                                 </div>
-                                                <div class="p-4">
-                                                    <div class="mb-4 flex flex-row items-center gap-4">
+                                                <div class="py-2 px-0">
+                                                    {{-- <div class="mb-4 flex flex-row items-center gap-4">
                                                         <div class="">
-                                                            <img class="relative top-0 z-auto h-8 w-8 rounded-full object-cover ring-2 ring-white"
-                                                                src="https://images.unsplash.com/photo-1555952517-2e8e729e0b44?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHBlcnNvbnxlbnwwfDF8MHx8&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60"
+                                                            <img class="h-8 w-8 rounded-full object-cover ring-2 ring-white"
+                                                                src="{{ asset('storage/' . $gig->user->avatar) ?? 'https://images.unsplash.com/photo-1555952517-2e8e729e0b44?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHBlcnNvbnxlbnwwfDF8MHx8&auto=format&fit=crop&w=500&q=60' }}"
                                                                 alt="">
                                                         </div>
                                                         <div
@@ -160,6 +163,16 @@
                                                             <a href="{{ route('my-profile') }}"
                                                                 class="href">{{ $gig->title }}</a>
                                                         </div>
+                                                    </div> --}}
+                                                    <div class="mb-4 flex flex-row items-center gap-4">
+                                                        <img class="h-8 w-8 rounded-full object-cover ring-2 ring-white"
+                                                            src="{{ asset('storage/' . $gig->user->avatar) ?? 'https://images.unsplash.com/photo-1555952517-2e8e729e0b44?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHBlcnNvbnxlbnwwfDF8MHx8&auto=format&fit=crop&w=500&q=60' }}"
+                                                            alt="">
+                                                        <a href="{{ route('my-profile') }}" class="">
+                                                            <p
+                                                                class="mb-2 cursor-pointer text-sm font-bold uppercase tracking-tight text-gray-900 hover:underline">
+                                                                {{ $gig->title }}</p>
+                                                        </a>
                                                     </div>
                                                     <p
                                                         class="line-clamp-3 mb-3 text-justify font-normal text-gray-700">
@@ -194,13 +207,26 @@
                                         </div>
                                     @endif
                                 @endforeach
-
-                                <a href="{{ route('gigs.create') }}">
+                                {{-- <a href="{{ route('gigs.create') }}">
                                     <div
                                         class="flex h-52 w-full items-center justify-center rounded border-2 border-dashed p-6 text-xl font-bold uppercase tracking-wide text-gray-500">
                                         Create Gig
                                     </div>
-                                </a>
+                                </a> --}}
+                                @if ($gig->user->status == 'approved')
+                                    <a href="{{ route('gigs.create') }}">
+                                        <div
+                                            class="flex h-52 w-full items-center justify-center rounded border-2 border-dashed p-6 text-xl font-bold uppercase tracking-wide text-gray-500">
+                                            Create Gig
+                                        </div>
+                                    </a>
+                                @else
+                                    <div class="">
+                                        <span
+                                            class="mr-2 rounded-full bg-yellow-100 px-2.5 py-0.5 text-xs font-medium uppercase text-[#32393a]">Create
+                                            Gig Pending</span>
+                                    </div>
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -222,7 +248,8 @@
                             <section class="py-8 lg:py-16">
                                 <div class="mx-auto px-4">
                                     <div class="mb-6 flex items-center justify-between">
-                                        <h2 class="text-lg font-bold text-gray-900 lg:text-2xl">Reviews (20)
+                                        <h2 class="text-lg font-bold text-gray-900 lg:text-2xl">Reviews
+                                            {{ $gig->user->comments->count() }}
                                         </h2>
                                         <div class="self-center">
 
@@ -239,42 +266,33 @@
                                             </button>
                                             <div id="star"
                                                 class="z-10 hidden w-44 divide-y divide-gray-100 rounded-lg bg-white shadow">
+
                                                 <ul class="p-4 py-2 text-sm text-gray-700"
                                                     aria-labelledby="dropdownDefaultButton">
                                                     <li>
-                                                        <a href="#"
+                                                        <a href="{{ URL::current() }}"
                                                             class="block px-4 py-2 hover:bg-gray-100">All
                                                             Star</a>
                                                     </li>
-                                                    <li>
-                                                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">1
-                                                            Star</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">2
-                                                            Star</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">3
-                                                            Star</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">4
-                                                            Star
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">5
-                                                            Star
-                                                        </a>
-                                                    </li>
-
+                                                    @for ($i = 1; $i <= 5; $i++)
+                                                        <li>
+                                                            <a href="{{ URL::current() }}?rating={{ $i }}"
+                                                                class="block px-4 py-2 hover:bg-gray-100">{{ $i }}
+                                                                Star</a>
+                                                        </li>
+                                                    @endfor
                                                 </ul>
                                             </div>
                                         </div>
                                     </div>
 
-                                    @foreach (auth()->user()->comments as $comment)
+                                    @foreach (auth()->user()->load([
+            'comments' => function ($query) {
+                $query->when(request()->get('rating'), function ($query) {
+                    $query->where('ratings', request()->get('rating'));
+                });
+            },
+        ])->comments as $comment)
                                         <article class="mb-6 rounded-lg bg-white p-6 text-base">
                                             <footer class="mb-2 flex items-center justify-between">
                                                 <div class="flex items-center">

@@ -24,7 +24,7 @@
 </head>
 
 
-<body class="overflow-auto" style="font-family: Montserrat">
+<body class="overflow-auto" style="font-family: 'lato', sans-serif;">
     <div class="flex min-h-screen flex-col justify-between">
         <div>
             <header>@include('layouts.header')</header>

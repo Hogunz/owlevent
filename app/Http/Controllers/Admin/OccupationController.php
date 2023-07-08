@@ -94,6 +94,7 @@ class OccupationController extends Controller
      */
     public function destroy(Occupation $occupation)
     {
-        //
+        $occupation->delete();
+        return redirect()->route('occupations.index')->with('status', 'Successfully deleted occupation');
     }
 }

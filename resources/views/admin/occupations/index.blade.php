@@ -38,6 +38,11 @@
                                     <a href="{{ route('occupations.edit', $occupation) }}">
                                         <x-button>Edit</x-button>
                                     </a>
+                                    <form action="{{ route('occupations.destroy', $occupation) }}" method="post">
+                                        @csrf
+                                        @method('delete')
+                                        <x-button type="submit">Delete</x-button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach

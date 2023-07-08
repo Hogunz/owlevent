@@ -10,6 +10,8 @@ use App\Http\Controllers\Controller;
 
 class ApprovalController extends Controller
 {
+
+    //Service Approval
     public function serviceindex()
     {
         $services = Gig::all();
@@ -23,6 +25,7 @@ class ApprovalController extends Controller
         ]);
         return redirect()->route('services.approval.index');
     }
+    //Supplier Approval
     public function supplierindex()
     {
 
@@ -38,7 +41,7 @@ class ApprovalController extends Controller
     }
 
 
-
+    //Blog Approval
     public function index()
     {
         $blogs = Blog::all();

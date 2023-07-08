@@ -32,6 +32,17 @@ class SupplierCommentController extends Controller
         $reply->save();
         return redirect()->back()->with('success', 'Successfully replied to comment');
     }
+
+    public function updateComment(Request $request, SupplierComment $comment)
+    {
+        if ($comment->commenter_id != Auth::id()) {
+            return redirect()->back()->with('error', 'You are not authorized to edit this reply');
+        }
+        $comment->text = $request->review;
+        $comment->save();
+
+        return redirect()->back()->with('success', 'Reply updated successfully');
+    }
     public function updateReply(Request $request, SupplierCommentReply $reply)
     {
         if ($reply->commenter_id != Auth::id()) {
@@ -42,7 +53,17 @@ class SupplierCommentController extends Controller
 
         return redirect()->back()->with('success', 'Reply updated successfully');
     }
+    public function destroy(SupplierComment $comment)
+    {
 
+        if ($comment->commenter_id != Auth::id()) {
+
+            return redirect()->back()->with('error', 'You are not authorized to delete this reply');
+        }
+        $comment->replies()->delete();
+        $comment->delete();
+        return redirect()->back()->with('success', 'Reply deleted successfully');
+    }
     public function destroyReply(SupplierCommentReply $reply)
     {
 

@@ -1,7 +1,7 @@
 <x-guest-layout>
     <section class="container mx-auto sm:p-0 lg:p-8">
         <div class="h-auto">
-            <div class="container mx-auto" style="">
+            <div class="container mx-auto">
                 <div
                     class="from-50% h-auto rounded-t-lg bg-gradient-to-br from-[#7895B2] to-[#E8DFCA] bg-cover bg-center object-fill py-24 px-10 text-white">
                     <div class="sm:w-full lg:w-1/2">
@@ -113,15 +113,15 @@
                                             </div>
                                             <div class="p-4">
                                                 <div class="mb-4 flex flex-row items-center gap-4">
-                                                    <div class="">
-                                                        <img class="relative top-0 z-auto h-8 w-8 rounded-full object-cover ring-2 ring-white"
-                                                            src="https://images.unsplash.com/photo-1555952517-2e8e729e0b44?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHBlcnNvbnxlbnwwfDF8MHx8&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60"
-                                                            alt="">
-                                                    </div>
-                                                    <div
-                                                        class="cursor-pointer text-sm font-bold uppercase hover:underline">
-                                                        <a href="/itsMeCJ" class="href">{{ $gig->title }}</a>
-                                                    </div>
+                                                    <img class="h-8 w-8 rounded-full object-cover ring-2 ring-white"
+                                                        src="{{ asset('storage/' . $gig->user->avatar) ?? 'https://images.unsplash.com/photo-1555952517-2e8e729e0b44?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHBlcnNvbnxlbnwwfDF8MHx8&auto=format&fit=crop&w=500&q=60' }}"
+                                                        alt="">
+                                                    <a href="{{ route('show.supplier-gig', ['user' => $user, 'gig' => $gig]) }}"
+                                                        class="">
+                                                        <p
+                                                            class="mb-2 cursor-pointer text-sm font-bold uppercase tracking-tight text-gray-900 hover:underline">
+                                                            {{ $gig->title }}</p>
+                                                    </a>
                                                 </div>
                                                 <p class="line-clamp-3 mb-3 text-justify font-normal text-gray-700">
                                                     {{ $gig->description }}</p>
@@ -160,7 +160,8 @@
                         <section class="py-8 lg:py-16">
                             <div class="mx-auto px-4">
                                 <div class="mb-6 flex items-center justify-between">
-                                    <h2 class="text-lg font-bold text-gray-900 lg:text-2xl">Reviews (20)
+                                    <h2 class="text-lg font-bold text-gray-900 lg:text-2xl">Reviews
+                                        {{ $user->comments->count() }}
                                     </h2>
                                     <div class="self-center">
 
@@ -248,8 +249,8 @@
                                                         title="February 8th, 2022">{{ $comment->created_at->diffForHumans() }}</time>
                                                 </p>
                                             </div>
-                                            <button id="dropdownComment1Button"
-                                                data-dropdown-toggle="dropdownComment1"
+                                            <button id="dropdownComment1{{ $comment->id }}Button"
+                                                data-dropdown-toggle="dropdownComment1{{ $comment->id }}"
                                                 class="inline-flex items-center rounded-lg bg-white p-2 text-center text-sm font-medium text-gray-400 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-50"
                                                 type="button">
                                                 <svg class="h-5 w-5" aria-hidden="true" fill="currentColor"
@@ -261,17 +262,27 @@
                                                 <span class="sr-only">Comment settings</span>
                                             </button>
                                             <!-- Dropdown menu -->
-                                            <div id="dropdownComment1"
+                                            <div id="dropdownComment1{{ $comment->id }}"
                                                 class="z-10 hidden w-36 divide-y divide-gray-100 rounded bg-white shadow">
                                                 <ul class="py-1 text-sm text-gray-700"
                                                     aria-labelledby="dropdownMenuIconHorizontalButton">
                                                     <li>
-                                                        <a href="#"
-                                                            class="block py-2 px-4 hover:bg-gray-100">Edit</a>
+                                                        <!-- Edit Button -->
+                                                        <button onclick="showEditForm({{ $comment->id }})"
+                                                            class="block w-full px-2 py-2 hover:bg-gray-100">Edit</button>
+                                                        {{-- <a href="#"
+                                                            class="block py-2 px-4 hover:bg-gray-100">Edit</a> --}}
                                                     </li>
                                                     <li>
-                                                        <a href="#"
-                                                            class="block py-2 px-4 hover:bg-gray-100">Remove</a>
+                                                        <!-- Delete Form -->
+                                                        <form
+                                                            action="{{ route('supplier.comment.destroy', $comment) }}"
+                                                            method="POST">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit"
+                                                                class="block w-full px-2 py-2 hover:bg-gray-100">Remove</button>
+                                                        </form>
                                                     </li>
                                                     <li>
                                                         <a href="#"
@@ -294,7 +305,19 @@
                                                 </span>
                                             @endfor
                                         </div>
-                                        <p class="text-gray-500">{{ $comment->text }}</p>
+                                        <p class="reply-text text-gray-500" id="replyText{{ $comment->id }}">
+                                            {{ $comment->text }}</p>
+                                        <!-- Edit Form -->
+                                        <form class="hidden" id="editReplyForm{{ $comment->id }}"
+                                            action="{{ route('supplier.comment.update', $comment) }}" method="POST">
+                                            @csrf
+                                            @method('PUT')
+                                            <textarea class="w-full rounded-lg border-gray-300 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
+                                                name="review" required>{{ $comment->text }}</textarea>
+                                            <x-button type="submit" class="bg-red-600">
+                                                Update</x-button>
+                                        </form>
+                                        {{-- <p class="text-gray-500">{{ $comment->text }}</p> --}}
                                         <div class="">
                                             @if (Auth::check())
                                                 <form method="POST"

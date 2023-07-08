@@ -119,9 +119,6 @@ class BlogController extends Controller
      */
     public function update(Request $request, Blog $blog)
     {
-
-
-
         $request->validate([
             'name' => 'required|string|max:255',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',

@@ -84,7 +84,7 @@
                 </div>
         </div> --}}
     </section>
-    <section class="sm:bg-white sm:pt-12 lg:bg-[#E8DFCA] lg:pt-36">
+    <section class="sm:bg-white sm:pt-12 lg:pt-36 lg:bg-[#E8DFCA] ">
         <div class="container mx-auto mb-4 justify-between pl-4 text-2xl text-black sm:flex lg:hidden">
             <div>Featured</div>
             <a href="/featured" class="p-2 text-center text-base text-[#7895B2]">See All</a>
@@ -201,7 +201,7 @@
             Top Supplier
         </h2>
         <div id="owl-carousel3" class="owl-carousel owl-theme grid grid-cols-1 bg-[#E8DFCA] p-8">
-            @foreach ($suppliers as $supplier)
+            @foreach ($suppliers->take(5) as $supplier)
                 <a href="{{ route('show.profile', $supplier) }}" class="href">
                     <div class="flex scale-75 flex-col duration-300 ease-in-out hover:scale-100">
                         <img class="h-96 w-full rounded-t-3xl object-cover"
@@ -492,7 +492,7 @@
                     stagePadding: 100
                 },
                 768: {
-                    items: 3
+                    items: 2
                 },
                 992: {
                     items: 4
