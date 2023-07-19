@@ -21,7 +21,6 @@
                                     </a>
                                 </div>
                             </div>
-
                             <div class="justify-between p-4 leading-normal">
                                 <div class="mb-4 flex flex-row items-center gap-4">
                                     <img class="h-8 w-8 rounded-full object-cover ring-2 ring-white"

@@ -51,7 +51,9 @@ Route::get('/blog', function () {
 Route::get('/categories', function () {
     return view('/categories');
 });
-
+Route::get('/sample', function () {
+    return view('/sample');
+});
 
 Route::get('/blog/create', function () {
     return view('/blog/create');

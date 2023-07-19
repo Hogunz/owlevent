@@ -4,9 +4,9 @@
         <div class=" h-auto ">
             <div class="container mx-auto" style="">
                 <div
-                    class="bg-cover bg-center  h-auto text-white py-24 px-10 object-fill rounded-t-lg bg-gradient-to-br from-[#7895B2] from-50% to-[#E8DFCA]">
+                    class="bg-cover bg-center h-auto text-white py-24 px-10 object-fill rounded-t-lg bg-gradient-to-br from-[#7895B2] from-50% to-[#E8DFCA]">
                     <div class="lg:w-1/2 sm:w-full">
-                        <p class="text-3xl text-left font-bold">"Discover the highlights: A visual
+                        <p class="text-3xl text-left font-bold mb-4">"Discover the highlights: A visual
                             journey through our featured
                             page's top features."</p>
                         <p class="text-2xl text-left mb-10 leading-none">Find the perfect solution to
@@ -66,17 +66,19 @@
     </section> --}}
 
     <section class="container mx-auto p-8">
-        <div class="grid lg:grid-cols-4 justify-items-center sm:grid-cols-2 gap-4">
+        <div class="grid lg:grid-cols-4 justify-items-center sm:grid-cols-2 gap-4 ">
             @foreach ($gigs->shuffle()->take(8) as $gig)
-                <div class="w-full max-w-sm bg-white">
+                <div class="w-full max-w-sm bg-white flex flex-col">
+                    <!-- Added flex flex-col -->
 
                     <a href="{{ route('show.supplier-gig', ['user' => $gig->user, 'gig' => $gig]) }}">
-                        <img class="rounded-lg"
+                        <img class="rounded-lg flex-grow-0 flex-shrink-0"
                             src="{{ asset('storage/' . $gig->gigUploads->where('type', 'image')->first()->url) }}"
                             alt="product image" />
                     </a>
 
-                    <div class="py-2 px-0">
+                    <div class="py-2 px-0 flex-grow flex flex-col justify-between">
+                        <!-- Added flex-grow -->
                         <div class="mt-6 mb-4 flex flex-row items-center gap-4">
                             <img class="h-8 w-8 rounded-full object-cover ring-2 ring-white"
                                 src="{{ asset('storage/' . $gig->user->avatar) ?? 'https://images.unsplash.com/photo-1555952517-2e8e729e0b44?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHBlcnNvbnxlbnwwfDF8MHx8&auto=format&fit=crop&w=500&q=60' }}"
@@ -87,7 +89,9 @@
                                     {{ $gig->user->name }}</p>
                             </a>
                         </div>
-                        <p class="line-clamp-3 mb-3 font-normal text-gray-700">{{ $gig->description }}</p>
+                        <div class="flex items-center">
+                            <p class="line-clamp-3 mb-3 font-normal text-gray-700">{{ $gig->description }}</p>
+                        </div>
                         <div class="flex items-center mt-2.5 mb-5">
                             <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star"
                                 class="w-4 text-yellow-300" role="img" xmlns="http://www.w3.org/2000/svg"
@@ -105,4 +109,5 @@
             @endforeach
         </div>
     </section>
+
 </x-guest-layout>
