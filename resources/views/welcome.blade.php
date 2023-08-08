@@ -497,15 +497,14 @@
                     stagePadding: 100
                 },
                 768: {
-                    items: 2
+                    items: 3
                 },
                 992: {
                     items: 4
                 },
                 1200: {
-                    items: 4,
-                    stagePadding: 150,
-
+                    items: 5,
+                    stagePadding: 100
                 }
             }
         });
