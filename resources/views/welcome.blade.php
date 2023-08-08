@@ -8,20 +8,19 @@
                             data-te-carousel-item data-te-carousel-active>
                             <img class="hidden object-cover sm:hidden md:block"
                                 style="height:600px; width:500px; top:-59px; left:87px;"
-                                src="{{ asset('storage/2/photographer.png') }}" />
-                            
+                                src="{{ url('storage/2/photographer.png') }}" />
                         </div>
                         <div class="relative float-left -mr-[100%] hidden max-w-lg transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
                             data-te-carousel-item>
                             <img class="hidden object-cover sm:hidden md:block"
                                 style="height:600px; width:500px; top:-59px; left:87px;"
-                                src="{{ asset('storage/2/photographer.png') }}" />
+                                src="{{ url('storage/2/photographer.png') }}" />
                         </div>
                         <div class="relative float-left -mr-[100%] hidden w-full max-w-lg transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
                             data-te-carousel-item>
                             <img class="hidden object-cover sm:hidden md:block"
                                 style="height:600px; width:500px; top:-59px; left:87px;"
-                                src="{{ asset('storage/2/wedding.png') }}" />
+                                src="{{ url('storage/2/wedding.png') }}" />
                         </div>
                     </div>
                 </div>
