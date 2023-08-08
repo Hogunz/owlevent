@@ -1,14 +1,14 @@
-<div class="border-t bg-gradient-to-br from-[#F5EFE6] via-[#E8DFCA] to-transparent sm:hidden lg:flex">
-    <footer class="container mx-auto p-4 sm:p-6">
-        <div class="md:flex md:justify-between">
-            <div class="mb-6 flex flex-col md:mb-0">
-                <a href="" class="flex items-center">
+<div class="border-t bg-gradient-to-br from-[#F5EFE6] via-[#E8DFCA] to-transparent sm:hidden lg:flex ">
+    <footer class="container mx-auto pb-8">
+        <div class="md:flex md:justify-between mt-11">
+            <div class="mb-6 flex flex-col md:mb-0 ">
+                <a href="" class="flex">
                     <img src="" class="mr-3 h-8" alt="" />
-                    <span class="self-center whitespace-nowrap text-2xl font-semibold dark:text-white"><span
+                    <span class="self-center whitespace-nowrap text-2xl font-semibold dark:text-white "><span
                             style="color:#F69679;">Owl</span>Event</span>
                 </a>
                 <div class="">
-                    <p class="mt-6">
+                    <p class="mt-6 text-justify">
                         OwlEvent is an online platform that turns<br> your event into a professional and festive<br>
                         event in no time. Created to provide a <br> reliable and trusted event resource in the
                         Philippines.

@@ -3,7 +3,7 @@
         <div class="mx-auto grid max-w-screen-xl px-4 xs:grid xs:place-content-center lg:grid-cols-12 lg:gap-8 xl:gap-0">
             <div class="flex-col xs:col-span-12 sm:flex md:flex-row lg:col-span-5 lg:mt-0">
                 <div id="carouselSlide" class="relative sm:hidden lg:flex" data-te-carousel-init data-te-carousel-slide>
-                    <div class="relative overflow-hidden pt-36 after:clear-both after:block after:content-['']">
+                    <div class="block relative overflow-hidden sm:pt-24 pt-8 after:clear-both after:block after:content-['']">
                         <div class="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
                             data-te-carousel-item data-te-carousel-active>
                             <img class="hidden object-cover sm:hidden md:block"
@@ -28,21 +28,9 @@
 
 
             <div class="mr-auto place-self-center xs:col-span-12 sm:p-8 lg:col-span-7 lg:p-0">
-
-                {{-- <h1 class=" font-bold tracking-wider uppercase text-gray-800 sm:w-full leading-8 "
-                    style="font-family: 'Rubik One';">
-                    <span class="font-extrabold py-2 text-4xl sm:text-5xl lg:text-6xl"> Whatever you’re<br> <span
-                            class="text-[#7895b2]">
-                            planning,</span>
-                    </span><span
-                        class="font-extrabold tracking-wider text-gray-800 py-2 text-4xl sm:text-5xl lg:text-6xl">
-                        make
-                        it
-                        <br><span class="text-[#7895b2]">extraordinary</span></span>
-                </h1> --}}
-                <h1 class="sm:w-full uppercase leading-8">
-                    <p class="text-black/75 tracking-wider font-bold lg:text-5xl sm:text-lg"
-                        style="font-family: 'Rubik Mono One', sans-serif; ">
+                <h1 class="sm:w-full uppercase ">
+                    <p class="text-black/75 tracking-wide text-5xl leading-relaxed font-bold"
+                        style="font-family: 'Spectral', serif; ">
                         Whatever you're
                         planning,
                     </p>
@@ -56,7 +44,7 @@
     <div class="sm:static lg:relative" data-aos="fade-up" data-aos-duration="1500">
         <div class="container inset-x-0 -top-14 mx-auto max-w-7xl rounded-lg sm:static lg:absolute">
             <section
-                class="sm:rounded-0 container mx-auto w-full bg-[#F5EFE6] py-4 sm:max-w-screen-sm lg:max-w-screen-xl lg:rounded-2xl lg:p-8">
+                class=" bg-[#F5EFE6] py-4 sm:max-w-screen-sm lg:max-w-screen-xl lg:rounded-2xl lg:p-8">
                 <div class="grid items-end gap-6 px-2.5 md:grid-cols-4">
                     <div class="relative z-0">
                         <select type="" id="default_standard"
@@ -89,7 +77,7 @@
                     </div>
                     <div class="relative z-0">
                         <button
-                            class="rounded-lg border border-[#7895B2] bg-[#7895B2] p-4 text-sm font-medium text-white shadow-2xl hover:bg-[#AEBDCA] hover:text-black focus:z-10 focus:outline-none focus:ring-4 focus:ring-[#AEBDCA] sm:w-full md:px-10 lg:px-24">
+                            class="rounded-3xl border border-[#7895B2] bg-[#7895B2] p-4 text-sm font-medium text-white shadow-2xl hover:bg-[#AEBDCA] hover:text-black focus:z-10 focus:outline-none focus:ring-4 focus:ring-[#AEBDCA] sm:w-full md:px-10 lg:px-24 w-full">
                             Search
                         </button>
 
@@ -99,7 +87,7 @@
         </div>
         </section>
         <section class="sm:bg-white sm:pt-12 lg:pt-28 lg:bg-[#E8DFCA] ">
-            <div class="container mx-auto mb-4 justify-between pl-4 text-2xl text-black sm:flex lg:hidden">
+            <div class="mb-4 justify-between pl-4 text-2xl text-black flex lg:hidden">
                 <div class="uppercase tracking-widest mb-4 pl-4 font-extrabold">
                     Featured</div>
                 <a href="/featured" class="p-2 text-center text-base text-[#7895B2] uppercase">See All</a>
@@ -120,10 +108,9 @@
 
         <section class="">
             <h2
-                class="container uppercase  mx-auto mb-4 pl-4 font-extrabold tracking-widest text-gray-900 sm:flex sm:justify-between sm:pt-12 sm:text-2xl lg:flex lg:justify-center lg:pt-36 lg:text-4xl">
+                class="mb-4 justify-between pl-8 text-2xl text-black flex uppercase font-extrabold tracking-widest lg:justify-center lg:pt-36 lg:text-4xl">
                 Category
             </h2>
-
             <div class="">
                 <div id="owl-carousel2" class="owl-carousel owl-theme container mx-auto sm:p-8 lg:p-2">
                     @foreach ($categories as $category)
@@ -152,7 +139,7 @@
                 <div class="flex items-center bg-[#E8DFCA] p-4 md:p-8" data-aos="fade-right" data-aos-duration="2000">
                     <div>
                         <div class="">
-                            <h1 class="text-left text-2xl font-bold md:text-3xl">Unique</h1>
+                            <h1 class="text-left text-2xl font-bold md:text-3xl mb-8">Unique</h1>
                             <h2 class="text-left text-base md:text-lg">Make your next event truly one-of-a-kind and
                                 unforgettable by partnering with our event management team, which offers a unique
                                 approach
@@ -177,7 +164,7 @@
                 <div class="flex items-center bg-[#7895B2] p-4 md:p-8" data-aos="fade-left" data-aos-duration="2000">
                     <div>
                         <div class="">
-                            <h1 class="text-left text-3xl font-bold md:text-4xl">Reliable</h1>
+                            <h1 class="text-left text-3xl font-bold md:text-4xl mb-8">Reliable</h1>
                             <h2 class="text-left text-base md:text-lg">Trust us to deliver reliable events for all your
                                 special moments. From weddings to corporate events, we handle every detail to ensure an
                                 exceptional experience that exceeds your expectations.</h2>
@@ -190,7 +177,7 @@
 
                     <div>
                         <div class="">
-                            <h1 class="text-left text-3xl font-bold md:text-4xl">All In One</h1>
+                            <h1 class="text-left text-3xl font-bold md:text-4xl mb-8">All In One</h1>
                             <h2 class="text-left text-base md:text-lg">Our all-in-one event planning services take care
                                 of
                                 every detail, making it effortless for you to plan your next event. Let us handle
@@ -449,7 +436,7 @@
                             <h1
                                 class="w-64 text-3xl font-bold leading-9 text-black sm:w-auto md:text-5xl md:leading-10">
                                 Come and Join us!</h1>
-                            <p class="mt-4 text-lg leading-6 text-black/75 md:w-10/12 lg:w-8/12 xl:w-5/12 2xl:pr-12">
+                            <p class="mt-4 text-lg leading-loose text-black/75 md:w-10/12 lg:w-8/12 xl:w-5/12 2xl:pr-12">
                                 Are you a business owner looking to expand your reach and increase your sales? Look no
                                 further than our website! By creating an account and becoming a supplier on our
                                 platform,
@@ -457,9 +444,9 @@
                                 your
                                 products or services.</p>
                         </div>
-                        <div class="mt-20 md:mt-12">
+                        <div class="mt-20">
                             <a href="{{ route('login') }}"
-                                class="w-full rounded bg-[#E8DFCA] p-4 text-base font-medium leading-4 text-white hover:bg-[#E8DFCA]/75 sm:w-auto">Get
+                                class="rounded bg-[#E8DFCA] p-4 text-base font-medium leading-4 text-white hover:bg-[#E8DFCA]/75 ">Get
                                 Started</a>
                         </div>
                     </div>

@@ -1,22 +1,21 @@
 <x-guest-layout>
 
-    <section class="container mx-auto p-8">
-        <div class=" h-auto ">
-            <div class="container mx-auto" style="">
+    <section class="sm:container mx-auto sm:p-8 p-2 flex">
+
                 <div
-                    class="bg-cover bg-center h-auto text-white py-24 px-10 object-fill rounded-t-lg bg-gradient-to-br from-[#7895B2] from-50% to-[#E8DFCA]">
-                    <div class="lg:w-1/2 sm:w-full">
+                    class="w-full bg-cover bg-center h-auto text-white py-24 px-10 object-fill rounded-t-lg bg-gradient-to-br from-[#7895B2] from-50% to-[#E8DFCA]">
+                
                         <p class="text-3xl text-left font-bold mb-4">"Discover the highlights: A visual
                             journey through our featured
                             page's top features."</p>
                         <p class="text-2xl text-left mb-10 leading-none">Find the perfect solution to
                             your needs with our
                             supplier's wide range of services.</p>
-                    </div>
+                  
                 </div> <!-- container -->
                 <br>
-            </div>
-        </div>
+           
+
     </section>
     {{-- <section class="container mx-auto p-8">
         <div class="grid lg:grid-cols-4 justify-items-center sm:grid-cols-1 gap-y-2 gap-x-0">
