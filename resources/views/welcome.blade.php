@@ -29,7 +29,7 @@
 
             <div class="mr-auto place-self-center xs:col-span-12 sm:p-8 lg:col-span-7 lg:p-0">
                 <h1 class="sm:w-full uppercase ">
-                    <p class="text-black/75 tracking-wide text-5xl leading-relaxed font-bold"
+                    <p class="text-black/75 tracking-wide text-5xl leading-snug font-bold"
                         style="font-family: 'Spectral', serif; ">
                         Whatever you're
                         planning,
@@ -139,7 +139,7 @@
                 <div class="flex items-center bg-[#E8DFCA] p-4 md:p-8" data-aos="fade-right" data-aos-duration="2000">
                     <div>
                         <div class="">
-                            <h1 class="text-left text-2xl font-bold md:text-3xl mb-8">Unique</h1>
+                            <h1 class="text-left text-2xl font-bold md:text-3xl mb-8 uppercase tracking-widest">Unique</h1>
                             <h2 class="text-left text-base md:text-lg">Make your next event truly one-of-a-kind and
                                 unforgettable by partnering with our event management team, which offers a unique
                                 approach
@@ -164,7 +164,7 @@
                 <div class="flex items-center bg-[#7895B2] p-4 md:p-8" data-aos="fade-left" data-aos-duration="2000">
                     <div>
                         <div class="">
-                            <h1 class="text-left text-3xl font-bold md:text-4xl mb-8">Reliable</h1>
+                            <h1 class="text-left text-3xl font-bold md:text-4xl mb-8 uppercase tracking-widest">Reliable</h1>
                             <h2 class="text-left text-base md:text-lg">Trust us to deliver reliable events for all your
                                 special moments. From weddings to corporate events, we handle every detail to ensure an
                                 exceptional experience that exceeds your expectations.</h2>
@@ -177,7 +177,7 @@
 
                     <div>
                         <div class="">
-                            <h1 class="text-left text-3xl font-bold md:text-4xl mb-8">All In One</h1>
+                            <h1 class="text-left text-3xl font-bold md:text-4xl mb-8 uppercase tracking-widest">All In One</h1>
                             <h2 class="text-left text-base md:text-lg">Our all-in-one event planning services take care
                                 of
                                 every detail, making it effortless for you to plan your next event. Let us handle

@@ -206,6 +206,7 @@
                                             </div>
                                         </div>
                                     @endif
+                                    
                                 @endforeach
                                 {{-- <a href="{{ route('gigs.create') }}">
                                     <div
@@ -213,7 +214,7 @@
                                         Create Gig
                                     </div>
                                 </a> --}}
-                                @if ($gig->user->status == 'approved')
+                                @if (auth()->user()->status == 'approved')
                                     <a href="{{ route('gigs.create') }}">
                                         <div
                                             class="flex h-52 w-full items-center justify-center rounded border-2 border-dashed p-6 text-xl font-bold uppercase tracking-wide text-gray-500">
@@ -243,13 +244,12 @@
                 <div class="">
                     <div class="">
                         <section class="container mx-auto max-w-7xl" id="reviews">
-
                             <hr class="my-8 w-full md:mt-12 md:mb-8 lg:mt-10" />
                             <section class="py-8 lg:py-16">
                                 <div class="mx-auto px-4">
                                     <div class="mb-6 flex items-center justify-between">
-                                        <h2 class="text-lg font-bold text-gray-900 lg:text-2xl">Reviews
-                                            {{ $gig->user->comments->count() }}
+                                        <h2 class="text-lg font-bold text-gray-900 lg:text-2xl">Reviews: 
+                                            {{ auth()->user()->comments->count() }}
                                         </h2>
                                         <div class="self-center">
 
@@ -287,12 +287,12 @@
                                     </div>
 
                                     @foreach (auth()->user()->load([
-            'comments' => function ($query) {
-                $query->when(request()->get('rating'), function ($query) {
-                    $query->where('ratings', request()->get('rating'));
-                });
-            },
-        ])->comments as $comment)
+                                        'comments' => function ($query) {
+                                            $query->when(request()->get('rating'), function ($query) {
+                                                $query->where('ratings', request()->get('rating'));
+                                            });
+                                        },
+                                    ])->comments as $comment)
                                         <article class="mb-6 rounded-lg bg-white p-6 text-base">
                                             <footer class="mb-2 flex items-center justify-between">
                                                 <div class="flex items-center">
