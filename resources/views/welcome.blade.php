@@ -8,19 +8,19 @@
                             data-te-carousel-item data-te-carousel-active>
                             <img class="hidden object-cover sm:hidden md:block"
                                 style="height:600px; width:500px; top:-59px; left:87px;"
-                                src="{{ url('storage/2/photographer.png') }}" />
+                                src="{{ asset('images/photographer.png') }}" />
                         </div>
                         <div class="relative float-left -mr-[100%] hidden max-w-lg transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
                             data-te-carousel-item>
                             <img class="hidden object-cover sm:hidden md:block"
                                 style="height:600px; width:500px; top:-59px; left:87px;"
-                                src="{{ url('storage/2/photographer.png') }}" />
+                                src="{{ asset('images/photographer.png') }}" />
                         </div>
                         <div class="relative float-left -mr-[100%] hidden w-full max-w-lg transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
                             data-te-carousel-item>
                             <img class="hidden object-cover sm:hidden md:block"
                                 style="height:600px; width:500px; top:-59px; left:87px;"
-                                src="{{ url('storage/2/wedding.png') }}" />
+                                src="{{ asset('images/wedding.png') }}" />
                         </div>
                     </div>
                 </div>
@@ -41,7 +41,7 @@
                         <br><span class="text-[#7895b2]">extraordinary</span></span>
                 </h1> --}}
                 <h1 class="sm:w-full uppercase leading-8">
-                    <p class="text-black/75 tracking-wider font-bold text-5xl"
+                    <p class="text-black/75 tracking-wider font-bold lg:text-5xl sm:text-lg"
                         style="font-family: 'Rubik Mono One', sans-serif; ">
                         Whatever you're
                         planning,
@@ -50,10 +50,8 @@
                     <p class="text-base leading-normal text-gray-800 mt-4 sm:mt-5 sm:w-5/1 normal-case ">
                         “Making every moment memorable - with our events!”</p>
                 </h1>
-
             </div>
         </div>
-
     </section>
     <div class="sm:static lg:relative" data-aos="fade-up" data-aos-duration="1500">
         <div class="container inset-x-0 -top-14 mx-auto max-w-7xl rounded-lg sm:static lg:absolute">
