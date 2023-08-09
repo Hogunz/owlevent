@@ -3076,6 +3076,15 @@ input:checked + .toggle-bg {
 .p-\[auto\] {
   padding: auto;
 }
+.p-64 {
+  padding: 16rem;
+}
+.p-96 {
+  padding: 24rem;
+}
+.p-48 {
+  padding: 12rem;
+}
 .\!py-0 {
   padding-top: 0px !important;
   padding-bottom: 0px !important;

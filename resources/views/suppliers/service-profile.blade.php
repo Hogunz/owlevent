@@ -21,7 +21,6 @@
                     <div class="inset-x-0 top-14 max-h-full">
                         <div id="owl-carousel" class="owl-carousel owl-theme">
                             <!-- Item 1 -->
-
                             @foreach ($gig->gigUploads as $upload)
                                 <div class="relative" data-modal-target="extralarge-modal"
                                     data-modal-toggle="extralarge-modal">
@@ -55,8 +54,7 @@
                     <div class="relative h-full w-full max-w-7xl md:h-auto">
                         <!-- Modal content -->
                         <div id="owl-carousel2"
-                            class="owl-carousel owl-theme relative rounded-lg bg-transparent shadow">
-
+                            class="owl-carousel owl-theme relative rounded-lg bg-transparent shadow p-48">
                             @foreach ($gig->gigUploads as $upload)
                                 <div class="relative" data-modal-target="extralarge-modal"
                                     data-modal-toggle="extralarge-modal">

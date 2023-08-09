@@ -58,8 +58,7 @@
                     <div class="relative h-full w-full max-w-7xl md:h-auto">
                         <!-- Modal content -->
                         <div id="owl-carousel2"
-                            class="owl-carousel owl-theme relative rounded-lg bg-transparent shadow">
-
+                            class="owl-carousel owl-theme relative rounded-lg bg-transparent shadow p-48">
                             @foreach ($gig->gigUploads as $upload)
                                 <div class="relative" data-modal-target="extralarge-modal"
                                     data-modal-toggle="extralarge-modal">
@@ -75,13 +74,6 @@
                                     @endif
                                 </div>
                             @endforeach
-                            {{--
-                            @foreach ($gig->gigUploads as $upload)
-                                <div class="relative">
-                                    <img src="{{ asset('storage/' . $upload->url) }}"
-                                        class="relative rounded-lg transition duration-300 ease-in-out" alt="...">
-                                </div>
-                            @endforeach --}}
                         </div>
                     </div>
                 </div>
