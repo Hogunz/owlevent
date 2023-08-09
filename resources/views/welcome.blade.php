@@ -112,7 +112,7 @@
                 Category
             </h2>
             <div class="">
-                <div id="owl-carousel2" class="owl-carousel owl-theme container mx-auto sm:p-8 lg:p-2">
+                <div id="owl-carousel2" class="owl-carousel owl-theme lg:container lg:mx-auto p-2">
                     @foreach ($categories as $category)
                         <div class="group relative">
                             <a href="{{ route('show.category', $category) }}"
@@ -464,7 +464,8 @@
             loop: true,
             responsive: {
                 0: {
-                    items: 1
+                    items: 1,
+                    stagePadding: 100
                 },
                 640: {
                     items: 1,
@@ -490,7 +491,8 @@
             margin: 30,
             responsive: {
                 0: {
-                    items: 1
+                    items: 1,
+                    stagePadding: 50
                 },
                 640: {
                     items: 1,
@@ -515,7 +517,8 @@
             margin: 30,
             responsive: {
                 0: {
-                    items: 1
+                      items: 1,
+                    stagePadding: 50
                 },
                 640: {
                     items: 1,

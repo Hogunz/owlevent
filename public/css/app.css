@@ -1174,11 +1174,17 @@ input:checked + .toggle-bg {
 .-bottom-\[47px\] {
   bottom: -47px;
 }
+.-left-2 {
+  left: -0.5rem;
+}
 .-left-\[15px\] {
   left: -15px;
 }
 .-top-14 {
   top: -3.5rem;
+}
+.-top-2 {
+  top: -0.5rem;
 }
 .-top-\[21px\] {
   top: -21px;
@@ -1263,12 +1269,6 @@ input:checked + .toggle-bg {
 }
 .top-\[13px\] {
   top: 13px;
-}
-.-left-2 {
-  left: -0.5rem;
-}
-.-top-2 {
-  top: -0.5rem;
 }
 .-z-10 {
   z-index: -10;
@@ -3061,6 +3061,9 @@ input:checked + .toggle-bg {
 .p-4 {
   padding: 1rem;
 }
+.p-48 {
+  padding: 12rem;
+}
 .p-5 {
   padding: 1.25rem;
 }
@@ -3075,15 +3078,6 @@ input:checked + .toggle-bg {
 }
 .p-\[auto\] {
   padding: auto;
-}
-.p-64 {
-  padding: 16rem;
-}
-.p-96 {
-  padding: 24rem;
-}
-.p-48 {
-  padding: 12rem;
 }
 .\!py-0 {
   padding-top: 0px !important;

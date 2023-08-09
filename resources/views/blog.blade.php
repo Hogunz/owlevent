@@ -1,6 +1,6 @@
 <x-guest-layout>
     <div class="bg-white">
-        <div class="container mx-auto flex justify-between">
+        <div class="lg:container lg:mx-auto flex justify-between">
             <!-- 1 -->
             <div class="">
                 <aside class="sticky inset-x-0 top-14 hidden max-h-full lg:block lg:w-80">
@@ -29,12 +29,12 @@
             <!-- 2 -->
 
             <div>
-                <div class="container mx-auto max-w-max p-8">
-                    <div class="mx-auto max-w-screen-xl px-4">
-                        <div class="grid grid-cols-1 gap-4 divide-y">
+                <div class="lg:container lg:mx-auto max-w-max p-8">
+                    <div class="w-full max-w-2xl mx-auto">
+                        <div class="max-w-full">
                             @foreach ($blogs->shuffle()->take(1) as $blog)
-                                <div class="mr-auto place-self-center lg:col-span-7">
-                                    <div class="lg:col-span-5 lg:mt-0 lg:flex">
+                                <div class="mr-auto place-self-center">
+                                    <div class=" lg:mt-0 lg:flex">
                                         <img class="mb-4" src="{{ asset('storage/' . $blog->image) }}" alt="">
                                     </div>
                                     <div class="text-justify">

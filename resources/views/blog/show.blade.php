@@ -1,6 +1,6 @@
 <x-guest-layout>
 
-    <div class="flex justify-between container mx-auto">
+    <div class="lg:container lg:mx-auto flex justify-between">
         <!-- 1 -->
         <div class="">
             <aside class="hidden lg:block lg:w-80 sticky inset-x-0 top-14 max-h-full">
@@ -28,7 +28,7 @@
         </div>
         <!-- 2 -->
         <div>
-            <div class="container max-w-max mx-auto p-8 ">
+            <div class="lg:container max-w-max lg:mx-auto lg:p-8 ">
                 <div class="max-w-screen-xl px-4 py-8 mx-auto">
                     <div class="mr-auto place-self-center lg:col-span-7">
                         <div class=" lg:mt-0 lg:col-span-5 lg:flex ">
