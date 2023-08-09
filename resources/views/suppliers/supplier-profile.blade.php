@@ -1,23 +1,25 @@
 <x-guest-layout>
-    <section class="container mx-auto sm:p-0 lg:p-8">
-        <div class="h-auto">
-            <div class="container mx-auto">
+ 
+        <section class="sm:container mx-auto sm:p-8 p-2 flex">
+
                 <div
-                    class="from-50% h-auto rounded-t-lg bg-gradient-to-br from-[#7895B2] to-[#E8DFCA] bg-cover bg-center object-fill py-24 px-10 text-white">
-                    <div class="sm:w-full lg:w-1/2">
-                        <p class="text-left text-3xl font-bold">"Discover the highlights: A visual
+                    class="w-full bg-cover bg-center h-auto text-white py-24 px-10 object-fill rounded-t-lg bg-gradient-to-br from-[#7895B2] from-50% to-[#E8DFCA]">
+                
+                        <p class="text-3xl text-left font-bold mb-4">"Discover the highlights: A visual
                             journey through our featured
                             page's top features."</p>
-                        <p class="mb-10 text-left text-2xl leading-none">Find the perfect solution to
+                        <p class="text-2xl text-left mb-10 leading-none">Find the perfect solution to
                             your needs with our
                             supplier's wide range of services.</p>
-                    </div>
+                  
                 </div> <!-- container -->
                 <br>
-            </div>
-        </div>
-        <div class="">
-            <div class="container mx-auto my-5 p-5">
+           
+
+    </section>
+    <section class="">
+       
+            <div class="lg:container lg:mx-auto my-5 p-5">
                 <div class="no-wrap md:-mx-2 md:flex">
                     <!-- Left Side -->
                     <div class="md:mx-2 md:w-2/6">
@@ -37,9 +39,7 @@
                                             class="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75"></span>
                                         <span class="relative inline-flex h-4 w-4 rounded-full bg-sky-500"></span>
                                     </span>
-
                                 </div>
-
                             </div>
                             <h1 class="my-1 text-center text-xl font-bold leading-8 text-gray-900">
                                 {{ $user->name }}</h1>
@@ -96,7 +96,7 @@
                         <!-- Profile tab -->
                         <!-- Grid Section -->
                         <div class="rounded-sm p-3 shadow-sm">
-                            <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+                            <div class="grid md:grid-cols-3 justify-items-center grid-cols-2 gap-4 p-2">
 
                                 <!-- CAROUSEL -->
                                 @foreach ($user->gigs as $gig)

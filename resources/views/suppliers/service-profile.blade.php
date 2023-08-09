@@ -2,7 +2,7 @@
 
 
     <section>
-        <div class="container mx-auto grid gap-4 p-8 sm:grid-cols-1 lg:grid-cols-2">
+        <div class="lg:container lg:mx-auto grid gap-4 p-8 sm:grid-cols-1 lg:grid-cols-2 w-full">
             <!--1st DIV -->
             <div class="">
                 <div class="mb-12">
@@ -17,9 +17,9 @@
                     </div>
                 </div>
                 <!-- CAROUSEL -->
-                <div class="container">
+                <div class="container mx-auto">
                     <div class="inset-x-0 top-14 max-h-full">
-                        <div id="owl-carousel" class="owl-carousel owl-theme">
+                        <div id="owl-carousel" class="owl-carousel owl-theme ">
                             <!-- Item 1 -->
                             @foreach ($gig->gigUploads as $upload)
                                 <div class="relative" data-modal-target="extralarge-modal"
@@ -431,7 +431,7 @@
                 </section>
             </div>
             <!-- 2 -->
-            <div class="container">
+            <div class="lg:container">
                 <div class="sticky inset-x-0 top-14 max-h-full">
                     @foreach ($gig->gigPackages as $package)
                         <div
