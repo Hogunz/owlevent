@@ -2,7 +2,7 @@
 
 
 
-    <section class="container mx-auto p-8">
+    <section class="lg:container lg:mx-auto lg:p-8 p-2">
         <div class="flex flex-col">
             <div class="mb-2 text-4xl font-bold">{{ $category->name }}</div>
             <div class="text-base font-bold text-black/50">Understanding the client's needs and objectives for the event
@@ -61,8 +61,8 @@
     </section> --}}
 
 
-    <section class="container mx-auto p-8">
-        <div class="grid lg:grid-cols-4 justify-items-center sm:grid-cols-2 gap-4 ">
+    <section class="lg:container lg:mx-auto lg:p-8 p-2">
+        <div class="grid md:grid-cols-4 justify-items-center grid-cols-2 gap-4 p-2 ">
             @foreach ($category->gigs as $gig)
                 <div class="w-full max-w-sm bg-white flex flex-col">
                     <!-- Added flex flex-col -->
