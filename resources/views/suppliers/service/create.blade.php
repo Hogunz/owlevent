@@ -252,11 +252,11 @@
                         </div>
                     </div>
                     <div>
-                        <div class="text-2xl font-semibold">Videos</div>
+                        <div class="text-2xl font-semibold mb-4">Videos</div>
                         <div class="grid grid-cols-3 gap-2">
                             <template x-for="(upload, index) in videos" :key="`v` + index">
                                 <div class="relative">
-                                    <div class="absolute top-0 left-2">
+                                    <div class="absolute -top-2 -left-2">
                                         <button type="button"
                                             class="rounded bg-red-500 p-1 text-xs text-white hover:bg-red-300"
                                             @click="removeVideo(index)">
