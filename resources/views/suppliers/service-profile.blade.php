@@ -2,7 +2,7 @@
 
 
     <section>
-        <div class="lg:container lg:mx-auto grid gap-4 p-8 sm:grid-cols-1 lg:grid-cols-2 w-full">
+        <div class="lg:container lg:mx-auto grid gap-4 lg:p-8 p-4 sm:grid-cols-1 lg:grid-cols-2 w-full">
             <!--1st DIV -->
             <div class="">
                 <div class="mb-12">
@@ -123,7 +123,7 @@
                     </p>
                 </div>
 
-                <div class="p-8">
+                <div class="lg:p-8">
                     <h1 class="text-left text-xl font-semibold leading-7 text-gray-800 lg:text-2xl lg:leading-9">
                         FAQ's</h1>
 
