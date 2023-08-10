@@ -1,4 +1,4 @@
-<nav class="rounded border-b border-gray-200 bg-white px-2 py-2.5 sm:px-4">
+<nav class="rounded lg:border-b lg:border-gray-200 border-none lg:bg-white bg-[#F5EFE6]/75 px-2 py-2.5 sm:px-4  ">
     <div class="flex flex-wrap items-center justify-between">
         <div class="flex">
             <button type="button" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation"

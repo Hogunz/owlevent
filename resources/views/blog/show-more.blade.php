@@ -2,7 +2,7 @@
 
 
 
-    <section class="container mx-auto p-8">
+    <section class="lg:container lg:mx-auto lg:p-8 p-2">
         <div class="flex flex-col">
             <div class="text-4xl mb-2 font-bold">All Posts</div>
             <div class="text-base text-black/50 font-bold">This feature is especially useful for blogs that feature <br>
@@ -10,11 +10,11 @@
             </div>
         </div>
     </section>
-    <section class="container mx-auto lg:p-24 sm:p-8">
+    <section class="lg:container lg:mx-auto lg:p-24 p-8">
         <div class="grid lg:grid-cols-3 sm:grid-cols-1 lg:gap-y-12 sm:gap-y-2">
             @foreach ($blogs as $blog)
                 <div
-                    class=" flex lg:flex-col overflow-hidden sm:flex-row items-center bg-white border border-gray-200 rounded-lg shadow  sm:max-w-xl lg:max-w-sm hover:bg-gray-100">
+                    class=" ">
                     <div class="">
                         <a href="{{ route('blogs.show', $blog->id) }}">
                             <img class="object-cover lg:max-w-sm sm:max-w-xs sm:rounded-l-lg lg:rounded-t-lg hover:scale-105 transition ease-in-out duration-300"

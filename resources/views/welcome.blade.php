@@ -41,8 +41,9 @@
             </div>
         </div>
     </section>
-    <div class="sm:static lg:relative" data-aos="fade-up" data-aos-duration="1500">
-        <div class="container inset-x-0 -top-14 mx-auto max-w-7xl rounded-lg sm:static lg:absolute">
+
+    <div class="sm:static lg:relative " data-aos="fade-up" data-aos-duration="1500">
+        {{-- <div class="container inset-x-0 -top-14 mx-auto max-w-7xl rounded-lg sm:static lg:absolute lg:pt-0 pt-48">
             <section
                 class=" bg-[#F5EFE6] py-4 sm:max-w-screen-sm lg:max-w-screen-xl lg:rounded-2xl lg:p-8">
                 <div class="grid items-end gap-6 px-2.5 md:grid-cols-4">
@@ -84,11 +85,11 @@
 
                     </div>
                 </div>
-        </div>
+        </div> --}}
         </section>
-        <section class="sm:bg-white sm:pt-12 lg:pt-28 lg:bg-[#E8DFCA] ">
-            <div class="mb-4 justify-between pl-4 text-2xl text-black flex lg:hidden">
-                <div class="uppercase tracking-widest mb-4 pl-4 font-extrabold">
+        <section class="sm:bg-white lg:pt-28 lg:bg-[#E8DFCA] ">
+            <div class=" justify-between text-2xl text-black flex lg:hidden pt-12">
+                <div class="uppercase tracking-widest font-extrabold ">
                     Featured</div>
                 <a href="/featured" class="p-2 text-center text-base text-[#7895B2] uppercase">See All</a>
             </div>
@@ -108,7 +109,7 @@
 
         <section class="">
             <h2
-                class="mb-4 justify-between pl-8 text-2xl text-black flex uppercase font-extrabold tracking-widest lg:justify-center lg:pt-36 lg:text-4xl">
+                class="mb-4 justify-between lg:pl-8 text-2xl text-black flex uppercase font-extrabold tracking-widest lg:justify-center lg:pt-36 lg:text-4xl">
                 Category
             </h2>
             <div class="">
@@ -134,7 +135,7 @@
         </section>
         {{-- </div> --}}
 
-        <section class="p-8">
+        <section class="lg:p-8">
             <div class="mx-auto grid max-w-7xl grid-cols-1 gap-2 md:grid-cols-2">
                 <div class="flex items-center bg-[#E8DFCA] p-4 md:p-8" data-aos="fade-right" data-aos-duration="2000">
                     <div>
@@ -201,10 +202,10 @@
         <section>
 
             <h2
-                class="container mx-auto mb-4 pl-4 font-extrabold tracking-tight text-gray-900 sm:flex sm:justify-between sm:pt-12 sm:text-2xl lg:flex lg:justify-center lg:pt-36 lg:text-4xl">
-                Top Supplier
-            </h2>
-            <div id="owl-carousel3" class="owl-carousel owl-theme grid grid-cols-1 bg-[#E8DFCA] p-8">
+            class="justify-between lg:pl-8 text-2xl text-black flex uppercase font-extrabold tracking-widest lg:justify-center lg:pt-24 py-4 lg:text-4xl">
+            Top Supplier
+        </h2>
+            <div id="owl-carousel3" class="owl-carousel owl-theme grid grid-cols-1 bg-[#E8DFCA] p-0">
                 @foreach ($suppliers->take(5) as $supplier)
                     <a href="{{ route('show.profile', $supplier) }}" class="href">
                         <div class="flex scale-75 flex-col duration-300 ease-in-out hover:scale-100">
@@ -465,7 +466,7 @@
             responsive: {
                 0: {
                     items: 1,
-                    stagePadding: 100
+                    stagePadding: 50
                 },
                 640: {
                     items: 1,
@@ -514,7 +515,6 @@
         // Initialize second carousel
         $('#owl-carousel3').owlCarousel({
             loop: true,
-            margin: 30,
             responsive: {
                 0: {
                       items: 1,
