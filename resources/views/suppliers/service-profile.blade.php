@@ -210,15 +210,15 @@
 
 
                     <hr class="my-8 w-full md:mt-12 md:mb-8 lg:mt-10 px-2" />
-                    <section class="bg-white py-8 lg:py-16 px-2">
-                        <div class="lg:mx-auto lg:max-w-2xl lg:px-4 ">
-                            <div class="mb-6 flex items-center justify-between">
+                    <section class="bg-white py-8 lg:py-16 px-2 w-full ">
+                        <div class="lg:mx-auto lg:max-w-2xl lg:px-4 w-full ">
+                            <div class="mb-6 flex items-center justify-between w-full ">
                                 <h2 class="text-lg font-bold text-gray-900 lg:text-2xl">Reviews
                                     {{ $gig->comments->count() }}
                                 </h2>
                             </div>
                             @auth
-                                <form action="{{ route('gig.comment', $gig) }}" method="post" class="mb-6 ">
+                                <form action="{{ route('gig.comment', $gig) }}" method="post" class="mb-6 w-full">
                                     @csrf
                                     <div class="mb-4 rounded-lg rounded-t-lg border border-gray-200 bg-white py-2 px-4 w-full">
                                         <label for="review" class="sr-only">Your review</label>
@@ -226,13 +226,13 @@
                                             class="w-full border-0 px-0 text-sm text-gray-900 focus:outline-none focus:ring-0" placeholder="Write a review..."
                                             required></textarea>
                                     </div>
-                                    <div class="flex space-x-2">
+                                    <div class="flex lg:space-x-2 w-full">
                                         @for ($i = 1; $i < 6; $i++)
-                                            <div class="flex">
+                                            <div class="flex w-full ">
                                                 <input type="radio" id="{{ $i }}" name="ratings" required
                                                     value="{{ $i }}">
                                                 <label for="{{ $i }}" class="ml-2">
-                                                    <div class="flex">
+                                                    <div class="flex w-full ">
                                                         @for ($j = 0; $j < $i; $j++)
                                                             <span>
                                                                 <svg aria-hidden="true" focusable="false"
@@ -437,7 +437,7 @@
                 </div>
                 <!-- 2 -->
                 <div class="lg:container">
-                    <div class="sticky inset-x-0 top-14 max-h-full">
+                    <div class="sticky inset-x-0 top-14 max-h-full lg:p-0 px-2">
                         @foreach ($gig->gigPackages as $package)
                             <div
                                 class="mx-auto mb-5 flex max-w-lg flex-col rounded-lg border border-gray-300 bg-white bg-opacity-25 p-6 text-center text-gray-900 shadow-md drop-shadow-2xl backdrop-blur-md backdrop-filter">
