@@ -1,4 +1,5 @@
-<div class="border-t bg-gradient-to-br from-[#F5EFE6] via-[#E8DFCA] to-transparent sm:hidden lg:flex ">
+
+<div class="border-t bg-gradient-to-br from-[#F5EFE6] via-[#E8DFCA] to-transparent sm:hidden lg:flex w-full">
     <footer class="container mx-auto pb-8">
         <div class="md:flex md:justify-between mt-11">
             <div class="mb-6 flex flex-col md:mb-0 ">
