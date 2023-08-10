@@ -29,7 +29,7 @@
             <!-- 2 -->
 
             <div>
-                <div class="lg:container lg:mx-auto max-w-max p-8">
+                <div class="lg:container lg:mx-auto max-w-max lg:p-8 p-2">
                     <div class="w-full max-w-2xl mx-auto">
                         <div class="max-w-full">
                             @foreach ($blogs->shuffle()->take(1) as $blog)
