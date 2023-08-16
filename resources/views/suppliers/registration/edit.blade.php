@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <div class="container mx-auto">
+    <div class="lg:container lg:mx-auto ">
         <form action="{{ route('suppliers.update', $user) }}" method="post" enctype="multipart/form-data">
             @csrf
             @method('put')
@@ -19,7 +19,7 @@
                         </span>
                     </div>
                     <div data-te-stepper-content-ref
-                        class="absolute w-full p-16 transition-all duration-500 ease-in-out">
+                        class="absolute w-full lg:p-16 p-4 transition-all duration-500 ease-in-out">
                         <!--1st content -->
                         <div>
                             <h1 class="font-bold text-4xl pb-6">Personal Information
@@ -30,13 +30,13 @@
                             </p>
                             <hr class="pb-8">
                         </div>
-                        <div class="grid grid-cols-2 gap-16 text-left">
+                        <div class="grid md:grid-cols-2 md:gap-16 grid-cols-1 gap-2 text-left">
                             <div class="font-bold text-gray-600 text-lg uppercase">Business
                                 Owner
                             </div>
                             <div class="text-left">
                                 <input placeholder="First Name" value="{{ $user->first_name }}" name="first_name"
-                                    class="border rounded p-2 px-2 w-64 appearance-none outline-none  text-gray-800"
+                                    class="border rounded p-2 px-2 mb-2 w-64 appearance-none outline-none  text-gray-800"
                                     required>
                                 <input placeholder="Last Name" value="{{ $user->last_name }}" name="last_name"
                                     class="border rounded p-2 px-2 w-64 appearance-none outline-none  text-gray-800"
@@ -48,14 +48,14 @@
                             <div class="text-left">
                                 <input placeholder="Enter your Business Name" value="{{ $user->business_name }}"
                                     name="business_name"
-                                    class="border rounded p-2 px-2 w-96 appearance-none outline-none  text-gray-800"
+                                    class="border rounded p-2 px-2 lg:w-96 w-full appearance-none outline-none  text-gray-800"
                                     required>
                             </div>
                             <div class="font-bold text-gray-600 text-lg uppercase">Address
                             </div>
                             <div class="text-left">
                                 <input placeholder="Enter your Full Address" value="{{ $user->address }}" name="address"
-                                    class="border rounded p-2 px-2 w-96 appearance-none outline-none text-gray-800"
+                                    class="border rounded p-2 px-2 lg:w-96 w-full appearance-none outline-none text-gray-800"
                                     required>
                             </div>
                             <div class="font-bold text-gray-600 text-lg uppercase">
@@ -90,7 +90,7 @@
                     </div>
 
                     <div data-te-stepper-content-ref
-                        class="absolute left-0 w-full translate-x-[150%] p-16 transition-all duration-500 ease-in-out ">
+                        class="absolute left-0 w-full translate-x-[150%] lg:p-16 p-4 transition-all duration-500 ease-in-out ">
                         <div>
                             <h1 class="font-bold text-4xl pb-6">Professional Information
                             </h1>
@@ -102,11 +102,10 @@
                             <hr class="pb-8">
                         </div>
 
-                        <div class="p-5">
+                        <div class="lg:p-5 p-0">
 
                             <div class="mx-auto ">
                                 <div>
-
                                     <div class="font-bold text-gray-600 text-lg leading-8 uppercase h-6 mx-2 mt-3 mb-6">
                                         Your Occupation</div>
 
@@ -174,7 +173,7 @@
                         </span>
                     </div>
                     <div data-te-stepper-content-ref
-                        class="absolute left-0 w-full translate-x-[150%] p-16 transition-all duration-500 ease-in-out">
+                        class="absolute left-0 w-full translate-x-[150%] lg:p-16 p-4 transition-all duration-500 ease-in-out">
                         <h1 class="font-bold text-4xl pb-6">Link Your Account
                         </h1>
                         <p class="pb-8">Investing time in verifying and linking your accounts can enhance your
@@ -273,20 +272,20 @@
                         </span>
                     </div>
                     <div data-te-stepper-content-ref
-                        class="absolute left-0 w-full translate-x-[150%] p-16 transition-all duration-500 ease-in-out">
+                        class="absolute left-0 w-full translate-x-[150%] lg:p-16 p-4 transition-all duration-500 ease-in-out">
                         <h1 class="font-bold text-4xl pb-6">Account Security
                         </h1>
                         <p class="pb-8">Ensuring trust and safety is of utmost importance in our community. <br> To
                             maintain
                             the security of your account, kindly verify your email and phone number.</p>
                         <hr class="pb-8">
-                        <div class="grid grid-cols-2 gap-16 text-left">
+                        <div class="grid md:grid-cols-2 md:gap-16 grid-cols-1 gap-2 text-left">
                             <div class="font-bold text-gray-600 text-lg uppercase">
                                 Email Address
                             </div>
                             <div class="text-left">
                                 <input value="{{ $user->email }}"
-                                    class="border rounded p-2 px-2 w-96 appearance-none outline-none  text-gray-800"
+                                    class="border rounded p-2 px-2 lg:w-96 w-full appearance-none outline-none  text-gray-800"
                                     required>
                             </div>
                             <div class="font-bold text-gray-600 text-lg uppercase">

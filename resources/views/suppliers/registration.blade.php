@@ -1,7 +1,6 @@
 <x-guest-layout>
     <div class="bg-white" x-data="registration()">
         <div class="lg:container lg:mx-auto ">
-
             <ul data-te-stepper-init
                 class="relative m-0 flex list-none justify-between overflow-hidden p-0 transition-[height] duration-200 ease-in-out">
                 <li data-te-stepper-step-ref data-te-stepper-step-active class="w-[4.5rem] flex-auto">
