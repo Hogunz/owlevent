@@ -27,7 +27,7 @@
             </div>
 
 
-            <div class="mr-auto place-self-center xs:col-span-12 sm:p-8 lg:col-span-7 lg:p-0">
+            <div class="mr-auto place-self-center xs:col-span-12 sm:p-8 lg:col-span-7 lg:p-0 w-full">
                 <h1 class="sm:w-full uppercase ">
                     <p class="text-black/75 tracking-wide text-5xl leading-snug font-bold"
                         style="font-family: 'Spectral', serif; ">
@@ -235,7 +235,7 @@
 
         </section>
 
-        <section>
+        {{-- <section>
             <section class="bg-white dark:bg-gray-900">
                 <div class="mx-auto max-w-screen-xl py-8 px-4 lg:py-16 lg:px-6">
                     <div class="mx-auto mb-8 max-w-screen-md text-center lg:mb-12">
@@ -426,7 +426,7 @@
                     </div>
                 </div>
             </section>
-        </section>
+        </section> --}}
         <section class="sm:hidden lg:flex">
             <div class="px-4 py-9 2xl:container md:px-20 md:py-12 2xl:mx-auto">
                 <div class="relative rounded-md bg-gradient-to-r from-[#AEBDCA] to-[#F5EFE6]">
