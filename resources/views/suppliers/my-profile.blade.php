@@ -1,10 +1,11 @@
 <x-guest-layout>
-    <section class="container mx-auto sm:p-0 lg:p-8">
-        <div class="h-auto">
-            <div class="container mx-auto" style="">
+    <section class="lg:container lg:mx-auto sm:p-0 lg:p-8">
+
+        {{-- <div class="">
+            <div class="lg:container lg:mx-auto mx-4" style="">
                 <div
-                    class="from-50% h-auto rounded-t-lg bg-gradient-to-br from-[#7895B2] to-[#E8DFCA] bg-cover bg-center object-fill py-24 px-10 text-white">
-                    <div class="sm:w-full lg:w-1/2">
+                    class="w-full bg-cover bg-center h-auto text-white py-24 px-10 object-fill rounded-t-lg bg-gradient-to-br from-[#7895B2] from-50% to-[#E8DFCA]">
+                    <div class="">
                         <p class="text-left text-3xl font-bold">"Discover the highlights: A visual
                             journey through our featured
                             page's top features."</p>
@@ -14,10 +15,22 @@
                     </div>
                 </div> <!-- container -->
                 <br>
+                
             </div>
+        </div> --}}
+
+
+        <div class="w-full p-4 lg:text-center text-left bg-gradient-to-br from-[#7895B2] from-50% to-[#E8DFCA] border border-gray-200 rounded-lg shadow sm:p-8">
+            <h5 class="mb-2 text-3xl font-bold text-gray-900 ">"Discover the highlights: A visual
+                journey through our featured
+                page's top features."</h5>
+            <p class="mb-5 text-base text-gray-500 sm:text-lg ">Find the perfect solution to
+                your needs with our
+                supplier's wide range of services.</p>
         </div>
+    
         <div class="">
-            <div class="container mx-auto my-5 p-5">
+            <div class="lg:container lg:mx-auto lg:my-5 my-0 lg:p-5 p-0">
                 <div class="no-wrap md:-mx-2 md:flex">
                     <!-- Left Side -->
                     <div class="md:mx-2 md:w-2/6">
@@ -101,10 +114,9 @@
                                     <div class="order-last">
                                         <h1 class="mb-4 text-left text-lg font-bold">Portfolio</h1>
                                     </div>
-
                                 </div>
                             </div>
-                            <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
+                            <div class="grid gap-4 grid-cols-2 md:grid-cols-2">
                                 @foreach ($gigs->take(2) as $gig)
                                     @if ($gig->user_id === auth()->id())
                                         <div class="gap-4">
@@ -135,7 +147,7 @@
                         <!-- Profile tab -->
                         <!-- Grid Section -->
                         <div class="rounded-sm p-3 shadow-sm">
-                            <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+                            <div class="grid gap-4 grid-cols-2 md:grid-cols-3">
                                 <!-- CAROUSEL -->
                                 @foreach ($gigs as $gig)
                                     @if ($gig->user_id === auth()->id())
@@ -444,7 +456,7 @@
             </div>
     </section>
 
-    <section>
+    {{-- <section>
 
         <!-- CALENDAR -->
 
@@ -621,7 +633,8 @@
                     <!-- /Modal -->
                 </div>
             </div>
-    </section>
+        </div>
+    </section> --}}
 
 </x-guest-layout>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.min.css"
@@ -723,7 +736,7 @@
         }
     });
 </script>
-<script>
+{{-- <script>
     //calendar
     const MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
         'October', 'November', 'December'
@@ -844,4 +857,4 @@
             }
         }
     }
-</script>
+</script> --}}

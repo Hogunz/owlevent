@@ -1,6 +1,6 @@
 <x-guest-layout>
     <div class="bg-white" x-data="registration()">
-        <div class="container mx-auto ">
+        <div class="lg:container lg:mx-auto ">
 
             <ul data-te-stepper-init
                 class="relative m-0 flex list-none justify-between overflow-hidden p-0 transition-[height] duration-200 ease-in-out">
@@ -17,7 +17,7 @@
                         </span>
                     </div>
                     <div data-te-stepper-content-ref
-                        class="absolute w-full p-16 transition-all duration-500 ease-in-out">
+                        class="absolute w-full lg:p-16 p-4 transition-all duration-500 ease-in-out">
                         <!--1st content -->
                         <div>
                             <h1 class="font-bold text-4xl pb-6">Personal Information
@@ -28,13 +28,13 @@
                             </p>
                             <hr class="pb-8">
                         </div>
-                        <div class="grid grid-cols-2 gap-16 text-left">
+                        <div class="grid md:grid-cols-2 md:gap-16 grid-cols-1 gap-2 text-left">
                             <div class="font-bold text-gray-600 text-lg uppercase">Business
                                 Owner
                             </div>
-                            <div class="text-left">
+                            <div class="text-left ">
                                 <input placeholder="First Name" x-model="first_name"
-                                    class="border rounded p-2 px-2 w-64 appearance-none outline-none  text-gray-800"
+                                    class="border rounded p-2 px-2 mb-2 w-64 appearance-none outline-none  text-gray-800"
                                     required>
                                 <input placeholder="Last Name" x-model="last_name"
                                     class="border rounded p-2 px-2 w-64 appearance-none outline-none  text-gray-800"
@@ -45,14 +45,14 @@
                             </div>
                             <div class="text-left">
                                 <input placeholder="Enter your Business Name" x-model="business_name"
-                                    class="border rounded p-2 px-2 w-96 appearance-none outline-none  text-gray-800"
+                                    class="border rounded p-2 px-2 lg:w-96 w-full appearance-none outline-none  text-gray-800"
                                     required>
                             </div>
                             <div class="font-bold text-gray-600 text-lg uppercase">Address
                             </div>
                             <div class="text-left">
                                 <input placeholder="Enter your Full Address" x-model="address"
-                                    class="border rounded p-2 px-2 w-96 appearance-none outline-none text-gray-800"
+                                    class="border rounded p-2 px-2 lg:w-96 w-full appearance-none outline-none text-gray-800"
                                     required>
                             </div>
                             <div class="font-bold text-gray-600 text-lg uppercase">
@@ -85,7 +85,7 @@
                     </div>
 
                     <div data-te-stepper-content-ref
-                        class="absolute left-0 w-full translate-x-[150%] p-16 transition-all duration-500 ease-in-out ">
+                        class="absolute left-0 w-full translate-x-[150%] lg:p-16 p-4 transition-all duration-500 ease-in-out ">
                         <div>
                             <h1 class="font-bold text-4xl pb-6">Professional Information
                             </h1>
@@ -166,7 +166,7 @@
                         </span>
                     </div>
                     <div data-te-stepper-content-ref
-                        class="absolute left-0 w-full translate-x-[150%] p-16 transition-all duration-500 ease-in-out">
+                        class="absolute left-0 w-full translate-x-[150%] lg:p-16 p-4 transition-all duration-500 ease-in-out">
                         <h1 class="font-bold text-4xl pb-6">Link Your Account
                         </h1>
                         <p class="pb-8">Investing time in verifying and linking your accounts can enhance your
@@ -263,14 +263,14 @@
                         </span>
                     </div>
                     <div data-te-stepper-content-ref
-                        class="absolute left-0 w-full translate-x-[150%] p-16 transition-all duration-500 ease-in-out">
+                        class="absolute left-0 w-full translate-x-[150%] lg:p-16 p-4 transition-all duration-500 ease-in-out">
                         <h1 class="font-bold text-4xl pb-6">Account Security
                         </h1>
                         <p class="pb-8">Ensuring trust and safety is of utmost importance in our community. <br> To
                             maintain
                             the security of your account, kindly verify your email and phone number.</p>
                         <hr class="pb-8">
-                        <div class="grid grid-cols-2 gap-16 text-left">
+                        <div class="grid md:grid-cols-2 md:gap-16 grid-cols-1 gap-2 text-left">
                             <div class="font-bold text-gray-600 text-lg uppercase">
                                 Email Address
                             </div>

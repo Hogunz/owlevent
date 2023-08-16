@@ -1,6 +1,6 @@
 <x-guest-layout>
     <section>
-        <div class="container mx-auto mt-6 bg-white" x-data="gig()">
+        <div class="lg:container mx-auto mt-6 bg-white" x-data="gig()">
             <div class="sticky inset-x-0 top-5">
                 <ol id="stepper"
                     class="flex w-full items-center text-center text-sm font-medium text-gray-500 dark:text-gray-400 sm:text-base">
@@ -43,7 +43,7 @@
             </div>
 
 
-            <div id="content1" class="w-full p-16 transition-all duration-500 ease-in-out">
+            <div id="content1" class="w-full lg:p-16 p-4 transition-all duration-500 ease-in-out">
                 <!--1st content -->
                 <div>
                     <h1 class="pb-6 text-4xl font-bold">Overview
@@ -53,7 +53,7 @@
                     </p>
                     <hr class="pb-8">
                 </div>
-                <div class="grid grid-cols-2 gap-16 text-left">
+                <div class="grid lg:grid-cols-2 grid-cols-1 gap-4 lg:gap-16 text-left">
                     <div class="text-lg font-bold uppercase text-gray-600">
                         Gig title
                     </div>
@@ -88,7 +88,7 @@
             </div>
 
 
-            <div id="content2" class="w-full p-16 transition-all duration-500 ease-in-out">
+            <div id="content2" class="w-full lg:p-16 p-4 transition-all duration-500 ease-in-out">
                 <div>
                     <h1 class="pb-6 text-4xl font-bold">Pricing
                     </h1>
@@ -98,9 +98,9 @@
                     <hr class="pb-8">
                 </div>
 
-                <div class="p-5">
+                <div class="lg:p-5 p-2">
 
-                    <div class="mx-auto grid grid-cols-3 gap-4">
+                    <div class="lg:mx-auto grid md:grid-cols-3 grid-cols-1 gap-4">
                         <template x-for="(package, index) in packages" :key="`p` + index">
                             <div class="relative flex flex-col space-y-4 rounded border-2 p-3">
                                 <div class="absolute top-0 right-1">
@@ -142,14 +142,14 @@
                 </div>
             </div>
 
-            <div id="content3" class="w-full p-16 transition-all duration-500 ease-in-out">
+            <div id="content3" class="w-full lg:p-16 p-4 transition-all duration-500 ease-in-out">
                 <h1 class="pb-6 text-4xl font-bold">Frequently Asked Questions
                 </h1>
                 <p class="pb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis mattis
 
                 </p>
                 <hr class="pb-8">
-                <div class="flex flex-col space-y-4 p-6">
+                <div class="flex flex-col space-y-4 lg:p-6 p-0">
                     <template x-for="(faq, index) in faqs" :key="`f` + index">
                         <div class="relative flex flex-col space-y-4 border-2 p-3">
                             <div class="absolute top-0 left-2">
@@ -182,7 +182,7 @@
                 </div>
             </div>
 
-            <div id="content4" class="w-full p-16 transition-all duration-500 ease-in-out">
+            <div id="content4" class="w-full lg:p-16 p-4 transition-all duration-500 ease-in-out">
                 <h1 class="pb-6 text-4xl font-bold">Portfolio
                 </h1>
                 <p class="pb-8">Ensuring trust and safety is of utmost importance in our community. <br>
@@ -222,10 +222,10 @@
                     <span x-text="getSize()" class="font-bold"></span>
                 </div>
 
-                <div class="grid grid-cols-2 gap-4">
+                <div class="grid md:grid-cols-2 grid-cols-1 md:gap-4 gap-0">
                     <div>
                         <div class="text-2xl font-semibold">Pictures</div>
-                        <div class="grid grid-cols-3 gap-2">
+                        <div class="grid lg:grid-cols-3 grid-cols-1 gap-2">
                             <template x-for="(upload, index) in images" :key="`i` + index">
                                 <div class="relative">
                                     <div class="absolute top-0 left-2">
@@ -253,7 +253,7 @@
                     </div>
                     <div>
                         <div class="text-2xl font-semibold mb-4">Videos</div>
-                        <div class="grid grid-cols-3 gap-2">
+                        <div class="grid lg:grid-cols-3 grid-cols-1 gap-2">
                             <template x-for="(upload, index) in videos" :key="`v` + index">
                                 <div class="relative">
                                     <div class="absolute -top-2 -left-2">
