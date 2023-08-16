@@ -35,7 +35,7 @@
                         planning,
                     </p>
                     <p class="text-[#7895B2] font-extrabold tracking-widest text-3xl">make it extraordinary</p>
-                    <p class="text-base leading-normal text-gray-800 mt-4 sm:mt-5 sm:w-5/1 normal-case ">
+                    <p class="text-base leading-normal text-gray-800 mt-4 sm:mt-5 sm:w-5/1 normal-case mb-4 ">
                         “Making every moment memorable - with our events!”</p>
                 </h1>
             </div>
