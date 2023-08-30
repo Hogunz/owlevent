@@ -112,12 +112,7 @@
                                                 </div>
                                             </div>
                                             <div class="p-4">
-                                                <div class="mb-4 flex flex-row items-center gap-4">
-                                                    <img class="h-8 w-8 rounded-full object-cover ring-2 ring-white"
-                                                        src="{{ asset('storage/' . $gig->user->avatar) ?? 'https://images.unsplash.com/photo-1555952517-2e8e729e0b44?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHBlcnNvbnxlbnwwfDF8MHx8&auto=format&fit=crop&w=500&q=60' }}"
-                                                        alt="">
-                                                   
-                                                </div>
+                                               
                                                 <div class="mb-4 flex flex-row items-center gap-4">
                                                     
                                                     <a href="{{ route('show.supplier-gig', ['user' => $user, 'gig' => $gig]) }}"
