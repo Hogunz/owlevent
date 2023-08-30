@@ -116,15 +116,12 @@
                                                     src="{{ asset('storage/' . $blog->image) }}" alt=""></div>
 
                                             <div class="flex flex-col space-y-4">
-                                                <div class="mr-3">
-                                                    <span
-                                                        class="block text-sm text-gray-900">{{ $blog->created_at }}</span>
-                                                </div>
+                                               
                                                 <div class="mr-3"><span
                                                         class="line-clamp-2 text-sm">{{ $blog->name }}</span>
                                                 </div>
                                                 <div
-                                                    class="-mr-1 inline-flex items-center justify-center text-center text-sm font-light text-[#7895B2] hover:text-[#F69679] hover:underline hover:underline-offset-2">
+                                                    class="-mr-2 inline-flex items-center justify-center text-center text-sm font-light text-[#7895B2] hover:text-[#F69679] hover:underline hover:underline-offset-2">
                                                     Read More
                                                     <svg class="ml-2 h-3 w-3" fill="currentColor" viewBox="0 0 20 20"
                                                         xmlns="http://www.w3.org/2000/svg">

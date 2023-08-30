@@ -223,7 +223,7 @@
                                             d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
                                         </path>
                                     </svg>
-                                    <p class="ml-2 text-sm font-bold text-gray-900 dark:text-white">
+                                    <p class="ml-2 text-sm font-bold text-gray-900 ">
                                         {{ $supplier->ratings }}</p>
                                 </div>
 
@@ -236,12 +236,12 @@
         </section>
 
         {{-- <section>
-            <section class="bg-white dark:bg-gray-900">
+            <section class="bg-white ">
                 <div class="mx-auto max-w-screen-xl py-8 px-4 lg:py-16 lg:px-6">
                     <div class="mx-auto mb-8 max-w-screen-md text-center lg:mb-12">
-                        <h2 class="mb-4 text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white">OwlEvent
+                        <h2 class="mb-4 text-4xl font-extrabold tracking-tight text-gray-900 ">OwlEvent
                             Premium</h2>
-                        <p class="mb-5 font-light text-gray-500 dark:text-gray-400 sm:text-xl">By upgrading to our
+                        <p class="mb-5 font-light text-gray-500  sm:text-xl">By upgrading to our
                             premium
                             subscription, you'll gain access to a wealth of exclusive features and benefits that will
                             enhance your overall experience with our product/service.
@@ -253,18 +253,18 @@
                         <div class="mx-auto flex max-w-lg flex-col rounded-lg border-2 border-yellow-900 bg-transparent p-6 text-center text-gray-900 drop-shadow-2xl"
                             data-aos="fade-down-right" data-aos-duration="2000">
                             <h3 class="mb-4 text-2xl font-semibold text-yellow-900">Bronze</h3>
-                            <p class="font-light text-gray-500 dark:text-gray-400 sm:text-lg">Our Bronze Package offers
+                            <p class="font-light text-gray-500  sm:text-lg">Our Bronze Package offers
                                 the
                                 perfect balance of affordability and functionality. </p>
                             <div class="my-8 flex items-baseline justify-center">
                                 <span class="mr-2 text-5xl font-extrabold text-yellow-900">$29</span>
-                                <span class="text-gray-500 dark:text-gray-400">/month</span>
+                                <span class="text-gray-500 ">/month</span>
                             </div>
                             <!-- List -->
                             <ul role="list" class="mb-8 space-y-4 text-left">
                                 <li class="flex items-center space-x-3">
                                     <!-- Icon -->
-                                    <svg class="h-5 w-5 flex-shrink-0 text-green-500 dark:text-green-400"
+                                    <svg class="h-5 w-5 flex-shrink-0 text-green-500 "
                                         fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd"
                                             d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
@@ -274,7 +274,7 @@
                                 </li>
                                 <li class="flex items-center space-x-3">
                                     <!-- Icon -->
-                                    <svg class="h-5 w-5 flex-shrink-0 text-green-500 dark:text-green-400"
+                                    <svg class="h-5 w-5 flex-shrink-0 text-green-500 "
                                         fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd"
                                             d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
@@ -284,7 +284,7 @@
                                 </li>
                                 <li class="flex items-center space-x-3">
                                     <!-- Icon -->
-                                    <svg class="h-5 w-5 flex-shrink-0 text-green-500 dark:text-green-400"
+                                    <svg class="h-5 w-5 flex-shrink-0 text-green-500 "
                                         fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd"
                                             d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
@@ -294,7 +294,7 @@
                                 </li>
                                 <li class="flex items-center space-x-3">
                                     <!-- Icon -->
-                                    <svg class="h-5 w-5 flex-shrink-0 text-green-500 dark:text-green-400"
+                                    <svg class="h-5 w-5 flex-shrink-0 text-green-500 "
                                         fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd"
                                             d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
@@ -311,17 +311,17 @@
                         <div
                             class="mx-auto flex max-w-lg flex-col rounded-lg border-2 border-stone-400 bg-transparent p-6 text-center text-gray-900 drop-shadow-2xl">
                             <h3 class="mb-4 text-2xl font-semibold text-stone-400">Silver</h3>
-                            <p class="font-light text-gray-500 dark:text-gray-400 sm:text-lg">Our Silver Package is
+                            <p class="font-light text-gray-500 sm:text-lg">Our Silver Package is
                                 designed for those who want a little bit more. </p>
                             <div class="my-8 flex items-baseline justify-center">
                                 <span class="mr-2 text-5xl font-extrabold text-stone-400">$99</span>
-                                <span class="text-gray-500 dark:text-gray-400" dark:text-gray-400>/month</span>
+                                <span class="text-gray-500 " >/month</span>
                             </div>
                             <!-- List -->
                             <ul role="list" class="mb-8 space-y-4 text-left">
                                 <li class="flex items-center space-x-3">
                                     <!-- Icon -->
-                                    <svg class="h-5 w-5 flex-shrink-0 text-green-500 dark:text-green-400"
+                                    <svg class="h-5 w-5 flex-shrink-0 text-green-500 "
                                         fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd"
                                             d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
@@ -331,7 +331,7 @@
                                 </li>
                                 <li class="flex items-center space-x-3">
                                     <!-- Icon -->
-                                    <svg class="h-5 w-5 flex-shrink-0 text-green-500 dark:text-green-400"
+                                    <svg class="h-5 w-5 flex-shrink-0 text-green-500 "
                                         fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd"
                                             d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
@@ -341,7 +341,7 @@
                                 </li>
                                 <li class="flex items-center space-x-3">
                                     <!-- Icon -->
-                                    <svg class="h-5 w-5 flex-shrink-0 text-green-500 dark:text-green-400"
+                                    <svg class="h-5 w-5 flex-shrink-0 text-green-500 "
                                         fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd"
                                             d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
@@ -351,7 +351,7 @@
                                 </li>
                                 <li class="flex items-center space-x-3">
                                     <!-- Icon -->
-                                    <svg class="h-5 w-5 flex-shrink-0 text-green-500 dark:text-green-400"
+                                    <svg class="h-5 w-5 flex-shrink-0 text-green-500 "
                                         fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd"
                                             d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
@@ -369,17 +369,17 @@
                         <div class="mx-auto flex max-w-lg flex-col rounded-lg border-2 border-yellow-300 bg-transparent p-6 text-center text-gray-900 drop-shadow-2xl"
                             data-aos="fade-down-left" data-aos-duration="2000">
                             <h3 class="mb-4 text-2xl font-semibold text-yellow-300">Gold</h3>
-                            <p class="font-light text-gray-500 dark:text-gray-400 sm:text-lg">Our Gold Package is the
+                            <p class="font-light text-gray-500 sm:text-lg">Our Gold Package is the
                                 ultimate premium experience.</p>
                             <div class="my-8 flex items-baseline justify-center">
                                 <span class="mr-2 text-5xl font-extrabold text-yellow-300">$499</span>
-                                <span class="text-gray-500 dark:text-gray-400">/month</span>
+                                <span class="text-gray-500 ">/month</span>
                             </div>
                             <!-- List -->
                             <ul role="list" class="mb-8 space-y-4 text-left">
                                 <li class="flex items-center space-x-3">
                                     <!-- Icon -->
-                                    <svg class="h-5 w-5 flex-shrink-0 text-green-500 dark:text-green-400"
+                                    <svg class="h-5 w-5 flex-shrink-0 text-green-500 "
                                         fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd"
                                             d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
@@ -389,7 +389,7 @@
                                 </li>
                                 <li class="flex items-center space-x-3">
                                     <!-- Icon -->
-                                    <svg class="h-5 w-5 flex-shrink-0 text-green-500 dark:text-green-400"
+                                    <svg class="h-5 w-5 flex-shrink-0 text-green-500 "
                                         fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd"
                                             d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
@@ -399,7 +399,7 @@
                                 </li>
                                 <li class="flex items-center space-x-3">
                                     <!-- Icon -->
-                                    <svg class="h-5 w-5 flex-shrink-0 text-green-500 dark:text-green-400"
+                                    <svg class="h-5 w-5 flex-shrink-0 text-green-500 "
                                         fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd"
                                             d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
@@ -409,7 +409,7 @@
                                 </li>
                                 <li class="flex items-center space-x-3">
                                     <!-- Icon -->
-                                    <svg class="h-5 w-5 flex-shrink-0 text-green-500 dark:text-green-400"
+                                    <svg class="h-5 w-5 flex-shrink-0 text-green-500 "
                                         fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd"
                                             d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
@@ -427,33 +427,30 @@
                 </div>
             </section>
         </section> --}}
-        <section class="sm:hidden lg:flex">
-            <div class="px-4 py-9 2xl:container md:px-20 md:py-12 2xl:mx-auto">
-                <div class="relative rounded-md bg-gradient-to-r from-[#AEBDCA] to-[#F5EFE6]">
+     
 
-                    <div
-                        class="relative top-0 z-20 flex h-full w-full flex-col justify-between rounded-md p-6 text-xl md:p-16">
-                        <div>
-                            <h1
-                                class="w-64 text-3xl font-bold leading-9 text-black sm:w-auto md:text-5xl md:leading-10">
-                                Come and Join us!</h1>
-                            <p class="mt-4 text-lg leading-loose text-black/75 md:w-10/12 lg:w-8/12 xl:w-5/12 2xl:pr-12">
-                                Are you a business owner looking to expand your reach and increase your sales? Look no
-                                further than our website! By creating an account and becoming a supplier on our
-                                platform,
-                                you'll gain access to a vast network of potential customers who are eager to purchase
-                                your
-                                products or services.</p>
-                        </div>
-                        <div class="mt-20">
-                            <a href="{{ route('login') }}"
-                                class="rounded bg-[#E8DFCA] p-4 text-base font-medium leading-4 text-white hover:bg-[#E8DFCA]/75 ">Get
-                                Started</a>
-                        </div>
+
+        <section class="bg-white  sm:hidden lg:flex lg:pb-6 lg:pt-6 pb-2 pt-2">
+            <div class="py-8 px-4 lg:mx-auto lg:container sm:py-16 lg:px-6 bg-gradient-to-r from-[#AEBDCA] to-[#F5EFE6]">
+                <div class="max-w-screen-md">
+                    <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 ">Come and Join Us!</h2>
+                    <p class="mb-8 font-light text-gray-500 sm:text-xl ">  Are you a business owner looking to expand your reach and increase your sales? Look no
+                        further than our website! By creating an account and becoming a supplier on our
+                        platform,
+                        you'll gain access to a vast network of potential customers who are eager to purchase
+                        your
+                        products or services.</p>
+                    <div class="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
+                        <a href="#" class="rounded bg-[#E8DFCA] hover:bg-[#E8DFCA]/75 inline-flex items-center justify-center px-4 py-2.5 text-base font-medium text-center text-black/80 focus:ring-4 focus:ring-primary-300 ">
+                            Get started
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
+
+
+
 
 </x-guest-layout>
 <script>

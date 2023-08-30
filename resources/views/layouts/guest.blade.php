@@ -8,6 +8,10 @@
     <title>{{ config('app.name', 'OwlEvent') }}</title>
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+
+
+
     <!-- Styles -->
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
@@ -20,13 +24,14 @@
 
     <!-- Owl Carousel CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    
 
     <!-- Summernote -->
     @stack('head-script')
 </head>
 
 
-<body class="overflow-auto " style="font-family: 'lato', sans-serif;">
+<body class="overflow-auto text-black/75 bg-white/50" style=" font-family: 'Quicksand', sans-serif;">
     <div class="flex min-h-screen flex-col justify-between">
         <div>
             <header>@include('layouts.header')</header>

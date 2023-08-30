@@ -39,12 +39,12 @@
                     <h2 class="mb-6 text-base font-semibold text-gray-900 dark:text-white">Business</h2>
                     <ul class="text-gray-600 dark:text-gray-400">
                         <li class="mb-4">
-                            <a href="" class="hover:underline">Become a
+                            <a href="/become-a-supplier" class="hover:underline">Become a
                                 Supplier</a>
                         </li>
-                        <li>
+                        {{-- <li>
                             <a href="" class="hover:underline">Advertise with Us</a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </div>
 
