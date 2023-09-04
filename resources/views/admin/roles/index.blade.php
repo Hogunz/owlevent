@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
+    <div class="p-4 sm:ml-64">
 
         <x-auth-session-status :status="session('status')"></x-auth-session-status>
 

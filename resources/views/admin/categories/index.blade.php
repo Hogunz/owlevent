@@ -5,8 +5,12 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
 
+
+
+
+
+    <div class="p-4 sm:ml-64">
         <x-auth-session-status :status="session('status')"></x-auth-session-status>
 
         <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
@@ -45,6 +49,7 @@
                 </table>
             </div>
         </div>
-
     </div>
+
+
 </x-app-layout>

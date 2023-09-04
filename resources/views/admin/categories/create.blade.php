@@ -5,8 +5,7 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
-
+    <div class="p-4 sm:ml-64">
         <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
             <div class="border-b border-gray-200 bg-white p-6">
                 <form action="{{ route('categories.store') }}" method="post">
@@ -22,6 +21,5 @@
                 </form>
             </div>
         </div>
-
-    </div>
+    <div>
 </x-app-layout>
