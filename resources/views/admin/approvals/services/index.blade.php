@@ -4,7 +4,7 @@
             {{ __('Services') }}
         </h2>
     </x-slot>
-    <div class="p-4 ">
+    <div class="lg:p-4 ">
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
             <div class="mb-2 flex justify-end">
                 <x-auth-validation-errors></x-auth-validation-errors>

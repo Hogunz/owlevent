@@ -5,12 +5,12 @@
         </h2>
     </x-slot>
 
-    <div class="p-4 sm:ml-64">
+    <div class="lg:p-4 sm:ml-64">
 
         <x-auth-session-status :status="session('status')"></x-auth-session-status>
 
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-            <div class="p-6 bg-white border-b border-gray-200">
+            <div class="lg:p-6 bg-white border-b border-gray-200">
                 <div class="flex justify-end mb-2">
                     <a href="{{ route('roles.create') }}">
                         <x-button>Create</x-button>

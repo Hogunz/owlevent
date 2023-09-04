@@ -4,7 +4,7 @@
             {{ __('Supplier') }}
         </h2>
     </x-slot>
-    <div class="p-4 sm:ml-64">
+    <div class="lg:p-4 sm:ml-64">
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg lg:container lg:mx-auto">
             <div class="mb-2 flex justify-end">
                 <x-auth-validation-errors></x-auth-validation-errors>
