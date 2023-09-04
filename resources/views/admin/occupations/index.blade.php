@@ -8,49 +8,65 @@
   
 
 
-    <div class="lg:p-4 sm:ml-64">
-        <x-auth-session-status :status="session('status')"></x-auth-session-status>
+ 
 
-        <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-            <div class="p-6 bg-white border-b border-gray-200">
-                <div class="flex justify-end mb-2">
+
+    <div class="lg:p-4 sm:ml-64">
+        <div class="relative overflow-x-auto shadow-md sm:rounded-lg lg:container lg:mx-auto">
+
+
+            <div class="mb-2 flex justify-end">
+                <div class="mb-2 flex justify-end">
                     <a href="{{ route('occupations.create') }}">
                         <x-button>Create</x-button>
                     </a>
                 </div>
-                <table class="table-auto min-w-full">
-                    <thead>
-                        <tr class="bg-gray-300">
-                            <th class="tracking-tight px-3 py-2 uppercase">Name</th>
-                            <th class="tracking-tight px-3 py-2 uppercase">
-                                <span class="sr-only">
-                                    Action
-                                </span>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($occupations as $occupation)
-                            <tr>
-                                <td class="px-3 py-2 text-center">{{ $occupation->name }}</td>
-                                <td class="px-3 py-2 text-center">
-                                    <a href="{{ route('occupations.show', $occupation) }}">
-                                        <x-button>Show</x-button>
-                                    </a>
-                                    <a href="{{ route('occupations.edit', $occupation) }}">
-                                        <x-button>Edit</x-button>
-                                    </a>
-                                    <form action="{{ route('occupations.destroy', $occupation) }}" method="post">
-                                        @csrf
-                                        @method('delete')
-                                        <x-button type="submit">Delete</x-button>
-                                    </form>
-                                </td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+                <x-auth-validation-errors></x-auth-validation-errors>
             </div>
+            <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                    <tr>
+
+                        <th scope="col" class="px-6 py-3">
+                            ID
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Name
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Action
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($occupations as $occupation)
+                        <tr
+                            class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+
+                            <th scope="row"
+                                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                {{ $occupation->id }}
+                            </th>
+                            <td class="px-6 py-4">
+                                {{ $occupation->name }}
+                            </td>
+                            <td class="flex items-center px-6 py-4 space-x-3">
+                                {{-- <a href="{{ route('occupations.show', $occupation) }}">
+                                    <x-button>Show</x-button>
+                                </a> --}}
+                                <a href="{{ route('occupations.edit', $occupation) }}">
+                                    <button class="font-medium text-green-600 hover:underline">Edit</button>
+                                </a>
+                                <form action="{{ route('occupations.destroy', $occupation) }}" method="post">
+                                    @csrf
+                                    @method('delete')
+                                    <button class="font-medium text-red-600 hover:underline" type="submit">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
     </div>
 </x-app-layout>
