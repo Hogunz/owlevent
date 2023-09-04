@@ -12,15 +12,13 @@
 
 
     <div class="lg:p-4 sm:ml-64">
+        <div class="mb-2 flex justify-end">
+            <a href="{{ route('occupations.create') }}">
+                <x-button>Create</x-button>
+            </a>
+        </div>
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg lg:container lg:mx-auto">
-
-
             <div class="mb-2 flex justify-end">
-                <div class="mb-2 flex justify-end">
-                    <a href="{{ route('occupations.create') }}">
-                        <x-button>Create</x-button>
-                    </a>
-                </div>
                 <x-auth-validation-errors></x-auth-validation-errors>
             </div>
             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
