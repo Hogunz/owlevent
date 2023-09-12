@@ -6,7 +6,7 @@
                 <!--1st DIV -->
                 <div class="w-full">
                     <div class="mb-12">
-                        <div class="mb-2 text-2xl font-bold">
+                        <div class="mb-2 text-3xl font-bold">
                             About Their Services
                         </div>
                         <div class="text-xl font-semibold">

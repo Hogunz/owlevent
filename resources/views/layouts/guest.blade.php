@@ -31,7 +31,7 @@
 </head>
 
 
-<body class="overflow-auto text-black/75 bg-white/50" style=" font-family: 'Quicksand', sans-serif;">
+<body class="overflow-auto text-black/75 bg-white/25" style=" font-family: 'Quicksand', sans-serif;">
     <div class="flex min-h-screen flex-col justify-between">
         <div>
             <header>@include('layouts.header')</header>

@@ -69,10 +69,10 @@
                                         <div class="text-justify">
                                             <a href="{{ route('blogs.show', $blog->id) }}" class="href">
                                                 <div class="flex flex-col">
-                                                    <div>
+                                                    <div class="underline italic text-sm">
                                                         {{ $blog->created_at }}
                                                     </div>
-                                                    <div>
+                                                    <div class="font-bold">
                                                         {{ $blog->name }}
                                                     </div>
                                                 </div>

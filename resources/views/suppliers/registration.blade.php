@@ -2,7 +2,7 @@
     <div class="bg-white" x-data="registration()">
         <div class="lg:container lg:mx-auto ">
             <ul data-te-stepper-init
-                class="relative m-0 flex list-none justify-between overflow-hidden p-0 transition-[height] duration-200 ease-in-out">
+                class="relative m-0 flex list-none justify-between overflow-hidden p-0 transition-[height] duration-200 ease-in-out text-sm w-full">
                 <li data-te-stepper-step-ref data-te-stepper-step-active class="w-[4.5rem] flex-auto">
                     <div data-te-stepper-head-ref
                         class="flex cursor-pointer items-center pl-2 leading-[1.3rem] no-underline after:ml-2 after:h-px after:w-full after:flex-1 after:bg-[#e0e0e0] after:content-[''] hover:bg-[#f9f9f9]   focus:outline-none ">
