@@ -1,10 +1,10 @@
 <x-guest-layout>
-    <section class="w-full ">
+    <section class="w-full  ">
         <div class=" relative z-0">
             <div class="p-8 flex justify-center items-center bg-[#E8DFCA]/75  w-full" style="height:50vh;"></div>
             <div class="p-8 flex justify-center items-center  bg-[#F5EFE6]/50 w-full" style="height:40vh;"></div>
             <div
-                class="max-w-md bg-[#E8DFCA]/75 p-8 shadow-md absolute top-1/2 left-1/2 transform lg:-translate-x-1/4 -translate-x-1/2 -translate-y-1/2 z-20 w-full">
+                class="max-w-md bg-[#E8DFCA]/75 p-8 shadow-md absolute top-1/2 left-1/2 transform lg:translate-x-10 -translate-x-1/2 -translate-y-1/2 z-20 w-full">
                 <div class="mr-auto place-self-center xs:col-span-12 sm:p-8 lg:col-span-7 lg:p-0 w-full ">
                     <h1 class="sm:w-full uppercase">
                         <p class="text-black/75 tracking-wide text-5xl leading-snug font-bold"
