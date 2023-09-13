@@ -160,6 +160,7 @@
                         alt="">
                 </div>
             </div>
+            <hr class="my-8 w-full md:mt-12 md:mb-8 lg:mt-10 px-2">
             <div class="grid grid-cols-1 md:grid-cols-2">
                 <div
                     class="flex cursor-pointer items-center overflow-hidden border-[20px] border-[#7895B2] lg:order-none order-last">
@@ -183,6 +184,7 @@
                     </div>
                 </div>
             </div>
+            <hr class="my-8 w-full md:mt-12 md:mb-8 lg:mt-10 px-2">
             <div class="grid grid-cols-1 md:grid-cols-2">
                 <div class="flex items-center p-4 md:p-8" data-aos="fade-right" data-aos-duration="2000">
                     <div>
