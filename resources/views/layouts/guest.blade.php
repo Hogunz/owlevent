@@ -24,14 +24,14 @@
 
     <!-- Owl Carousel CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    
+
 
     <!-- Summernote -->
     @stack('head-script')
 </head>
 
 
-<body class="overflow-auto text-black/75 bg-white/25" style=" font-family: 'Quicksand', sans-serif;">
+<body class="overflow-auto text-black/75 bg-white/25 w-full" style=" font-family: 'Quicksand', sans-serif;">
     <div class="flex min-h-screen flex-col justify-between">
         <div>
             <header>@include('layouts.header')</header>

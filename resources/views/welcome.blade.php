@@ -1,8 +1,8 @@
 <x-guest-layout>
-    <section class=" ">
+    <section class="w-full ">
         <div class=" relative z-0">
             <div class="p-8 flex justify-center items-center bg-[#E8DFCA]/75  w-full" style="height:50vh;"></div>
-            <div class="p-8 flex justify-center items-center  bg-[#F5EFE6]/50  w-full" style="height:40vh;"></div>
+            <div class="p-8 flex justify-center items-center  bg-[#F5EFE6]/50 w-full" style="height:40vh;"></div>
             <div
                 class="max-w-md bg-[#E8DFCA]/75 p-8 shadow-md absolute top-1/2 left-1/2 transform lg:-translate-x-1/4 -translate-x-1/2 -translate-y-1/2 z-20 w-full">
                 <div class="mr-auto place-self-center xs:col-span-12 sm:p-8 lg:col-span-7 lg:p-0 w-full ">
@@ -25,8 +25,8 @@
             </div>
         </div>
     </section>
-    <section class=" lg:pt-24">
-        <div class=" justify-between text-2xl text-black flex lg:hidden pt-12">
+    <section class=" lg:pt-24 w-full">
+        <div class=" justify-between text-2xl text-[#7895B2] flex lg:hidden pt-12">
             <div class="uppercase tracking-widest font-extrabold ">
                 Featured</div>
             <a href="/featured" class="p-2 text-center text-base text-[#7895B2] uppercase">See All</a>
@@ -36,7 +36,7 @@
                 <a href="{{ $category->gigs->count() ? route('show.supplier-gig', ['user' => optional($category->firstGig())->user_id, 'gig' => optional($category->firstGig())->id]) : '#' }}"
                     class="href">
                     <div class="flex p-2 flex-col">
-                        <img class="h-auto max-w-sm rounded-lg shadow-none transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-black/30"
+                        <img class="aspect-square object-cover bg-no-repeat bg-center h-auto max-w-sm rounded-lg shadow-none transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-black/30"
                             src="{{ $category->firstImg() ? asset('storage/' . $category->firstImg()) : 'https://images.unsplash.com/photo-1682232860597-9e16a4972602?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80' }}"
                             alt="">
                     </div>
@@ -56,7 +56,7 @@
                     <div class="group relative">
                         <a href="{{ route('show.category', $category) }}"
                             class="h-auto max-w-lg cursor-pointer rounded-lg filter transition-all duration-300 hover:opacity-75 ">
-                            <img class="mb-4 aspect-square h-full rounded-lg object-cover "
+                            <img class="mb-4 aspect-square h-full object-cover "
                                 src={{ $category->firstImg() ? asset('storage/' . $category->firstImg()) : 'https://images.unsplash.com/photo-1682232860597-9e16a4972602?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80' }}>
                             <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black">
                             </div>

@@ -6389,6 +6389,10 @@ input:checked + .toggle-bg {
     padding-top: 4rem;
   }
 
+  .lg\:pt-12 {
+    padding-top: 3rem;
+  }
+
   .lg\:text-center {
     text-align: center;
   }
