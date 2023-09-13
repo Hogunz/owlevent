@@ -1,6 +1,121 @@
 <x-guest-layout>
 
+    <!-- sample 0.5 -->
+    <section class="bg-[#F5EFE6]/75" data-aos="zoom-in" data-aos-duration="1500">
+        <div class="mx-auto grid max-w-screen-xl px-4 xs:grid xs:place-content-center lg:grid-cols-12 lg:gap-8 xl:gap-0">
+            <div class="flex-col xs:col-span-12 sm:flex md:flex-row lg:col-span-5 lg:mt-0">
+                <div id="carouselSlide" class="relative sm:hidden lg:flex" data-te-carousel-init data-te-carousel-slide>
+                    <div class="block relative overflow-hidden sm:pt-24 pt-8 after:clear-both after:block after:content-['']">
+                        <div class="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+                            data-te-carousel-item data-te-carousel-active>
+                            <img class="hidden object-cover sm:hidden md:block"
+                                style="height:600px; width:500px; top:-59px; left:87px;"
+                                src="{{ asset('images/photographer.png') }}" />
+                        </div>
+                        <div class="relative float-left -mr-[100%] hidden max-w-lg transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+                            data-te-carousel-item>
+                            <img class="hidden object-cover sm:hidden md:block"
+                                style="height:600px; width:500px; top:-59px; left:87px;"
+                                src="{{ asset('images/photographer.png') }}" />
+                        </div>
+                        <div class="relative float-left -mr-[100%] hidden w-full max-w-lg transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+                            data-te-carousel-item>
+                            <img class="hidden object-cover sm:hidden md:block"
+                                style="height:600px; width:500px; top:-59px; left:87px;"
+                                src="{{ asset('images/wedding.png') }}" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="mr-auto place-self-center xs:col-span-12 sm:p-8 lg:col-span-7 lg:p-0 w-full">
+                <h1 class="sm:w-full uppercase ">
+                    <p class="text-black/75 tracking-wide text-5xl leading-snug font-bold"
+                        style="font-family: 'Spectral', serif; ">
+                        Whatever you're
+                        planning,
+                    </p>
+                    <p class="text-[#7895B2] font-extrabold tracking-widest text-3xl">make it extraordinary</p>
+                    <p class="text-base leading-normal text-gray-800 mt-4 sm:mt-5 sm:w-5/1 normal-case mb-4 ">
+                        “Making every moment memorable - with our events!”</p>
+                </h1>
+            </div>
+        </div>
+    </section>
+
+    <div class="sm:static lg:relative " data-aos="fade-up" data-aos-duration="1500">
+        {{-- <div class="container inset-x-0 -top-14 mx-auto max-w-7xl rounded-lg sm:static lg:absolute lg:pt-0 pt-48">
+            <section
+                class=" bg-[#F5EFE6] py-4 sm:max-w-screen-sm lg:max-w-screen-xl lg:rounded-2xl lg:p-8">
+                <div class="grid items-end gap-6 px-2.5 md:grid-cols-4">
+                    <div class="relative z-0">
+                        <select type="" id="default_standard"
+                            class="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent py-2.5 px-0 text-sm text-black focus:border-gray-300 focus:outline-none focus:ring-0"
+                            placeholder=" ">
+                            <option class="text-black" value="">Type of Event</option>
+                            <option class="text-black" value="">Wedding</option>
+                            <option class="text-black" value="">Debut</option>
+                            <option class="text-black" value="">Birthday</option>
+                        </select>
+                        <label for="default_standard"
+                            class="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-base text-black duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75">
+                            Event</label>
+                    </div>
+                    <div class="relative z-0">
+                        <input type="text" id="default_standard"
+                            class="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-gray-300 focus:outline-none focus:ring-0"
+                            placeholder=" " />
+                        <label for="default_standard"
+                            class="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-base text-black duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-black">
+                            Location / Venues</label>
+                    </div>
+                    <div class="relative z-0">
+                        <input type="date" id="default_standard"
+                            class="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent py-2.5 px-0 text-sm text-black focus:border-gray-300 focus:outline-none focus:ring-0"
+                            placeholder=" " />
+                        <label for="default_standard"
+                            class="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-base text-black duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-black">
+                            Date</label>
+                    </div>
+                    <div class="relative z-0">
+                        <button
+                            class="rounded-3xl border border-[#7895B2] bg-[#7895B2] p-4 text-sm font-medium text-white shadow-2xl hover:bg-[#AEBDCA] hover:text-black focus:z-10 focus:outline-none focus:ring-4 focus:ring-[#AEBDCA] sm:w-full md:px-10 lg:px-24 w-full">
+                            Search
+                        </button>
+
+
+                    </div>
+                </div>
+        </div> --}}
+        </section>
     <!-- sample 1 -->
+    <section class=" ">
+        <div class="h-screen relative z-0">
+            <div class="p-8 flex justify-center items-center bg-[#E8DFCA]/75  w-full" style="height:50vh;"></div>
+            <div class="p-8 flex justify-center items-center  bg-[#F5EFE6]/50  w-full" style="height:40vh;"></div>
+            <div
+                class="max-w-md bg-[#E8DFCA]/75 p-8 shadow-md absolute top-1/2 left-1/2 transform -translate-x-1/5 -translate-y-1/2 z-20" >
+                <div class="mr-auto place-self-center xs:col-span-12 sm:p-8 lg:col-span-7 lg:p-0 w-full ">
+                    <h1 class="sm:w-full uppercase">
+                        <p class="text-black/75 tracking-wide text-5xl leading-snug font-bold"
+                            style="font-family: 'Spectral', serif; ">
+                            Whatever you're
+                            planning,
+                        </p>
+                        <p class="text-[#7895B2] font-extrabold tracking-widest text-3xl">make it extraordinary</p>
+                        <p class="text-base leading-normal text-gray-800 mt-4 sm:mt-5 sm:w-5/1 normal-case mb-4 ">
+                            “Making every moment memorable - with our events!”</p>
+                    </h1>
+                </div>
+            </div>
+            <img src="images/try3.jpg"
+                class="aspect-square max-w-2xl absolute top-1/2 left-1/2 transform -translate-x-3/4 -translate-y-1/2 z-10"
+                alt="..." />
+        </div>
+
+    </section>
+    <!-- sample 2 -->
     <section class="p-8 flex justify-center items-center h-screen">
         <div class="relative">
             <img src="images/try2.png"
@@ -14,7 +129,7 @@
     </section>
 
 
-    <!-- sample 2 -->
+    <!-- sample 3 -->
     <section class=" ">
         <div class="relative bg-gray-600  w-full" style="height:75vh;">
             <div class="absolute bottom-0 right-0">
@@ -28,7 +143,7 @@
         </div>
     </section>
 
-    <!-- sample 3 -->
+    <!-- sample 4 -->
     <section class="grid grid-cols-4 gap-4 p-8 container mx-auto">
 
         <div class="-translate-y-6">
@@ -60,7 +175,7 @@
 
     </section>
 
-    <!-- sample 3 -->
+    <!-- sample 5 -->
     <section class="p-8 flex justify-center items-center h-screen ">
         <div class="relative">
             <div
@@ -75,7 +190,7 @@
         </div>
     </section>
 
-    <!-- sample 1 -->
+    <!-- sample 6 -->
     <section class="p-8 flex justify-center items-center h-screen">
         <div class="relative">
 
@@ -309,52 +424,75 @@
     </section>
 
     <section>
-        
-<!-- Modal toggle -->
-<button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
-    Toggle modal
-  </button>
-  
-  <!-- Main modal -->
-  <div id="authentication-modal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
-      <div class="relative w-full max-w-md max-h-full">
-          <!-- Modal content -->
-          <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-              <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="authentication-modal">
-                  <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-                  </svg>
-                  <span class="sr-only">Close modal</span>
-              </button>
-              <div class="px-6 py-6 lg:px-8">
-                  <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Sign in to our platform</h3>
-                  <form class="space-y-6" action="#">
-                      <div>
-                          <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
-                          <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="name@company.com" required>
-                      </div>
-                      <div>
-                          <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your password</label>
-                          <input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
-                      </div>
-                      <div class="flex justify-between">
-                          <div class="flex items-start">
-                              <div class="flex items-center h-5">
-                                  <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-600 dark:border-gray-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" required>
-                              </div>
-                              <label for="remember" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember me</label>
-                          </div>
-                          <a href="#" class="text-sm text-blue-700 hover:underline dark:text-blue-500">Lost Password?</a>
-                      </div>
-                      <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login to your account</button>
-                      <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
-                          Not registered? <a href="#" class="text-blue-700 hover:underline dark:text-blue-500">Create account</a>
-                      </div>
-                  </form>
-              </div>
-          </div>
-      </div>
-  </div> 
-  
+
+        <!-- Modal toggle -->
+        <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal"
+            class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            type="button">
+            Toggle modal
+        </button>
+
+        <!-- Main modal -->
+        <div id="authentication-modal" tabindex="-1" aria-hidden="true"
+            class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+            <div class="relative w-full max-w-md max-h-full">
+                <!-- Modal content -->
+                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                    <button type="button"
+                        class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                        data-modal-hide="authentication-modal">
+                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 14 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                        </svg>
+                        <span class="sr-only">Close modal</span>
+                    </button>
+                    <div class="px-6 py-6 lg:px-8">
+                        <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Sign in to our platform</h3>
+                        <form class="space-y-6" action="#">
+                            <div>
+                                <label for="email"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
+                                    email</label>
+                                <input type="email" name="email" id="email"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                    placeholder="name@company.com" required>
+                            </div>
+                            <div>
+                                <label for="password"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
+                                    password</label>
+                                <input type="password" name="password" id="password" placeholder="••••••••"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                    required>
+                            </div>
+                            <div class="flex justify-between">
+                                <div class="flex items-start">
+                                    <div class="flex items-center h-5">
+                                        <input id="remember" type="checkbox" value=""
+                                            class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-600 dark:border-gray-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
+                                            required>
+                                    </div>
+                                    <label for="remember"
+                                        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember
+                                        me</label>
+                                </div>
+                                <a href="#"
+                                    class="text-sm text-blue-700 hover:underline dark:text-blue-500">Lost Password?</a>
+                            </div>
+                            <button type="submit"
+                                class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login
+                                to your account</button>
+                            <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
+                                Not registered? <a href="#"
+                                    class="text-blue-700 hover:underline dark:text-blue-500">Create account</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </section>
 </x-guest-layout>

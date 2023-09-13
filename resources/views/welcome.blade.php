@@ -1,141 +1,78 @@
 <x-guest-layout>
-    <section class="bg-[#F5EFE6]/75" data-aos="zoom-in" data-aos-duration="1500">
-        <div class="mx-auto grid max-w-screen-xl px-4 xs:grid xs:place-content-center lg:grid-cols-12 lg:gap-8 xl:gap-0">
-            <div class="flex-col xs:col-span-12 sm:flex md:flex-row lg:col-span-5 lg:mt-0">
-                <div id="carouselSlide" class="relative sm:hidden lg:flex" data-te-carousel-init data-te-carousel-slide>
-                    <div class="block relative overflow-hidden sm:pt-24 pt-8 after:clear-both after:block after:content-['']">
-                        <div class="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
-                            data-te-carousel-item data-te-carousel-active>
-                            <img class="hidden object-cover sm:hidden md:block"
-                                style="height:600px; width:500px; top:-59px; left:87px;"
-                                src="{{ asset('images/photographer.png') }}" />
-                        </div>
-                        <div class="relative float-left -mr-[100%] hidden max-w-lg transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
-                            data-te-carousel-item>
-                            <img class="hidden object-cover sm:hidden md:block"
-                                style="height:600px; width:500px; top:-59px; left:87px;"
-                                src="{{ asset('images/photographer.png') }}" />
-                        </div>
-                        <div class="relative float-left -mr-[100%] hidden w-full max-w-lg transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
-                            data-te-carousel-item>
-                            <img class="hidden object-cover sm:hidden md:block"
-                                style="height:600px; width:500px; top:-59px; left:87px;"
-                                src="{{ asset('images/wedding.png') }}" />
-                        </div>
-                    </div>
+    <section class=" ">
+        <div class=" relative z-0">
+            <div class="p-8 flex justify-center items-center bg-[#E8DFCA]/75  w-full" style="height:50vh;"></div>
+            <div class="p-8 flex justify-center items-center  bg-[#F5EFE6]/50  w-full" style="height:40vh;"></div>
+            <div
+                class="max-w-md bg-[#E8DFCA]/75 p-8 shadow-md absolute top-1/2 left-1/2 transform lg:-translate-x-1/4 -translate-x-1/2 -translate-y-1/2 z-20 w-full">
+                <div class="mr-auto place-self-center xs:col-span-12 sm:p-8 lg:col-span-7 lg:p-0 w-full ">
+                    <h1 class="sm:w-full uppercase">
+                        <p class="text-black/75 tracking-wide text-5xl leading-snug font-bold"
+                            style="font-family: 'Spectral', serif; ">
+                            Whatever you're
+                            planning,
+                        </p>
+                        <p class="text-[#7895B2] font-extrabold tracking-widest text-3xl">make it extraordinary</p>
+                        <p class="text-base leading-normal text-gray-800 mt-4 sm:mt-5 sm:w-5/1 normal-case mb-4 ">
+                            “Making every moment memorable - with our events!”</p>
+                    </h1>
                 </div>
             </div>
-
-
-            <div class="mr-auto place-self-center xs:col-span-12 sm:p-8 lg:col-span-7 lg:p-0 w-full">
-                <h1 class="sm:w-full uppercase ">
-                    <p class="text-black/75 tracking-wide text-5xl leading-snug font-bold"
-                        style="font-family: 'Spectral', serif; ">
-                        Whatever you're
-                        planning,
-                    </p>
-                    <p class="text-[#7895B2] font-extrabold tracking-widest text-3xl">make it extraordinary</p>
-                    <p class="text-base leading-normal text-gray-800 mt-4 sm:mt-5 sm:w-5/1 normal-case mb-4 ">
-                        “Making every moment memorable - with our events!”</p>
-                </h1>
+            <div class="">
+                <img src="images/try3.jpg"
+                    class="md:block hidden sm:hidden aspect-square max-w-xl absolute top-1/2 left-1/2 transform -translate-x-3/4 -translate-y-1/2 z-10 w-full"
+                    alt="..." />
             </div>
         </div>
     </section>
+    <section class=" lg:pt-24">
+        <div class=" justify-between text-2xl text-black flex lg:hidden pt-12">
+            <div class="uppercase tracking-widest font-extrabold ">
+                Featured</div>
+            <a href="/featured" class="p-2 text-center text-base text-[#7895B2] uppercase">See All</a>
+        </div>
+        <div id="owl-carousel1" class="owl-carousel owl-theme p-0">
+            @foreach ($categories as $category)
+                <a href="{{ $category->gigs->count() ? route('show.supplier-gig', ['user' => optional($category->firstGig())->user_id, 'gig' => optional($category->firstGig())->id]) : '#' }}"
+                    class="href">
+                    <div class="flex scale-75 flex-col">
+                        <img class="h-96 w-full rounded-3xl object-cover object-center"
+                            src="{{ $category->firstImg() ? asset('storage/' . $category->firstImg()) : 'https://images.unsplash.com/photo-1682232860597-9e16a4972602?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80' }}"
+                            alt="">
+                    </div>
+                </a>
+            @endforeach
+        </div>
+    </section>
 
-    <div class="sm:static lg:relative " data-aos="fade-up" data-aos-duration="1500">
-        {{-- <div class="container inset-x-0 -top-14 mx-auto max-w-7xl rounded-lg sm:static lg:absolute lg:pt-0 pt-48">
-            <section
-                class=" bg-[#F5EFE6] py-4 sm:max-w-screen-sm lg:max-w-screen-xl lg:rounded-2xl lg:p-8">
-                <div class="grid items-end gap-6 px-2.5 md:grid-cols-4">
-                    <div class="relative z-0">
-                        <select type="" id="default_standard"
-                            class="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent py-2.5 px-0 text-sm text-black focus:border-gray-300 focus:outline-none focus:ring-0"
-                            placeholder=" ">
-                            <option class="text-black" value="">Type of Event</option>
-                            <option class="text-black" value="">Wedding</option>
-                            <option class="text-black" value="">Debut</option>
-                            <option class="text-black" value="">Birthday</option>
-                        </select>
-                        <label for="default_standard"
-                            class="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-base text-black duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75">
-                            Event</label>
-                    </div>
-                    <div class="relative z-0">
-                        <input type="text" id="default_standard"
-                            class="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-gray-300 focus:outline-none focus:ring-0"
-                            placeholder=" " />
-                        <label for="default_standard"
-                            class="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-base text-black duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-black">
-                            Location / Venues</label>
-                    </div>
-                    <div class="relative z-0">
-                        <input type="date" id="default_standard"
-                            class="peer block w-full appearance-none border-0 border-b-2 border-gray-300 bg-transparent py-2.5 px-0 text-sm text-black focus:border-gray-300 focus:outline-none focus:ring-0"
-                            placeholder=" " />
-                        <label for="default_standard"
-                            class="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-base text-black duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-black">
-                            Date</label>
-                    </div>
-                    <div class="relative z-0">
-                        <button
-                            class="rounded-3xl border border-[#7895B2] bg-[#7895B2] p-4 text-sm font-medium text-white shadow-2xl hover:bg-[#AEBDCA] hover:text-black focus:z-10 focus:outline-none focus:ring-4 focus:ring-[#AEBDCA] sm:w-full md:px-10 lg:px-24 w-full">
-                            Search
-                        </button>
-
-
-                    </div>
-                </div>
-        </div> --}}
-        </section>
-        <section class="sm:bg-white lg:pt-28 lg:bg-[#E8DFCA] ">
-            <div class=" justify-between text-2xl text-black flex lg:hidden pt-12">
-                <div class="uppercase tracking-widest font-extrabold ">
-                    Featured</div>
-                <a href="/featured" class="p-2 text-center text-base text-[#7895B2] uppercase">See All</a>
-            </div>
-            <div id="owl-carousel1" class="owl-carousel owl-theme p-0">
+    <section class="lg:bg-[#E8DFCA] sm:bg-white/75">
+        <h2
+            class="mb-4 justify-between lg:pl-8 text-2xl text-[#7895B2] flex uppercase font-extrabold tracking-widest lg:justify-center lg:pt-36 lg:text-4xl">
+            Category
+        </h2>
+        <div class="">
+            <div id="owl-carousel2" class="owl-carousel owl-theme lg:container lg:mx-auto p-2">
                 @foreach ($categories as $category)
-                    <a href="{{ $category->gigs->count() ? route('show.supplier-gig', ['user' => optional($category->firstGig())->user_id, 'gig' => optional($category->firstGig())->id]) : '#' }}"
-                        class="href">
-                        <div class="flex scale-75 flex-col">
-                            <img class="h-96 w-full rounded-3xl object-cover object-center"
-                                src="{{ $category->firstImg() ? asset('storage/' . $category->firstImg()) : 'https://images.unsplash.com/photo-1682232860597-9e16a4972602?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80' }}"
-                                alt="">
-                        </div>
-                    </a>
+                    <div class="group relative">
+                        <a href="{{ route('show.category', $category) }}"
+                            class="h-auto max-w-lg cursor-pointer rounded-lg filter transition-all duration-300 hover:opacity-75">
+                            <img class="mb-4 aspect-square h-full rounded-lg object-cover"
+                                src={{ $category->firstImg() ? asset('storage/' . $category->firstImg()) : 'https://images.unsplash.com/photo-1682232860597-9e16a4972602?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80' }}>
+                            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black">
+                            </div>
+                            <div class="absolute inset-0 bottom-0 flex items-end justify-center">
+                                <p class="mb-3 whitespace-pre-line font-bold text-white sm:text-3xl lg:text-lg">
+                                    {{ $category->name }}</p>
+                            </div>
+                        </a>
+                    </div>
                 @endforeach
             </div>
-        </section>
+        </div>
+    </section>
+    {{-- </div> --}}
 
-        <section class="">
-            <h2
-                class="mb-4 justify-between lg:pl-8 text-2xl text-black flex uppercase font-extrabold tracking-widest lg:justify-center lg:pt-36 lg:text-4xl">
-                Category
-            </h2>
-            <div class="">
-                <div id="owl-carousel2" class="owl-carousel owl-theme lg:container lg:mx-auto p-2">
-                    @foreach ($categories as $category)
-                        <div class="group relative">
-                            <a href="{{ route('show.category', $category) }}"
-                                class="h-auto max-w-lg cursor-pointer rounded-lg filter transition-all duration-300 hover:opacity-75">
-                                <img class="mb-4 aspect-square h-full rounded-lg object-cover"
-                                    src={{ $category->firstImg() ? asset('storage/' . $category->firstImg()) : 'https://images.unsplash.com/photo-1682232860597-9e16a4972602?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80' }}>
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black">
-                                </div>
-                                <div class="absolute inset-0 bottom-0 flex items-end justify-center">
-                                    <p class="mb-3 whitespace-pre-line font-bold text-white sm:text-3xl lg:text-lg">
-                                        {{ $category->name }}</p>
-                                </div>
-                            </a>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </section>
-        {{-- </div> --}}
-
-        <section class="lg:p-8">
+    {{-- <section class="lg:p-8">
             <div class="mx-auto grid max-w-7xl grid-cols-1 gap-2 md:grid-cols-2">
                 <div class="flex items-center bg-[#E8DFCA] p-4 md:p-8" data-aos="fade-right" data-aos-duration="2000">
                     <div>
@@ -196,46 +133,123 @@
                         alt="">
                 </div>
             </div>
-        </section>
+        </section> --}}
 
+    <section class="lg:p-8">
+        <div class="mx-auto max-w-7xl">
+            <div class="grid grid-cols-1 md:grid-cols-2">
+                <div class="flex items-center p-4 md:p-8" data-aos="fade-right" data-aos-duration="2000">
+                    <div>
+                        <div class="">
+                            <h1
+                                class="text-left text-2xl font-bold md:text-3xl mb-8 uppercase tracking-widest text-[#E8DFCA]">
+                                Unique</h1>
+                            <h2 class="text-left text-base md:text-lg text-[#8b7949]">Make your next event truly
+                                one-of-a-kind and
+                                unforgettable by partnering with our event management team, which offers a unique
+                                approach
+                                that is customized to meet your specific needs and goals.
+                            </h2>
+                        </div>
+                    </div>
+                </div>
 
-        <section>
+                <div class="flex cursor-pointer items-center overflow-hidden border-[20px] border-[#E8DFCA]">
+                    <img class="h-auto w-full object-cover transition duration-300 ease-in-out hover:rotate-3 hover:scale-110 md:h-full"
+                        src="https://images.unsplash.com/photo-1510924199351-4e9d94df18a6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1474&q=80"
+                        alt="">
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2">
+                <div
+                    class="flex cursor-pointer items-center overflow-hidden border-[20px] border-[#7895B2] lg:order-none order-last">
+                    <img class="h-auto w-full object-cover transition duration-300 ease-in-out hover:rotate-3 hover:scale-110 md:h-full"
+                        src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80"
+                        alt="">
+                </div>
 
-            <h2
-            class="justify-between lg:pl-8 text-2xl text-black flex uppercase font-extrabold tracking-widest lg:justify-center lg:pt-24 py-4 lg:text-4xl">
+                <div class="flex items-center p-4 md:p-8" data-aos="fade-left" data-aos-duration="2000">
+                    <div>
+                        <div class="">
+                            <h1
+                                class="text-left text-3xl font-bold md:text-4xl mb-8 uppercase tracking-widest text-[#7895B2]">
+                                Reliable</h1>
+                            <h2 class="text-left text-base md:text-lg text-[#324d68]">Trust us to deliver reliable
+                                events
+                                for all your
+                                special moments. From weddings to corporate events, we handle every detail to ensure an
+                                exceptional experience that exceeds your expectations.</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2">
+                <div class="flex items-center p-4 md:p-8" data-aos="fade-right" data-aos-duration="2000">
+                    <div>
+                        <div class="">
+                            <h1
+                                class="text-left text-3xl font-bold md:text-4xl mb-8 uppercase tracking-widest text-[#E8DFCA]">
+                                All In One</h1>
+                            <h2 class="text-left text-base md:text-lg text-[#8b7949]">Our all-in-one event planning
+                                services
+                                take care
+                                of
+                                every detail, making it effortless for you to plan your next event. Let us handle
+                                everything
+                                from venue selection to entertainment and transportation, while you sit back and enjoy
+                                the
+                                event.
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex cursor-pointer items-center overflow-hidden border-[20px] border-[#E8DFCA]">
+                    <img class="w-full object-cover transition duration-300 ease-in-out hover:rotate-3 hover:scale-110 md:h-full"
+                        src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                        alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+
+        <h2
+            class="justify-between lg:pl-8 text-2xl text-[#7895B2] flex uppercase font-extrabold tracking-widest lg:justify-center lg:pt-24 py-4 lg:text-4xl">
             Top Supplier
         </h2>
-            <div id="owl-carousel3" class="owl-carousel owl-theme grid grid-cols-1 bg-[#E8DFCA] p-0">
-                @foreach ($suppliers->take(5) as $supplier)
-                    <a href="{{ route('show.profile', $supplier) }}" class="href">
-                        <div class="flex scale-75 flex-col duration-300 ease-in-out hover:scale-100">
-                            <img class="h-96 w-full rounded-t-3xl object-cover"
-                                src="{{ asset('storage/' . $supplier->avatar) ?? 'https://images.unsplash.com/photo-1627564174704-4c3765ef733a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80' }}"
-                                alt="">
-                            <div class="flex justify-between rounded-b-3xl bg-white p-4">
-                                <div class="text-base font-bold">{{ $supplier->business_name }}</div>
 
-                                <div class="flex items-center justify-center">
-                                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star"
-                                        class="w-4 text-yellow-300" role="img" xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 576 512">
-                                        <path fill="currentColor"
-                                            d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
-                                        </path>
-                                    </svg>
-                                    <p class="ml-2 text-sm font-bold text-gray-900 ">
-                                        {{ $supplier->ratings }}</p>
-                                </div>
-
+        <div id="owl-carousel3" class="owl-carousel owl-theme grid grid-cols-1 p-0">
+            @foreach ($suppliers->take(5) as $supplier)
+                <a href="{{ route('show.profile', $supplier) }}" class="href">
+                    <div class="flex scale-75 flex-col overflow-hidden ">
+                        <img class="h-96 w-full object-cover transition duration-300 ease-in-out hover:scale-110"
+                            src="{{ asset('storage/' . $supplier->avatar) ?? 'https://images.unsplash.com/photo-1627564174704-4c3765ef733a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80' }}"
+                            alt="">
+                        <div class="flex justify-between bg-[#E8DFCA] p-8">
+                            <div class="text-sm normal-case whitespace-normal font-bold">{{ $supplier->business_name }}
                             </div>
+
+                            <div class="flex items-center justify-center">
+                                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star"
+                                    class="w-4 text-yellow-300" role="img" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 576 512">
+                                    <path fill="currentColor"
+                                        d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z">
+                                    </path>
+                                </svg>
+                                <p class="ml-2 text-sm font-bold text-gray-900 ">
+                                    {{ $supplier->ratings }}</p>
+                            </div>
+
                         </div>
-                    </a>
-                @endforeach
-            </div>
+                    </div>
+                </a>
+            @endforeach
+        </div>
 
-        </section>
+    </section>
 
-        {{-- <section>
+    {{-- <section>
             <section class="bg-white ">
                 <div class="mx-auto max-w-screen-xl py-8 px-4 lg:py-16 lg:px-6">
                     <div class="mx-auto mb-8 max-w-screen-md text-center lg:mb-12">
@@ -427,27 +441,29 @@
                 </div>
             </section>
         </section> --}}
-     
 
 
-        <section class="bg-white  sm:hidden lg:flex lg:pb-6 lg:pt-6 pb-2 pt-2">
-            <div class="py-8 px-4 lg:mx-auto lg:container sm:py-16 lg:px-6 bg-gradient-to-r from-[#AEBDCA] to-[#F5EFE6]">
-                <div class="max-w-screen-md">
-                    <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 ">Come and Join Us!</h2>
-                    <p class="mb-8 font-light text-gray-500 sm:text-xl ">  Are you a business owner looking to expand your reach and increase your sales? Look no
-                        further than our website! By creating an account and becoming a supplier on our
-                        platform,
-                        you'll gain access to a vast network of potential customers who are eager to purchase
-                        your
-                        products or services.</p>
-                    <div class="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
-                        <a href="#" class="rounded bg-[#E8DFCA] hover:bg-[#E8DFCA]/75 inline-flex items-center justify-center px-4 py-2.5 text-base font-medium text-center text-black/80 focus:ring-4 focus:ring-primary-300 ">
-                            Get started
-                        </a>
-                    </div>
+
+    <section class="bg-white  sm:hidden lg:flex lg:pb-6 lg:pt-6 pb-2 pt-2">
+        <div class="py-8 px-4 lg:mx-auto lg:container sm:py-16 lg:px-6 bg-gradient-to-r from-[#AEBDCA] to-[#F5EFE6]">
+            <div class="max-w-screen-md">
+                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 ">Come and Join Us!</h2>
+                <p class="mb-8 font-light text-gray-500 sm:text-xl "> Are you a business owner looking to expand your
+                    reach and increase your sales? Look no
+                    further than our website! By creating an account and becoming a supplier on our
+                    platform,
+                    you'll gain access to a vast network of potential customers who are eager to purchase
+                    your
+                    products or services.</p>
+                <div class="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
+                    <a href="#"
+                        class="rounded bg-[#E8DFCA] hover:bg-[#E8DFCA]/75 inline-flex items-center justify-center px-4 py-2.5 text-base font-medium text-center text-black/80 focus:ring-4 focus:ring-primary-300 ">
+                        Get started
+                    </a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
 
 
@@ -514,7 +530,7 @@
             loop: true,
             responsive: {
                 0: {
-                      items: 1,
+                    items: 1,
                     stagePadding: 50
                 },
                 640: {
