@@ -35,8 +35,8 @@
             @foreach ($categories as $category)
                 <a href="{{ $category->gigs->count() ? route('show.supplier-gig', ['user' => optional($category->firstGig())->user_id, 'gig' => optional($category->firstGig())->id]) : '#' }}"
                     class="href">
-                    <div class="flex scale-75 flex-col">
-                        <img class="h-96 w-full rounded-3xl object-cover object-center"
+                    <div class="flex p-2 flex-col">
+                        <img class="h-auto max-w-sm rounded-lg shadow-none transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-black/30"
                             src="{{ $category->firstImg() ? asset('storage/' . $category->firstImg()) : 'https://images.unsplash.com/photo-1682232860597-9e16a4972602?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80' }}"
                             alt="">
                     </div>
@@ -55,8 +55,8 @@
                 @foreach ($categories as $category)
                     <div class="group relative">
                         <a href="{{ route('show.category', $category) }}"
-                            class="h-auto max-w-lg cursor-pointer rounded-lg filter transition-all duration-300 hover:opacity-75">
-                            <img class="mb-4 aspect-square h-full rounded-lg object-cover"
+                            class="h-auto max-w-lg cursor-pointer rounded-lg filter transition-all duration-300 hover:opacity-75 ">
+                            <img class="mb-4 aspect-square h-full rounded-lg object-cover "
                                 src={{ $category->firstImg() ? asset('storage/' . $category->firstImg()) : 'https://images.unsplash.com/photo-1682232860597-9e16a4972602?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80' }}>
                             <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black">
                             </div>
