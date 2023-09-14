@@ -25,7 +25,7 @@
             </div>
         </div>
     </section>
-    <section class=" lg:pt-24 w-full">
+    <section class=" lg:my-24 w-full">
         <div class=" justify-between text-2xl text-[#7895B2] flex lg:hidden pt-12">
             <div class="uppercase tracking-widest font-extrabold ">
                 Featured</div>
@@ -45,9 +45,10 @@
         </div>
     </section>
 
-    <section class="lg:bg-[#E8DFCA] sm:bg-white/75">
+    <section class="lg:bg-[#E8DFCA]  sm:bg-white/75 w-full">
+
         <h2
-            class="mb-4 justify-between lg:pl-8 text-2xl text-[#7895B2] flex uppercase font-extrabold tracking-widest lg:justify-center lg:pt-36 lg:text-4xl">
+            class="mb-4 justify-between lg:pl-8 text-2xl text-[#7895B2] flex uppercase font-extrabold tracking-widest lg:justify-center lg:pt-16 lg:text-4xl">
             Category
         </h2>
         <div class="">
@@ -69,6 +70,7 @@
                 @endforeach
             </div>
         </div>
+
     </section>
     {{-- </div> --}}
 
@@ -224,7 +226,7 @@
             @foreach ($suppliers->take(5) as $supplier)
                 <a href="{{ route('show.profile', $supplier) }}" class="href">
                     <div class="flex scale-75 flex-col overflow-hidden ">
-                        <img class="h-96 w-full object-cover transition duration-300 ease-in-out hover:scale-110"
+                        <img class="h-96 w-full object-cover  transition duration-300 ease-in-out hover:scale-110"
                             src="{{ asset('storage/' . $supplier->avatar) ?? 'https://images.unsplash.com/photo-1627564174704-4c3765ef733a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80' }}"
                             alt="">
                         <div class="flex justify-between bg-[#E8DFCA] p-8">
