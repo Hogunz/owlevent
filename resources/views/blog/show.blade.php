@@ -29,16 +29,17 @@
         <!-- 2 -->
         <div>
             <div class="lg:container max-w-max lg:mx-auto lg:p-8 ">
-                <div class="max-w-screen-xl px-4 py-8 mx-auto">
+                <div class="max-w-screen-xl px-4 mx-auto">
                     <div class="mr-auto place-self-center lg:col-span-7">
+                        <h1
+                            class="max-w-2xl mb-12 font-extrabold tracking-tight leading-none text-lg md:text-xl lg:text-5xl text-justify ">
+                            {{ $blog->name }}</h1>
                         <div class=" lg:mt-0 lg:col-span-5 lg:flex ">
-                            <img class="mb-4" src="{{ asset('storage/' . $blog->image) }}" alt="">
+                            <img class="mb-4 rounded-3xl" src="{{ asset('storage/' . $blog->image) }}"
+                                alt="{{ $blog->name }}">
                         </div>
 
-                        <div class="text-justify ">
-                            <h1
-                                class="max-w-2xl mb-4  font-extrabold tracking-tight leading-none text-lg md:text-xl xl:text-4xl ">
-                                {{ $blog->name }}</h1>
+                        <div class="text-justify">
                             <p class="text-xs p-2">By:<span class="underline text-black">{{ Auth::user()->name }}</span>
                                 {{ $blog->created_at }}</p>
                             <div

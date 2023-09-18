@@ -13,12 +13,11 @@
     <section class="lg:container lg:mx-auto lg:p-24 p-8">
         <div class="grid lg:grid-cols-3 sm:grid-cols-1 lg:gap-y-12 sm:gap-y-2">
             @foreach ($blogs as $blog)
-                <div
-                    class=" ">
+                <div class=" ">
                     <div class="">
                         <a href="{{ route('blogs.show', $blog->id) }}">
                             <img class="object-cover lg:max-w-sm sm:max-w-xs sm:rounded-l-lg lg:rounded-t-lg hover:scale-105 transition ease-in-out duration-300"
-                                src="{{ asset('storage/' . $blog->image) }}" alt="">
+                                src="{{ asset('storage/' . $blog->image) }}" alt="{{ $blog->name }}">
                     </div>
                     <div class=" justify-between p-4 leading-normal ">
                         <p class="mb-3 font-bold text-lg text-gray-700">{{ $blog->name }}</p>

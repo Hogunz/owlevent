@@ -35,7 +35,8 @@
                             @foreach ($blogs->shuffle()->take(1) as $blog)
                                 <div class="mr-auto place-self-center">
                                     <div class=" lg:mt-0 lg:flex">
-                                        <img class="mb-4" src="{{ asset('storage/' . $blog->image) }}" alt="">
+                                        <img class="mb-4" src="{{ asset('storage/' . $blog->image) }}"
+                                            alt="{{ $blog->name }}">
                                     </div>
                                     <div class="text-justify">
                                         <a href="{{ route('blogs.show', $blog->id) }}" class="href">
@@ -113,10 +114,11 @@
                                             href="{{ route('blogs.show', $blog->id) }}">
                                             <div class="mr-3 shrink-0"><img
                                                     class="h-24 w-full object-cover object-center"
-                                                    src="{{ asset('storage/' . $blog->image) }}" alt=""></div>
+                                                    src="{{ asset('storage/' . $blog->image) }}"
+                                                    alt="{{ $blog->name }}"></div>
 
                                             <div class="flex flex-col space-y-4">
-                                               
+
                                                 <div class="mr-3"><span
                                                         class="line-clamp-2 text-sm">{{ $blog->name }}</span>
                                                 </div>

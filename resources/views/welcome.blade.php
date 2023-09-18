@@ -16,12 +16,18 @@
                         <p class="text-base leading-normal text-gray-800 mt-4 sm:mt-5 sm:w-5/1 normal-case mb-4 ">
                             “Making every moment memorable - with our events!”</p>
                     </h1>
+                    <div class="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
+                        <a href="/login"
+                            class="rounded bg-[#7895B2] hover:bg-[#7895B2]/75 inline-flex items-center justify-center px-4 py-2.5 text-base font-medium text-center text-black/80 focus:ring-4 focus:ring-primary-300 w-full ">
+                            Get started
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="">
                 <img src="images/try3.jpg"
                     class="md:block hidden sm:hidden aspect-square max-w-2xl absolute top-1/2 left-1/2 transform -translate-x-3/4 -translate-y-1/2 z-10 w-full"
-                    alt="..." />
+                    alt="hero-section" />
             </div>
         </div>
     </section>
@@ -38,7 +44,7 @@
                     <div class="flex p-2 flex-col">
                         <img class="aspect-square object-cover bg-no-repeat bg-center h-auto max-w-sm rounded-lg shadow-none transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-black/30"
                             src="{{ $category->firstImg() ? asset('storage/' . $category->firstImg()) : 'https://images.unsplash.com/photo-1682232860597-9e16a4972602?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80' }}"
-                            alt="">
+                            alt="featured">
                     </div>
                 </a>
             @endforeach
@@ -58,7 +64,8 @@
                         <a href="{{ route('show.category', $category) }}"
                             class="h-auto max-w-lg cursor-pointer rounded-lg filter transition-all duration-300 hover:opacity-75 ">
                             <img class="mb-4 aspect-square h-full object-cover "
-                                src={{ $category->firstImg() ? asset('storage/' . $category->firstImg()) : 'https://images.unsplash.com/photo-1682232860597-9e16a4972602?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80' }}>
+                                src={{ $category->firstImg() ? asset('storage/' . $category->firstImg()) : 'https://images.unsplash.com/photo-1682232860597-9e16a4972602?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80' }}
+                                alt="category">
                             <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black">
                             </div>
                             <div class="absolute inset-0 bottom-0 flex items-end justify-center">
@@ -159,7 +166,7 @@
                 <div class="flex cursor-pointer items-center overflow-hidden border-[20px] border-[#E8DFCA]">
                     <img class="h-auto w-full object-cover transition duration-300 ease-in-out hover:rotate-3 hover:scale-110 md:h-full"
                         src="https://images.unsplash.com/photo-1510924199351-4e9d94df18a6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1474&q=80"
-                        alt="">
+                        alt="pic1">
                 </div>
             </div>
             <hr class="my-8 w-full md:mt-12 md:mb-8 lg:mt-10 px-2">
@@ -168,7 +175,7 @@
                     class="flex cursor-pointer items-center overflow-hidden border-[20px] border-[#7895B2] lg:order-none order-last">
                     <img class="h-auto w-full object-cover transition duration-300 ease-in-out hover:rotate-3 hover:scale-110 md:h-full"
                         src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80"
-                        alt="">
+                        alt="pic2">
                 </div>
 
                 <div class="flex items-center p-4 md:p-8" data-aos="fade-left" data-aos-duration="2000">
@@ -210,7 +217,7 @@
                 <div class="flex cursor-pointer items-center overflow-hidden border-[20px] border-[#E8DFCA]">
                     <img class="w-full object-cover transition duration-300 ease-in-out hover:rotate-3 hover:scale-110 md:h-full"
                         src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                        alt="">
+                        alt="pic3">
                 </div>
             </div>
         </div>
@@ -228,7 +235,7 @@
                     <div class="flex scale-75 flex-col overflow-hidden ">
                         <img class="h-96 w-full object-cover  transition duration-300 ease-in-out hover:scale-110"
                             src="{{ asset('storage/' . $supplier->avatar) ?? 'https://images.unsplash.com/photo-1627564174704-4c3765ef733a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80' }}"
-                            alt="">
+                            alt="top-supplier">
                         <div class="flex justify-between bg-[#E8DFCA] p-8">
                             <div class="text-sm normal-case whitespace-normal font-bold">{{ $supplier->business_name }}
                             </div>
