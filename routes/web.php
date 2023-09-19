@@ -75,10 +75,8 @@ Route::get('/blog/show-more', [BlogController::class, 'showM'])->name('blogs.sho
 Route::get('/blog/categorized', [BlogController::class, 'categorized'])->name('blogs.categorized');
 Route::post('/gig-comments/{comment}/reply', [GigCommentController::class, 'reply'])->name('gig.comment.reply');
 Route::post('/supplier-comments/{comment}/reply', [SupplierCommentController::class, 'reply'])->name('supplier.comment.reply');
+Route::resource('blogs', BlogController::class);
 Route::middleware(['auth'])->group(function () {
-
-
-    Route::resource('blogs', BlogController::class);
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');

@@ -40,7 +40,7 @@
                         </div>
 
                         <div class="text-justify">
-                            <p class="text-xs p-2">By:<span class="underline text-black">{{ Auth::user()->name }}</span>
+                            <p class="text-xs p-2">By:<span class="underline text-black">{{ $blog->user->name }}</span>
                                 {{ $blog->created_at }}</p>
                             <div
                                 class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-1  gap-4 mb-6">

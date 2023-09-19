@@ -233,7 +233,7 @@
             @foreach ($suppliers->take(5) as $supplier)
                 <a href="{{ route('show.profile', $supplier) }}" class="href">
                     <div class="flex scale-75 flex-col overflow-hidden ">
-                        <img class="h-96 w-full object-cover  transition duration-300 ease-in-out hover:scale-110"
+                        <img class="h-96 w-full object-cover transition duration-300 ease-in-out hover:scale-110"
                             src="{{ asset('storage/' . $supplier->avatar) ?? 'https://images.unsplash.com/photo-1627564174704-4c3765ef733a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80' }}"
                             alt="top-supplier">
                         <div class="flex justify-between bg-[#E8DFCA] p-8">

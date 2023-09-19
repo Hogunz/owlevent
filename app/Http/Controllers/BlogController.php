@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\Auth;
 
 class BlogController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware(["auth"])->except(['show', 'blog', 'showM', 'categorized']);
+    }
     /**
      * Display a listing of the resource.
      *
