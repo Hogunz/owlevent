@@ -20,7 +20,8 @@
         </div> --}}
 
 
-        <div class="w-full p-4 lg:text-center text-left bg-gradient-to-br from-[#7895B2] from-50% to-[#E8DFCA] border border-gray-200 rounded-lg shadow sm:p-8">
+        <div
+            class="w-full p-4 lg:text-center text-left bg-gradient-to-br from-[#7895B2] from-50% to-[#E8DFCA] border border-gray-200 rounded-lg shadow sm:p-8">
             <h5 class="mb-2 text-3xl font-bold text-gray-900 ">"Discover the highlights: A visual
                 journey through our featured
                 page's top features."</h5>
@@ -28,7 +29,7 @@
                 your needs with our
                 supplier's wide range of services.</p>
         </div>
-    
+
         <div class="">
             <div class="lg:container lg:mx-auto lg:my-5 my-0 lg:p-5 p-0">
                 <div class="no-wrap md:-mx-2 md:flex">
@@ -44,7 +45,7 @@
                                     x-data="{ show: false }" @mouseover="show = true" @mouseover.away="show = false">
                                     <img class="relative top-0 z-auto h-32 w-32 rounded-full object-cover transition-transform duration-500"
                                         src="{{ asset('storage/' . auth()->user()->avatar) ?? 'https://images.unsplash.com/photo-1555952517-2e8e729e0b44?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHBlcnNvbnxlbnwwfDF8MHx8&auto=format&fit=crop&w=500&q=60' }}"
-                                        alt="">
+                                        alt="pic3">
 
                                     <span class="absolute bottom-0 right-7 flex h-4 w-4">
                                         <span
@@ -123,7 +124,7 @@
                                             <div>
                                                 <img class="h-auto w-full rounded-lg sm:max-w-xs lg:max-w-full"
                                                     src="{{ asset('storage/' . $gig->gigUploads->where('type', 'image')->first()->url) }}"
-                                                    alt="">
+                                                    alt="pic4">
                                             </div>
                                         </div>
                                     @endif
@@ -159,7 +160,7 @@
                                                         <a href="{{ route('gigs.show', $gig) }}" class="href">
                                                             <img src="{{ asset('storage/' . $gig->gigUploads->where('type', 'image')->first()->url) }}"
                                                                 class="h-auto w-full object-cover rounded-lg"
-                                                                alt="...">
+                                                                alt="pic1">
                                                         </a>
                                                     </div>
                                                 </div>
@@ -179,15 +180,14 @@
                                                     <div class="mb-4 flex flex-row items-center gap-4">
                                                         <img class="h-8 w-8 rounded-full object-cover ring-2 ring-white"
                                                             src="{{ asset('storage/' . $gig->user->avatar) ?? 'https://images.unsplash.com/photo-1555952517-2e8e729e0b44?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHBlcnNvbnxlbnwwfDF8MHx8&auto=format&fit=crop&w=500&q=60' }}"
-                                                            alt="">
+                                                            alt="pic2">
                                                         <a href="{{ route('my-profile') }}" class="">
                                                             <p
                                                                 class="mb-2 cursor-pointer text-sm font-bold uppercase tracking-tight text-gray-900 hover:underline">
                                                                 {{ $gig->title }}</p>
                                                         </a>
                                                     </div>
-                                                    <p
-                                                        class="line-clamp-3 mb-3 text-justify font-normal text-gray-700">
+                                                    <p class="line-clamp-3 mb-3 text-justify font-normal text-gray-700">
                                                         {{ $gig->description }}
                                                     </p>
 
@@ -218,7 +218,6 @@
                                             </div>
                                         </div>
                                     @endif
-                                    
                                 @endforeach
                                 {{-- <a href="{{ route('gigs.create') }}">
                                     <div
@@ -260,7 +259,7 @@
                             <section class="py-8 lg:py-16">
                                 <div class="mx-auto px-4">
                                     <div class="mb-6 flex items-center justify-between">
-                                        <h2 class="text-lg font-bold text-gray-900 lg:text-2xl">Reviews: 
+                                        <h2 class="text-lg font-bold text-gray-900 lg:text-2xl">Reviews:
                                             {{ auth()->user()->comments->count() }}
                                         </h2>
                                         <div class="self-center">
@@ -299,12 +298,12 @@
                                     </div>
 
                                     @foreach (auth()->user()->load([
-                                        'comments' => function ($query) {
-                                            $query->when(request()->get('rating'), function ($query) {
-                                                $query->where('ratings', request()->get('rating'));
-                                            });
-                                        },
-                                    ])->comments as $comment)
+            'comments' => function ($query) {
+                $query->when(request()->get('rating'), function ($query) {
+                    $query->where('ratings', request()->get('rating'));
+                });
+            },
+        ])->comments as $comment)
                                         <article class="mb-6 rounded-lg bg-white p-6 text-base">
                                             <footer class="mb-2 flex items-center justify-between">
                                                 <div class="flex items-center">

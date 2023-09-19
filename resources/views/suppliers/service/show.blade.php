@@ -35,7 +35,7 @@
                                     @else
                                         <img src="{{ asset('storage/' . $upload->url) }}"
                                             class="absolute top-1/2 left-1/2 block w-full -translate-x-1/2 -translate-y-1/2 cursor-pointer transition duration-300 ease-out hover:scale-110 hover:overflow-hidden"
-                                            alt="...">
+                                            alt="{{ $gig->title }}">
                                     @endif
                                 </div>
                             @endforeach
@@ -70,7 +70,7 @@
                                     @else
                                         <img src="{{ asset('storage/' . $upload->url) }}"
                                             class="relative rounded-lg transition duration-300 ease-in-out"
-                                            alt="...">
+                                            alt="{{ $gig->title }}">
                                     @endif
                                 </div>
                             @endforeach
@@ -85,7 +85,7 @@
                     <div class="">
                         <img class="relative top-0 z-auto h-32 w-32 rounded-full object-cover ring-2 ring-white"
                             src="{{ asset('storage/' . auth()->user()->avatar) ?? 'https://images.unsplash.com/photo-1555952517-2e8e729e0b44?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHBlcnNvbnxlbnwwfDF8MHx8&auto=format&fit=crop&w=500&q=60' }}"
-                            alt="">
+                            alt="{{ $gig->user->business_name }}">
                     </div>
                     <div class="flex flex-col">
                         <div class="inset-x-0 bottom-0 mb-4 cursor-pointer text-left text-sm font-bold hover:underline">
@@ -227,7 +227,7 @@
                                         <p class="mr-3 inline-flex items-center text-sm text-gray-900">
                                             <img class="mr-2 h-6 w-6 rounded-full"
                                                 src="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
-                                                alt="Michael Gough">{{ $comment->commenter->name }}
+                                                alt="user comment">{{ $comment->commenter->name }}
                                         </p>
                                         <p class="text-sm text-gray-600"><time pubdate datetime="2022-02-08"
                                                 title="February 8th, 2022">{{ $comment->created_at->diffForHumans() }}</time>
@@ -297,7 +297,7 @@
                                             <p class="mr-3 inline-flex items-center text-sm text-gray-900">
                                                 <img class="mr-2 h-6 w-6 rounded-full"
                                                     src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
-                                                    alt="Jese Leos">{{ $reply->commenter->name }}
+                                                    alt="user reply">{{ $reply->commenter->name }}
                                             </p>
                                             <p class="text-sm text-gray-600"><time pubdate datetime="2022-02-12"
                                                     title="February 12th, 2022">{{ $reply->created_at->diffForHumans() }}</time>
@@ -379,7 +379,8 @@
                     <div class="relative rounded-lg bg-white shadow">
                         <div class="relative">
                             <img src="https://images.unsplash.com/photo-1539074012390-794e447a2d9e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                                class="relative rounded-lg transition duration-300 ease-in-out" alt="...">
+                                class="relative rounded-lg transition duration-300 ease-in-out"
+                                alt="{{ $package->description }}">
                         </div>
                     </div>
                 </div>

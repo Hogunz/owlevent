@@ -1370,6 +1370,10 @@ input:checked + .toggle-bg {
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
 }
+.my-3 {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
 .my-4 {
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -1389,10 +1393,6 @@ input:checked + .toggle-bg {
 .my-\[5px\] {
   margin-top: 5px;
   margin-bottom: 5px;
-}
-.my-3 {
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
 }
 .-mb-1 {
   margin-bottom: -0.25rem;
@@ -1760,6 +1760,9 @@ input:checked + .toggle-bg {
 .w-11\/12 {
   width: 91.666667%;
 }
+.w-16 {
+  width: 4rem;
+}
 .w-2 {
   width: 0.5rem;
 }
@@ -1864,9 +1867,6 @@ input:checked + .toggle-bg {
 }
 .w-screen {
   width: 100vw;
-}
-.w-16 {
-  width: 4rem;
 }
 .min-w-0 {
   min-width: 0px;
@@ -3357,6 +3357,10 @@ input:checked + .toggle-bg {
   font-size: 3rem;
   line-height: 1;
 }
+.text-7xl {
+  font-size: 4.5rem;
+  line-height: 1;
+}
 .text-\[0\.8rem\] {
   font-size: 0.8rem;
 }
@@ -3410,9 +3414,8 @@ input:checked + .toggle-bg {
   font-size: 0.75rem;
   line-height: 1rem;
 }
-.text-7xl {
-  font-size: 4.5rem;
-  line-height: 1;
+.font-black {
+  font-weight: 900;
 }
 .font-bold {
   font-weight: 700;
@@ -3431,9 +3434,6 @@ input:checked + .toggle-bg {
 }
 .font-semibold {
   font-weight: 600;
-}
-.font-black {
-  font-weight: 900;
 }
 .uppercase {
   text-transform: uppercase;

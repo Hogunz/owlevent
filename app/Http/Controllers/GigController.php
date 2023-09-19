@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Intervention\Image\Facades\Image;
 use App\Models\Category;
 use App\Models\Gig;
 use Auth;
@@ -89,15 +89,21 @@ class GigController extends Controller
 
             $paths = [];
 
-            $gig->load([
-                'gigUploads' => function ($query) {
-                }
-            ]);
-
             foreach ($request->file('images') as $file) {
+                // Open the image
+                $image = Image::make($file);
+
+               
+                $image->encode('jpg', 50); 
+
+                // Generate a unique filename
+                $filename = Auth::id() . "/gig/{$gig->id}/" . Str::random(20) . '.' . $file->getClientOriginalExtension();
+
+                // Save the compressed image
+                Storage::disk('public')->put($filename, $image);
 
                 $paths[] = [
-                    'url' => $file->store(Auth::id() . "/gig/{$gig->id}", 'public'),
+                    'url' => $filename,
                     'type' => 'image',
                 ];
             }
@@ -247,6 +253,7 @@ class GigController extends Controller
             if ($request->images) {
 
                 foreach ($request->file('images') as $file) {
+                    
                     $paths[] = [
                         'url' => $file->store(Auth::id() . "/gig/{$gig->id}", 'public'),
                         'type' => 'image',
@@ -254,13 +261,23 @@ class GigController extends Controller
                 }
             }
 
-            if ($request->videos) {
-
-                foreach ($request->file('videos') as $file) {
-
+            if ($request->images) {
+                foreach ($request->file('images') as $file) {
+                    // Open the image
+                    $image = Image::make($file);
+    
+                    // Compress the image with a desired quality (e.g., 70)
+                    $image->encode('jpg', 70); // You can change 'jpg' to 'png' or other formats if needed
+    
+                    // Generate a unique filename
+                    $filename = Auth::id() . "/gig/{$gig->id}/" . Str::random(20) . '.' . $file->getClientOriginalExtension();
+    
+                    // Save the compressed image
+                    Storage::disk('public')->put($filename, $image);
+    
                     $paths[] = [
-                        'url' => $file->store(Auth::id() . "/gig/{$gig->id}", 'public'),
-                        'type' => 'video',
+                        'url' => $filename,
+                        'type' => 'image',
                     ];
                 }
             }
