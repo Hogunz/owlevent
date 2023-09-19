@@ -22,8 +22,8 @@
                             <div id="owl-carousel" class="owl-carousel owl-theme ">
                                 <!-- Item 1 -->
                                 @foreach ($gig->gigUploads as $upload)
-                                    <div class="relative" data-modal-target="extralarge-modal"
-                                        data-modal-toggle="extralarge-modal">
+                                    <div class="item relative h-56 overflow-hidden rounded-lg md:h-96"
+                                        data-modal-target="extralarge-modal" data-modal-toggle="extralarge-modal">
                                         @if (pathinfo($upload->url, PATHINFO_EXTENSION) === 'mp4')
                                             <video class="relative rounded-lg transition duration-300 ease-in-out"
                                                 controls>
@@ -33,7 +33,7 @@
                                         @else
                                             <img src="{{ asset('storage/' . $upload->url) }}"
                                                 class="relative h-auto rounded-lg transition duration-300 ease-in-out"
-                                                alt="...">
+                                                alt=" {{ $gig->title }}">
                                         @endif
                                     </div>
                                 @endforeach
@@ -220,7 +220,8 @@
                             @auth
                                 <form action="{{ route('gig.comment', $gig) }}" method="post" class="mb-6 w-full">
                                     @csrf
-                                    <div class="mb-4 rounded-lg rounded-t-lg border border-gray-200 bg-white py-2 px-4 w-full">
+                                    <div
+                                        class="mb-4 rounded-lg rounded-t-lg border border-gray-200 bg-white py-2 px-4 w-full">
                                         <label for="review" class="sr-only">Your review</label>
                                         <textarea id="review" rows="6" name="review"
                                             class="w-full border-0 px-0 text-sm text-gray-900 focus:outline-none focus:ring-0" placeholder="Write a review..."
