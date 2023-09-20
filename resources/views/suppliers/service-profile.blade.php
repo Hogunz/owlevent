@@ -448,7 +448,7 @@
                                         {{ number_format($package->price, 2, '.', ',') }}</span>
                                 </div>
                                 <p class="text-justify font-light text-gray-800 sm:text-sm">
-                                    {{ $package->description }}
+                                    {!! $package->description !!}
                                 </p>
                             </div>
                         @endforeach
