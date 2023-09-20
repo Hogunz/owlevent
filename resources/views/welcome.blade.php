@@ -165,7 +165,7 @@
 
                 <div class="flex cursor-pointer items-center overflow-hidden border-[20px] border-[#E8DFCA]">
                     <img class="h-auto w-full object-cover transition duration-300 ease-in-out hover:rotate-3 hover:scale-110 md:h-full"
-                        src="images/pic1.jpg" alt="pic1">
+                        src="images/pic1.jpg" alt="pic1" loading="lazy">
                 </div>
             </div>
             <hr class="my-8 w-full md:mt-12 md:mb-8 lg:mt-10 px-2">
@@ -173,7 +173,7 @@
                 <div
                     class="flex cursor-pointer items-center overflow-hidden border-[20px] border-[#7895B2] lg:order-none order-last">
                     <img class="h-auto w-full object-cover transition duration-300 ease-in-out hover:rotate-3 hover:scale-110 md:h-full"
-                        src="images/pic2.jpg" alt="pic2">
+                        src="images/pic2.jpg" alt="pic2" loading="lazy">
                 </div>
 
                 <div class="flex items-center p-4 md:p-8" data-aos="fade-left" data-aos-duration="2000">
@@ -214,7 +214,7 @@
                 </div>
                 <div class="flex cursor-pointer items-center overflow-hidden border-[20px] border-[#E8DFCA]">
                     <img class="w-full object-cover transition duration-300 ease-in-out hover:rotate-3 hover:scale-110 md:h-full"
-                        src="images/pic3.jpg" alt="pic3">
+                        src="images/pic3.jpg" alt="pic3" loading="lazy">
                 </div>
             </div>
         </div>
