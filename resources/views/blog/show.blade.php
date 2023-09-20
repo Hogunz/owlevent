@@ -32,20 +32,22 @@
                 <div class="max-w-screen-xl px-4 mx-auto">
                     <div class="mr-auto place-self-center lg:col-span-7">
                         <h1
-                            class="max-w-2xl mb-12 font-extrabold tracking-tight leading-none text-lg md:text-xl lg:text-5xl text-justify ">
+                            class="max-w-2xl mb-10 pt-11 lg:pt-0 font-extrabold tracking-tight leading-relax lg:text-5xl text-2xl text-justify ">
                             {{ $blog->name }}</h1>
+                        <p class="text-xs p-2 mb-4">By:<span class="underline text-black">{{ $blog->user->name }}</span>
+                            {{ $blog->created_at }}</p>
                         <div class=" lg:mt-0 lg:col-span-5 lg:flex ">
                             <img class="mb-4 rounded-3xl" src="{{ asset('storage/' . $blog->image) }}"
                                 alt="{{ $blog->name }}">
+
                         </div>
 
                         <div class="text-justify">
-                            <p class="text-xs p-2">By:<span class="underline text-black">{{ $blog->user->name }}</span>
-                                {{ $blog->created_at }}</p>
                             <div
                                 class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-1  gap-4 mb-6">
                                 <div class="">
-                                    <p class="max-w-2xl mb-6 font-base text-gray-500 lg:mb-8 md:text-sm lg:text-base">
+                                    <p class="max-w-2xl mb-6 font-base text-gray-500 lg:mb-8 md:text-sm lg:text-base"
+                                        style="font-family: 'Montserrat', sans-serif;">
                                         {!! $blog->description !!}
                                     </p>
                                 </div>

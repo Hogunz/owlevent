@@ -1,21 +1,20 @@
 <x-guest-layout>
 
-    <section class="sm:container mx-auto sm:p-8 p-2 flex">
 
-                <div
-                    class="w-full bg-cover bg-center h-auto text-white py-24 px-10 object-fill rounded-t-lg bg-gradient-to-br from-[#7895B2] from-50% to-[#E8DFCA]">
-                
-                        <p class="text-3xl text-left font-bold mb-4">"Discover the highlights: A visual
-                            journey through our featured
-                            page's top features."</p>
-                        <p class="text-2xl text-left mb-10 leading-none">Find the perfect solution to
-                            your needs with our
-                            supplier's wide range of services.</p>
-                  
-                </div> <!-- container -->
-                <br>
-           
+    <section class="bg-white">
+        <div
+            class="py-8 px-4 mx-auto max-w-screen-2xl  sm:py-16 lg:px-6 w-full bg-cover bg-center h-auto  object-fill rounded-t-lg lg:bg-gradient-to-br from-[#7895B2] from-50% to-[#E8DFCA]">
+            <div class="max-w-screen-md">
+                <h2 class="mb-4 text-4xl tracking-tight font-extrabold lg:text-white text-black">"Discover the
+                    highlights: A visual
+                    journey through our featured
+                    page's top features."</h2>
+                <p class="mb-8 font-light lg:text-white/75 text-black/75 sm:text-xl ">Find the perfect solution to
+                    your needs with our
+                    supplier's wide range of services.</p>
 
+            </div>
+        </div>
     </section>
     {{-- <section class="container mx-auto p-8">
         <div class="grid lg:grid-cols-4 justify-items-center sm:grid-cols-1 gap-y-2 gap-x-0">
@@ -70,9 +69,9 @@
                 <div class="w-full max-w-sm bg-white flex flex-col">
                     <!-- Added flex flex-col -->
                     <a href="{{ route('show.supplier-gig', ['user' => $gig->user, 'gig' => $gig]) }}">
-                        <img class="rounded-lg flex-grow-0 flex-shrink-0"
+                        <img class="rounded-lg flex-grow-0 flex-shrink-0 object-cover object-center"
                             src="{{ asset('storage/' . $gig->gigUploads->where('type', 'image')->first()->url) }}"
-                            alt="product image" />
+                            alt="product image"style="width:368px;height:230px" />
                     </a>
 
                     <div class="py-2 px-0 flex-grow flex flex-col justify-between">

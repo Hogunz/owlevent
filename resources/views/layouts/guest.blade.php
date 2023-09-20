@@ -9,9 +9,7 @@
     <title>{{ config('app.name', 'OwlEvent') }}</title>
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
-
-
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <!-- Styles -->
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">

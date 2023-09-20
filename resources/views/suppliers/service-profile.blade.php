@@ -6,13 +6,13 @@
                 <!--1st DIV -->
                 <div class="w-full">
                     <div class="mb-12">
-                        <div class="mb-2 text-3xl font-bold">
+                        <div class="mb-2 text-5xl font-bold">
                             About Their Services
                         </div>
-                        <div class="text-xl font-semibold">
+                        <div class="text-xl font-semibold" style="font-family: 'Montserrat', sans-serif;">
                             {{ $gig->title }}
                         </div>
-                        <div>
+                        <div style="font-family: 'Montserrat', sans-serif;">
                             <p>{{ $gig->description }}</p>
                         </div>
                     </div>
@@ -448,7 +448,7 @@
                                         {{ number_format($package->price, 2, '.', ',') }}</span>
                                 </div>
                                 <p class="text-justify font-light text-gray-800 sm:text-sm">
-                                    {{ $package->description }}
+                                    {{ !!$package->description!! }}
                                 </p>
                             </div>
                         @endforeach

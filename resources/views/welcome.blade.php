@@ -153,7 +153,8 @@
                             <h1
                                 class="text-left text-2xl font-bold md:text-3xl mb-8 uppercase tracking-widest text-[#E8DFCA]">
                                 Unique</h1>
-                            <h2 class="text-left text-base md:text-lg text-[#8b7949]">Make your next event truly
+                            <h2 class="text-left text-base md:text-lg text-[#8b7949]"
+                                style="font-family: 'Montserrat', sans-serif;">Make your next event truly
                                 one-of-a-kind and
                                 unforgettable by partnering with our event management team, which offers a unique
                                 approach
@@ -182,7 +183,8 @@
                             <h1
                                 class="text-left text-3xl font-bold md:text-4xl mb-8 uppercase tracking-widest text-[#7895B2]">
                                 Reliable</h1>
-                            <h2 class="text-left text-base md:text-lg text-[#324d68]">Trust us to deliver reliable
+                            <h2 class="text-left text-base md:text-lg text-[#324d68]"
+                                style="font-family: 'Montserrat', sans-serif;">Trust us to deliver reliable
                                 events
                                 for all your
                                 special moments. From weddings to corporate events, we handle every detail to ensure an
@@ -199,7 +201,8 @@
                             <h1
                                 class="text-left text-3xl font-bold md:text-4xl mb-8 uppercase tracking-widest text-[#E8DFCA]">
                                 All In One</h1>
-                            <h2 class="text-left text-base md:text-lg text-[#8b7949]">Our all-in-one event planning
+                            <h2 class="text-left text-base md:text-lg text-[#8b7949]"
+                                style="font-family: 'Montserrat', sans-serif;">Our all-in-one event planning
                                 services
                                 take care
                                 of
