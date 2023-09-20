@@ -32,12 +32,12 @@
         </div>
     </section>
     <section class=" lg:my-24 w-full">
-        <div class=" justify-between text-2xl text-[#7895B2] flex lg:hidden pt-12 px-4">
+        <div class=" justify-between text-2xl text-[#7895B2] flex lg:hidden pt-12 px-4 ">
             <div class="uppercase tracking-widest font-extrabold ">
                 Featured</div>
             <a href="/featured" class="p-2 text-center text-base text-[#7895B2] uppercase">See All</a>
         </div>
-        <div id="owl-carousel1" class="owl-carousel owl-theme p-0">
+        <div id="owl-carousel1" class="owl-carousel owl-theme p-0 ">
             @foreach ($categories as $category)
                 <a href="{{ $category->gigs->count() ? route('show.supplier-gig', ['user' => optional($category->firstGig())->user_id, 'gig' => optional($category->firstGig())->id]) : '#' }}"
                     class="href">
@@ -144,10 +144,10 @@
             </div>
         </section> --}}
 
-    <section class="lg:p-8">
+    <section class="lg:p-8 w-full">
         <div class="mx-auto max-w-7xl">
             <div class="grid grid-cols-1 md:grid-cols-2">
-                <div class="flex items-center p-4 md:p-8" data-aos="fade-right" data-aos-duration="2000">
+                <div class="flex items-center p-4 md:p-8 aos-disabled" data-aos="fade-right" data-aos-duration="2000">
                     <div>
                         <div class="">
                             <h1
@@ -177,7 +177,7 @@
                         src="images/pic2.jpg" alt="pic2" loading="lazy">
                 </div>
 
-                <div class="flex items-center p-4 md:p-8" data-aos="fade-left" data-aos-duration="2000">
+                <div class="flex items-center p-4 md:p-8 aos-disabled" data-aos="fade-left" data-aos-duration="2000">
                     <div>
                         <div class="">
                             <h1
@@ -195,7 +195,7 @@
             </div>
             <hr class="my-8 w-full md:mt-12 md:mb-8 lg:mt-10 px-2">
             <div class="grid grid-cols-1 md:grid-cols-2">
-                <div class="flex items-center p-4 md:p-8" data-aos="fade-right" data-aos-duration="2000">
+                <div class="flex items-center p-4 md:p-8 aos-disabled" data-aos="fade-right" data-aos-duration="2000">
                     <div>
                         <div class="">
                             <h1
@@ -222,7 +222,7 @@
             </div>
         </div>
     </section>
-    <section>
+    <section class="w-full">
 
         <h2
             class="justify-between lg:pl-8 text-2xl text-[#7895B2] flex uppercase font-extrabold tracking-widest lg:justify-center lg:pt-24 py-4 lg:text-4xl">
@@ -455,7 +455,7 @@
 
 
 
-    <section class=" sm:hidden lg:flex lg:pb-6 lg:pt-6 pb-2 pt-2">
+    <section class=" sm:hidden lg:flex lg:pb-6 lg:pt-6 pb-2 pt-2 w-full">
         <div class="py-8 px-4 lg:mx-auto lg:container sm:py-16 lg:px-6 bg-gradient-to-r from-[#AEBDCA] to-[#F5EFE6]">
             <div class="max-w-screen-md">
                 <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 ">Come and Join Us!</h2>
@@ -561,4 +561,16 @@
         });
 
     });
+</script>
+<script>
+    // Check if the device is a mobile device (you can use a library for better device detection)
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+    // Disable "data-aos" for elements with the "aos-disabled" class on mobile devices
+    if (isMobile) {
+        const elementsWithAosDisabled = document.querySelectorAll('.aos-disabled[data-aos]');
+        elementsWithAosDisabled.forEach(element => {
+            element.removeAttribute('data-aos');
+        });
+    }
 </script>
