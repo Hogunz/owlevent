@@ -32,7 +32,7 @@
         </div>
     </section>
     <section class=" lg:my-24 w-full">
-        <div class=" justify-between text-2xl text-[#7895B2] flex lg:hidden pt-12">
+        <div class=" justify-between text-2xl text-[#7895B2] flex lg:hidden pt-12 px-4">
             <div class="uppercase tracking-widest font-extrabold ">
                 Featured</div>
             <a href="/featured" class="p-2 text-center text-base text-[#7895B2] uppercase">See All</a>
@@ -44,7 +44,7 @@
                     <div class="flex p-2 flex-col">
                         <img class="aspect-square object-cover bg-no-repeat bg-center h-auto max-w-sm rounded-lg shadow-none transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-black/30"
                             src="{{ $category->firstImg() ? asset('storage/' . $category->firstImg()) : 'images/holder.jpg' }}"
-                            alt="featured" wdi>
+                            alt="featured">
                     </div>
                 </a>
             @endforeach
@@ -54,7 +54,7 @@
     <section class="lg:bg-[#E8DFCA]  sm:bg-white/75 w-full">
 
         <h2
-            class="mb-4 justify-between lg:pl-8 text-2xl text-[#7895B2] flex uppercase font-extrabold tracking-widest lg:justify-center lg:pt-16 lg:text-4xl">
+            class="mb-4 justify-between lg:pl-8 text-2xl text-[#7895B2] flex uppercase font-extrabold tracking-widest lg:justify-center lg:pt-16 lg:text-4xl px-4">
             Category
         </h2>
         <div class="">
