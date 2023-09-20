@@ -26,7 +26,7 @@
 </head>
 
 
-<body class="overflow-auto text-black/75 bg-white/25 w-full" style=" font-family: 'Quicksand', sans-serif;">
+<body class="overflow-auto text-black/75 bg-[#F5EFE6]/50 w-full" style=" font-family: 'Quicksand', sans-serif;">
     <div class="flex min-h-screen flex-col justify-between">
         <div>
             <header>@include('layouts.header')</header>

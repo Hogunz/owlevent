@@ -1,7 +1,7 @@
 <x-guest-layout>
 
 
-    <section class="bg-white">
+    <section class="">
         <div
             class="py-8 px-4 mx-auto max-w-screen-2xl  sm:py-16 lg:px-6 w-full bg-cover bg-center h-auto  object-fill rounded-t-lg lg:bg-gradient-to-br from-[#7895B2] from-50% to-[#E8DFCA]">
             <div class="max-w-screen-md">

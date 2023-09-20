@@ -455,7 +455,7 @@
 
 
 
-    <section class="bg-white  sm:hidden lg:flex lg:pb-6 lg:pt-6 pb-2 pt-2">
+    <section class=" sm:hidden lg:flex lg:pb-6 lg:pt-6 pb-2 pt-2">
         <div class="py-8 px-4 lg:mx-auto lg:container sm:py-16 lg:px-6 bg-gradient-to-r from-[#AEBDCA] to-[#F5EFE6]">
             <div class="max-w-screen-md">
                 <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 ">Come and Join Us!</h2>

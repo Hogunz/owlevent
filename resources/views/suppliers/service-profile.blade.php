@@ -6,7 +6,7 @@
                 <!--1st DIV -->
                 <div class="w-full">
                     <div class="mb-12">
-                        <div class="mb-2 text-5xl font-bold">
+                        <div class="mb-2 text-5xl font-bold text-[#7895B2]">
                             About Their Services
                         </div>
                         <div class="text-xl font-semibold" style="font-family: 'Montserrat', sans-serif;">
@@ -85,7 +85,7 @@
                     </div>
 
 
-                    <div class="mb-2 text-2xl font-bold">
+                    <div class="mb-2 text-2xl font-bold text-[#7895B2]">
                         About This Supplier
                     </div>
                     <div class="justify-left mb-8 flex gap-4 w-full">
@@ -127,7 +127,7 @@
                     </div>
 
                     <div class="lg:p-8 w-full">
-                        <h1 class="text-left text-xl font-semibold leading-7 text-gray-800 lg:text-2xl lg:leading-9">
+                        <h1 class="text-left text-xl font-semibold leading-7 lg:text-2xl lg:leading-9 text-[#7895B2]">
                             FAQ's</h1>
 
 
@@ -170,7 +170,7 @@
                     </div>
                     <div class="mb-8 flex w-full justify-between p-4 px-2" id="review">
                         <div
-                            class="order-first text-left text-xl font-semibold leading-7 text-gray-800 lg:text-2xl lg:leading-9">
+                            class="order-first text-left text-xl font-semibold leading-7 lg:text-2xl lg:leading-9 text-[#7895B2]">
                             Reviews</div>
 
                         <div class="self-center">
@@ -213,7 +213,7 @@
                     <section class="bg-white py-8 lg:py-16 px-2 w-full ">
                         <div class="lg:mx-auto lg:max-w-2xl lg:px-4 w-full ">
                             <div class="mb-6 flex items-center justify-between w-full ">
-                                <h2 class="text-lg font-bold text-gray-900 lg:text-2xl">Reviews
+                                <h2 class="text-lg font-bold  lg:text-2xl text-[#7895B2]">Reviews
                                     {{ $gig->comments->count() }}
                                 </h2>
                             </div>
