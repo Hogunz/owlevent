@@ -27,7 +27,7 @@
             <div class="">
                 <img src="images/try3.jpg"
                     class="md:block hidden sm:hidden aspect-square max-w-2xl absolute top-1/2 left-1/2 transform -translate-x-3/4 -translate-y-1/2 z-10 w-full"
-                    alt="hero-section" />
+                    alt="hero-section" loading="lazy" />
             </div>
         </div>
     </section>
