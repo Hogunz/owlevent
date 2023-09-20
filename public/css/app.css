@@ -6124,6 +6124,10 @@ input:checked + .toggle-bg {
     height: 100%;
   }
 
+  .lg\:h-auto {
+    height: auto;
+  }
+
   .lg\:w-1\/2 {
     width: 50%;
   }
