@@ -45,7 +45,7 @@
 
                     <div id="extralarge-modal" tabindex="-1"
                         class="fixed inset-0 z-50 hidden h-[calc(100%-1rem)] w-full overflow-y-auto overflow-x-hidden p-4 md:inset-0 md:h-full">
-                        <div class="relative w-full max-w-full">
+                        <div class="relative lg:h-full h-0 w-full max-w-full lg:max-w-7xl ">
                             <!-- Modal content -->
                             <div id="owl-carousel2"
                                 class="owl-carousel owl-theme relative rounded-lg bg-transparent shadow w-full ">
