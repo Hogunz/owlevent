@@ -6,10 +6,10 @@
                 <!--1st DIV -->
                 <div class="w-full">
                     <div class="mb-12">
-                        <div class="mb-2 text-5xl font-bold text-[#7895B2]">
+                        <div class="mb-8 text-5xl font-bold text-[#7895B2]">
                             About Their Services
                         </div>
-                        <div class="text-xl font-semibold" style="font-family: 'Montserrat', sans-serif;">
+                        <div class="text-xl font-semibold mb-4" style="font-family: 'Montserrat', sans-serif;">
                             {{ $gig->title }}
                         </div>
                         <div style="font-family: 'Montserrat', sans-serif;">
@@ -17,12 +17,12 @@
                         </div>
                     </div>
                     <!-- CAROUSEL -->
-                    <div class="container lg:mx-auto w-full">
+                    <div class="container lg:mx-auto w-full mb-8">
                         <div class="inset-x-0 top-14 max-h-full w-full">
-                            <div id="owl-carousel" class="owl-carousel owl-theme ">
+                            <div id="owl-carousel" class="owl-carousel owl-theme  ">
                                 <!-- Item 1 -->
                                 @foreach ($gig->gigUploads as $upload)
-                                    <div class="item relative h-56 overflow-hidden rounded-lg md:h-96"
+                                    <div class="item relative h-56 overflow-hidden rounded-lg md:h-96 "
                                         data-modal-target="extralarge-modal" data-modal-toggle="extralarge-modal">
                                         @if (pathinfo($upload->url, PATHINFO_EXTENSION) === 'mp4')
                                             <video class="relative rounded-lg transition duration-300 ease-in-out"
@@ -37,25 +37,18 @@
                                         @endif
                                     </div>
                                 @endforeach
-                                {{-- @foreach ($gig->gigUploads as $upload)
-                                <div class="item relative h-56 overflow-hidden rounded-lg md:h-96"
-                                    data-modal-target="extralarge-modal" data-modal-toggle="extralarge-modal">
-                                    <img src="{{ asset('storage/' . $upload->url) }}"
-                                        class="absolute top-1/2 left-1/2 block w-full -translate-x-1/2 -translate-y-1/2 cursor-pointer transition duration-300 ease-out hover:scale-110 hover:overflow-hidden"
-                                        alt="...">
-                                </div>
-                            @endforeach --}}
+
                             </div>
                         </div>
                     </div>
 
 
                     <div id="extralarge-modal" tabindex="-1"
-                        class="fixed top-0 left-0 right-0 z-50 hidden h-[calc(100%-1rem)] w-full overflow-y-auto overflow-x-hidden p-4 md:inset-0 md:h-full">
-                        <div class="relative h-full w-full max-w-7xl md:h-auto">
+                        class="fixed inset-0 z-50 hidden h-[calc(100%-1rem)] w-full overflow-y-auto overflow-x-hidden p-4 md:inset-0 md:h-full">
+                        <div class="relative w-full max-w-full">
                             <!-- Modal content -->
                             <div id="owl-carousel2"
-                                class="owl-carousel owl-theme relative rounded-lg bg-transparent shadow p-48">
+                                class="owl-carousel owl-theme relative rounded-lg bg-transparent shadow w-full ">
                                 @foreach ($gig->gigUploads as $upload)
                                     <div class="relative" data-modal-target="extralarge-modal"
                                         data-modal-toggle="extralarge-modal">
@@ -67,8 +60,8 @@
                                             </video>
                                         @else
                                             <img src="{{ asset('storage/' . $upload->url) }}"
-                                                class="relative rounded-lg transition duration-300 ease-in-out"
-                                                alt="...">
+                                                class="relative rounded-lg transition duration-300 ease-in-out object-cover object-center "
+                                                alt="{{ $gig->title }}" style="width=200px;height=800;">
                                         @endif
                                     </div>
                                 @endforeach
@@ -94,7 +87,7 @@
                                 src="{{ asset('storage/' . $user->avatar) ?? 'https://images.unsplash.com/photo-1555952517-2e8e729e0b44?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHBlcnNvbnxlbnwwfDF8MHx8&auto=format&fit=crop&w=500&q=60' }}"
                                 alt="">
                         </div>
-                        <div class="flex flex-col">
+                        <div class="flex flex-col items-center lg:self-start self-center">
                             <div
                                 class="inset-x-0 bottom-0 mb-4 cursor-pointer text-left text-sm font-bold hover:underline">
                                 <a href="#" class="href">{{ $gig->user->business_name }}</a>
@@ -127,7 +120,8 @@
                     </div>
 
                     <div class="lg:p-8 w-full">
-                        <h1 class="text-left text-xl font-semibold leading-7 lg:text-2xl lg:leading-9 text-[#7895B2]">
+                        <h1
+                            class="text-left text-xl pt-8 font-semibold leading-7 lg:text-2xl lg:leading-9 text-[#7895B2]">
                             FAQ's</h1>
 
 
@@ -455,18 +449,6 @@
                     </div>
                 </div>
 
-                <div id="extralarge-modal" tabindex="-1"
-                    class="fixed top-0 left-0 right-0 z-50 hidden h-[calc(100%-1rem)] w-full overflow-y-auto overflow-x-hidden p-4 md:inset-0 md:h-full">
-                    <div class="relative h-full w-full max-w-7xl md:h-auto">
-                        <!-- Modal content -->
-                        <div class="relative rounded-lg bg-white shadow">
-                            <div class="relative">
-                                <img src="https://images.unsplash.com/photo-1539074012390-794e447a2d9e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                                    class="relative rounded-lg transition duration-300 ease-in-out" alt="...">
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
             </div>
 
@@ -556,5 +538,24 @@
                 items: 1
             }
         }
+    });
+</script>
+<script>
+    // Check if the device is a mobile device (you can use a library for better device detection)
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+    // Find all elements with data-modal-target and data-modal-toggle attributes
+    const modalElements = document.querySelectorAll('[data-modal-target][data-modal-toggle]');
+
+    // Function to prevent the default modal behavior
+    function disableModal(event) {
+        if (isMobile) {
+            event.preventDefault();
+        }
+    }
+
+    // Attach an event listener to each modal element to prevent it from opening on mobile
+    modalElements.forEach(element => {
+        element.addEventListener('click', disableModal);
     });
 </script>

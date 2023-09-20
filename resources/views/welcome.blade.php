@@ -563,10 +563,9 @@
     });
 </script>
 <script>
-    // Check if the device is a mobile device (you can use a library for better device detection)
     const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
-    // Disable "data-aos" for elements with the "aos-disabled" class on mobile devices
+
     if (isMobile) {
         const elementsWithAosDisabled = document.querySelectorAll('.aos-disabled[data-aos]');
         elementsWithAosDisabled.forEach(element => {
