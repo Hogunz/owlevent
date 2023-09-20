@@ -44,7 +44,7 @@
                     <div class="flex p-2 flex-col">
                         <img class="aspect-square object-cover bg-no-repeat bg-center h-auto max-w-sm rounded-lg shadow-none transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-black/30"
                             src="{{ $category->firstImg() ? asset('storage/' . $category->firstImg()) : 'images/holder.jpg' }}"
-                            alt="featured">
+                            alt="featured" wdi>
                     </div>
                 </a>
             @endforeach
