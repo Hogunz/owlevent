@@ -43,7 +43,7 @@
                     class="href">
                     <div class="flex p-2 flex-col">
                         <img class="aspect-square object-cover bg-no-repeat bg-center h-auto max-w-sm rounded-lg shadow-none transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-black/30"
-                            src="{{ $category->firstImg() ? asset('storage/' . $category->firstImg()) : 'https://images.unsplash.com/photo-1682232860597-9e16a4972602?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80' }}"
+                            src="{{ $category->firstImg() ? asset('storage/' . $category->firstImg()) : 'images/holder.jpg' }}"
                             alt="featured">
                     </div>
                 </a>
@@ -64,7 +64,7 @@
                         <a href="{{ route('show.category', $category) }}"
                             class="h-auto max-w-lg cursor-pointer rounded-lg filter transition-all duration-300 hover:opacity-75 ">
                             <img class="mb-4 aspect-square h-full object-cover "
-                                src={{ $category->firstImg() ? asset('storage/' . $category->firstImg()) : 'https://images.unsplash.com/photo-1682232860597-9e16a4972602?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80' }}
+                                src={{ $category->firstImg() ? asset('storage/' . $category->firstImg()) : 'images/holder.jpg' }}
                                 alt="category">
                             <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black">
                             </div>
