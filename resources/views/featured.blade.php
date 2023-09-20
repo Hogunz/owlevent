@@ -66,7 +66,7 @@
     <section class="lg:container lg:mx-auto w-full">
         <div class="grid md:grid-cols-4 justify-items-center grid-cols-2 gap-4 p-2 ">
             @foreach ($gigs->shuffle()->take(8) as $gig)
-                <div class="w-full max-w-sm bg-white flex flex-col">
+                <div class="w-full max-w-sm flex flex-col">
                     <!-- Added flex flex-col -->
                     <a href="{{ route('show.supplier-gig', ['user' => $gig->user, 'gig' => $gig]) }}">
                         <img class="rounded-lg flex-grow-0 flex-shrink-0 object-cover object-center"
