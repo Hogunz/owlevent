@@ -225,7 +225,7 @@
     <section class="w-full">
 
         <h2
-            class="justify-between lg:pl-8 text-2xl text-[#7895B2] flex uppercase font-extrabold tracking-widest lg:justify-center lg:pt-24 py-4 lg:text-4xl">
+            class="justify-between lg:pl-8 px-4 text-2xl text-[#7895B2] flex uppercase font-extrabold tracking-widest lg:justify-center lg:pt-24 py-4 lg:text-4xl">
             Top Supplier
         </h2>
 
@@ -455,11 +455,14 @@
 
 
 
-    <section class=" sm:hidden lg:flex lg:pb-6 lg:pt-6 pb-2 pt-2 w-full">
-        <div class="py-8 px-4 lg:mx-auto lg:container sm:py-16 lg:px-6 bg-gradient-to-r from-[#AEBDCA] to-[#F5EFE6]">
+    <section class="mb-4">
+        <div
+            class="py-8 px-4 mx-auto max-w-screen-2xl  sm:py-16 lg:px-6 w-full bg-cover bg-center h-auto text-justify  object-fill lg:rounded-t-lg bg-[#E8DFCA]/75   ">
             <div class="max-w-screen-md">
-                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 ">Come and Join Us!</h2>
-                <p class="mb-8 font-light text-gray-500 sm:text-xl "> Are you a business owner looking to expand your
+                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-800">Come and Join Us!
+                </h2>
+                <p class="mb-8 font-light text-gray-500 sm:text-xl">Are you a business owner looking
+                    to expand your
                     reach and increase your sales? Look no
                     further than our website! By creating an account and becoming a supplier on our
                     platform,
@@ -468,7 +471,7 @@
                     products or services.</p>
                 <div class="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
                     <a href="#"
-                        class="rounded bg-[#E8DFCA] hover:bg-[#E8DFCA]/75 inline-flex items-center justify-center px-4 py-2.5 text-base font-medium text-center text-black/80 focus:ring-4 focus:ring-primary-300 ">
+                        class="inline-flex items-center justify-center px-4 py-2.5 text-base font-medium text-center text-black/75 rounded-lg  focus:ring-4 focus:ring-primary-300 bg-[#7895B2] hover:bg-[#7895B2]/75">
                         Get started
                     </a>
                 </div>
