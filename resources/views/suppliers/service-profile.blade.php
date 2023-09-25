@@ -65,8 +65,6 @@
                                         @endif
                                     </div>
                                 @endforeach
-
-
                             </div>
                         </div>
                     </div>
@@ -448,7 +446,7 @@
 
         </section>
     </div>
-    </div>
+
 
 </x-guest-layout>
 
