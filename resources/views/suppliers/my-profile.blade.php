@@ -113,7 +113,7 @@
                                 {{-- <hr class="my-8 w-full md:mt-12 md:mb-8 lg:mt-10" /> --}}
                                 <div class="... flex justify-between">
                                     <div class="order-last">
-                                        <h1 class="mb-4 text-left text-lg font-bold">Portfolio</h1>
+                                        <h1 class="mb-4 text-left text-2xl font-bold">Portfolio</h1>
                                     </div>
                                 </div>
                             </div>
@@ -137,8 +137,8 @@
                         <!-- Description -->
                         <div
                             class="mb-4 rounded-lg bg-gradient-to-br from-[#F5EFE6] via-[#E8DFCA] to-transparent p-8 shadow-xl">
-                            <h1 class="mb-4 text-left text-lg font-bold">Description</h1>
-                            <p class="text-justify">{{ auth()->user()->description }}
+                            <h1 class="mb-4 text-left text-2xl font-bold">Description</h1>
+                            <p class="text-justify text-base">{{ auth()->user()->description }}
                             </p>
                         </div>
                         <!-- End of Description-->
@@ -159,7 +159,7 @@
                                                     <div class="">
                                                         <a href="{{ route('gigs.show', $gig) }}" class="href">
                                                             <img src="{{ asset('storage/' . $gig->gigUploads->where('type', 'image')->first()->url) }}"
-                                                                class="h-auto w-full object-cover rounded-lg"
+                                                                class="object-cover object-center rounded-lg lg:h-[230px] w-[368px] h-[113px]"
                                                                 alt="pic1">
                                                         </a>
                                                     </div>
@@ -183,11 +183,11 @@
                                                             alt="pic2">
                                                         <a href="{{ route('my-profile') }}" class="">
                                                             <p
-                                                                class="mb-2 cursor-pointer text-sm font-bold uppercase tracking-tight text-gray-900 hover:underline">
+                                                                class="mb-2 line-clamp-2 flex cursor-pointer text-sm font-bold uppercase tracking-tight text-gray-900 hover:underline">
                                                                 {{ $gig->title }}</p>
                                                         </a>
                                                     </div>
-                                                    <p class="line-clamp-3 mb-3 text-justify font-normal text-gray-700">
+                                                    <p class="line-clamp-2 mb-3 text-justify font-normal text-gray-700">
                                                         {{ $gig->description }}
                                                     </p>
 
@@ -203,8 +203,7 @@
                                                                 </path>
                                                             </svg>
 
-                                                            <p
-                                                                class="ml-2 text-sm font-bold text-gray-900 dark:text-white">
+                                                            <p class="ml-2 text-sm font-bold text-gray-900">
                                                                 {{ $gig->ratings }}
                                                             </p>
                                                         </div>
