@@ -224,7 +224,7 @@
 
                 <div class="grid md:grid-cols-2 grid-cols-1 md:gap-4 gap-0">
                     <div>
-                        <div class="text-2xl font-semibold">Pictures</div>
+                        <div class="text-2xl font-semibold mb-4">Pictures</div>
                         <div class="grid lg:grid-cols-3 grid-cols-1 gap-2">
                             <template x-for="(upload, index) in images" :key="`i` + index">
                                 <div class="relative">
