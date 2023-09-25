@@ -64,7 +64,7 @@
     <section class="lg:container lg:mx-auto lg:p-8 p-2">
         <div class="grid md:grid-cols-4 justify-items-center grid-cols-2 gap-4 p-2 ">
             @foreach ($category->gigs as $gig)
-                <div class="w-full max-w-sm bg-white flex flex-col">
+                <div class="w-full max-w-sm flex flex-col">
                     <!-- Added flex flex-col -->
 
                     <a href="{{ route('show.supplier-gig', ['user' => $gig->user, 'gig' => $gig]) }}">
