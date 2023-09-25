@@ -70,9 +70,9 @@
                 <div class="w-full max-w-sm flex flex-col">
                     <!-- Added flex flex-col -->
                     <a href="{{ route('show.supplier-gig', ['user' => $gig->user, 'gig' => $gig]) }}">
-                        <img class="rounded-lg flex-grow-0 flex-shrink-0 object-cover object-center"
+                        <img class="object-cover object-center rounded-lg lg:h-[230px] w-[368px] h-[113px] "
                             src="{{ asset('storage/' . $gig->gigUploads->where('type', 'image')->first()->url) }}"
-                            alt="product image"style="width:368px;height:230px" />
+                            alt={{ $gig->user->name }} />
                     </a>
 
                     <div class="py-2 px-0 flex-grow flex flex-col justify-between">

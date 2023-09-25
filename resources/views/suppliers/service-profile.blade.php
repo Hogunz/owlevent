@@ -6,13 +6,13 @@
                 <!--1st DIV -->
                 <div class="w-full">
                     <div class="mb-12">
-                        <div class="mb-8 text-5xl font-bold text-[#7895B2]">
+                        <div class="mb-8 text-3xl font-bold text-[#7895B2]">
                             About Their Services
                         </div>
-                        <div class="text-xl font-semibold mb-4" style="font-family: 'Montserrat', sans-serif;">
+                        <div class="text-xl font-semibold mb-4 " style="font-family: 'Montserrat', sans-serif;">
                             {{ $gig->title }}
                         </div>
-                        <div style="font-family: 'Montserrat', sans-serif;">
+                        <div class="text-lg" style="font-family: 'Montserrat', sans-serif;">
                             <p>{{ $gig->description }}</p>
                         </div>
                     </div>
@@ -22,7 +22,7 @@
                             <div id="owl-carousel" class="owl-carousel owl-theme  ">
                                 <!-- Item 1 -->
                                 @foreach ($gig->gigUploads as $upload)
-                                    <div class="item relative h-56 overflow-hidden rounded-lg md:h-96 "
+                                    <div class="item relative h-56 overflow-hidden hover:scale-105 transition duration-300 ease-in-out scale-100 rounded-lg md:h-96 "
                                         data-modal-target="extralarge-modal" data-modal-toggle="extralarge-modal">
                                         @if (pathinfo($upload->url, PATHINFO_EXTENSION) === 'mp4')
                                             <video class="relative rounded-lg transition duration-300 ease-in-out"

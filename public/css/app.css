@@ -1721,6 +1721,18 @@ input:checked + .toggle-bg {
 .h-screen {
   height: 100vh;
 }
+.h-\[230px\] {
+  height: 230px;
+}
+.h-\[368px\] {
+  height: 368px;
+}
+.h-\[3px\] {
+  height: 3px;
+}
+.h-\[113px\] {
+  height: 113px;
+}
 .max-h-\[calc\(100\%-64px\)\] {
   max-height: calc(100% - 64px);
 }
@@ -1867,6 +1879,12 @@ input:checked + .toggle-bg {
 }
 .w-screen {
   width: 100vw;
+}
+.w-\[368px\] {
+  width: 368px;
+}
+.w-\[230px\] {
+  width: 230px;
 }
 .min-w-0 {
   min-width: 0px;
@@ -2229,6 +2247,30 @@ input:checked + .toggle-bg {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+}
+.columns-3xs {
+  -moz-columns: 16rem;
+       columns: 16rem;
+}
+.columns-3 {
+  -moz-columns: 3;
+       columns: 3;
+}
+.columns-2 {
+  -moz-columns: 2;
+       columns: 2;
+}
+.columns-2xs {
+  -moz-columns: 18rem;
+       columns: 18rem;
+}
+.columns-auto {
+  -moz-columns: auto;
+       columns: auto;
+}
+.columns-xs {
+  -moz-columns: 20rem;
+       columns: 20rem;
 }
 .grid-flow-col {
   grid-auto-flow: column;
@@ -2939,13 +2981,6 @@ input:checked + .toggle-bg {
   --tw-gradient-to-position:  ;
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
-.from-\[\#AEBDCA\] {
-  --tw-gradient-from: #AEBDCA var(--tw-gradient-from-position);
-  --tw-gradient-from-position:  ;
-  --tw-gradient-to: rgb(174 189 202 / 0)  var(--tw-gradient-from-position);
-  --tw-gradient-to-position:  ;
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
 .from-\[\#F5EFE6\] {
   --tw-gradient-from: #F5EFE6 var(--tw-gradient-from-position);
   --tw-gradient-from-position:  ;
@@ -2984,10 +3019,6 @@ input:checked + .toggle-bg {
 }
 .to-\[\#E8DFCA\] {
   --tw-gradient-to: #E8DFCA var(--tw-gradient-to-position);
-  --tw-gradient-to-position:  ;
-}
-.to-\[\#F5EFE6\] {
-  --tw-gradient-to: #F5EFE6 var(--tw-gradient-to-position);
   --tw-gradient-to-position:  ;
 }
 .to-black {
@@ -3960,6 +3991,9 @@ input:checked + .toggle-bg {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
+.delay-300 {
+  transition-delay: 300ms;
+}
 .delay-\[0ms\] {
   transition-delay: 0ms;
 }
@@ -4347,6 +4381,9 @@ input:checked + .toggle-bg {
 .hover\:rounded-\[50\%\]:hover {
   border-radius: 50%;
 }
+.hover\:rounded-lg:hover {
+  border-radius: 0.5rem;
+}
 .hover\:border-black:hover {
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
@@ -4374,9 +4411,6 @@ input:checked + .toggle-bg {
 .hover\:bg-\[\#AEBDCA\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(174 189 202 / var(--tw-bg-opacity));
-}
-.hover\:bg-\[\#E8DFCA\]\/75:hover {
-  background-color: rgb(232 223 202 / 0.75);
 }
 .hover\:bg-\[\#eee\]:hover {
   --tw-bg-opacity: 1;
@@ -4424,10 +4458,6 @@ input:checked + .toggle-bg {
 .hover\:bg-neutral-200:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(229 229 229 / var(--tw-bg-opacity));
-}
-.hover\:bg-primary-800:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(32 64 117 / var(--tw-bg-opacity));
 }
 .hover\:bg-red-300:hover {
   --tw-bg-opacity: 1;
@@ -6077,8 +6107,16 @@ input:checked + .toggle-bg {
     margin-top: 3rem;
   }
 
+  .lg\:mb-0 {
+    margin-bottom: 0px;
+  }
+
   .lg\:block {
     display: block;
+  }
+
+  .lg\:inline-block {
+    display: inline-block;
   }
 
   .lg\:flex {
@@ -6095,6 +6133,18 @@ input:checked + .toggle-bg {
 
   .lg\:h-full {
     height: 100%;
+  }
+
+  .lg\:h-\[230px\] {
+    height: 230px;
+  }
+
+  .lg\:h-\[368px\] {
+    height: 368px;
+  }
+
+  .lg\:max-h-full {
+    max-height: 100%;
   }
 
   .lg\:w-1\/2 {
@@ -6115,6 +6165,14 @@ input:checked + .toggle-bg {
 
   .lg\:w-full {
     width: 100%;
+  }
+
+  .lg\:w-\[368px\] {
+    width: 368px;
+  }
+
+  .lg\:w-\[230px\] {
+    width: 230px;
   }
 
   .lg\:max-w-2xl {
@@ -6302,10 +6360,6 @@ input:checked + .toggle-bg {
     padding-bottom: 1.75rem;
   }
 
-  .lg\:pb-6 {
-    padding-bottom: 1.5rem;
-  }
-
   .lg\:pl-3 {
     padding-left: 0.75rem;
   }
@@ -6324,10 +6378,6 @@ input:checked + .toggle-bg {
 
   .lg\:pt-24 {
     padding-top: 6rem;
-  }
-
-  .lg\:pt-6 {
-    padding-top: 1.5rem;
   }
 
   .lg\:text-center {

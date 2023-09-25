@@ -69,7 +69,7 @@
 
                     <a href="{{ route('show.supplier-gig', ['user' => $gig->user, 'gig' => $gig]) }}">
                         <img src="{{ asset('storage/' . $gig->gigUploads->where('type', 'image')->first()->url) }}"
-                            class="object-cover object-center sm:h-auto sm:w-96 rounded-lg lg:h-full lg:w-full "
+                            class="object-cover object-center rounded-lg lg:h-[230px] w-[368px] h-[113px]"
                             alt="{{ $gig->title }}">
                     </a>
 
