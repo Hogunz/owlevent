@@ -235,7 +235,7 @@
                     <div class="flex scale-75 flex-col overflow-hidden ">
                         <img class="h-96 w-full object-cover transition duration-300 ease-in-out hover:scale-110"
                             src="{{ asset('storage/' . $supplier->avatar) ?? 'https://images.unsplash.com/photo-1627564174704-4c3765ef733a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80' }}"
-                            alt="top-supplier">
+                            alt={{ $supplier->business_name }}>
                         <div class="flex justify-between bg-[#E8DFCA] p-8">
                             <div class="text-sm normal-case whitespace-normal font-bold">{{ $supplier->business_name }}
                             </div>
@@ -251,7 +251,6 @@
                                 <p class="ml-2 text-sm font-bold text-gray-900 ">
                                     {{ $supplier->ratings }}</p>
                             </div>
-
                         </div>
                     </div>
                 </a>
