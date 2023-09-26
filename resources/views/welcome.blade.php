@@ -37,18 +37,39 @@
                 Featured</div>
             <a href="/featured" class="p-2 text-center text-base text-[#7895B2] uppercase">See All</a>
         </div>
-        <div id="owl-carousel1" class="owl-carousel owl-theme p-0 ">
-            @foreach ($categories as $category)
-                <a href="{{ $category->gigs->count() ? route('show.supplier-gig', ['user' => optional($category->firstGig())->user_id, 'gig' => optional($category->firstGig())->id]) : '#' }}"
-                    class="href">
-                    <div class="flex p-2 flex-col">
-                        <img class="aspect-square object-cover bg-no-repeat bg-center h-auto max-w-sm rounded-lg shadow-none transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-black/30"
-                            src="{{ $category->firstImg() ? asset('storage/' . $category->firstImg()) : 'images/holder.jpg' }}"
-                            alt="featured" loading="lazy">
-                    </div>
-                </a>
-            @endforeach
+        <div class="relative w-[80%] mx-auto ">
+            <div id="owl-carousel1" class="owl-carousel owl-theme p-0 relative">
+                @foreach ($categories as $category)
+                    <a href="{{ $category->gigs->count() ? route('show.supplier-gig', ['user' => optional($category->firstGig())->user_id, 'gig' => optional($category->firstGig())->id]) : '#' }}"
+                        class="href">
+                        <div class="flex p-2 flex-col">
+                            <img class="aspect-square object-cover bg-no-repeat bg-center h-auto max-w-sm rounded-lg shadow-none transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-black/30 "
+                                src="{{ $category->firstImg() ? asset('storage/' . $category->firstImg()) : 'images/holder.jpg' }}"
+                                alt="featured" loading="lazy">
+                        </div>
+                    </a>
+                @endforeach
+            </div>
+
+            <a
+                class="z-40 prev flex items-center justify-center h-10 w-10 bg-[#7895B2] hover:bg-[#324d68] rounded-full opacity-100 shadow-md cursor-pointer absolute left-[8px] top-1/2 transform -translate-y-1/2 -translate-x-1/2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-chevron-left">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </a>
+            <a
+                class="z-40 next flex items-center justify-center h-10 w-10 bg-[#7895B2] hover:bg-[#324d68] rounded-full opacity-100 shadow-md cursor-pointer absolute right-[8px] top-1/2 transform -translate-y-1/2 translate-x-1/2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-chevron-right">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </a>
+
         </div>
+
     </section>
 
     <section class="lg:bg-[#E8DFCA]  sm:bg-white/75 w-full">
@@ -195,7 +216,8 @@
             </div>
             <hr class="my-8 w-full md:mt-12 md:mb-8 lg:mt-10 px-2">
             <div class="grid grid-cols-1 md:grid-cols-2">
-                <div class="flex items-center p-4 md:p-8 aos-disabled" data-aos="fade-right" data-aos-duration="2000">
+                <div class="flex items-center p-4 md:p-8 aos-disabled" data-aos="fade-right"
+                    data-aos-duration="2000">
                     <div>
                         <div class="">
                             <h1
@@ -486,17 +508,20 @@
     $(document).ready(function() {
 
         // Initialize first carousel
-        $('#owl-carousel1').owlCarousel({
-            rtl: true,
+        var owlCarousel1 = $('#owl-carousel1');
+        owlCarousel1.owlCarousel({
+            dots: false,
+            rtl: false,
             loop: true,
+            margin: 30,
             responsive: {
                 0: {
                     items: 1,
-                    stagePadding: 50
+
                 },
                 640: {
                     items: 1,
-                    stagePadding: 100
+
                 },
                 768: {
                     items: 3
@@ -505,11 +530,21 @@
                     items: 4
                 },
                 1200: {
-                    items: 5,
-                    stagePadding: 100
+                    items: 4
+
                 }
             }
         });
+
+        // Add next and previous button functionality
+        $(".next").click(function() {
+            owlCarousel1.trigger('next.owl.carousel');
+        });
+
+        $(".prev").click(function() {
+            owlCarousel1.trigger('prev.owl.carousel');
+        });
+
         // Initialize second carousel
         $('#owl-carousel2').owlCarousel({
             nav: true,
