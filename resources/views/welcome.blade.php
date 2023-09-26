@@ -28,7 +28,7 @@
             <div class="">
                 @foreach ($categories->shuffle() as $category)
                     <img src="{{ $category->firstImg() ? asset('storage/' . $category->firstImg()) : 'images/holder.jpg' }}"
-                        class="md:block hidden sm:hidden aspect-square max-w-2xl absolute top-1/2 left-1/2 transform -translate-x-3/4 -translate-y-1/2 z-10 w-full object-cover object-center"
+                        class=" md:block hidden sm:hidden aspect-square max-w-2xl absolute top-1/2 left-1/2 transform -translate-x-3/4 -translate-y-1/2 z-10 w-full object-cover object-center"
                         alt="hero-section" loading="lazy" />
                 @endforeach
             </div>
