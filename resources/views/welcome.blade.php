@@ -7,13 +7,14 @@
                 class="max-w-md bg-[#E8DFCA] p-8 shadow-md absolute top-1/2 left-1/2 transform lg:translate-x-10 -translate-x-1/2 -translate-y-1/2 z-20 w-full">
                 <div class="mr-auto place-self-center xs:col-span-12 sm:p-8 lg:col-span-7 lg:p-0 w-full ">
                     <h1 class="sm:w-full uppercase">
-                        <p class="text-black/75 tracking-wide text-5xl leading-snug font-bold"
-                            style="font-family: 'Spectral', serif; ">
+                        <p class="text-[#272c31] tracking-wide text-xl leading-snug font-bold mb-2">
                             Whatever you're
                             planning,
                         </p>
-                        <p class="text-[#7895B2] font-extrabold tracking-widest text-3xl">make it extraordinary</p>
-                        <p class="text-base leading-normal text-gray-800 mt-4 sm:mt-5 sm:w-5/1 normal-case mb-4 ">
+                        <p tabindex="0" class="text-[#7895B2] text-4xl lg:text-[40px] font-black mb-8"
+                            style="font-family: 'Spectral', serif; ">make it
+                            extraordinary</p>
+                        <p class="text-base leading-normal text-[#1F1717] mt-4 sm:mt-5 sm:w-5/1 normal-case mb-4 ">
                             “Making every moment memorable - with our events!”</p>
                     </h1>
                     <div class="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
@@ -25,9 +26,11 @@
                 </div>
             </div>
             <div class="">
-                <img src="images/try3.jpg"
-                    class="md:block hidden sm:hidden aspect-square max-w-2xl absolute top-1/2 left-1/2 transform -translate-x-3/4 -translate-y-1/2 z-10 w-full"
-                    alt="hero-section" loading="lazy" />
+                @foreach ($categories->shuffle() as $category)
+                    <img src="{{ $category->firstImg() ? asset('storage/' . $category->firstImg()) : 'images/holder.jpg' }}"
+                        class="md:block hidden sm:hidden aspect-square max-w-2xl absolute top-1/2 left-1/2 transform -translate-x-3/4 -translate-y-1/2 z-10 w-full object-cover object-center"
+                        alt="hero-section" loading="lazy" />
+                @endforeach
             </div>
         </div>
     </section>
@@ -90,7 +93,7 @@
                             <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black">
                             </div>
                             <div class="absolute inset-0 bottom-0 flex items-end justify-center">
-                                <p class="mb-3 whitespace-pre-line font-bold text-white sm:text-3xl lg:text-lg">
+                                <p class="mb-3 whitespace-pre-line font-bold text-[#FAF4F4] sm:text-3xl lg:text-lg">
                                     {{ $category->name }}</p>
                             </div>
                         </a>
@@ -480,7 +483,7 @@
         <div
             class="py-8 px-4 mx-auto max-w-screen-2xl  sm:py-16 lg:px-6 w-full bg-cover bg-center h-auto text-justify  object-fill lg:rounded-t-lg bg-[#E8DFCA]/75   ">
             <div class="max-w-screen-md">
-                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-800">Come and Join Us!
+                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-[#291f1f]">Come and Join Us!
                 </h2>
                 <p class="mb-8 font-light text-gray-500 sm:text-xl">Are you a business owner looking
                     to expand your

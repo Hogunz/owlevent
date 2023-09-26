@@ -500,80 +500,43 @@
             </div>
 
         </section>
+
+
         <section>
-            <div class="w-80 mx-auto relative">
-                <div id="owl-carousel1" class="owl-carousel owl-theme relative">
-                    @for ($i = 0; $i < 7; $i++)
-                        <div class="item">
-                            <div class="img-box p-10">
-                                <img src="https://via.placeholder.com/150" class="w-full" />
+            <div class="w-full relative pb-10 px-6 xl:px-0">
+                <div class="pt-32 lg:flex items-center relative z-10 container mx-auto">
+                    <div class="w-full lg:w-1/2 h-full lg:pr-10 xl:pr-0">
+                        <section class="p-8 flex justify-center items-center h-screen">
+                            <div class="relative">
+                                <img src="images/try2.png"
+                                    class="max-w-lg border bg-gradient-to-b from-gray-300 to-black p-8 rounded-lg rotate-12 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"
+                                    alt="..." />
+
+                                <img src="images/try2.png"
+                                    class="max-w-lg border bg-gradient-to-b from-gray-300 to-black p-8 rounded-lg absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20"
+                                    alt="..." />
                             </div>
-                        </div>
-                    @endfor
-                </div>
-                <div class="customNavigation prev_next">
-                    <a
-                        class="z-40 prev flex items-center justify-center h-40 w-40 bg-white rounded-full opacity-100 shadow-md cursor-pointer absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-1/2 ">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" class="feather feather-chevron-left">
-                            <polyline points="15 18 9 12 15 6"></polyline>
-                        </svg>
-                    </a>
-                    <a
-                        class="z-40 next flex items-center justify-center h-40 w-40 bg-white rounded-full opacity-100 shadow-md cursor-pointer absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-1/2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" class="feather feather-chevron-right">
-                            <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg>
-                    </a>
+                        </section>
+                    </div>
+                    <div role="contentinfo" class="w-full lg:w-1/2 h-full">
+                        <p tabindex="0" class="text-[#749bc2] text-2xl font-bold">
+                            WHATEVER YOU'RE PLANNING,
+                        </p>
+                        <h1 tabindex="0" class="text-[#7895B2] text-4xl lg:text-4xl font-black mb-8">MAKE IT
+                            EXTRAORDINARY</h1>
+                        <p tabindex="0" class="text-[#1F1717] dark:text-white font-regular mb-8">“Making every
+                            moment
+                            memorable - with our events!”</p>
+
+                    </div>
                 </div>
             </div>
-
         </section>
 
 
 
+
+
+
+
 </x-guest-layout>
-<script>
-    $(document).ready(function() {
-
-        // Initialize first carousel
-        var owlCarousel1 = $('#owl-carousel1');
-        owlCarousel1.owlCarousel({
-            rtl: false,
-            loop: true,
-            responsive: {
-                0: {
-                    items: 1,
-                    stagePadding: 50
-                },
-                640: {
-                    items: 1,
-                    stagePadding: 100
-                },
-                768: {
-                    items: 3
-                },
-                992: {
-                    items: 4
-                },
-                1200: {
-                    items: 5,
-                    stagePadding: 100
-                }
-            }
-        });
-
-        // Add next and previous button functionality
-        $(".next").click(function() {
-            owlCarousel1.trigger('next.owl.carousel');
-        });
-
-        $(".prev").click(function() {
-            owlCarousel1.trigger('prev.owl.carousel');
-        });
-
-    });
-</script>
