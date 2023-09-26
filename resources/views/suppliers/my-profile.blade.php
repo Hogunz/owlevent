@@ -45,7 +45,7 @@
                                     x-data="{ show: false }" @mouseover="show = true" @mouseover.away="show = false">
                                     <img class="relative top-0 z-auto h-32 w-32 rounded-full object-cover transition-transform duration-500"
                                         src="{{ asset('storage/' . auth()->user()->avatar) ?? 'https://images.unsplash.com/photo-1555952517-2e8e729e0b44?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHBlcnNvbnxlbnwwfDF8MHx8&auto=format&fit=crop&w=500&q=60' }}"
-                                        alt="pic3">
+                                        alt="pic3" loading="lazy">
 
                                     <span class="absolute bottom-0 right-7 flex h-4 w-4">
                                         <span

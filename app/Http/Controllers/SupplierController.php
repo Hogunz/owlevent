@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
-
+use Intervention\Image\Facades\Image;
 class SupplierController extends Controller
 {
     public function becomeSupplier()
@@ -142,24 +142,56 @@ class SupplierController extends Controller
     public function showRegistration()
     {
     }
+    // public function updateAvatar(Request $request)
+    // {
+    //     try {
+    //         $user = Auth::user();
+
+    //         $image = $request->input('image');
+    //         $image = str_replace('data:image/png;base64,', '', $image);
+    //         $image = str_replace(' ', '+', $image);
+
+    //         // $path = $request->file('id_card')->storeAs(Auth::id(), 'avatar.png', 'public');
+    //         $disk = Storage::disk('public');
+    //         $path = Auth::id() . '/avatar.png';
+    //         $disk->put($path, base64_decode($image));
+
+    //         $user->update([
+    //             'avatar' => $path,
+    //         ]);
+
+    //         return response()->json([
+    //             'status' => 'Successfully updated avatar'
+    //         ]);
+    //     } catch (Exception $e) {
+    //         return response()->json([
+    //             'errors' => [
+    //                 'error' => $e->getMessage(),
+    //             ]
+    //         ]);
+    //     }
+    // }
     public function updateAvatar(Request $request)
     {
         try {
             $user = Auth::user();
-
+    
             $image = $request->input('image');
             $image = str_replace('data:image/png;base64,', '', $image);
             $image = str_replace(' ', '+', $image);
-
-            // $path = $request->file('id_card')->storeAs(Auth::id(), 'avatar.png', 'public');
+    
+            // Convert the base64 image data to a compressed image
+            $compressedImage = Image::make(base64_decode($image))
+                ->encode('jpg', 50); 
+    
             $disk = Storage::disk('public');
-            $path = Auth::id() . '/avatar.png';
-            $disk->put($path, base64_decode($image));
-
+            $path = Auth::id() . '/avatar.jpg'; // Save as JPEG for smaller size
+            $disk->put($path, $compressedImage->stream()->__toString());
+    
             $user->update([
                 'avatar' => $path,
             ]);
-
+    
             return response()->json([
                 'status' => 'Successfully updated avatar'
             ]);
@@ -171,7 +203,6 @@ class SupplierController extends Controller
             ]);
         }
     }
-
     public function myProfile()
     {
         if (!Auth::user()->hasRole('Supplier')) {

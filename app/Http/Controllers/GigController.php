@@ -92,8 +92,6 @@ class GigController extends Controller
             foreach ($request->file('images') as $file) {
                 // Open the image
                 $image = Image::make($file);
-
-               
                 $image->encode('jpg', 50); 
 
                 // Generate a unique filename
