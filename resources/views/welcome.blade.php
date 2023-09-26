@@ -44,7 +44,7 @@
                     <div class="flex p-2 flex-col">
                         <img class="aspect-square object-cover bg-no-repeat bg-center h-auto max-w-sm rounded-lg shadow-none transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-black/30"
                             src="{{ $category->firstImg() ? asset('storage/' . $category->firstImg()) : 'images/holder.jpg' }}"
-                            alt="featured">
+                            alt="featured" loading="lazy">
                     </div>
                 </a>
             @endforeach
@@ -235,7 +235,7 @@
                     <div class="flex scale-75 flex-col overflow-hidden ">
                         <img class="h-96 w-full object-cover transition duration-300 ease-in-out hover:scale-105"
                             src="{{ asset('storage/' . $supplier->avatar) ?? 'https://images.unsplash.com/photo-1627564174704-4c3765ef733a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80' }}"
-                            alt={{ $supplier->business_name }}>
+                            alt={{ $supplier->business_name }} loading="lazy">
                         <div class="flex justify-between bg-[#E8DFCA] p-8">
                             <div class="text-sm normal-case whitespace-normal font-bold">{{ $supplier->business_name }}
                             </div>
