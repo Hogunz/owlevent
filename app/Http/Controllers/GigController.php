@@ -248,6 +248,16 @@ class GigController extends Controller
 
             $paths = [];
 
+            if ($request->videos) {
+
+                foreach ($request->file('videos') as $file) {
+
+                    $paths[] = [
+                        'url' => $file->store(Auth::id() . "/gig/{$gig->id}", 'public'),
+                        'type' => 'video',
+                    ];
+                }
+            }
             if ($request->images) {
 
                 foreach ($request->file('images') as $file) {
