@@ -4,7 +4,7 @@
             <div class="p-8 flex justify-center items-center bg-[#E8DFCA]/75  w-full" style="height:50vh;"></div>
             <div class="p-8 flex justify-center items-center  bg-[#F5EFE6]/50 w-full" style="height:40vh;"></div>
             <div
-                class="max-w-md bg-[#E8DFCA] p-8 shadow-md absolute top-1/2 left-1/2 transform lg:translate-x-10 -translate-x-1/2 -translate-y-1/2 z-20 w-full">
+                class="max-w-md bg-[#E8DFCA] p-8 shadow-md absolute top-1/2 left-1/2 transform lg:translate-x-10 -translate-x-1/2 -translate-y-1/2 z-20 w-full ">
                 <div class="mr-auto place-self-center xs:col-span-12 sm:p-8 lg:col-span-7 lg:p-0 w-full ">
                     <h1 class="sm:w-full uppercase">
                         <p class="text-[#272c31] tracking-wide text-xl leading-snug font-bold mb-2">
@@ -27,9 +27,12 @@
             </div>
             <div class="">
                 @foreach ($categories->shuffle() as $category)
-                    <img src="{{ $category->firstImg() ? asset('storage/' . $category->firstImg()) : 'images/holder.jpg' }}"
-                        class=" md:block hidden sm:hidden aspect-square max-w-2xl absolute top-1/2 left-1/2 transform -translate-x-3/4 -translate-y-1/2 z-10 w-full object-cover object-center"
-                        alt="hero-section" loading="lazy" />
+                    <a href="{{ $category->gigs->count() ? route('show.supplier-gig', ['user' => optional($category->firstGig())->user_id, 'gig' => optional($category->firstGig())->id]) : '#' }}"
+                        class="href">
+                        <img src="{{ $category->firstImg() ? asset('storage/' . $category->firstImg()) : 'images/holder.jpg' }}"
+                            class=" md:block hidden sm:hidden aspect-square max-w-2xl absolute top-1/2 left-1/2 transform -translate-x-3/4 -translate-y-1/2 z-10 hover:z-40 transition ease-in-out delay-75 hover:scale-110 duration-300  w-full object-cover object-center"
+                            alt="hero-section" loading="lazy" />
+                    </a>
                 @endforeach
             </div>
         </div>
@@ -81,7 +84,7 @@
             class="mb-4 justify-between lg:pl-8 text-2xl text-[#7895B2] flex uppercase font-extrabold tracking-widest lg:justify-center lg:pt-16 lg:text-4xl px-4">
             Category
         </h2>
-        <div class="">
+        <div class="relative w-[80%] mx-auto">
             <div id="owl-carousel2" class="owl-carousel owl-theme lg:container lg:mx-auto p-2">
                 @foreach ($categories as $category)
                     <div class="group relative">
@@ -100,6 +103,24 @@
                     </div>
                 @endforeach
             </div>
+
+            <a
+                class="z-40 prev1 flex items-center justify-center h-10 w-10 bg-[#7895B2] hover:bg-[#324d68] rounded-full opacity-100 shadow-md cursor-pointer absolute left-[8px] top-1/2 transform -translate-y-1/2 -translate-x-1/2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-chevron-left">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </a>
+            <a
+                class="z-40 next1 flex items-center justify-center h-10 w-10 bg-[#7895B2] hover:bg-[#324d68] rounded-full opacity-100 shadow-md cursor-pointer absolute right-[8px] top-1/2 transform -translate-y-1/2 translate-x-1/2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-chevron-right">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </a>
+
         </div>
 
     </section>
@@ -171,7 +192,8 @@
     <section class="lg:p-8 w-full">
         <div class="mx-auto max-w-7xl">
             <div class="grid grid-cols-1 md:grid-cols-2">
-                <div class="flex items-center p-4 md:p-8 aos-disabled" data-aos="fade-right" data-aos-duration="2000">
+                <div class="flex items-center p-4 md:p-8 aos-disabled" data-aos="fade-right"
+                    data-aos-duration="2000">
                     <div>
                         <div class="">
                             <h1
@@ -188,7 +210,7 @@
                     </div>
                 </div>
 
-                <div class="flex cursor-pointer items-center overflow-hidden border-[20px] border-[#E8DFCA]">
+                <div class="flex  items-center overflow-hidden border-[20px] border-[#E8DFCA]">
                     <img class="h-auto w-full object-cover transition duration-300 ease-in-out hover:rotate-3 hover:scale-110 md:h-full"
                         src="images/pic1.jpg" alt="pic1" loading="lazy">
                 </div>
@@ -196,7 +218,7 @@
             <hr class="my-8 w-full md:mt-12 md:mb-8 lg:mt-10 px-2">
             <div class="grid grid-cols-1 md:grid-cols-2">
                 <div
-                    class="flex cursor-pointer items-center overflow-hidden border-[20px] border-[#7895B2] lg:order-none order-last">
+                    class="flex  items-center overflow-hidden border-[20px] border-[#7895B2] lg:order-none order-last">
                     <img class="h-auto w-full object-cover transition duration-300 ease-in-out hover:rotate-3 hover:scale-110 md:h-full"
                         src="images/pic2.jpg" alt="pic2" loading="lazy">
                 </div>
@@ -240,7 +262,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex cursor-pointer items-center overflow-hidden border-[20px] border-[#E8DFCA]">
+                <div class="flex  items-center overflow-hidden border-[20px] border-[#E8DFCA]">
                     <img class="w-full object-cover transition duration-300 ease-in-out hover:rotate-3 hover:scale-110 md:h-full"
                         src="images/pic3.jpg" alt="pic3" loading="lazy">
                 </div>
@@ -262,7 +284,8 @@
                             src="{{ asset('storage/' . $supplier->avatar) ?? 'https://images.unsplash.com/photo-1627564174704-4c3765ef733a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80' }}"
                             alt={{ $supplier->business_name }} loading="lazy">
                         <div class="flex justify-between bg-[#E8DFCA] p-8">
-                            <div class="text-sm normal-case whitespace-normal font-bold">{{ $supplier->business_name }}
+                            <div class="text-sm normal-case whitespace-normal font-bold">
+                                {{ $supplier->business_name }}
                             </div>
 
                             <div class="flex items-center justify-center">
@@ -549,15 +572,18 @@
         });
 
         // Initialize second carousel
-        $('#owl-carousel2').owlCarousel({
-            nav: true,
+
+
+
+        var owlCarousel2 = $('#owl-carousel2');
+        owlCarousel2.owlCarousel({
+            dots: false,
+            rtl: false,
             loop: true,
-            rtl: true,
             margin: 30,
             responsive: {
                 0: {
-                    items: 1,
-                    stagePadding: 50
+                    items: 1
                 },
                 640: {
                     items: 1,
@@ -575,6 +601,30 @@
                 }
             }
         });
+
+        // Add next and previous button functionality
+        $(".next1").click(function() {
+            owlCarousel2.trigger('next.owl.carousel');
+        });
+
+        $(".prev1").click(function() {
+            owlCarousel2.trigger('prev.owl.carousel');
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         // Initialize second carousel
         $('#owl-carousel3').owlCarousel({

@@ -32,7 +32,7 @@
                                             </video>
                                         @else
                                             <img src="{{ asset('storage/' . $upload->url) }}"
-                                                class="relative h-auto rounded-lg transition duration-300 ease-in-out"
+                                                class="relative h-auto cursor-pointer rounded-lg transition duration-300 ease-in-out"
                                                 alt=" {{ $gig->title }}">
                                         @endif
                                     </div>
@@ -42,7 +42,7 @@
                         </div>
                     </div>
 
-
+                    {{-- 
                     <div id="extralarge-modal" tabindex="-1"
                         class="fixed inset-0 z-50 hidden h-[calc(100%-1rem)] w-full overflow-y-auto overflow-x-hidden p-4 md:inset-0 md:h-full">
                         <div class="relative  w-full max-w-2xl max-h-full">
@@ -67,8 +67,58 @@
                                 @endforeach
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
 
+                    <div id="extralarge-modal" tabindex="-1"
+                        class="fixed inset-0 z-50 hidden h-[calc(100%-1rem)] w-full overflow-y-auto overflow-x-hidden  md:inset-0 md:h-full ">
+                        <div class="relative">
+                            <!-- Modal content -->
+                            <div class="container lg:mx-auto w-[1011px]">
+                                <div class="inset-x-0">
+                                    <div id="owl-carousel2" class="owl-carousel owl-theme lg:bg-[#F5EFE6] lg:p-8 p-0">
+                                        <!-- Item 1 -->
+                                        @foreach ($gig->gigUploads as $upload)
+                                            <div class="relative rounded-lg " data-modal-target="extralarge-modal"
+                                                data-modal-toggle="extralarge-modal">
+                                                @if (pathinfo($upload->url, PATHINFO_EXTENSION) === 'mp4')
+                                                    <video
+                                                        class=" cursor-pointer rounded-xl transition duration-300 ease-in-out lg:h-[674px] max-h-full object-scale-down object-center bg-center"
+                                                        controls>
+                                                        <source src="{{ asset('storage/' . $upload->url) }}"
+                                                            type="video/mp4">
+                                                        Your browser does not support the video tag.
+                                                    </video>
+                                                @else
+                                                    <img src="{{ asset('storage/' . $upload->url) }}"
+                                                        class=" cursor-pointer rounded-xl transition duration-300 ease-in-out lg:h-[674px] max-h-full object-scale-down object-center bg-center"
+                                                        alt=" {{ $gig->title }}">
+                                                @endif
+                                            </div>
+                                        @endforeach
+                                    </div>
+
+                                    <a
+                                        class="z-40 prev lg:flex hidden items-center justify-center h-10 w-10 bg-[#7895B2] hover:bg-[#324d68] rounded-full opacity-100 shadow-md cursor-pointer absolute left-[1px] top-1/2 transform -translate-y-1/2 -translate-x-1/2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="feather feather-chevron-left">
+                                            <polyline points="15 18 9 12 15 6" style="color:#FAF4F4;"></polyline>
+                                        </svg>
+                                    </a>
+                                    <a
+                                        class="z-40 next lg:flex hidden items-center justify-center h-10 w-10 bg-[#7895B2] hover:bg-[#324d68] rounded-full opacity-100 shadow-md cursor-pointer absolute right-[1px] top-1/2 transform -translate-y-1/2 translate-x-1/2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="feather feather-chevron-right">
+                                            <polyline points="9 18 15 12 9 6" style="color:#FAF4F4;"></polyline>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="mb-2 text-2xl font-bold text-[#7895B2]">
                         About This Supplier
@@ -165,7 +215,8 @@
                                 data-dropdown-toggle="star">
                                 Filter
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                    fill="currentColor" class="bi bi-filter" viewBox="0 0 16 16" id="IconChangeColor">
+                                    fill="currentColor" class="bi bi-filter" viewBox="0 0 16 16"
+                                    id="IconChangeColor">
                                     <path
                                         d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"
                                         id="mainIconPathAttribute"></path>
@@ -508,28 +559,42 @@
 </script>
 
 <script>
-    //Owl-Carousel
-    $('#owl-carousel2').owlCarousel({
-        items: 5,
+    // Initialize first carousel
+    var owlCarousel2 = $('#owl-carousel2');
+    owlCarousel2.owlCarousel({
+        dots: false,
+        rtl: false,
         loop: true,
-        margin: 20,
+        margin: 30,
         responsive: {
             0: {
-                items: 1
+                items: 1,
+
             },
             640: {
-                items: 1
+                items: 1,
+
             },
             768: {
-                items: 1
+                items: 3
             },
             992: {
-                items: 1
+                items: 4
             },
             1200: {
-                items: 1
+                items: 4
+
             }
         }
+    });
+
+    // Add next and previous button functionality
+    $(".next").click(function() {
+        owlCarousel2.trigger('next.owl.carousel');
+    });
+
+    $(".prev").click(function() {
+        owlCarousel2.trigger('prev.owl.carousel');
     });
 </script>
 <script>

@@ -35,13 +35,13 @@
                             @foreach ($blogs->shuffle()->take(1) as $blog)
                                 <div class="mr-auto place-self-center">
                                     <div class=" lg:mt-0 lg:flex">
-                                        <img class="mb-4" src="{{ asset('storage/' . $blog->image) }}"
+                                        <img class="mb-4 rounded-lg" src="{{ asset('storage/' . $blog->image) }}"
                                             alt="{{ $blog->name }}">
                                     </div>
                                     <div class="text-justify">
                                         <a href="{{ route('blogs.show', $blog->id) }}" class="href">
                                             <h1
-                                                class="font-base mb-4 max-w-2xl text-lg leading-none tracking-tight sm:text-2xl xl:text-4xl">
+                                                class="font-base mb-4 max-w-2xl text-lg leading-none tracking-tight sm:text-2xl xl:text-4xl hover:underline">
                                                 {{ $blog->name }}</h1>
                                         </a>
                                     </div>
@@ -64,8 +64,8 @@
                                 <div>
                                     <div class="mr-auto place-self-center lg:col-span-7">
                                         <div class="overflow-hidden lg:col-span-5 lg:mt-0 lg:flex">
-                                            <img class="mb-4 transition duration-300 ease-in-out hover:scale-110"
-                                                src="{{ asset('storage/' . $blog->image) }}" alt="{{ $blog->name }}">
+                                            <img class="mb-4 rounded-lg" src="{{ asset('storage/' . $blog->image) }}"
+                                                alt="{{ $blog->name }}">
                                         </div>
                                         <div class="text-justify">
                                             <a href="{{ route('blogs.show', $blog->id) }}" class="href">
@@ -73,7 +73,7 @@
                                                     <div class="underline italic text-sm">
                                                         {{ $blog->created_at }}
                                                     </div>
-                                                    <div class="font-bold">
+                                                    <div class="font-bold hover:underline">
                                                         {{ $blog->name }}
                                                     </div>
                                                 </div>
