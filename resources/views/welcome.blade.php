@@ -4,7 +4,7 @@
             <div class="p-8 flex justify-center items-center bg-[#E8DFCA]/75  w-full" style="height:50vh;"></div>
             <div class="p-8 flex justify-center items-center  bg-[#F5EFE6]/50 w-full" style="height:40vh;"></div>
             <div
-                class="max-w-md bg-[#E8DFCA] p-8 shadow-md absolute top-1/2 left-1/2 transform lg:translate-x-10 -translate-x-1/2 -translate-y-1/2 z-20 w-full ">
+                class="max-w-md bg-[#E8DFCA] p-8 shadow-md rounded-xl absolute top-1/2 left-1/2 transform lg:translate-x-10 -translate-x-1/2 -translate-y-1/2 z-20 w-full ">
                 <div class="mr-auto place-self-center xs:col-span-12 sm:p-8 lg:col-span-7 lg:p-0 w-full ">
                     <h1 class="sm:w-full uppercase">
                         <p class="text-[#272c31] tracking-wide text-xl leading-snug font-bold mb-2">
@@ -30,7 +30,7 @@
                     <a href="{{ $category->gigs->count() ? route('show.supplier-gig', ['user' => optional($category->firstGig())->user_id, 'gig' => optional($category->firstGig())->id]) : '#' }}"
                         class="href">
                         <img src="{{ $category->firstImg() ? asset('storage/' . $category->firstImg()) : 'images/holder.jpg' }}"
-                            class=" md:block hidden sm:hidden aspect-square max-w-2xl absolute top-1/2 left-1/2 transform -translate-x-3/4 -translate-y-1/2 z-10 hover:z-40 transition ease-in-out delay-75 hover:scale-110 duration-300  w-full object-cover object-center"
+                            class=" md:block hidden sm:hidden aspect-square max-w-2xl absolute top-1/2 left-1/2 transform -translate-x-3/4 -translate-y-1/2 z-10 hover:z-40 transition ease-in-out delay-150 hover:scale-110 duration-700  w-full object-cover object-center rounded-xl"
                             alt="hero-section" loading="lazy" />
                     </a>
                 @endforeach

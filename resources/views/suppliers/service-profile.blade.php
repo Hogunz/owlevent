@@ -1,48 +1,50 @@
 <x-guest-layout>
-
     <div class="w-full">
         <section>
             <div class="lg:container lg:mx-auto grid gap-4 lg:p-8 p-4 sm:grid-cols-1 lg:grid-cols-2 w-full">
                 <!--1st DIV -->
-                <div class="w-full">
-                    <div class="mb-12">
-                        <div class="mb-8 text-3xl font-bold text-[#7895B2]">
-                            About Their Services
-                        </div>
-                        <div class="text-xl font-semibold mb-4 " style="font-family: 'Montserrat', sans-serif;">
-                            {{ $gig->title }}
-                        </div>
-                        <div class="text-lg" style="font-family: 'Montserrat', sans-serif;">
-                            <p>{{ $gig->description }}</p>
-                        </div>
-                    </div>
-                    <!-- CAROUSEL -->
-                    <div class="container lg:mx-auto w-full mb-8">
-                        <div class="inset-x-0 top-14 max-h-full w-full">
-                            <div id="owl-carousel" class="owl-carousel owl-theme  ">
-                                <!-- Item 1 -->
-                                @foreach ($gig->gigUploads as $upload)
-                                    <div class="item relative h-56 overflow-hidden hover:scale-105 transition duration-300 ease-in-out scale-100 rounded-lg md:h-96 "
-                                        data-modal-target="extralarge-modal" data-modal-toggle="extralarge-modal">
-                                        @if (pathinfo($upload->url, PATHINFO_EXTENSION) === 'mp4')
-                                            <video class="relative rounded-lg transition duration-300 ease-in-out"
-                                                controls>
-                                                <source src="{{ asset('storage/' . $upload->url) }}" type="video/mp4">
-                                                Your browser does not support the video tag.
-                                            </video>
-                                        @else
-                                            <img src="{{ asset('storage/' . $upload->url) }}"
-                                                class="relative h-auto cursor-pointer rounded-lg transition duration-300 ease-in-out"
-                                                alt=" {{ $gig->title }}">
-                                        @endif
-                                    </div>
-                                @endforeach
 
+                <div class="w-full">
+                    <div class="flex flex-col">
+                        <div class="mb-12 lg:order-first order-last">
+                            <div class="mb-8 text-3xl font-bold text-[#7895B2]">
+                                About Their Services
+                            </div>
+                            <div class="text-xl font-semibold mb-4 " style="font-family: 'Montserrat', sans-serif;">
+                                {{ $gig->title }}
+                            </div>
+                            <div class="text-lg" style="font-family: 'Montserrat', sans-serif;">
+                                <p>{{ $gig->description }}</p>
                             </div>
                         </div>
-                    </div>
+                        <!-- CAROUSEL -->
+                        <div class="container lg:mx-auto mb-8 min-w-full w-full lg:order-last order-first ">
+                            <div class="inset-x-0 top-14 max-h-full">
+                                <div id="owl-carousel" class="owl-carousel owl-theme ">
+                                    <!-- Item 1 -->
+                                    @foreach ($gig->gigUploads as $upload)
+                                        <div class="item relative h-56 overflow-hidden transition duration-300 ease-in-out scale-100 rounded-lg md:h-96 "
+                                            data-modal-target="extralarge-modal" data-modal-toggle="extralarge-modal">
+                                            @if (pathinfo($upload->url, PATHINFO_EXTENSION) === 'mp4')
+                                                <video class="relative rounded-lg transition duration-300 ease-in-out"
+                                                    controls>
+                                                    <source src="{{ asset('storage/' . $upload->url) }}"
+                                                        type="video/mp4">
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                            @else
+                                                <img src="{{ asset('storage/' . $upload->url) }}"
+                                                    class="relative cursor-pointer rounded-lg transition duration-300 ease-in-out scale-100 hover:scale-105 bg-center bg-cover"
+                                                    alt=" {{ $gig->title }}">
+                                            @endif
+                                        </div>
+                                    @endforeach
 
-                    {{-- 
+                                </div>
+                            </div>
+                        </div>
+
+                        {{-- 
                     <div id="extralarge-modal" tabindex="-1"
                         class="fixed inset-0 z-50 hidden h-[calc(100%-1rem)] w-full overflow-y-auto overflow-x-hidden p-4 md:inset-0 md:h-full">
                         <div class="relative  w-full max-w-2xl max-h-full">
@@ -69,57 +71,57 @@
                         </div>
                     </div> --}}
 
-                    <div id="extralarge-modal" tabindex="-1"
-                        class="fixed inset-0 z-50 hidden h-[calc(100%-1rem)] w-full overflow-y-auto overflow-x-hidden  md:inset-0 md:h-full ">
-                        <div class="relative">
-                            <!-- Modal content -->
-                            <div class="container lg:mx-auto w-[1011px]">
-                                <div class="inset-x-0">
-                                    <div id="owl-carousel2" class="owl-carousel owl-theme lg:bg-[#F5EFE6] lg:p-8 p-0">
-                                        <!-- Item 1 -->
-                                        @foreach ($gig->gigUploads as $upload)
-                                            <div class="relative rounded-lg " data-modal-target="extralarge-modal"
-                                                data-modal-toggle="extralarge-modal">
-                                                @if (pathinfo($upload->url, PATHINFO_EXTENSION) === 'mp4')
-                                                    <video
-                                                        class=" cursor-pointer rounded-xl transition duration-300 ease-in-out lg:h-[674px] max-h-full object-scale-down object-center bg-center"
-                                                        controls>
-                                                        <source src="{{ asset('storage/' . $upload->url) }}"
-                                                            type="video/mp4">
-                                                        Your browser does not support the video tag.
-                                                    </video>
-                                                @else
-                                                    <img src="{{ asset('storage/' . $upload->url) }}"
-                                                        class=" cursor-pointer rounded-xl transition duration-300 ease-in-out lg:h-[674px] max-h-full object-scale-down object-center bg-center"
-                                                        alt=" {{ $gig->title }}">
-                                                @endif
-                                            </div>
-                                        @endforeach
+                        <div id="extralarge-modal" tabindex="-1"
+                            class="fixed inset-0 z-50 hidden h-[calc(100%-1rem)] w-full overflow-y-auto overflow-x-hidden  md:inset-0 md:h-full ">
+                            <div class="relative">
+                                <!-- Modal content -->
+                                <div class="container lg:mx-auto w-[1011px]">
+                                    <div class="inset-x-0">
+                                        <div id="owl-carousel2"
+                                            class="owl-carousel owl-theme lg:bg-[#F5EFE6] lg:p-8 p-0">
+                                            <!-- Item 1 -->
+                                            @foreach ($gig->gigUploads as $upload)
+                                                <div class="relative rounded-lg " data-modal-target="extralarge-modal"
+                                                    data-modal-toggle="extralarge-modal">
+                                                    @if (pathinfo($upload->url, PATHINFO_EXTENSION) === 'mp4')
+                                                        <video
+                                                            class=" cursor-pointer rounded-xl transition duration-300 ease-in-out lg:h-[674px] max-h-full object-scale-down object-center bg-center"
+                                                            controls>
+                                                            <source src="{{ asset('storage/' . $upload->url) }}"
+                                                                type="video/mp4">
+                                                            Your browser does not support the video tag.
+                                                        </video>
+                                                    @else
+                                                        <img src="{{ asset('storage/' . $upload->url) }}"
+                                                            class=" cursor-pointer rounded-xl transition duration-300 ease-in-out lg:h-[674px] max-h-full object-scale-down object-center bg-center"
+                                                            alt=" {{ $gig->title }}">
+                                                    @endif
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                        <a
+                                            class="z-40 prev lg:flex hidden items-center justify-center h-10 w-10 bg-[#7895B2] hover:bg-[#324d68] rounded-full opacity-100 shadow-md cursor-pointer absolute left-[1px] top-1/2 transform -translate-y-1/2 -translate-x-1/2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                class="feather feather-chevron-left">
+                                                <polyline points="15 18 9 12 15 6" style="color:#FAF4F4;"></polyline>
+                                            </svg>
+                                        </a>
+                                        <a
+                                            class="z-40 next lg:flex hidden items-center justify-center h-10 w-10 bg-[#7895B2] hover:bg-[#324d68] rounded-full opacity-100 shadow-md cursor-pointer absolute right-[1px] top-1/2 transform -translate-y-1/2 translate-x-1/2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                class="feather feather-chevron-right">
+                                                <polyline points="9 18 15 12 9 6" style="color:#FAF4F4;"></polyline>
+                                            </svg>
+                                        </a>
                                     </div>
-
-                                    <a
-                                        class="z-40 prev lg:flex hidden items-center justify-center h-10 w-10 bg-[#7895B2] hover:bg-[#324d68] rounded-full opacity-100 shadow-md cursor-pointer absolute left-[1px] top-1/2 transform -translate-y-1/2 -translate-x-1/2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round"
-                                            class="feather feather-chevron-left">
-                                            <polyline points="15 18 9 12 15 6" style="color:#FAF4F4;"></polyline>
-                                        </svg>
-                                    </a>
-                                    <a
-                                        class="z-40 next lg:flex hidden items-center justify-center h-10 w-10 bg-[#7895B2] hover:bg-[#324d68] rounded-full opacity-100 shadow-md cursor-pointer absolute right-[1px] top-1/2 transform -translate-y-1/2 translate-x-1/2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round"
-                                            class="feather feather-chevron-right">
-                                            <polyline points="9 18 15 12 9 6" style="color:#FAF4F4;"></polyline>
-                                        </svg>
-                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                     <div class="mb-2 text-2xl font-bold text-[#7895B2]">
                         About This Supplier
                     </div>
