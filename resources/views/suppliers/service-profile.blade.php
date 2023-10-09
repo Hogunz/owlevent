@@ -476,17 +476,17 @@
                     </section>
                 </div>
                 <!-- 2 -->
-                <div class="lg:container">
+                <div class="lg:container ">
                     <div class="sticky inset-x-0 top-14 max-h-full lg:p-0 px-2">
                         @foreach ($gig->gigPackages as $package)
                             <div
-                                class="mx-auto mb-5 flex max-w-lg flex-col rounded-lg border border-gray-300  p-6 text-center text-gray-900 shadow-2xl drop-shadow-2xl backdrop-blur-md backdrop-filter">
-                                <h1 class="mb-4 text-4xl font-semibold ">Package ({{ $package->package }})</h1>
+                                class="mx-auto mb-5 flex max-w-sm flex-col rounded-lg border border-gray-300  p-6 text-center text-gray-900 shadow-2xl drop-shadow-2xl backdrop-blur-md backdrop-filter">
+                                <h1 class="mb-4 font-medium ">Package ({{ $package->package }})</h1>
                                 <div class="my-8 flex items-baseline justify-center text-[#7895B2]">
                                     <span class="mr-2 text-4xl font-extrabold">₱
                                         {{ number_format($package->price, 2, '.', ',') }}</span>
                                 </div>
-                                <p class="font-light text-gray-800 sm:text-sm">
+                                <p class="font-light text-gray-800 text-left  sm:text-sm">
                                     {!! $package->description !!}
                                 </p>
                             </div>
