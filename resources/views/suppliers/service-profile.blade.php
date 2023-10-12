@@ -1,9 +1,10 @@
 <x-guest-layout>
+
+
     <div class="w-full">
         <section>
             <div class="lg:container lg:mx-auto grid gap-4 lg:p-8 p-4 sm:grid-cols-1 lg:grid-cols-2 w-full">
                 <!--1st DIV -->
-
                 <div class="w-full">
                     <div class="flex flex-col">
                         <div class="mb-12 lg:order-first order-last">
@@ -39,37 +40,10 @@
                                             @endif
                                         </div>
                                     @endforeach
-
                                 </div>
                             </div>
                         </div>
 
-                        {{-- 
-                    <div id="extralarge-modal" tabindex="-1"
-                        class="fixed inset-0 z-50 hidden h-[calc(100%-1rem)] w-full overflow-y-auto overflow-x-hidden p-4 md:inset-0 md:h-full">
-                        <div class="relative  w-full max-w-2xl max-h-full">
-                            <!-- Modal content -->
-                            <div id="owl-carousel2"
-                                class="owl-carousel owl-theme relative rounded-lg bg-transparent shadow w-full ">
-                                @foreach ($gig->gigUploads as $upload)
-                                    <div class="relative" data-modal-target="extralarge-modal"
-                                        data-modal-toggle="extralarge-modal">
-                                        @if (pathinfo($upload->url, PATHINFO_EXTENSION) === 'mp4')
-                                            <video class="relative rounded-lg transition duration-300 ease-in-out"
-                                                controls>
-                                                <source src="{{ asset('storage/' . $upload->url) }}" type="video/mp4">
-                                                Your browser does not support the video tag.
-                                            </video>
-                                        @else
-                                            <img src="{{ asset('storage/' . $upload->url) }}"
-                                                class="relative rounded-lg transition duration-300 ease-in-out object-cover object-center "
-                                                alt="{{ $gig->title }}" style="width=200px;height=800;">
-                                        @endif
-                                    </div>
-                                @endforeach
-                            </div>
-                        </div>
-                    </div> --}}
 
                         <div id="extralarge-modal" tabindex="-1"
                             class="fixed inset-0 z-50 hidden h-[calc(100%-1rem)] w-full overflow-y-auto overflow-x-hidden  md:inset-0 md:h-full ">
