@@ -141,6 +141,14 @@
                             <p class="text-justify text-base">{{ auth()->user()->description }}
                             </p>
                         </div>
+                        <div
+                            class="mb-4 rounded-lg bg-gradient-to-br from-[#F5EFE6] via-[#E8DFCA] to-transparent p-8 shadow-xl">
+                            <h1 class="mb-4 text-left text-2xl font-bold">Description</h1>
+
+                            <p class="text-justify text-base">{{ auth()->user()->skills }}
+                            </p>
+
+                        </div>
                         <!-- End of Description-->
                     </div>
                     <!-- Right Side -->
@@ -187,7 +195,8 @@
                                                                 {{ $gig->title }}</p>
                                                         </a>
                                                     </div>
-                                                    <p class="line-clamp-2 mb-3 text-justify font-normal text-gray-700">
+                                                    <p
+                                                        class="line-clamp-2 mb-3 text-justify font-normal text-gray-700">
                                                         {{ $gig->description }}
                                                     </p>
 
@@ -637,7 +646,8 @@
 </x-guest-layout>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.min.css"
     integrity="sha512-zxBiDORGDEAYDdKLuYU9X/JaJo/DPzE42UubfBw9yg8Qvb2YRRIQ8v4KsGHOx2H1/+sdSXyXxLXv5r7tHc9ygg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.min.js"
     integrity="sha512-Gs+PsXsGkmr+15rqObPJbenQ2wB3qYvTHuJO6YJzPe/dTLvhy0fmae2BcnaozxDo5iaF8emzmCZWbQ1XXiX2Ig=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>

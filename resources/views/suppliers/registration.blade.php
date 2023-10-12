@@ -100,7 +100,6 @@
 
                             <div class="mx-auto ">
                                 <div>
-
                                     <div class="font-bold text-gray-600 text-lg leading-8 uppercase h-6 mx-2 mt-3 mb-6">
                                         Your Occupation</div>
 
@@ -120,9 +119,7 @@
                                                 </div>
                                             </div>
                                         @endforeach
-
                                     </div>
-
                                     <!--Skills -->
                                     <div
                                         class="font-bold text-gray-600 text-lg leading-8 uppercase h-6 mx-2 mt-10 mb-6">

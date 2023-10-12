@@ -109,7 +109,7 @@
                                     <div class="font-bold text-gray-600 text-lg leading-8 uppercase h-6 mx-2 mt-3 mb-6">
                                         Your Occupation</div>
 
-                                    <div class="grid grid-rows-3 grid-flow-col gap-4 mt-4 ">
+                                    <div class="grid lg:grid-cols-4 grid-cols-1 gap-4 mt-4">
                                         @foreach ($occupations as $occupation)
                                             <div>
                                                 <div class="form-check">
@@ -134,7 +134,7 @@
                                         Skills</div>
 
 
-                                    <div class="grid grid-rows-3 grid-flow-col gap-4 mt-4 ">
+                                    <div class="grid lg:grid-cols-4 grid-cols-1 gap-4 mt-4">
                                         @foreach ($skills as $skill)
                                             <div>
                                                 <div class="form-check">
