@@ -7,12 +7,14 @@ use Validator;
 use App\Models\Gig;
 use App\Models\User;
 use App\Models\Skill;
+use App\Models\Category;
 use App\Models\Occupation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Storage;
+
 class SupplierController extends Controller
 {
     public function becomeSupplier()
@@ -26,8 +28,8 @@ class SupplierController extends Controller
     {
         $occupations = Occupation::all();
         $skills = Skill::all();
-
-        return view('/suppliers/registration', compact('occupations', 'skills'));
+        $categories = Category::all();
+        return view('/suppliers/registration', compact('occupations', 'skills', 'categories'));
     }
 
     public function store(Request $request)
@@ -175,23 +177,23 @@ class SupplierController extends Controller
     {
         try {
             $user = Auth::user();
-    
+
             $image = $request->input('image');
             $image = str_replace('data:image/png;base64,', '', $image);
             $image = str_replace(' ', '+', $image);
-    
+
             // Convert the base64 image data to a compressed image
             $compressedImage = Image::make(base64_decode($image))
-                ->encode('jpg', 50); 
-    
+                ->encode('jpg', 50);
+
             $disk = Storage::disk('public');
             $path = Auth::id() . '/avatar.jpg'; // Save as JPEG for smaller size
             $disk->put($path, $compressedImage->stream()->__toString());
-    
+
             $user->update([
                 'avatar' => $path,
             ]);
-    
+
             return response()->json([
                 'status' => 'Successfully updated avatar'
             ]);

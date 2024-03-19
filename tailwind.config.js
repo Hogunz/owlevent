@@ -13,7 +13,9 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+                quicksand: ['Quicksand', defaultTheme.fontFamily.sans],
+                brandon: ['HvDTrial Brandon Grotesque', "sans-serif"],
+
             },
         },
     },

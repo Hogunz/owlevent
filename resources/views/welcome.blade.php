@@ -43,7 +43,7 @@
                 Featured</div>
             <a href="/featured" class="p-2 text-center text-base text-[#7895B2] uppercase">See All</a>
         </div>
-        <div class="relative w-[80%] mx-auto ">
+        <div class="relative w-[80%] mx-auto">
             <div id="owl-carousel1" class="owl-carousel owl-theme p-0 relative">
                 @foreach ($categories as $category)
                     <a href="{{ $category->gigs->count() ? route('show.supplier-gig', ['user' => optional($category->firstGig())->user_id, 'gig' => optional($category->firstGig())->id]) : '#' }}"
@@ -75,7 +75,6 @@
             </a>
 
         </div>
-
     </section>
 
     <section class="lg:bg-[#E8DFCA]  sm:bg-white/75 w-full">
@@ -96,7 +95,7 @@
                             <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black">
                             </div>
                             <div class="absolute inset-0 bottom-0 flex items-end justify-center">
-                                <p class="mb-3 whitespace-pre-line font-bold text-[#FAF4F4] sm:text-3xl lg:text-lg">
+                                <p class="mb-3 whitespace-pre-line font-brandon text-[#FAF4F4] sm:text-3xl lg:text-lg">
                                     {{ $category->name }}</p>
                             </div>
                         </a>
@@ -345,7 +344,7 @@
             dots: false,
             rtl: false,
             loop: true,
-            margin: 30,
+            // margin: 30,
             responsive: {
                 0: {
                     items: 1,
@@ -356,13 +355,13 @@
 
                 },
                 768: {
-                    items: 3
+                    items: 3,
                 },
                 992: {
-                    items: 4
+                    items: 4,
                 },
                 1200: {
-                    items: 4
+                    items: 4,
 
                 }
             }
