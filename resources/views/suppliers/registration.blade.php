@@ -101,36 +101,21 @@
                             <div class="mx-auto ">
                                 <div>
                                     <div class="font-bold text-black text-xl leading-8 uppercase h-6 mt-3 mb-6">
-                                        Your Occupation</div>
+                                        Your Occupation
+                                    </div>
                                     <div>
 
-                                        <button id="dropdownSearchButton" data-dropdown-toggle="dropdownSearch"
-                                            data-dropdown-placement="bottom"
-                                            class="text-white focus:outline-none font-medium text-sm px-5 py-2.5 text-center inline-flex items-center rounded bg-[#7895B2] hover:bg-[#7895B2]/75 text-black/80 focus:ring-4 focus:ring-primary-300"
-                                            type="button">Select Occupation <svg class="w-2.5 h-2.5 ms-3"
-                                                aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                                viewBox="0 0 10 6">
-                                                <path stroke="currentColor" stroke-linecap="round"
-                                                    stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
-                                            </svg>
-                                        </button>
-
-                                        <!-- Dropdown menu -->
-                                        <div id="dropdownSearch"
-                                            class="z-10 hidden bg-white rounded-lg shadow w-60 dark:bg-gray-700">
-                                            <ul class="h-full px-3 pb-3 overflow-y-auto text-sm text-gray-700 dark:text-gray-200"
-                                                aria-labelledby="dropdownSearchButton">
+                                        <form action="" class="max-w-sm ">
+                                            <select
+                                                class="text-white focus:outline-none font-medium text-sm px-5 py-2.5 text-center inline-flex items-center rounded bg-[#7895B2] hover:bg-[#7895B2]/75 text-black/80 focus:ring-4 focus:ring-primary-300"
+                                                name="" id="ddlViewBy">
                                                 @foreach ($categories as $category)
-                                                    <li>
-                                                        <div
-                                                            class="flex items-center ps-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                                                            <label for="checkbox-item-11"
-                                                                class="w-full py-2 ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">{{ $category->name }}</label>
-                                                        </div>
-                                                    </li>
+                                                    <option class="" value="1" selected="selected">
+                                                        {{ $category->name }}
+                                                    </option>
                                                 @endforeach
-                                            </ul>
-                                        </div>
+                                            </select>
+                                        </form>
                                     </div>
                                     <div class="grid lg:grid-cols-4 grid-cols-1 gap-4 mt-4">
                                         @foreach ($occupations as $occupation)
@@ -426,8 +411,18 @@
 
                     }
                 }
-
             }
         </script>
     @endpush
+    <script>
+        var e = document.getElementById("ddlViewBy");
+
+        function onChange() {
+            var value = e.value;
+            var text = e.options[e.selectedIndex].text;
+            console.log(value, text);
+        }
+        e.onchange = onChange;
+        onChange();
+    </script>
 </x-guest-layout>
